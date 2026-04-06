@@ -1,101 +1,117 @@
-import Image from "next/image";
+import Hero from "@/components/sections/Hero";
+import WaterQualityChecker from "@/components/sections/WaterQualityChecker";
+import TrustBar from "@/components/sections/TrustBar";
+import { InlineCTA } from "@/components/InlineCTA";
+import { TestimonialStrip } from "@/components/TestimonialStrip";
+import { FactStrip } from "@/components/FactStrip";
+import { ActivityFeed } from "@/components/ActivityFeed";
+import { BeforeAfter } from "@/components/BeforeAfter";
+import Services from "@/components/sections/Services";
+import About from "@/components/sections/About";
+import Process from "@/components/sections/Process";
+import SavingsCalculator from "@/components/sections/SavingsCalculator";
+import Gallery from "@/components/sections/Gallery";
+import FAQ from "@/components/sections/FAQ";
+import Stats from "@/components/sections/Stats";
+import CTA from "@/components/sections/CTA";
+import WaveDivider from "@/components/ui/WaveDivider";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <>
+      <Hero />
+      <WaterQualityChecker />
+      <TrustBar />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      <FactStrip
+        variant="warning"
+        text="Indiana well water contains 3x the national average of iron and hardness — is your family protected?"
+        highlight="3x the national average"
+      />
+
+      <InlineCTA
+        variant="banner"
+        text="Your Water Could Be Affecting Your Family's Health"
+        message="Schedule a free in-home water test and find out exactly what's in your water. No cost, no obligation."
+      />
+
+      <Services />
+
+      <TestimonialStrip
+        quote="Best decision we ever made for our family. The water tastes incredible and our skin feels so much better."
+        author="The Johnson Family"
+        location="Fishers, IN"
+      />
+
+      {/* white → surface */}
+      <WaveDivider variant="wave2" topColor="#ffffff" bottomColor="#f8fafb" />
+      <About />
+
+      <FactStrip
+        variant="didyouknow"
+        text="The average American family spends $1,200/year on bottled water. A whole-home system costs less than $1/day."
+        highlight="$1,200/year"
+      />
+
+      <InlineCTA
+        variant="button"
+        text="Get My FREE Water Test"
+        trustLine="No cost, no obligation — takes less than 30 minutes"
+      />
+
+      {/* white (InlineCTA bg) → dark */}
+      <WaveDivider variant="ripple" topColor="#ffffff" bottomColor="#164e63" />
+      <Process />
+
+      {/* dark → white */}
+      <WaveDivider variant="wave1" topColor="#164e63" bottomColor="#ffffff" />
+
+      <TestimonialStrip
+        quote="We had orange stains everywhere. After Aqua Otter installed our system, it was like moving into a new house."
+        author="Mike & Sarah T."
+        location="Noblesville, IN"
+      />
+
+      <SavingsCalculator />
+
+      <BeforeAfter />
+
+      <ActivityFeed />
+
+      <InlineCTA
+        variant="banner"
+        text="Stop Spending on Bottled Water"
+        message="A whole-home water system pays for itself. Get started with a free water test today."
+      />
+
+      <Gallery />
+
+      <FactStrip
+        variant="stat"
+        text="Hard water reduces appliance lifespan by up to 30% — costing homeowners thousands in early replacements."
+        highlight="30%"
+      />
+
+      <TestimonialStrip
+        quote="I was skeptical, but the free water test showed things I never expected. So glad we made the switch."
+        author="David R."
+        location="Carmel, IN"
+      />
+
+      {/* white → surface */}
+      <WaveDivider variant="wave3" topColor="#ffffff" bottomColor="#f8fafb" />
+      <FAQ />
+
+      <InlineCTA
+        variant="text"
+        text="Have more questions? Talk to a water expert today"
+        href="/contact"
+      />
+
+      {/* white (InlineCTA bg) → dark */}
+      <WaveDivider variant="wave2" topColor="#ffffff" bottomColor="#164e63" />
+      <Stats />
+      <CTA />
+    </>
   );
 }
