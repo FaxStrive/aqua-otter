@@ -5,12 +5,12 @@ import {
   Star,
   ArrowRight,
   Phone,
-  ChevronDown,
   ShieldCheck,
   Award,
   ThumbsUp,
   Quote,
 } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import Section from "@/components/ui/Section";
 import { InlineCTA } from "@/components/InlineCTA";
