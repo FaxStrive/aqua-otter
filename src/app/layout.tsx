@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     template: "%s | Aqua Otter Water Systems",
   },
   description:
-    "Family-owned water treatment experts serving IN, MI, OH, KY & TN. Specializing in well water treatment and no-salt hard water solutions. Free water test — call (812) 499-6807.",
+    "Family-owned water treatment experts serving IN, MI, OH, KY & TN. Specializing in well water treatment and no-salt hard water solutions. Free water test — call (616) 612-1660.",
   keywords:
     "water treatment Indiana, well water filtration, no-salt water softener, hard water solutions, water testing near me, Aqua Otter, water filtration systems, whole house water filter",
   icons: {

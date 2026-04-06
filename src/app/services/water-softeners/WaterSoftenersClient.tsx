@@ -186,11 +186,11 @@ export default function WaterSoftenersClient() {
               <ArrowRight className="w-4 h-4" />
             </Link>
             <a
-              href="tel:8124996807"
+              href="tel:6166121660"
               className="inline-flex items-center gap-2 border border-white/20 text-white font-semibold px-8 py-4 rounded-xl text-sm hover:bg-white/10 transition-all"
             >
               <Phone className="w-4 h-4" />
-              (812) 499-6807
+              (616) 612-1660
             </a>
           </motion.div>
         </div>
@@ -290,7 +290,7 @@ export default function WaterSoftenersClient() {
 
       <InlineCTA
         variant="text"
-        text="We&apos;ll help you choose — call (812) 499-6807 or schedule online"
+        text="We&apos;ll help you choose — call (616) 612-1660 or schedule online"
       />
 
       {/* Lifestyle Images */}
@@ -423,11 +423,11 @@ export default function WaterSoftenersClient() {
               <ArrowRight className="w-4 h-4" />
             </Link>
             <a
-              href="tel:8124996807"
+              href="tel:6166121660"
               className="inline-flex items-center gap-2 border border-white/20 text-white font-semibold px-8 py-4 rounded-xl text-sm hover:bg-white/10 transition-all"
             >
               <Phone className="w-4 h-4" />
-              (812) 499-6807
+              (616) 612-1660
             </a>
           </div>
         </div>

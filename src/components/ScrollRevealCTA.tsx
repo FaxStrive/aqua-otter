@@ -69,11 +69,11 @@ export default function ScrollRevealCTA() {
                   <ArrowRight className="w-4 h-4" />
                 </a>
                 <a
-                  href="tel:8124996807"
+                  href="tel:6166121660"
                   className="hidden md:inline-flex items-center gap-2 text-white/90 hover:text-white text-sm font-medium transition-colors"
                 >
                   <Phone className="w-4 h-4" />
-                  (812) 499-6807
+                  (616) 612-1660
                 </a>
               </div>
               <button

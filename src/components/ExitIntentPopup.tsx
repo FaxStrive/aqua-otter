@@ -4,8 +4,8 @@ import { useState, useEffect, useCallback, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Phone, Droplets, BadgeCheck, Shield, ArrowRight } from "lucide-react";
 
-const PHONE = "(812) 499-6807";
-const PHONE_TEL = "tel:8124996807";
+const PHONE = "(616) 612-1660";
+const PHONE_TEL = "tel:6166121660";
 const STORAGE_KEY = "aquaotter_exit_popup_shown";
 
 export default function ExitIntentPopup() {

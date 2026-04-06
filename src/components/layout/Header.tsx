@@ -127,7 +127,7 @@ export default function Header() {
 
           <div className="hidden lg:flex items-center gap-5">
             <a
-              href="tel:8124996807"
+              href="tel:6166121660"
               className={`text-[15px] transition-colors inline-flex items-center gap-1.5 font-medium ${
                 scrolled
                   ? "text-[var(--color-text-muted)] hover:text-[var(--color-text)]"
@@ -135,7 +135,7 @@ export default function Header() {
               }`}
             >
               <Phone className="w-4 h-4" />
-              (812) 499-6807
+              (616) 612-1660
             </a>
             <Link
               href="/contact"
@@ -208,11 +208,11 @@ export default function Header() {
               </nav>
               <div className="absolute bottom-0 left-0 right-0 p-6 border-t border-[var(--color-border)] space-y-3 bg-white">
                 <a
-                  href="tel:8124996807"
+                  href="tel:6166121660"
                   className="flex items-center justify-center gap-2 py-3 border border-[var(--color-border)] rounded-lg text-sm font-medium"
                 >
                   <Phone className="w-4 h-4" />
-                  (812) 499-6807
+                  (616) 612-1660
                 </a>
                 <Link
                   href="/contact"

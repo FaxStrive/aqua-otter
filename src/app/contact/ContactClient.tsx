@@ -23,9 +23,9 @@ import {
 import Section from "@/components/ui/Section";
 import { InlineCTA } from "@/components/InlineCTA";
 
-const PHONE = "(812) 499-6807";
-const PHONE_TEL = "tel:8124996807";
-const SMS_TEL = "sms:8124996807";
+const PHONE = "(616) 612-1660";
+const PHONE_TEL = "tel:6166121660";
+const SMS_TEL = "sms:6166121660";
 const EMAIL = "info@myaquaotter.com";
 
 const WATER_SOURCES = ["City Water", "Well Water", "Not Sure"];
@@ -350,6 +350,27 @@ export default function ContactClient() {
                       </motion.div>
                     )}
                   </AnimatePresence>
+
+                  {/* SMS Consent (visible on final step) */}
+                  {step === 2 && (
+                    <div className="mt-4 p-3 bg-gray-50 rounded-lg border border-gray-100">
+                      <p className="text-[10px] leading-relaxed text-gray-400">
+                        By submitting this form, you agree to receive text
+                        messages from Aqua Otter Water Systems LLC at the phone
+                        number provided. Message frequency varies. Message and
+                        data rates may apply. Reply STOP to opt out at any time.
+                        Reply HELP for assistance. View our{" "}
+                        <a href="/privacy" className="text-primary underline">
+                          Privacy Policy
+                        </a>{" "}
+                        and{" "}
+                        <a href="/terms" className="text-primary underline">
+                          Terms of Service
+                        </a>
+                        .
+                      </p>
+                    </div>
+                  )}
 
                   {/* Nav Buttons */}
                   <div className="flex items-center justify-between mt-6 pt-4 border-t border-gray-50">

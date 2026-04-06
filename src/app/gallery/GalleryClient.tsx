@@ -8,8 +8,8 @@ import { X, ArrowRight, Phone, ZoomIn } from "lucide-react";
 import Section from "@/components/ui/Section";
 import { InlineCTA } from "@/components/InlineCTA";
 
-const PHONE = "(812) 499-6807";
-const PHONE_TEL = "tel:8124996807";
+const PHONE = "(616) 612-1660";
+const PHONE_TEL = "tel:6166121660";
 
 interface GalleryItem {
   src: string;

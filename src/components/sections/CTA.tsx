@@ -5,8 +5,8 @@ import { ArrowRight, Phone, Shield, Star } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-const PHONE = "(812) 499-6807";
-const PHONE_TEL = "tel:8124996807";
+const PHONE = "(616) 612-1660";
+const PHONE_TEL = "tel:6166121660";
 
 export default function CTA() {
   return (

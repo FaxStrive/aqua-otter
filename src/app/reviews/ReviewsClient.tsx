@@ -309,11 +309,11 @@ export default function ReviewsClient() {
               <ArrowRight className="w-4 h-4" />
             </Link>
             <a
-              href="tel:8124996807"
+              href="tel:6166121660"
               className="inline-flex items-center gap-2 text-white/70 hover:text-white transition-colors font-medium"
             >
               <Phone className="w-4 h-4" />
-              (812) 499-6807
+              (616) 612-1660
             </a>
           </div>
         </div>

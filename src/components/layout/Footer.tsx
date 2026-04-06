@@ -4,8 +4,8 @@ import { Phone, MapPin, Droplets, Mail } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-const PHONE = "(812) 499-6807";
-const PHONE_TEL = "tel:8124996807";
+const PHONE = "(616) 612-1660";
+const PHONE_TEL = "tel:6166121660";
 
 const quickLinks = [
   { href: "/", label: "Home" },
@@ -126,7 +126,10 @@ export default function Footer() {
 
         <div className="mt-10 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/40">
           <p>&copy; {new Date().getFullYear()} Aqua Otter Water Systems LLC. All rights reserved.</p>
-          <p>Family-owned. Local experts. Water done right.</p>
+          <div className="flex items-center gap-4">
+            <Link href="/privacy" className="hover:text-white/70 transition-colors">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-white/70 transition-colors">Terms of Service</Link>
+          </div>
         </div>
       </div>
     </footer>
