@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import {
   ChevronDown,
@@ -138,10 +139,29 @@ export default function FAQClient() {
       {/* Hero */}
       <Section background="dark" padding="none">
         <div className="min-h-[35vh] flex flex-col items-center justify-center text-center py-16 sm:py-24">
-          <motion.span
+          <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
+            className="mb-4"
+          >
+            <motion.div
+              animate={{ y: [0, -8, 0] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+            >
+              <Image
+                src="/client/otter-thinking.png"
+                alt="Aqua Otter thinking"
+                width={120}
+                height={120}
+                className="w-20 h-20 object-contain drop-shadow-lg mx-auto"
+              />
+            </motion.div>
+          </motion.div>
+          <motion.span
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.15 }}
             className="inline-block bg-accent/20 text-accent-300 text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-5"
           >
             FAQ
@@ -150,10 +170,10 @@ export default function FAQClient() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.6 }}
-            className="text-3xl sm:text-4xl md:text-5xl font-heading font-black leading-tight mb-4"
+            className="text-3xl sm:text-4xl md:text-5xl font-heading font-black text-white leading-tight mb-4"
           >
             Frequently Asked{" "}
-            <span className="gradient-text">Questions</span>
+            <span className="text-[var(--color-accent)]">Questions</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 15 }}

@@ -17,64 +17,76 @@ import { InlineCTA } from "@/components/InlineCTA";
 
 const reviews = [
   {
-    name: "Mike Henderson",
-    location: "Jasper, IN",
+    name: "Daniel Hernandez",
+    location: "Google Review",
+    date: "April 2026",
+    text: "Aqua Otter exceeded my expectations. Morgan took the time to walk me through all the options and helped me find the perfect system for my home. Professional, knowledgeable, and genuinely cared about getting it right.",
+  },
+  {
+    name: "Travis Stelly",
+    location: "Google Review",
+    date: "April 2026",
+    text: "Had a really smooth experience with Aqua Otter from start to finish. Sierra was super helpful and made the whole process easy to understand. Great team, great product.",
+  },
+  {
+    name: "Ernie Bojrab",
+    location: "Google Review",
     date: "March 2026",
-    text: "Our well water had terrible iron staining — orange toilets, orange sinks, orange everything. Aqua Otter installed an AiO filtration system and the staining was gone within a day. Absolutely life-changing.",
+    text: "Justin Robb did an incredible job handling the situation I had replacing our water filter. Very professional and knowledgeable. Highly recommend Aqua Otter for anyone needing water treatment.",
   },
   {
-    name: "Sarah Collins",
-    location: "Evansville, IN",
-    date: "February 2026",
-    text: "The sulfur smell from our well was so bad we couldn&apos;t drink the water or even shower comfortably. After the install, zero smell. Our water actually tastes good now. Highly recommend these guys.",
-  },
-  {
-    name: "James & Laura Patterson",
-    location: "Owensboro, KY",
-    date: "January 2026",
-    text: "Hard water had been destroying our appliances for years. The no-salt conditioner they recommended was perfect — no more scale, no heavy salt bags to carry. Honest advice, fair price.",
-  },
-  {
-    name: "David Reeves",
-    location: "Tell City, IN",
+    name: "Jeff Krauter",
+    location: "Google Review",
     date: "December 2025",
-    text: "From the water test to the installation, everything was professional and on time. The technician explained every step and didn&apos;t try to upsell us on anything we didn&apos;t need. Refreshing experience.",
+    text: "These guys are great. Had service guy here a couple times, they are very knowledgeable and professional. Excellent customer service and the water quality has been fantastic since installation.",
   },
   {
-    name: "Karen Mitchell",
-    location: "Bloomington, IN",
+    name: "Benjamin",
+    location: "Google Review",
+    date: "December 2025",
+    text: "I purposely waited a few years to leave this review to see how things would shake out. The system has been running perfectly with zero issues. Best investment we made for our home.",
+  },
+  {
+    name: "Gerald Mitchell",
+    location: "Google Review",
     date: "November 2025",
-    text: "We were buying 5 cases of bottled water a week. Now we have an RO system under the sink and the water tastes better than any bottle we ever bought. Already saving money.",
+    text: "Wonderful and personable. Above and beyond on the install. The team was professional and took the time to explain everything about the system and how to maintain it.",
   },
   {
-    name: "Tom Brewer",
-    location: "Louisville, KY",
+    name: "Brittany Hobbs",
+    location: "Google Review",
     date: "October 2025",
-    text: "Best customer service I&apos;ve experienced in years. They showed up on time, were friendly, cleaned up after themselves, and even followed up a week later to make sure everything was working perfectly.",
+    text: "Justin has been wonderful to work with. Aqua Otter came out, tested our water, and recommended the perfect solution. The difference in our water quality is night and day.",
   },
   {
-    name: "Angela Pearson",
-    location: "Vincennes, IN",
-    date: "September 2025",
-    text: "Our well water was a nightmare — iron, sulfur, hardness, the works. Aqua Otter designed a custom system that handles all of it. Our water went from unusable to perfect. Can&apos;t thank them enough.",
-  },
-  {
-    name: "Robert & Diane Schultz",
-    location: "Paducah, KY",
+    name: "Shelly Ganger",
+    location: "Google Review",
     date: "August 2025",
-    text: "We got quotes from three companies. Aqua Otter was the most honest and their pricing was the most straightforward — no hidden fees, no pressure. The system works flawlessly.",
+    text: "We purchased our saltless water tank in Sept 2022, best purchase we&apos;ve made. The water quality is amazing and we haven&apos;t had a single issue in over three years.",
   },
   {
-    name: "Jennifer Walsh",
-    location: "Ferdinand, IN",
-    date: "July 2025",
-    text: "My eczema has improved dramatically since we got the whole house system installed. No more chlorine in the shower water. My dermatologist even noticed the difference. Worth every penny.",
+    name: "Michelle Rhodes",
+    location: "Google Review",
+    date: "February 2025",
+    text: "Great service! We had been dealing with a sediment problem in our water for years. Aqua Otter solved it completely. The team was professional, on time, and thorough.",
   },
   {
-    name: "Chris Underwood",
-    location: "Lexington, KY",
-    date: "June 2025",
-    text: "Moved to a property with well water for the first time and had no idea where to start. Aqua Otter tested everything, explained the results clearly, and installed the right system. Our well water is better than city water now.",
+    name: "Val Fowler",
+    location: "Google Review",
+    date: "October 2024",
+    text: "I recently had the Aqua Otter saltless whole house water filter system installed. The installation was clean and professional. Our water tastes incredible now — better than bottled.",
+  },
+  {
+    name: "Mike Jameson",
+    location: "Google Review",
+    date: "June 2024",
+    text: "This is a nice water filtration and softener system. The water tastes great and our appliances are already showing less scale buildup. Very happy with the investment.",
+  },
+  {
+    name: "Cathy Tooley",
+    location: "Google Review",
+    date: "July 2023",
+    text: "We had this system installed almost two years ago and have not had a single issue. The water quality is consistently excellent and the system runs quietly. Couldn&apos;t be happier.",
   },
 ];
 
@@ -110,8 +122,16 @@ export default function ReviewsClient() {
   return (
     <>
       {/* Hero */}
-      <Section background="dark" padding="default">
-        <div className="text-center py-12 md:py-20">
+      <section className="relative min-h-[50vh] flex items-center overflow-hidden">
+        <Image
+          src="/client/reviews-hero.jpg"
+          alt="Customer consultation — reviews"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-[var(--color-primary-dark)]/80" />
+        <div className="relative z-10 max-w-content mx-auto px-6 py-16 md:py-24 text-center" style={{ textShadow: "0 2px 20px rgba(0,0,0,0.5)" }}>
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -125,10 +145,10 @@ export default function ReviewsClient() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl md:text-6xl font-heading font-bold mb-6"
+            className="text-4xl md:text-6xl font-heading font-bold text-white mb-6"
           >
             What Our Customers{" "}
-            <span className="gradient-text">Say</span>
+            <span className="text-[var(--color-accent)]">Say</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -139,16 +159,8 @@ export default function ReviewsClient() {
             Real reviews from real homeowners who transformed their water quality
             with Aqua Otter Water Systems.
           </motion.p>
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.2, duration: 0.8 }}
-            className="mt-8"
-          >
-            <ChevronDown className="w-6 h-6 text-white/40 mx-auto bounce-arrow" />
-          </motion.div>
         </div>
-      </Section>
+      </section>
 
       {/* Overall Rating */}
       <Section background="white" padding="tight">

@@ -53,19 +53,19 @@ const stats = [
 
 const differentiators = [
   {
-    image: "/client/Iron_Testing_Otter.jpg",
+    icon: Droplets,
     title: "Test-Based Recommendations",
-    desc: "We never guess. Every recommendation starts with a thorough, free water test so we can identify exactly what&apos;s in your water and prescribe the right solution - not the most expensive one.",
+    desc: "We never guess. Every recommendation starts with a thorough, free water test so we can identify exactly what's in your water and prescribe the right solution - not the most expensive one.",
   },
   {
-    image: "/client/Result_Otter-removebg-preview.png",
+    icon: Shield,
     title: "No-Salt Specialists",
-    desc: "Traditional salt-based softeners aren&apos;t always the answer. We specialize in no-salt hard water treatment systems that are better for you, your plumbing, and the environment.",
+    desc: "Traditional salt-based softeners aren't always the answer. We specialize in no-salt hard water treatment systems that are better for you, your plumbing, and the environment.",
   },
   {
-    image: "/client/Satisfaction_otter.jpg",
+    icon: Heart,
     title: "Family Treatment",
-    desc: "When you work with Aqua Otter, you&apos;re not a number on a spreadsheet. You get direct access to our team, personalized follow-up, and service that feels like family.",
+    desc: "When you work with Aqua Otter, you're not a number on a spreadsheet. You get direct access to our team, personalized follow-up, and service that feels like family.",
   },
 ];
 
@@ -75,8 +75,16 @@ export default function AboutClient() {
   return (
     <main>
       {/* Hero */}
-      <Section background="dark" padding="none">
-        <div className="min-h-[40vh] flex flex-col items-center justify-center text-center py-20 sm:py-28">
+      <section className="relative min-h-[60vh] flex items-center overflow-hidden">
+        <Image
+          src="/client/about-family-hero.jpg"
+          alt="Happy family running together in a field"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-[var(--color-primary-dark)]/70" />
+        <div className="relative z-10 max-w-content mx-auto px-6 py-20 sm:py-28 text-center" style={{ textShadow: "0 2px 20px rgba(0,0,0,0.5)" }}>
           <motion.span
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -89,17 +97,17 @@ export default function AboutClient() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.6 }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-black leading-tight mb-5"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-black text-white leading-tight mb-5"
           >
             Family-Owned. Local Experts.
             <br />
-            <span className="gradient-text">Water Done Right.</span>
+            <span className="text-[var(--color-accent)]">Water Done Right.</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.35, duration: 0.5 }}
-            className="text-base sm:text-lg text-white/70 max-w-2xl mb-8"
+            className="text-base sm:text-lg text-white/70 max-w-2xl mx-auto mb-8"
           >
             We started Aqua Otter with one simple belief: every family deserves
             clean, safe, great-tasting water - and honest people to provide it.
@@ -108,7 +116,7 @@ export default function AboutClient() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
-            className="flex flex-col sm:flex-row gap-3"
+            className="flex flex-col sm:flex-row gap-3 justify-center"
           >
             <Link
               href="/contact"
@@ -126,19 +134,17 @@ export default function AboutClient() {
             </a>
           </motion.div>
         </div>
-      </Section>
+      </section>
 
       {/* Our Story */}
       <Section background="white" gradient="radial-left">
         <div className="grid md:grid-cols-2 gap-10 lg:gap-16 items-center">
-          <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
-            <Image
-              src="/client/Satisfaction_otter.jpg"
-              alt="Aqua Otter - Satisfied Customers"
-              fill
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-dark/30 to-transparent" />
+          <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl bg-[var(--color-primary-dark)] flex items-center justify-center">
+            <div className="text-center text-white/40">
+              <Users className="w-16 h-16 mx-auto mb-3 opacity-40" />
+              <p className="text-lg font-heading font-bold">Team Photo</p>
+              <p className="text-sm opacity-60">Coming Soon</p>
+            </div>
           </div>
           <div>
             <span className="text-primary font-bold text-sm tracking-widest uppercase">
@@ -281,34 +287,29 @@ export default function AboutClient() {
           </h2>
         </div>
         <div className="grid md:grid-cols-3 gap-6">
-          {differentiators.map((d, i) => (
-            <motion.div
-              key={d.title}
-              initial={{ opacity: 0, y: 25 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.12 }}
-              className="group bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-lg transition-all"
-            >
-              <div className="relative aspect-[4/3] overflow-hidden">
-                <Image
-                  src={d.image}
-                  alt={d.title}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-dark/40 to-transparent" />
-              </div>
-              <div className="p-5">
+          {differentiators.map((d, i) => {
+            const Icon = d.icon;
+            return (
+              <motion.div
+                key={d.title}
+                initial={{ opacity: 0, y: 25 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.12 }}
+                className="bg-white rounded-2xl p-7 shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all"
+              >
+                <div className="w-14 h-14 rounded-2xl bg-[var(--color-primary)]/10 flex items-center justify-center mb-5">
+                  <Icon className="w-7 h-7 text-[var(--color-primary)]" />
+                </div>
                 <h3 className="font-heading font-bold text-dark text-lg mb-2">
                   {d.title}
                 </h3>
                 <p className="text-gray-500 text-sm leading-relaxed">
                   {d.desc}
                 </p>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            );
+          })}
         </div>
       </Section>
 

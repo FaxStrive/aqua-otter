@@ -91,16 +91,13 @@ export default function WholeHouseClient() {
     <>
       {/* Hero */}
       <section className="relative min-h-[60vh] flex items-center overflow-hidden">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          poster="/client/service-filtration-glass.jpg"
-          className="absolute inset-0 w-full h-full object-cover"
-        >
-          <source src="/videos/service-water-2.mp4" type="video/mp4" />
-        </video>
+        <Image
+          src="/client/service-tap-closeup.jpg"
+          alt="Clean water flowing from kitchen faucet — whole house filtration"
+          fill
+          className="object-cover"
+          priority
+        />
         <div className="absolute inset-0 bg-[var(--color-primary-dark)]/80" />
         <div className="relative z-10 max-w-content mx-auto px-6 py-16 md:py-24 text-center" style={{ textShadow: "0 2px 20px rgba(0,0,0,0.5)" }}>
           <motion.div

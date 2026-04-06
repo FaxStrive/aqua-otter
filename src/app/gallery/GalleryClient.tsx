@@ -53,8 +53,16 @@ export default function GalleryClient() {
   return (
     <main>
       {/* Hero */}
-      <Section background="dark" padding="none">
-        <div className="min-h-[35vh] flex flex-col items-center justify-center text-center py-16 sm:py-24">
+      <section className="relative min-h-[50vh] flex items-center overflow-hidden">
+        <Image
+          src="/client/gallery-hero.jpg"
+          alt="Camera lens — installation gallery"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-[var(--color-primary-dark)]/70" />
+        <div className="relative z-10 max-w-content mx-auto px-6 py-16 sm:py-24 text-center" style={{ textShadow: "0 2px 20px rgba(0,0,0,0.5)" }}>
           <motion.span
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -67,22 +75,22 @@ export default function GalleryClient() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.6 }}
-            className="text-3xl sm:text-4xl md:text-5xl font-heading font-black leading-tight mb-4"
+            className="text-3xl sm:text-4xl md:text-5xl font-heading font-black text-white leading-tight mb-4"
           >
             Installation{" "}
-            <span className="gradient-text">Gallery</span>
+            <span className="text-[var(--color-accent)]">Gallery</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.35 }}
-            className="text-white/70 max-w-xl text-base sm:text-lg"
+            className="text-white/70 max-w-xl mx-auto text-base sm:text-lg"
           >
             Browse our installations and products. Real systems, real homes,
             real results.
           </motion.p>
         </div>
-      </Section>
+      </section>
 
       {/* Gallery Grid */}
       <Section background="surface" gradient="radial-center">
