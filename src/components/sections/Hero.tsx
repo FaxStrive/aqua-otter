@@ -141,14 +141,14 @@ export default function Hero() {
             initial={{ opacity: 0, x: 60 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 1 }}
-            className="hidden lg:block relative"
+            className="relative flex justify-center lg:block mt-8 lg:mt-0"
           >
             <Image
               src="/client/otter-arms-crossed.png"
               alt="Aqua Otter Mascot — Your Water Expert"
               width={400}
               height={500}
-              className="w-[420px] h-auto object-contain drop-shadow-[0_10px_40px_rgba(0,0,0,0.3)]"
+              className="w-48 sm:w-64 lg:w-[420px] h-auto object-contain drop-shadow-[0_10px_40px_rgba(0,0,0,0.3)]"
               priority
             />
 

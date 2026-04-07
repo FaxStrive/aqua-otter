@@ -248,8 +248,8 @@ export default function WaterSoftenersClient() {
             Both solve hard water — here&apos;s how to choose the right approach for your home.
           </p>
         </div>
-        <div className="max-w-3xl mx-auto bg-white rounded-2xl border border-gray-100 overflow-hidden">
-          <div className="grid grid-cols-3 bg-gray-50 p-4 border-b border-gray-100">
+        <div className="max-w-3xl mx-auto bg-white rounded-2xl border border-gray-100 overflow-x-auto">
+          <div className="grid grid-cols-3 bg-gray-50 p-4 border-b border-gray-100 min-w-[480px]">
             <div className="text-sm font-semibold text-dark">Factor</div>
             <div className="text-sm font-semibold text-primary text-center">Softener</div>
             <div className="text-sm font-semibold text-accent-600 text-center">No-Salt</div>
