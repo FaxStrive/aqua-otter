@@ -41,12 +41,12 @@ export default function CornerOfferPeek() {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 80, opacity: 0 }}
           transition={{ type: "spring", damping: 14, stiffness: 200 }}
-          className="fixed bottom-4 right-4 max-md:left-4 max-md:right-auto z-[35]"
+          className="fixed bottom-4 right-4 max-md:left-4 max-md:right-4 z-[35]"
         >
           <motion.div
             animate={{ y: [0, -4, 0] }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            className="relative bg-white rounded-xl shadow-2xl border border-gray-200 p-4 w-[220px]"
+            className="relative bg-white rounded-xl shadow-2xl border border-gray-200 p-4 w-full max-w-[220px]"
           >
             <button
               onClick={close}

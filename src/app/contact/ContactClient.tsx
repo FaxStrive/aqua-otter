@@ -2,21 +2,18 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Script from "next/script";
 
 import {
   Phone,
   Mail,
   MapPin,
   Clock,
-  ArrowRight,
-  ArrowLeft,
-  CheckCircle,
   Star,
   Shield,
   Award,
+  CheckCircle,
   MessageCircle,
-  Send,
-  Droplets,
   ChevronDown,
   ChevronUp,
 } from "lucide-react";
@@ -28,23 +25,10 @@ const PHONE_TEL = "tel:6166121660";
 const SMS_TEL = "sms:6166121660";
 const EMAIL = "info@myaquaotter.com";
 
-const WATER_SOURCES = ["City Water", "Well Water", "Not Sure"];
-const ISSUES = [
-  "Hard Water / Scale Buildup",
-  "Iron Stains / Rust",
-  "Sulfur / Rotten Egg Smell",
-  "Chlorine Taste / Smell",
-  "Sediment / Cloudy Water",
-  "Bad Taste or Odor",
-  "Bacteria / Safety Concerns",
-  "Just Want a Test / Peace of Mind",
-  "Other",
-];
-
 const faqs = [
   {
     q: "What happens during a free water test?",
-    a: "We come to your home, test your water right on the spot for hardness, iron, pH, TDS, and more. You&apos;ll see the results in real-time, and we&apos;ll explain exactly what they mean - no charge, no obligation.",
+    a: "We come to your home, test your water right on the spot for hardness, iron, pH, TDS, and more. You'll see the results in real-time, and we'll explain exactly what they mean - no charge, no obligation.",
   },
   {
     q: "How long does the water test take?",
@@ -52,7 +36,7 @@ const faqs = [
   },
   {
     q: "Is there really no cost or obligation?",
-    a: "Absolutely none. The water test is 100% free, and there&apos;s zero pressure to buy anything. We believe once you see what&apos;s in your water, you&apos;ll want to fix it - but that&apos;s always your choice.",
+    a: "Absolutely none. The water test is 100% free, and there's zero pressure to buy anything. We believe once you see what's in your water, you'll want to fix it - but that's always your choice.",
   },
 ];
 
@@ -64,36 +48,7 @@ const trustSignals = [
 ];
 
 export default function ContactClient() {
-  const [step, setStep] = useState(0);
-  const [submitted, setSubmitted] = useState(false);
-  const [waterSource, setWaterSource] = useState("");
-  const [issues, setIssues] = useState<string[]>([]);
-  const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
-  const [email, setEmail] = useState("");
-  const [address, setAddress] = useState("");
-  const [message, setMessage] = useState("");
-  const [honeypot, setHoneypot] = useState("");
   const [faqOpen, setFaqOpen] = useState<number | null>(null);
-
-  const toggleIssue = (issue: string) => {
-    setIssues((prev) =>
-      prev.includes(issue) ? prev.filter((i) => i !== issue) : [...prev, issue]
-    );
-  };
-
-  const canAdvance =
-    step === 0
-      ? waterSource !== ""
-      : step === 1
-        ? issues.length > 0
-        : name && phone;
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (honeypot) return;
-    setSubmitted(true);
-  };
 
   return (
     <main>
@@ -132,283 +87,27 @@ export default function ContactClient() {
       {/* Form + Contact Info */}
       <Section background="surface" gradient="radial-left">
         <div className="grid lg:grid-cols-5 gap-8 lg:gap-12">
-          {/* Left: Form */}
+          {/* Left: Embedded Form */}
           <div className="lg:col-span-3">
-            <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 sm:p-8">
-              {submitted ? (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  className="text-center py-10"
-                >
-                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <CheckCircle className="w-8 h-8 text-green-600" />
-                  </div>
-                  <h3 className="text-2xl font-heading font-black text-dark mb-2">
-                    Request Received!
-                  </h3>
-                  <p className="text-gray-500 max-w-md mx-auto mb-6">
-                    Thanks, {name}! We&apos;ll be in touch shortly to schedule
-                    your free water test. Expect a call or text from us within
-                    24 hours.
-                  </p>
-                  <a
-                    href={PHONE_TEL}
-                    className="inline-flex items-center gap-2 btn-shimmer-gold text-dark font-bold px-6 py-3 rounded-xl text-sm"
-                  >
-                    <Phone className="w-4 h-4" />
-                    Call Us Now: {PHONE}
-                  </a>
-                </motion.div>
-              ) : (
-                <form onSubmit={handleSubmit}>
-                  {/* Progress Bar */}
-                  <div className="flex items-center gap-2 mb-6">
-                    {[0, 1, 2].map((s) => (
-                      <div key={s} className="flex-1 h-1.5 rounded-full bg-gray-100 overflow-hidden">
-                        <motion.div
-                          className="h-full bg-primary rounded-full"
-                          initial={{ width: 0 }}
-                          animate={{ width: step >= s ? "100%" : "0%" }}
-                          transition={{ duration: 0.3 }}
-                        />
-                      </div>
-                    ))}
-                  </div>
-                  <p className="text-xs text-gray-400 mb-4 uppercase tracking-wider font-bold">
-                    Step {step + 1} of 3
-                  </p>
-
-                  {/* Honeypot */}
-                  <input
-                    type="text"
-                    name="website"
-                    value={honeypot}
-                    onChange={(e) => setHoneypot(e.target.value)}
-                    className="absolute opacity-0 pointer-events-none h-0 w-0"
-                    tabIndex={-1}
-                    autoComplete="off"
-                  />
-
-                  <AnimatePresence mode="wait">
-                    {step === 0 && (
-                      <motion.div
-                        key="step0"
-                        initial={{ opacity: 0, x: 30 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        exit={{ opacity: 0, x: -30 }}
-                        transition={{ duration: 0.25 }}
-                      >
-                        <h3 className="text-xl font-heading font-bold text-dark mb-1">
-                          What&apos;s your water source?
-                        </h3>
-                        <p className="text-gray-400 text-sm mb-5">
-                          This helps us prepare the right testing equipment.
-                        </p>
-                        <div className="grid gap-3">
-                          {WATER_SOURCES.map((src) => (
-                            <button
-                              key={src}
-                              type="button"
-                              onClick={() => setWaterSource(src)}
-                              className={`w-full text-left px-5 py-4 rounded-xl border-2 font-semibold text-sm transition-all ${
-                                waterSource === src
-                                  ? "border-primary bg-primary-50 text-primary-700"
-                                  : "border-gray-100 text-gray-600 hover:border-gray-200"
-                              }`}
-                            >
-                              <Droplets
-                                className={`w-4 h-4 inline mr-2 ${
-                                  waterSource === src
-                                    ? "text-primary"
-                                    : "text-gray-300"
-                                }`}
-                              />
-                              {src}
-                            </button>
-                          ))}
-                        </div>
-                      </motion.div>
-                    )}
-
-                    {step === 1 && (
-                      <motion.div
-                        key="step1"
-                        initial={{ opacity: 0, x: 30 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        exit={{ opacity: 0, x: -30 }}
-                        transition={{ duration: 0.25 }}
-                      >
-                        <h3 className="text-xl font-heading font-bold text-dark mb-1">
-                          What issues are you experiencing?
-                        </h3>
-                        <p className="text-gray-400 text-sm mb-5">
-                          Select all that apply.
-                        </p>
-                        <div className="grid sm:grid-cols-2 gap-2.5">
-                          {ISSUES.map((issue) => (
-                            <button
-                              key={issue}
-                              type="button"
-                              onClick={() => toggleIssue(issue)}
-                              className={`text-left px-4 py-3 rounded-xl border-2 text-sm font-medium transition-all ${
-                                issues.includes(issue)
-                                  ? "border-primary bg-primary-50 text-primary-700"
-                                  : "border-gray-100 text-gray-600 hover:border-gray-200"
-                              }`}
-                            >
-                              {issues.includes(issue) ? (
-                                <CheckCircle className="w-3.5 h-3.5 inline mr-1.5 text-primary" />
-                              ) : (
-                                <span className="inline-block w-3.5 h-3.5 mr-1.5 border-2 border-gray-200 rounded-full align-middle" />
-                              )}
-                              {issue}
-                            </button>
-                          ))}
-                        </div>
-                      </motion.div>
-                    )}
-
-                    {step === 2 && (
-                      <motion.div
-                        key="step2"
-                        initial={{ opacity: 0, x: 30 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        exit={{ opacity: 0, x: -30 }}
-                        transition={{ duration: 0.25 }}
-                      >
-                        <h3 className="text-xl font-heading font-bold text-dark mb-1">
-                          Your contact info
-                        </h3>
-                        <p className="text-gray-400 text-sm mb-5">
-                          We&apos;ll reach out to schedule your free test.
-                        </p>
-                        <div className="grid gap-4">
-                          <div>
-                            <label className="block text-xs font-bold text-gray-500 uppercase mb-1">
-                              Name *
-                            </label>
-                            <input
-                              type="text"
-                              required
-                              value={name}
-                              onChange={(e) => setName(e.target.value)}
-                              className="w-full border-2 border-gray-100 rounded-xl px-4 py-3 text-sm focus:border-primary focus:ring-0 outline-none transition-colors"
-                              placeholder="John Smith"
-                            />
-                          </div>
-                          <div>
-                            <label className="block text-xs font-bold text-gray-500 uppercase mb-1">
-                              Phone *
-                            </label>
-                            <input
-                              type="tel"
-                              required
-                              value={phone}
-                              onChange={(e) => setPhone(e.target.value)}
-                              className="w-full border-2 border-gray-100 rounded-xl px-4 py-3 text-sm focus:border-primary focus:ring-0 outline-none transition-colors"
-                              placeholder="(555) 123-4567"
-                            />
-                          </div>
-                          <div>
-                            <label className="block text-xs font-bold text-gray-500 uppercase mb-1">
-                              Email
-                            </label>
-                            <input
-                              type="email"
-                              value={email}
-                              onChange={(e) => setEmail(e.target.value)}
-                              className="w-full border-2 border-gray-100 rounded-xl px-4 py-3 text-sm focus:border-primary focus:ring-0 outline-none transition-colors"
-                              placeholder="john@email.com"
-                            />
-                          </div>
-                          <div>
-                            <label className="block text-xs font-bold text-gray-500 uppercase mb-1">
-                              Address / City
-                            </label>
-                            <input
-                              type="text"
-                              value={address}
-                              onChange={(e) => setAddress(e.target.value)}
-                              className="w-full border-2 border-gray-100 rounded-xl px-4 py-3 text-sm focus:border-primary focus:ring-0 outline-none transition-colors"
-                              placeholder="123 Main St, Indianapolis, IN"
-                            />
-                          </div>
-                          <div>
-                            <label className="block text-xs font-bold text-gray-500 uppercase mb-1">
-                              Anything else?
-                            </label>
-                            <textarea
-                              value={message}
-                              onChange={(e) => setMessage(e.target.value)}
-                              rows={3}
-                              className="w-full border-2 border-gray-100 rounded-xl px-4 py-3 text-sm focus:border-primary focus:ring-0 outline-none transition-colors resize-none"
-                              placeholder="Tell us more about your water situation..."
-                            />
-                          </div>
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-
-                  {/* SMS Consent (visible on final step) */}
-                  {step === 2 && (
-                    <div className="mt-4 p-3 bg-gray-50 rounded-lg border border-gray-100">
-                      <p className="text-[10px] leading-relaxed text-gray-400">
-                        By submitting this form, you agree to receive text
-                        messages from Aqua Otter Water Systems LLC at the phone
-                        number provided. Message frequency varies. Message and
-                        data rates may apply. Reply STOP to opt out at any time.
-                        Reply HELP for assistance. View our{" "}
-                        <a href="/privacy" className="text-primary underline">
-                          Privacy Policy
-                        </a>{" "}
-                        and{" "}
-                        <a href="/terms" className="text-primary underline">
-                          Terms of Service
-                        </a>
-                        .
-                      </p>
-                    </div>
-                  )}
-
-                  {/* Nav Buttons */}
-                  <div className="flex items-center justify-between mt-6 pt-4 border-t border-gray-50">
-                    {step > 0 ? (
-                      <button
-                        type="button"
-                        onClick={() => setStep(step - 1)}
-                        className="inline-flex items-center gap-1.5 text-sm text-gray-500 font-medium hover:text-gray-700 transition-colors"
-                      >
-                        <ArrowLeft className="w-4 h-4" />
-                        Back
-                      </button>
-                    ) : (
-                      <div />
-                    )}
-                    {step < 2 ? (
-                      <button
-                        type="button"
-                        disabled={!canAdvance}
-                        onClick={() => setStep(step + 1)}
-                        className="inline-flex items-center gap-1.5 btn-shimmer-gold text-dark font-bold px-6 py-3 rounded-xl text-sm disabled:opacity-40 disabled:cursor-not-allowed hover:scale-105 transition-all"
-                      >
-                        Next
-                        <ArrowRight className="w-4 h-4" />
-                      </button>
-                    ) : (
-                      <button
-                        type="submit"
-                        disabled={!canAdvance}
-                        className="inline-flex items-center gap-1.5 btn-shimmer-gold text-dark font-bold px-6 py-3 rounded-xl text-sm disabled:opacity-40 disabled:cursor-not-allowed hover:scale-105 transition-all"
-                      >
-                        <Send className="w-4 h-4" />
-                        Submit Request
-                      </button>
-                    )}
-                  </div>
-                </form>
-              )}
+            <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
+              <iframe
+                src="https://api.leadconnectorhq.com/widget/form/LXjbJ2Iy3pwot2oURuyb"
+                style={{ width: "100%", height: "1051px", border: "none", borderRadius: "3px" }}
+                id="inline-LXjbJ2Iy3pwot2oURuyb"
+                data-layout='{"id":"INLINE"}'
+                data-trigger-type="alwaysShow"
+                data-trigger-value=""
+                data-activation-type="alwaysActivated"
+                data-activation-value=""
+                data-deactivation-type="neverDeactivate"
+                data-deactivation-value=""
+                data-form-name="A2P Compliant Form"
+                data-height="1051"
+                data-layout-iframe-id="inline-LXjbJ2Iy3pwot2oURuyb"
+                data-form-id="LXjbJ2Iy3pwot2oURuyb"
+                title="A2P Compliant Form"
+              />
+              <Script src="https://link.msgsndr.com/js/form_embed.js" strategy="lazyOnload" />
             </div>
           </div>
 

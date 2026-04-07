@@ -80,9 +80,9 @@ export default function SocialProofToast() {
           animate={{ opacity: 1, x: 0, y: 0 }}
           exit={{ opacity: 0, x: -80 }}
           transition={{ type: "spring", stiffness: 300, damping: 28 }}
-          className="fixed left-4 z-40 bottom-20 lg:bottom-6"
+          className="fixed left-4 right-4 sm:right-auto z-40 bottom-20 lg:bottom-6"
         >
-          <div className="bg-white rounded-xl shadow-xl border border-gray-100 px-4 py-3 flex items-start gap-3 max-w-xs">
+          <div className="bg-white rounded-xl shadow-xl border border-gray-100 px-4 py-3 flex items-start gap-3 w-full sm:w-auto sm:max-w-xs">
             <div className="flex-shrink-0 w-9 h-9 bg-primary-100 rounded-full flex items-center justify-center mt-0.5">
               <CheckCircle2 className="w-5 h-5 text-primary-600" />
             </div>
