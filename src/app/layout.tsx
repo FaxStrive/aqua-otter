@@ -44,12 +44,6 @@ export const metadata: Metadata = {
     "Family-owned water treatment experts serving IN, MI, OH, KY & TN. Specializing in well water treatment and no-salt hard water solutions. Free water test — call (616) 612-1660.",
   keywords:
     "water treatment Indiana, well water filtration, no-salt water softener, hard water solutions, water testing near me, Aqua Otter, water filtration systems, whole house water filter",
-  icons: {
-    icon: [
-      { url: "/client/Logo.png", sizes: "any" },
-    ],
-    apple: "/client/Logo.png",
-  },
   openGraph: {
     title: "Aqua Otter Water Systems | The LAST Water System You Will EVER Need",
     description:
@@ -82,7 +76,6 @@ export default function RootLayout({
           name="viewport"
           content="width=device-width, initial-scale=1, viewport-fit=cover"
         />
-        <link rel="icon" href="/client/Logo.png" />
       </head>
       <body
         className={`${heading.variable} ${body.variable} font-body antialiased`}
