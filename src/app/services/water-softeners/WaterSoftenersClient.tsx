@@ -203,7 +203,7 @@ export default function WaterSoftenersClient() {
             How Water Softeners Work
           </h2>
           <p className="text-gray-600 max-w-xl mx-auto">
-            A proven process that&apos;s been the gold standard for hard water treatment for decades.
+            A proven process that's been the gold standard for hard water treatment for decades.
           </p>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -245,7 +245,7 @@ export default function WaterSoftenersClient() {
             Softener vs. No-Salt: Which Do You Need?
           </h2>
           <p className="text-gray-600 max-w-xl mx-auto">
-            Both solve hard water — here&apos;s how to choose the right approach for your home.
+            Both solve hard water — here's how to choose the right approach for your home.
           </p>
         </div>
         <div className="max-w-3xl mx-auto bg-white rounded-2xl border border-gray-100 overflow-x-auto">
@@ -284,13 +284,13 @@ export default function WaterSoftenersClient() {
           ))}
         </div>
         <p className="text-center text-sm text-gray-500 mt-4">
-          Not sure? <Link href="/contact" className="text-primary font-semibold hover:underline">Get a free water test</Link> and we&apos;ll recommend the right solution.
+          Not sure? <Link href="/contact" className="text-primary font-semibold hover:underline">Get a free water test</Link> and we'll recommend the right solution.
         </p>
       </Section>
 
       <InlineCTA
         variant="text"
-        text="We&apos;ll help you choose — call (616) 612-1660 or schedule online"
+        text="We'll help you choose — call (616) 612-1660 or schedule online"
       />
 
       {/* Lifestyle Images */}
@@ -312,7 +312,7 @@ export default function WaterSoftenersClient() {
             Our Water Softener Systems
           </h2>
           <p className="text-gray-600 max-w-xl mx-auto">
-            Premium softeners sized for your home&apos;s water hardness and usage.
+            Premium softeners sized for your home's water hardness and usage.
           </p>
         </div>
         <div className="grid md:grid-cols-3 gap-6">
@@ -361,7 +361,7 @@ export default function WaterSoftenersClient() {
             Our Installation Process
           </h2>
           <p className="text-gray-600 max-w-xl mx-auto">
-            From water test to soft water — here&apos;s what to expect.
+            From water test to soft water — here's what to expect.
           </p>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">

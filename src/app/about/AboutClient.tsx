@@ -24,7 +24,7 @@ const values = [
   {
     icon: Heart,
     title: "Family Values",
-    desc: "We treat every home like it&apos;s our own. As a family-owned business, we take personal pride in every installation and every glass of water you drink.",
+    desc: "We treat every home like it's our own. As a family-owned business, we take personal pride in every installation and every glass of water you drink.",
   },
   {
     icon: Shield,
@@ -39,7 +39,7 @@ const values = [
   {
     icon: Users,
     title: "Customer First",
-    desc: "Your satisfaction isn&apos;t just a goal - it&apos;s our standard. We&apos;re not done until you&apos;re thrilled with your water quality and our service.",
+    desc: "Your satisfaction isn't just a goal - it's our standard. We're not done until you're thrilled with your water quality and our service.",
   },
 ];
 
@@ -164,9 +164,9 @@ export default function AboutClient() {
             <p className="text-gray-600 leading-relaxed mb-4">
               Today, we proudly serve homeowners across{" "}
               <strong>five states</strong> - Indiana, Michigan, Ohio, Kentucky,
-              and Tennessee. Whether you&apos;re dealing with hard water,
+              and Tennessee. Whether you're dealing with hard water,
               iron stains, sulfur smell, or just want peace of mind about
-              what&apos;s in your water, we&apos;ve got you covered.
+              what's in your water, we've got you covered.
             </p>
             <p className="text-gray-600 leading-relaxed mb-6">
               We specialize in <strong>well water solutions</strong> and{" "}
@@ -209,7 +209,7 @@ export default function AboutClient() {
             What <span className="gradient-text">Drives Us</span> Every Day
           </h2>
           <p className="text-gray-500 max-w-2xl mx-auto mt-3">
-            Our values aren&apos;t just words on a wall. They&apos;re how we run
+            Our values aren't just words on a wall. They're how we run
             every water test, make every recommendation, and treat every customer.
           </p>
         </div>
@@ -238,7 +238,7 @@ export default function AboutClient() {
       <InlineCTA
         variant="banner"
         text="Your Water Deserves Better"
-        message="Get a FREE in-home water test and find out exactly what&apos;s in your water. No obligation, no pressure."
+        message="Get a FREE in-home water test and find out exactly what's in your water. No obligation, no pressure."
         href="/contact"
       />
 

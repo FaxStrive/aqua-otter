@@ -10,17 +10,17 @@ const faqs = [
   {
     question: "What does the free water test include?",
     answer:
-      "Our free in-home water test analyzes your water for hardness, iron, pH, TDS (total dissolved solids), chlorine, sulfur, and more. We bring professional testing equipment to your home, and you get instant results on the spot. There&apos;s no cost and no obligation — we simply want you to know what&apos;s in your water.",
+      "Our free in-home water test analyzes your water for hardness, iron, pH, TDS (total dissolved solids), chlorine, sulfur, and more. We bring professional testing equipment to your home, and you get instant results on the spot. There's no cost and no obligation — we simply want you to know what's in your water.",
   },
   {
     question: "What is a no-salt water system?",
     answer:
-      "A no-salt water conditioner treats hard water without using sodium or potassium chloride. Instead of ion exchange (like a traditional softener), it uses template-assisted crystallization to prevent scale buildup. It&apos;s maintenance-free, eco-friendly, and keeps beneficial minerals in your water while protecting your pipes and appliances.",
+      "A no-salt water conditioner treats hard water without using sodium or potassium chloride. Instead of ion exchange (like a traditional softener), it uses template-assisted crystallization to prevent scale buildup. It's maintenance-free, eco-friendly, and keeps beneficial minerals in your water while protecting your pipes and appliances.",
   },
   {
     question: "What areas do you serve?",
     answer:
-      "We serve families across five states: Indiana, Michigan, Ohio, Kentucky, and Tennessee. Whether you&apos;re on city water or well water, our team can reach you. Contact us to confirm service availability in your specific area.",
+      "We serve families across five states: Indiana, Michigan, Ohio, Kentucky, and Tennessee. Whether you're on city water or well water, our team can reach you. Contact us to confirm service availability in your specific area.",
   },
   {
     question: "How long does installation take?",

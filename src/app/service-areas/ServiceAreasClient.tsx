@@ -184,12 +184,12 @@ export default function ServiceAreasClient() {
 
       <InlineCTA
         variant="banner"
-        text="We&apos;re Probably in Your Area"
-        message="Even if you don&apos;t see your exact city listed, give us a call. We cover a wide service radius in all 5 states."
+        text="We're Probably in Your Area"
+        message="Even if you don't see your exact city listed, give us a call. We cover a wide service radius in all 5 states."
         href="/contact"
       />
 
-      {/* Don&apos;t See Your City */}
+      {/* Don't See Your City */}
       <Section background="white" gradient="radial-left">
         <div className="max-w-2xl mx-auto text-center">
           <motion.div
@@ -201,13 +201,13 @@ export default function ServiceAreasClient() {
               <MessageCircle className="w-8 h-8 text-primary" />
             </div>
             <h2 className="text-2xl sm:text-3xl font-heading font-black text-dark mb-3">
-              Don&apos;t See Your{" "}
+              Don't See Your{" "}
               <span className="gradient-text">City?</span>
             </h2>
             <p className="text-gray-500 mb-6 max-w-lg mx-auto">
-              Our service areas are always expanding. If your city isn&apos;t
-              listed, there&apos;s a good chance we still serve your area. Give
-              us a quick call or text and we&apos;ll let you know!
+              Our service areas are always expanding. If your city isn't
+              listed, there's a good chance we still serve your area. Give
+              us a quick call or text and we'll let you know!
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Link
@@ -251,7 +251,7 @@ export default function ServiceAreasClient() {
               },
               {
                 title: "Fast Response",
-                desc: "Because we&apos;re local, we can get to your home quickly. No waiting weeks for a corporate chain to schedule you in.",
+                desc: "Because we're local, we can get to your home quickly. No waiting weeks for a corporate chain to schedule you in.",
               },
               {
                 title: "Community Trust",
@@ -291,8 +291,8 @@ export default function ServiceAreasClient() {
               <span className="gradient-text">Closer Than You Think</span>
             </h2>
             <p className="text-white/70 mb-6">
-              No matter which state you&apos;re in, we&apos;ll come to you with
-              a free water test and honest recommendations. Let&apos;s get started.
+              No matter which state you're in, we'll come to you with
+              a free water test and honest recommendations. Let's get started.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Link

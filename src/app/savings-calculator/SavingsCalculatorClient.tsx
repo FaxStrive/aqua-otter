@@ -64,7 +64,7 @@ export default function SavingsCalculatorClient() {
             className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-8"
           >
             See exactly how much your bottled water habit costs you every year — and
-            how much you&apos;d save with a home filtration system.
+            how much you'd save with a home filtration system.
           </motion.p>
           <motion.div
             initial={{ opacity: 0 }}
@@ -280,11 +280,11 @@ export default function SavingsCalculatorClient() {
             Environmental Impact
           </span>
           <h2 className="text-3xl md:text-4xl font-heading font-bold text-dark mt-2 mb-4">
-            It&apos;s Not Just About Money
+            It's Not Just About Money
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Every bottle you don&apos;t buy is one less in a landfill. Here&apos;s the
-            environmental impact of your household&apos;s bottled water habit.
+            Every bottle you don't buy is one less in a landfill. Here's the
+            environmental impact of your household's bottled water habit.
           </p>
         </div>
         <div className="grid sm:grid-cols-3 gap-6 max-w-3xl mx-auto">

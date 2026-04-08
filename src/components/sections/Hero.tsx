@@ -81,7 +81,7 @@ export default function Hero() {
               className="text-white/75 mb-8 max-w-lg leading-relaxed"
               style={{ fontSize: "var(--text-body)" }}
             >
-              We test first, customize second, and don&apos;t stop until you&apos;re
+              We test first, customize second, and don't stop until you're
               completely satisfied. Specializing in well water treatment and
               no-salt hard water solutions across the Midwest.
             </motion.p>
@@ -160,7 +160,7 @@ export default function Hero() {
               className="absolute -top-4 -left-16 bg-white/95 backdrop-blur-sm rounded-2xl rounded-br-sm px-4 py-2.5 shadow-xl max-w-[180px]"
             >
               <p className="text-[11px] font-semibold text-[var(--color-primary-dark)] leading-tight">
-                &ldquo;Your water&apos;s not as clean as you think.&rdquo;
+                &ldquo;Your water's not as clean as you think.&rdquo;
               </p>
               <p className="text-[9px] text-[var(--color-text-muted)] mt-0.5 font-medium">— The Aqua Otter</p>
             </motion.div>

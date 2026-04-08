@@ -114,7 +114,7 @@ export default function WaterQualityChecker() {
             Free Instant Check
           </span>
           <h2 className="font-heading font-semibold text-[var(--color-text)] mb-2" style={{ fontSize: "var(--text-h2)" }}>
-            What&apos;s In <span className="text-[var(--color-primary)]">Your</span> Water?
+            What's In <span className="text-[var(--color-primary)]">Your</span> Water?
           </h2>
           <p className="text-[var(--color-text-muted)] max-w-lg mx-auto" style={{ fontSize: "var(--text-body)" }}>
             Enter your zip code to see common water quality issues reported in your area.
@@ -324,7 +324,7 @@ export default function WaterQualityChecker() {
                   </div>
                   <p className="text-gray-600 mb-6 max-w-lg mx-auto">
                     Your area shows {contaminants.filter((c) => c.severity === "high").length} high-severity
-                    contaminants. A free in-home water test will reveal exactly what&apos;s in
+                    contaminants. A free in-home water test will reveal exactly what's in
                     your water.
                   </p>
                   <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

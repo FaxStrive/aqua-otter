@@ -199,7 +199,7 @@ export default function GalleryClient() {
       <InlineCTA
         variant="banner"
         text="Want This for Your Home?"
-        message="Every installation starts with a free water test. Let&apos;s find the perfect system for your water."
+        message="Every installation starts with a free water test. Let's find the perfect system for your water."
         href="/contact"
       />
 
@@ -217,7 +217,7 @@ export default function GalleryClient() {
             </h2>
             <p className="text-white/70 mb-6">
               Every project in this gallery started the same way - with a free
-              water test. Let&apos;s get yours scheduled.
+              water test. Let's get yours scheduled.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Link

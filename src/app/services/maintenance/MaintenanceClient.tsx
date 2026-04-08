@@ -85,7 +85,7 @@ const reasons = [
   {
     icon: AlertTriangle,
     title: "Prevent Health Risks",
-    desc: "Expired filters can harbor bacteria and let contaminants through. Don&apos;t let your system become the problem.",
+    desc: "Expired filters can harbor bacteria and let contaminants through. Don't let your system become the problem.",
   },
 ];
 
@@ -201,7 +201,7 @@ export default function MaintenanceClient() {
             Maintenance Timeline
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Follow this schedule and your system will deliver clean water for decades. We&apos;ll remind you when it&apos;s time.
+            Follow this schedule and your system will deliver clean water for decades. We'll remind you when it's time.
           </p>
         </div>
         <div className="max-w-3xl mx-auto">
@@ -241,7 +241,7 @@ export default function MaintenanceClient() {
 
       <InlineCTA
         variant="banner"
-        text="Don&apos;t Wait Until Something Breaks"
+        text="Don't Wait Until Something Breaks"
         message="Schedule proactive maintenance and avoid costly emergency repairs. We service all brands."
         href="/contact"
       />

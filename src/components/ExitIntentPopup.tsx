@@ -97,16 +97,16 @@ export default function ExitIntentPopup() {
                 </span>
               </div>
               <h2 className="font-heading font-bold text-xl sm:text-2xl leading-tight">
-                Wait — Don&apos;t Leave Without Your Free Water Test!
+                Wait — Don't Leave Without Your Free Water Test!
               </h2>
               <p className="text-white/80 text-sm mt-1">
-                Find out exactly what&apos;s in your water. No obligation, no pressure.
+                Find out exactly what's in your water. No obligation, no pressure.
               </p>
             </div>
 
             <div className="px-6 py-5">
               <p className="text-gray-600 text-sm mb-4">
-                Get a free in-home water test with instant results. We&apos;ll show you exactly what&apos;s in your water and recommend the perfect solution for your home.
+                Get a free in-home water test with instant results. We'll show you exactly what's in your water and recommend the perfect solution for your home.
               </p>
 
               <a

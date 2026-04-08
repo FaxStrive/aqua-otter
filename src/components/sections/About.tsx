@@ -73,7 +73,7 @@ export default function About() {
           </h2>
           <p className="text-[var(--color-text-muted)] leading-relaxed mb-4" style={{ fontSize: "var(--text-body)" }}>
             At Aqua Otter Water Systems, we believe everyone deserves clean, safe water. As a
-            family-owned business, we treat every home like our own. We don&apos;t
+            family-owned business, we treat every home like our own. We don't
             just sell systems — we test your water first, build a solution customized to your
             needs, and stand behind it with our lifetime warranty.
           </p>

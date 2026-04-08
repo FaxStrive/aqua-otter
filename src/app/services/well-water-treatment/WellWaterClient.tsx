@@ -67,15 +67,10 @@ const systems = [
     name: "AiO Ozone System",
     desc: "Chemical-free oxidation that destroys bacteria, eliminates sulfur smell, and removes dissolved iron on contact.",
   },
-  {
-    src: "/client/Alpha_3000_RB.png",
-    name: "Alpha 3000",
-    desc: "Our flagship multi-stage system for the toughest well water. Handles extreme iron, sulfur, and hardness simultaneously.",
-  },
 ];
 
 const whyUs = [
-  { icon: Award, text: "Well water specialists — it&apos;s what we do best" },
+  { icon: Award, text: "Well water specialists — it's what we do best" },
   { icon: Shield, text: "Custom-engineered systems for YOUR water" },
   { icon: Wrench, text: "Professional installation with zero mess" },
   { icon: Clock, text: "Same-week installation available" },
@@ -109,7 +104,7 @@ export default function WellWaterClient() {
             animate={{ opacity: 1, y: 0 }}
             className="inline-block text-accent font-semibold text-sm tracking-wider uppercase mb-3"
           >
-            Southern Indiana&apos;s Well Water Experts
+            Southern Michigan's Well Water Experts
           </motion.span>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -187,7 +182,7 @@ export default function WellWaterClient() {
       <InlineCTA
         variant="banner"
         text="Tired of Your Well Water Problems?"
-        message="Schedule a free test and we&apos;ll identify exactly what&apos;s in your water."
+        message="Schedule a free test and we'll identify exactly what's in your water."
       />
 
       {/* Our Well Water Systems */}
@@ -197,10 +192,10 @@ export default function WellWaterClient() {
             Our Well Water Systems
           </h2>
           <p className="text-gray-600 max-w-xl mx-auto">
-            Purpose-built equipment designed to handle the toughest well water in Indiana.
+            Purpose-built equipment designed to handle the toughest well water in Michigan.
           </p>
         </div>
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
           {systems.map((sys, i) => (
             <motion.div
               key={sys.name}
@@ -246,7 +241,7 @@ export default function WellWaterClient() {
 
       <InlineCTA
         variant="text"
-        text="Not sure which system you need? We&apos;ll help you decide — free consultation"
+        text="Not sure which system you need? We'll help you decide — free consultation"
       />
 
       {/* Why Choose Us */}
@@ -257,9 +252,9 @@ export default function WellWaterClient() {
               Why Choose Aqua Otter for Well Water
             </h2>
             <p className="text-gray-600 mb-6 leading-relaxed">
-              Well water isn&apos;t like city water — it demands specialized knowledge
-              and equipment. We&apos;ve tested and treated thousands of wells across
-              Southern Indiana and know exactly what works.
+              Well water isn't like city water — it demands specialized knowledge
+              and equipment. We've tested and treated over 5,000 wells across
+              Southern Michigan and know exactly what works.
             </p>
             <ul className="space-y-3">
               {whyUs.map((item) => (
@@ -275,13 +270,13 @@ export default function WellWaterClient() {
           <div className="grid grid-cols-2 gap-4">
             <div className="bg-primary-50 rounded-2xl p-6 text-center">
               <div className="text-3xl font-heading font-bold text-primary mb-1">
-                <AnimatedCounter end={1500} suffix="+" />
+                <AnimatedCounter end={5000} suffix="+" />
               </div>
               <p className="text-sm text-gray-600">Wells Treated</p>
             </div>
             <div className="bg-accent-50 rounded-2xl p-6 text-center">
               <div className="text-3xl font-heading font-bold text-accent-600 mb-1">
-                <AnimatedCounter end={15} suffix="+" />
+                <AnimatedCounter end={25} suffix="+" />
               </div>
               <p className="text-sm text-gray-600">Years Experience</p>
             </div>
@@ -304,7 +299,7 @@ export default function WellWaterClient() {
       <InlineCTA
         variant="button"
         text="Schedule My Free Well Water Test"
-        trustLine="We&apos;ll come to you — no cost, no obligation"
+        trustLine="We'll come to you — no cost, no obligation"
       />
 
       {/* Installation Photos */}
@@ -354,7 +349,7 @@ export default function WellWaterClient() {
               href="/contact"
               className="btn-shimmer-gold text-dark font-bold px-8 py-4 rounded-xl text-sm hover:scale-105 transition-all inline-flex items-center gap-2"
             >
-              Get Started — It&apos;s Free
+              Get Started — It's Free
               <ArrowRight className="w-4 h-4" />
             </Link>
             <a

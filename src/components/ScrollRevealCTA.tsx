@@ -56,7 +56,7 @@ export default function ScrollRevealCTA() {
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-[shimmer_2s_infinite] bg-[length:200%_100%]" />
             <div className="relative max-w-7xl mx-auto px-4 py-4 flex flex-col md:flex-row items-center justify-between gap-3">
               <p className="text-white font-bold text-sm md:text-base text-center md:text-left">
-                Your water could be hiding problems you can&apos;t see —{" "}
+                Your water could be hiding problems you can't see —{" "}
                 <span className="text-accent-300">get a FREE water test today</span>
               </p>
               <div className="flex items-center gap-3 shrink-0">

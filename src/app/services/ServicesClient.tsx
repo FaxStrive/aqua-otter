@@ -28,7 +28,7 @@ const services = [
     title: "Free Water Test",
     href: "/services/free-water-test",
     icon: FlaskConical,
-    desc: "Complimentary in-home water analysis to identify exactly what&apos;s in your water.",
+    desc: "Complimentary in-home water analysis to identify exactly what's in your water.",
   },
   {
     title: "Well Water Treatment",
@@ -139,7 +139,7 @@ export default function ServicesClient() {
             className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-8"
           >
             From free water testing to full-home filtration, we solve every water
-            problem in Southern Indiana — guaranteed.
+            problem in Southern Michigan — guaranteed.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -205,7 +205,7 @@ export default function ServicesClient() {
       <InlineCTA
         variant="banner"
         text="Not Sure What You Need?"
-        message="Book a free in-home water test and we&apos;ll recommend the perfect system for your home."
+        message="Book a free in-home water test and we'll recommend the perfect system for your home."
       />
 
       {/* Specialties */}
@@ -215,7 +215,7 @@ export default function ServicesClient() {
             Our Specialties
           </h2>
           <p className="text-gray-600 max-w-xl mx-auto">
-            We&apos;re the region&apos;s go-to experts for well water and salt-free hard water treatment.
+            We're the region's go-to experts for well water and salt-free hard water treatment.
           </p>
         </div>
         <div className="grid md:grid-cols-2 gap-6">
@@ -331,7 +331,7 @@ export default function ServicesClient() {
             Common Water Problems We Solve
           </h2>
           <p className="text-gray-600 max-w-xl mx-auto">
-            If you&apos;ve noticed any of these issues, we have the solution.
+            If you've noticed any of these issues, we have the solution.
           </p>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -359,7 +359,7 @@ export default function ServicesClient() {
             Ready for <span className="gradient-text">Better Water</span>?
           </h2>
           <p className="text-white/70 max-w-lg mx-auto mb-8">
-            Start with a free in-home water test. We&apos;ll show you exactly what&apos;s in
+            Start with a free in-home water test. We'll show you exactly what's in
             your water and recommend the best solution — no pressure, no obligation.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

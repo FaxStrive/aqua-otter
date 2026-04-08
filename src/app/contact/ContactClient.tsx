@@ -69,7 +69,7 @@ export default function ContactClient() {
             transition={{ delay: 0.2, duration: 0.6 }}
             className="text-3xl sm:text-4xl md:text-5xl font-heading font-black leading-tight mb-4"
           >
-            Let&apos;s Get Your Water{" "}
+            Let's Get Your Water{" "}
             <span className="gradient-text">Tested</span>
           </motion.h1>
           <motion.p
@@ -79,7 +79,7 @@ export default function ContactClient() {
             className="text-white/70 max-w-xl text-base sm:text-lg"
           >
             Fill out the form below, give us a call, or shoot us a text.
-            We&apos;ll get your free water test scheduled fast.
+            We'll get your free water test scheduled fast.
           </motion.p>
         </div>
       </Section>
@@ -370,8 +370,8 @@ export default function ContactClient() {
             viewport={{ once: true }}
           >
             <h2 className="text-2xl sm:text-3xl font-heading font-black mb-4">
-              Don&apos;t Wait -{" "}
-              <span className="gradient-text">Your Water Won&apos;t Fix Itself</span>
+              Don't Wait -{" "}
+              <span className="gradient-text">Your Water Won't Fix Itself</span>
             </h2>
             <p className="text-white/70 mb-6">
               Every day with bad water is a day your family deserves better.

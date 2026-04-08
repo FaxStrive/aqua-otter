@@ -173,7 +173,7 @@ export default function ReverseOsmosisClient() {
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
             Reverse osmosis pushes water through an ultra-fine membrane under pressure,
-            stripping away contaminants molecule by molecule. Here&apos;s the step-by-step process.
+            stripping away contaminants molecule by molecule. Here's the step-by-step process.
           </p>
         </div>
         <div className="relative max-w-3xl mx-auto">
@@ -251,7 +251,7 @@ export default function ReverseOsmosisClient() {
       <InlineCTA
         variant="banner"
         text="Ready for Pure Water?"
-        message="Schedule a free in-home water test and we&apos;ll recommend the perfect RO system for your household."
+        message="Schedule a free in-home water test and we'll recommend the perfect RO system for your household."
         href="/contact"
       />
 
@@ -320,7 +320,7 @@ export default function ReverseOsmosisClient() {
             Whole House vs. Under-Sink RO
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Not sure which setup is right for your home? Here&apos;s a side-by-side comparison.
+            Not sure which setup is right for your home? Here's a side-by-side comparison.
           </p>
         </div>
         <div className="overflow-x-auto">
@@ -364,7 +364,7 @@ export default function ReverseOsmosisClient() {
             Start Drinking <span className="gradient-text">Cleaner Water</span> Today
           </motion.h2>
           <p className="text-white/70 max-w-xl mx-auto mb-8">
-            Book your free in-home water test. We&apos;ll test your water, explain the results,
+            Book your free in-home water test. We'll test your water, explain the results,
             and recommend the ideal reverse osmosis system for your home.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

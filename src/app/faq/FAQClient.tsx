@@ -43,19 +43,19 @@ const faqGroups: FAQGroup[] = [
       },
       {
         q: "How long does the water test take?",
-        a: "Most water tests take about 20-30 minutes from start to finish. We test multiple parameters, explain what each one means, and answer all your questions. There&apos;s no rush - we want you to understand your water quality completely.",
+        a: "Most water tests take about 20-30 minutes from start to finish. We test multiple parameters, explain what each one means, and answer all your questions. There's no rush - we want you to understand your water quality completely.",
       },
       {
         q: "Is the water test really free? No hidden costs?",
-        a: "100% free with zero obligation. We don&apos;t charge for the test, and there&apos;s absolutely no pressure to purchase anything. We believe in earning your business through honest results and expert recommendations - not high-pressure sales.",
+        a: "100% free with zero obligation. We don't charge for the test, and there's absolutely no pressure to purchase anything. We believe in earning your business through honest results and expert recommendations - not high-pressure sales.",
       },
       {
         q: "How do I prepare for a water test?",
-        a: "There&apos;s almost nothing you need to do! Just make sure we can access your main water line (usually in the basement or utility area) and a kitchen or bathroom faucet. If you have a well, having access to the pressure tank area is helpful. That&apos;s it!",
+        a: "There's almost nothing you need to do! Just make sure we can access your main water line (usually in the basement or utility area) and a kitchen or bathroom faucet. If you have a well, having access to the pressure tank area is helpful. That's it!",
       },
       {
         q: "Is my water safe to drink right now?",
-        a: "Without testing, it&apos;s impossible to know for sure. Many contaminants that affect taste, odor, and safety are invisible. That&apos;s exactly why we offer free testing - so you can know with certainty what&apos;s in your water and make informed decisions about treatment.",
+        a: "Without testing, it's impossible to know for sure. Many contaminants that affect taste, odor, and safety are invisible. That's exactly why we offer free testing - so you can know with certainty what's in your water and make informed decisions about treatment.",
       },
     ],
   },
@@ -65,10 +65,10 @@ const faqGroups: FAQGroup[] = [
     faqs: [
       {
         q: "What is no-salt water treatment?",
-        a: "No-salt water treatment (also called salt-free conditioning) treats hard water without using salt or chemicals. Instead of ion exchange (traditional softeners), these systems use template-assisted crystallization or other technologies to prevent scale buildup while keeping beneficial minerals in your water. It&apos;s better for the environment, your health, and your plumbing.",
+        a: "No-salt water treatment (also called salt-free conditioning) treats hard water without using salt or chemicals. Instead of ion exchange (traditional softeners), these systems use template-assisted crystallization or other technologies to prevent scale buildup while keeping beneficial minerals in your water. It's better for the environment, your health, and your plumbing.",
       },
       {
-        q: "What&apos;s the difference between well water and city water treatment?",
+        q: "What's the difference between well water and city water treatment?",
         a: "City water is pre-treated but often contains chlorine, fluoride, and other chemicals. Well water is untreated and can contain iron, sulfur, bacteria, hardness, and sediment. Treatment approaches differ significantly - well water typically requires more comprehensive filtration, which is why testing is so important.",
       },
       {
@@ -81,15 +81,15 @@ const faqGroups: FAQGroup[] = [
       },
       {
         q: "Is installation really free?",
-        a: "Yes! Free standard installation is included with every system purchase. We believe in transparent pricing - the price you&apos;re quoted is the price you pay, with installation included. No surprise fees, no add-on charges.",
+        a: "Yes! Free standard installation is included with every system purchase. We believe in transparent pricing - the price you're quoted is the price you pay, with installation included. No surprise fees, no add-on charges.",
       },
       {
         q: "What maintenance do the systems require?",
-        a: "Maintenance varies by system type. Salt-based softeners need salt refills. Filter systems need periodic filter changes (typically every 6-12 months). No-salt systems are very low maintenance. We&apos;ll walk you through everything during installation and are always a call or text away if you need help.",
+        a: "Maintenance varies by system type. Salt-based softeners need salt refills. Filter systems need periodic filter changes (typically every 6-12 months). No-salt systems are very low maintenance. We'll walk you through everything during installation and are always a call or text away if you need help.",
       },
       {
         q: "What warranty do your systems come with?",
-        a: "Our systems come with manufacturer warranties that vary by product - typically ranging from 5 years to lifetime warranties on tanks and valves. We also stand behind our installation work. If something isn&apos;t right, we&apos;ll make it right.",
+        a: "Our systems come with manufacturer warranties that vary by product - typically ranging from 5 years to lifetime warranties on tanks and valves. We also stand behind our installation work. If something isn't right, we'll make it right.",
       },
     ],
   },
@@ -99,15 +99,15 @@ const faqGroups: FAQGroup[] = [
     faqs: [
       {
         q: "What areas do you serve?",
-        a: "We proudly serve five states: Indiana, Michigan, Ohio, Kentucky, and Tennessee. Our service covers major cities and surrounding areas in each state. If you&apos;re not sure if we serve your area, just give us a call or text - chances are we do!",
+        a: "We proudly serve five states: Indiana, Michigan, Ohio, Kentucky, and Tennessee. Our service covers major cities and surrounding areas in each state. If you're not sure if we serve your area, just give us a call or text - chances are we do!",
       },
       {
         q: "How do I schedule a water test?",
-        a: "Easy! You can fill out our contact form, call us at (616) 612-1660, or text us at the same number. We&apos;ll work with your schedule to find a convenient time. Evenings work great for us, so don&apos;t worry if you work during the day.",
+        a: "Easy! You can fill out our contact form, call us at (616) 612-1660, or text us at the same number. We'll work with your schedule to find a convenient time. Evenings work great for us, so don't worry if you work during the day.",
       },
       {
         q: "Do you offer emergency service?",
-        a: "While we primarily focus on water treatment system installation and testing, we understand water emergencies happen. If you&apos;re experiencing a sudden change in water quality or a system malfunction, call or text us and we&apos;ll do our best to get to you as quickly as possible.",
+        a: "While we primarily focus on water treatment system installation and testing, we understand water emergencies happen. If you're experiencing a sudden change in water quality or a system malfunction, call or text us and we'll do our best to get to you as quickly as possible.",
       },
     ],
   },
@@ -117,11 +117,11 @@ const faqGroups: FAQGroup[] = [
     faqs: [
       {
         q: "How much do water treatment systems cost?",
-        a: "Pricing depends on your specific water issues and the system needed. That&apos;s why we test first - so we can recommend the right solution at the right price. We offer competitive pricing and never recommend more than you need. Contact us for a free test and honest quote.",
+        a: "Pricing depends on your specific water issues and the system needed. That's why we test first - so we can recommend the right solution at the right price. We offer competitive pricing and never recommend more than you need. Contact us for a free test and honest quote.",
       },
       {
         q: "What payment options do you accept?",
-        a: "We accept cash, checks, all major credit cards, and we offer financing options to help make clean water affordable for every family. We&apos;ll discuss all payment options during your consultation so you can choose what works best for your budget.",
+        a: "We accept cash, checks, all major credit cards, and we offer financing options to help make clean water affordable for every family. We'll discuss all payment options during your consultation so you can choose what works best for your budget.",
       },
     ],
   },
@@ -255,7 +255,7 @@ export default function FAQClient() {
           {gi === 0 && (
             <InlineCTA
               variant="banner"
-              text="Have a Question We Didn&apos;t Answer?"
+              text="Have a Question We Didn't Answer?"
               message="Give us a call or text anytime. We love talking water!"
               href="/contact"
             />
@@ -291,8 +291,8 @@ export default function FAQClient() {
               Still Have <span className="gradient-text">Questions?</span>
             </h2>
             <p className="text-white/70 mb-6">
-              We&apos;re real people who love talking about water. Call, text,
-              or fill out our form - we&apos;ll get back to you fast.
+              We're real people who love talking about water. Call, text,
+              or fill out our form - we'll get back to you fast.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Link

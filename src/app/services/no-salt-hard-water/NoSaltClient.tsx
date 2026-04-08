@@ -56,34 +56,29 @@ const benefits = [
 
 const systems = [
   {
-    src: "/client/No-Salt_Hard_Water_Treatment.png",
-    name: "No-Salt Hard Water Treatment",
-    desc: "Our core no-salt system. Uses template-assisted crystallization (TAC) to prevent scale without removing healthy minerals.",
-  },
-  {
-    src: "/client/Water_Conditioner_Cartridge.png",
-    name: "Water Conditioner Cartridge",
-    desc: "Compact cartridge-based conditioning for smaller homes or point-of-use applications. Easy to maintain.",
-  },
-  {
     src: "/client/Alpha_3000_RB.png",
-    name: "Alpha 3000 with No-Salt",
-    desc: "Multi-stage system combining no-salt conditioning with advanced filtration for the complete solution.",
+    name: "Alpha 3000",
+    desc: "Our flagship city water treatment system. Multi-stage filtration with automatic electric backwash — handles the toughest water without salt.",
+  },
+  {
+    src: "/client/No-Salt_Hard_Water_Treatment.png",
+    name: "Quintex 5",
+    desc: "Advanced no-salt conditioning system using template-assisted crystallization (TAC) to prevent scale and protect your home without chemicals.",
   },
 ];
 
 const faqs = [
   {
     q: "Does no-salt treatment actually work on hard water?",
-    a: "Yes. No-salt systems use Template Assisted Crystallization (TAC) technology to change the structure of hardness minerals so they can&apos;t stick to surfaces. You get all the scale prevention benefits without salt, chemicals, or wasted water. The technology is proven and backed by third-party testing.",
+    a: "Yes. No-salt systems use Template Assisted Crystallization (TAC) technology to change the structure of hardness minerals so they can't stick to surfaces. You get all the scale prevention benefits without salt, chemicals, or wasted water. The technology is proven and backed by third-party testing.",
   },
   {
     q: "Will my water still feel different from untreated water?",
-    a: "Your water will feel clean and natural — not slippery like salt-softened water. You&apos;ll notice the difference in reduced scale buildup on fixtures, cleaner dishes, and softer laundry without that 'slimy' feeling some people dislike about traditional softeners.",
+    a: "Your water will feel clean and natural — not slippery like salt-softened water. You'll notice the difference in reduced scale buildup on fixtures, cleaner dishes, and softer laundry without that 'slimy' feeling some people dislike about traditional softeners.",
   },
   {
     q: "How much maintenance does a no-salt system need?",
-    a: "Very little. Most no-salt systems need a media replacement every 3-5 years — that&apos;s it. No salt bags to refill, no regeneration cycles, no backwash settings. It&apos;s essentially set-it-and-forget-it.",
+    a: "Very little. Most no-salt systems need a media replacement every 3-5 years — that's it. No salt bags to refill, no regeneration cycles, no backwash settings. It's essentially set-it-and-forget-it.",
   },
   {
     q: "Is no-salt better than a traditional water softener?",
@@ -168,7 +163,7 @@ export default function NoSaltClient() {
               No-salt water treatment uses a process called{" "}
               <strong>Template Assisted Crystallization (TAC)</strong> to
               transform dissolved hardness minerals into microscopic crystals
-              that can&apos;t stick to pipes, fixtures, or appliances.
+              that can't stick to pipes, fixtures, or appliances.
             </p>
             <p className="text-gray-600 mb-4 leading-relaxed">
               Unlike traditional softeners that remove calcium and magnesium
@@ -204,7 +199,7 @@ export default function NoSaltClient() {
                 </div>
                 <div className="bg-white rounded-xl p-5 text-center shadow-sm">
                   <Zap className="w-8 h-8 text-accent-600 mx-auto mb-2" />
-                  <p className="text-sm font-semibold text-dark">No Electricity</p>
+                  <p className="text-sm font-semibold text-dark">Auto Backwash</p>
                 </div>
               </div>
             </div>
@@ -215,7 +210,7 @@ export default function NoSaltClient() {
       <InlineCTA
         variant="banner"
         text="Curious If No-Salt Is Right for You?"
-        message="Book a free water test and we&apos;ll recommend the best solution for your home."
+        message="Book a free water test and we'll recommend the best solution for your home."
       />
 
       {/* Benefits vs Traditional */}
@@ -265,7 +260,7 @@ export default function NoSaltClient() {
 
       <InlineCTA
         variant="text"
-        text="Want the eco-friendly option? Let&apos;s talk about no-salt for your home"
+        text="Want the eco-friendly option? Let's talk about no-salt for your home"
       />
 
       {/* Lifestyle Images */}
@@ -290,7 +285,7 @@ export default function NoSaltClient() {
             Premium no-salt equipment sized and configured for your specific water.
           </p>
         </div>
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
           {systems.map((sys, i) => (
             <motion.div
               key={sys.name}

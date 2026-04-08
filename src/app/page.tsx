@@ -25,7 +25,7 @@ export default function Home() {
 
       <FactStrip
         variant="warning"
-        text="Indiana well water contains 3x the national average of iron and hardness — is your family protected?"
+        text="Michigan well water contains 3x the national average of iron and hardness — is your family protected?"
         highlight="3x the national average"
       />
 

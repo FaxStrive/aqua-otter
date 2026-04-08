@@ -193,7 +193,7 @@ export default function WholeHouseClient() {
 
       <InlineCTA
         variant="text"
-        text="Want to know what&apos;s in your water? Start with a free test"
+        text="Want to know what's in your water? Start with a free test"
         href="/contact"
       />
 
@@ -244,7 +244,7 @@ export default function WholeHouseClient() {
       <InlineCTA
         variant="banner"
         text="Not Sure Which System You Need?"
-        message="Book a free water test and we&apos;ll recommend the perfect setup for your home&apos;s water source."
+        message="Book a free water test and we'll recommend the perfect setup for your home's water source."
         href="/contact"
       />
 

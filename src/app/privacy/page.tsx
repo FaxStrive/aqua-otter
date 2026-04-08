@@ -256,7 +256,7 @@ export default function PrivacyPolicyPage() {
             </ul>
 
             <h2 className="text-2xl font-bold text-dark mt-8 mb-4">
-              9. Children&apos;s Privacy
+              9. Children's Privacy
             </h2>
             <p className="text-gray-600 mb-6">
               Our services are not directed to individuals under the age of 18.

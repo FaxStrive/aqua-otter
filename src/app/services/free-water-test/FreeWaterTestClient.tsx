@@ -53,7 +53,7 @@ const steps = [
     num: "3",
     icon: ClipboardCheck,
     title: "Show You Results",
-    desc: "We walk you through each result, explain what it means, and show you exactly what&apos;s in your water — no jargon, no pressure.",
+    desc: "We walk you through each result, explain what it means, and show you exactly what's in your water — no jargon, no pressure.",
   },
 ];
 
@@ -120,7 +120,7 @@ export default function FreeWaterTestClient() {
             transition={{ delay: 0.2 }}
             className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-8"
           >
-            Find out exactly what&apos;s in your water in under 30 minutes. Our
+            Find out exactly what's in your water in under 30 minutes. Our
             certified technicians test right at your kitchen sink — results
             on the spot.
           </motion.p>
@@ -155,7 +155,7 @@ export default function FreeWaterTestClient() {
             What to Expect
           </h2>
           <p className="text-gray-600 max-w-xl mx-auto">
-            Our water test is quick, thorough, and completely free. Here&apos;s how it works.
+            Our water test is quick, thorough, and completely free. Here's how it works.
           </p>
         </div>
         <div className="grid md:grid-cols-3 gap-6">
@@ -186,8 +186,8 @@ export default function FreeWaterTestClient() {
 
       <InlineCTA
         variant="banner"
-        text="Ready to Find Out What&apos;s in Your Water?"
-        message="Takes less than 30 minutes — and it&apos;s completely free."
+        text="Ready to Find Out What's in Your Water?"
+        message="Takes less than 30 minutes — and it's completely free."
       />
 
       {/* What We Test For */}
@@ -231,9 +231,9 @@ export default function FreeWaterTestClient() {
               Why Testing Matters
             </h2>
             <p className="text-gray-600 mb-6 leading-relaxed">
-              Most water problems are invisible. You can&apos;t see dissolved iron, smell
+              Most water problems are invisible. You can't see dissolved iron, smell
               low-level bacteria, or taste nitrates. A professional test reveals
-              what&apos;s really going on — so you can protect your family and your home.
+              what's really going on — so you can protect your family and your home.
             </p>
             <p className="text-gray-600 mb-6 leading-relaxed font-medium">
               Have you noticed any of these in your home?
@@ -272,7 +272,7 @@ export default function FreeWaterTestClient() {
             What Happens After Your Test
           </h2>
           <p className="text-gray-600 max-w-xl mx-auto">
-            If your water needs treatment, here&apos;s what the process looks like.
+            If your water needs treatment, here's what the process looks like.
           </p>
         </div>
         <div className="grid md:grid-cols-3 gap-6">
@@ -329,7 +329,7 @@ export default function FreeWaterTestClient() {
           </h2>
           <p className="text-white/70 max-w-lg mx-auto mb-8">
             No sales pitch. No obligation. Just honest answers about your water.
-            Schedule today and know what you&apos;re drinking by tomorrow.
+            Schedule today and know what you're drinking by tomorrow.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

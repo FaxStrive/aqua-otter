@@ -62,7 +62,7 @@ const reviews = [
     name: "Shelly Ganger",
     location: "Google Review",
     date: "August 2025",
-    text: "We purchased our saltless water tank in Sept 2022, best purchase we&apos;ve made. The water quality is amazing and we haven&apos;t had a single issue in over three years.",
+    text: "We purchased our saltless water tank in Sept 2022, best purchase we've made. The water quality is amazing and we haven't had a single issue in over three years.",
   },
   {
     name: "Michelle Rhodes",
@@ -86,7 +86,7 @@ const reviews = [
     name: "Cathy Tooley",
     location: "Google Review",
     date: "July 2023",
-    text: "We had this system installed almost two years ago and have not had a single issue. The water quality is consistently excellent and the system runs quietly. Couldn&apos;t be happier.",
+    text: "We had this system installed almost two years ago and have not had a single issue. The water quality is consistently excellent and the system runs quietly. Couldn't be happier.",
   },
 ];
 
@@ -99,7 +99,7 @@ const trustItems = [
   {
     icon: ShieldCheck,
     title: "Satisfaction Guaranteed",
-    desc: "We stand behind every installation. If you&apos;re not happy, we make it right.",
+    desc: "We stand behind every installation. If you're not happy, we make it right.",
   },
   {
     icon: ThumbsUp,
