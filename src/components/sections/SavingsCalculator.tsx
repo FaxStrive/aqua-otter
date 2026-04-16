@@ -8,8 +8,8 @@ import Image from "next/image";
 import Section from "@/components/ui/Section";
 import AnimatedCounter from "@/components/ui/AnimatedCounter";
 
-const PHONE = "(616) 612-1660";
-const PHONE_TEL = "tel:6166121660";
+const PHONE = "(317) 961-6925";
+const PHONE_TEL = "tel:3179616925";
 
 export default function SavingsCalculator() {
   const [household, setHousehold] = useState(3);

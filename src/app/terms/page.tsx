@@ -93,7 +93,7 @@ export default function TermsOfServicePage() {
                 <strong>
                   You can cancel the SMS service at any time.
                 </strong>{" "}
-                Just text <strong>STOP</strong> to (616) 612-1660 or reply STOP
+                Just text <strong>STOP</strong> to (317) 961-6925 or reply STOP
                 to any message you receive from us.
               </p>
               <p className="text-dark mb-4">
@@ -126,7 +126,7 @@ export default function TermsOfServicePage() {
               </p>
               <ul className="list-disc pl-6 text-dark space-y-2">
                 <li>Email: info@myaquaotter.com</li>
-                <li>Phone: (616) 612-1660</li>
+                <li>Phone: (317) 961-6925</li>
               </ul>
             </div>
 
@@ -293,7 +293,7 @@ export default function TermsOfServicePage() {
                 Aqua Otter Water Systems LLC
               </p>
               <p className="text-gray-600">Email: info@myaquaotter.com</p>
-              <p className="text-gray-600">Phone: (616) 612-1660</p>
+              <p className="text-gray-600">Phone: (317) 961-6925</p>
               <p className="text-gray-600">
                 Service Areas: Indiana, Michigan, Ohio, Kentucky, Tennessee &amp;
                 North Carolina

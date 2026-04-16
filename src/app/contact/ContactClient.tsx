@@ -20,9 +20,9 @@ import {
 import Section from "@/components/ui/Section";
 import { InlineCTA } from "@/components/InlineCTA";
 
-const PHONE = "(616) 612-1660";
-const PHONE_TEL = "tel:6166121660";
-const SMS_TEL = "sms:6166121660";
+const PHONE = "(317) 961-6925";
+const PHONE_TEL = "tel:3179616925";
+const SMS_TEL = "sms:3179616925";
 const EMAIL = "info@myaquaotter.com";
 
 const faqs = [

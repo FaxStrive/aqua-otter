@@ -154,11 +154,11 @@ export default function ReverseOsmosisClient() {
               <ArrowRight className="w-4 h-4" />
             </Link>
             <a
-              href="tel:6166121660"
+              href="tel:3179616925"
               className="inline-flex items-center gap-2 text-white/70 hover:text-white transition-colors font-medium"
             >
               <Phone className="w-4 h-4" />
-              (616) 612-1660
+              (317) 961-6925
             </a>
           </motion.div>
         </div>
@@ -376,11 +376,11 @@ export default function ReverseOsmosisClient() {
               <ArrowRight className="w-4 h-4" />
             </Link>
             <a
-              href="tel:6166121660"
+              href="tel:3179616925"
               className="inline-flex items-center gap-2 text-white/70 hover:text-white transition-colors font-medium"
             >
               <Phone className="w-4 h-4" />
-              (616) 612-1660
+              (317) 961-6925
             </a>
           </div>
         </div>

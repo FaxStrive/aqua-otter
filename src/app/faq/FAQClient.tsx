@@ -18,8 +18,8 @@ import {
 import Section from "@/components/ui/Section";
 import { InlineCTA } from "@/components/InlineCTA";
 
-const PHONE = "(616) 612-1660";
-const PHONE_TEL = "tel:6166121660";
+const PHONE = "(317) 961-6925";
+const PHONE_TEL = "tel:3179616925";
 
 interface FAQ {
   q: string;
@@ -103,7 +103,7 @@ const faqGroups: FAQGroup[] = [
       },
       {
         q: "How do I schedule a water test?",
-        a: "Easy! You can fill out our contact form, call us at (616) 612-1660, or text us at the same number. We'll work with your schedule to find a convenient time. Evenings work great for us, so don't worry if you work during the day.",
+        a: "Easy! You can fill out our contact form, call us at (317) 961-6925, or text us at the same number. We'll work with your schedule to find a convenient time. Evenings work great for us, so don't worry if you work during the day.",
       },
       {
         q: "Do you offer emergency service?",

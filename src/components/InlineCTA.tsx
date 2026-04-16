@@ -13,8 +13,8 @@ interface InlineCTAProps {
   href?: string;
 }
 
-const PHONE_TEL = "tel:6166121660";
-const PHONE = "(616) 612-1660";
+const PHONE_TEL = "tel:3179616925";
+const PHONE = "(317) 961-6925";
 
 export function InlineCTA({
   variant,

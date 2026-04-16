@@ -208,7 +208,7 @@ export default function PrivacyPolicyPage() {
                 SMS message
               </li>
               <li>Contacting us at info@myaquaotter.com</li>
-              <li>Calling us at (616) 612-1660</li>
+              <li>Calling us at (317) 961-6925</li>
             </ul>
             <p className="text-gray-600 mb-6">
               After you opt out, you will receive one final confirmation message
@@ -286,7 +286,7 @@ export default function PrivacyPolicyPage() {
                 Aqua Otter Water Systems LLC
               </p>
               <p className="text-gray-600">Email: info@myaquaotter.com</p>
-              <p className="text-gray-600">Phone: (616) 612-1660</p>
+              <p className="text-gray-600">Phone: (317) 961-6925</p>
               <p className="text-gray-600">
                 Service Areas: Indiana, Michigan, Ohio, Kentucky, Tennessee &amp;
                 North Carolina

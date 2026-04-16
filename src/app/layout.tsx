@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     template: "%s | Aqua Otter Water Systems",
   },
   description:
-    "Family-owned water treatment experts serving IN, MI, OH, KY & TN. Specializing in well water treatment and no-salt hard water solutions. Free water test — call (616) 612-1660.",
+    "Family-owned water treatment experts serving IN, MI, OH, KY & TN. Specializing in well water treatment and no-salt hard water solutions. Free water test — call (317) 961-6925.",
   keywords:
     "water treatment Michigan, well water filtration, no-salt water softener, hard water solutions, water testing near me, Aqua Otter, water filtration systems, whole house water filter",
   openGraph: {
@@ -76,10 +76,16 @@ export default function RootLayout({
           name="viewport"
           content="width=device-width, initial-scale=1, viewport-fit=cover"
         />
+        {/* Google Tag Manager — HomePros Site-ID GTM-5WH7DWHM */}
+        <script dangerouslySetInnerHTML={{ __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5WH7DWHM');` }} />
+        {/* End Google Tag Manager */}
       </head>
       <body
         className={`${heading.variable} ${body.variable} font-body antialiased`}
       >
+        {/* Google Tag Manager (noscript) */}
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5WH7DWHM" height="0" width="0" style={{ display: 'none', visibility: 'hidden' }}></iframe></noscript>
+        {/* End Google Tag Manager (noscript) */}
         <Header />
         <main>{children}</main>
         <Footer />

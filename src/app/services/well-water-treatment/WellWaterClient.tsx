@@ -139,11 +139,11 @@ export default function WellWaterClient() {
               <ArrowRight className="w-4 h-4" />
             </Link>
             <a
-              href="tel:6166121660"
+              href="tel:3179616925"
               className="inline-flex items-center gap-2 border border-white/20 text-white font-semibold px-8 py-4 rounded-xl text-sm hover:bg-white/10 transition-all"
             >
               <Phone className="w-4 h-4" />
-              (616) 612-1660
+              (317) 961-6925
             </a>
           </motion.div>
         </div>
@@ -353,11 +353,11 @@ export default function WellWaterClient() {
               <ArrowRight className="w-4 h-4" />
             </Link>
             <a
-              href="tel:6166121660"
+              href="tel:3179616925"
               className="inline-flex items-center gap-2 border border-white/20 text-white font-semibold px-8 py-4 rounded-xl text-sm hover:bg-white/10 transition-all"
             >
               <Phone className="w-4 h-4" />
-              (616) 612-1660
+              (317) 961-6925
             </a>
           </div>
         </div>
