@@ -148,7 +148,7 @@ export default function GlossaryPage() {
             </p>
 
             {/* Search */}
-            <div className="relative max-w-md">
+            <div className="relative w-full max-w-lg">
               <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: "rgba(12,31,46,0.3)" }} />
               <input
                 type="text"

@@ -94,7 +94,7 @@ export default function CityServicePage({ params }: Props) {
                   {area.county} County, {area.state}
                 </span>
               </div>
-              <h1 className="font-display font-bold leading-[0.88] mb-5" style={{ fontSize: "clamp(2.6rem, 7vw, 5.8rem)", color: "#ffffff", letterSpacing: "-0.035em" }}>
+              <h1 className="font-display font-bold leading-[0.88] mb-5" style={{ fontSize: "clamp(2rem, 7vw, 5.8rem)", color: "#ffffff", letterSpacing: "-0.035em" }}>
                 {service.name}<br />
                 <span style={{ color: service.color }}>in {area.city}.</span>
               </h1>

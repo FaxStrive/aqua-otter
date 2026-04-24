@@ -182,7 +182,7 @@ export default function Nav() {
             <motion.nav
               initial={{ x: "100%" }} animate={{ x: 0 }} exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 28, stiffness: 200 }}
-              className="absolute right-0 top-0 bottom-0 w-80 border-l flex flex-col pt-24 px-6 pb-10 overflow-y-auto"
+              className="absolute right-0 top-0 bottom-0 w-[min(320px,calc(100vw-48px))] border-l flex flex-col pt-24 px-6 pb-10 overflow-y-auto"
               style={{ backgroundColor: "#ffffff", borderColor: "rgba(18,189,251,0.1)" }}
             >
               <div className="space-y-0.5 flex-1">

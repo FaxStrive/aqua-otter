@@ -337,7 +337,7 @@ export default function HouseDiagram() {
           ))}
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-10 lg:gap-14 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-6 lg:gap-14 items-start">
 
           {/* LEFT — Illustrated house */}
           <motion.div

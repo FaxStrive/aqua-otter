@@ -448,7 +448,7 @@ export default function Stats() {
 
       {/* Mobile: stacked, each counts independently */}
       <div className="md:hidden container-site relative z-10 py-16">
-        <div className="grid grid-cols-2 gap-x-6 gap-y-10">
+        <div className="grid grid-cols-2 gap-x-3 gap-y-8">
           {stats.map((s) => (
             <MobileStat key={s.label} s={s} />
           ))}

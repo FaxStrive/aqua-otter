@@ -287,7 +287,7 @@ export default function AskTheOtter() {
             className="fixed z-[91] flex flex-col rounded-3xl overflow-hidden"
             style={{
               bottom: "max(24px, env(safe-area-inset-bottom))",
-              right: 24,
+              right: "max(16px, env(safe-area-inset-right))",
               width: "min(420px, calc(100vw - 32px))",
               height: "min(640px, calc(100vh - 48px))",
               backgroundColor: "#07111A",

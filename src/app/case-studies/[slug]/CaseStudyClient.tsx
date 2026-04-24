@@ -34,7 +34,7 @@ export default function CaseStudyClient({ cs }: { cs: CaseStudy }) {
             <span style={{ color: "rgba(12,31,46,0.6)" }}>{cs.city}, {cs.state}</span>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.65 }}>
               <div className="flex items-center gap-2 mb-5">
                 <span className="px-3 py-1 rounded-full text-xs font-bold" style={{ backgroundColor: "#12BDFB", color: "#0C1F2E" }}>{cs.category}</span>

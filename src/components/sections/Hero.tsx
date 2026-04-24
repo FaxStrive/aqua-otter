@@ -101,7 +101,7 @@ export default function Hero() {
               transition={{ duration: 0.75, delay: 0.08, ease: [0.21, 0.47, 0.32, 0.98] }}
               className="font-display mb-7"
               style={{
-                fontSize: "clamp(3.2rem, 7vw, 6.5rem)",
+                fontSize: "clamp(2.4rem, 8vw, 6.5rem)",
                 lineHeight: 0.95,
                 color: "#0C1F2E",
                 letterSpacing: "-0.02em",
@@ -121,7 +121,7 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="leading-[1.7] mb-10"
               style={{
-                fontSize: "clamp(0.95rem, 1.25vw, 1.06rem)",
+                fontSize: "clamp(0.95rem, 3vw, 1.06rem)",
                 color: "rgba(12,31,46,0.5)",
                 maxWidth: "40ch",
                 fontWeight: 400,

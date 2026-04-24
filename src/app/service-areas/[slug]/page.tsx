@@ -69,7 +69,7 @@ export default function ServiceAreaPage({ params }: Props) {
             <MapPin className="w-4 h-4" style={{ color: "#12BDFB" }} />
             <span className="text-xs font-bold uppercase tracking-[0.2em]" style={{ color: "#12BDFB" }}>{area.county} County, {area.state}</span>
           </div>
-          <h1 className="font-display font-bold leading-[0.88] mb-5" style={{ fontSize: "clamp(2.8rem, 8vw, 6.5rem)", color: "#ffffff", letterSpacing: "-0.035em" }}>
+          <h1 className="font-display font-bold leading-[0.88] mb-5" style={{ fontSize: "clamp(2rem, 7vw, 6.5rem)", color: "#ffffff", letterSpacing: "-0.035em" }}>
             Water treatment in<br /><span style={{ color: "#12BDFB" }}>{area.city}.</span>
           </h1>
           <p className="text-base leading-relaxed mb-8" style={{ color: "rgba(255,255,255,0.55)", maxWidth: "56ch" }}>

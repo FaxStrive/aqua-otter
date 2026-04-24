@@ -42,7 +42,7 @@ export default function CaseStudiesPage() {
               <Award className="w-3.5 h-3.5" style={{ color: "#12BDFB" }} />
               <span className="text-xs font-medium tracking-[0.1em] uppercase" style={{ color: "#12BDFB" }}>Real Results</span>
             </div>
-            <h1 className="font-display font-bold leading-[0.92] tracking-tight mb-5" style={{ fontSize: "clamp(3rem, 6vw, 5.5rem)", color: "#0C1F2E" }}>
+            <h1 className="font-display font-bold leading-[0.92] tracking-tight mb-5" style={{ fontSize: "clamp(2rem, 7vw, 5.5rem)", color: "#0C1F2E" }}>
               Before and after.<br />
               <span style={{ color: "#12BDFB" }}>Real numbers.</span>
             </h1>
