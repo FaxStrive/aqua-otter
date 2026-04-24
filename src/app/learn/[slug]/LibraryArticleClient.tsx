@@ -60,7 +60,7 @@ export default function LibraryArticleClient({ article }: { article: LibraryArti
             <h1 className="font-display font-bold leading-[1.05] mb-5" style={{ fontSize: "clamp(2rem, 4.5vw, 3.5rem)", color: "#0C1F2E" }}>
               {article.title}
             </h1>
-            <p className="leading-relaxed" style={{ fontSize: "clamp(0.95rem, 1.3vw, 1.1rem)", color: "rgba(12,31,46,0.55)", maxWidth: "54ch" }}>
+            <p className="leading-relaxed" style={{ fontSize: "clamp(0.95rem, 2.5vw, 1.1rem)", color: "rgba(12,31,46,0.55)", maxWidth: "54ch" }}>
               {article.description}
             </p>
           </motion.div>
@@ -77,7 +77,7 @@ export default function LibraryArticleClient({ article }: { article: LibraryArti
             </div>
             <ol className="space-y-2">
               {article.sections.map((s, i) => (
-                <li key={s.heading} className="flex items-center gap-3 text-sm" style={{ color: "rgba(12,31,46,0.6)" }}>
+                <li key={s.heading} className="flex items-start gap-3 text-sm" style={{ color: "rgba(12,31,46,0.6)" }}>
                   <span className="text-xs font-bold w-5 text-right flex-shrink-0" style={{ color: "rgba(12,31,46,0.3)" }}>{i + 1}.</span>
                   <a href={`#section-${i}`} className="hover:text-[#12BDFB] transition-colors">{s.heading}</a>
                 </li>
