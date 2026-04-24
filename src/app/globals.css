@@ -1,0 +1,146 @@
+/* Leaflet map container fix */
+.leaflet-container { z-index: 0; font-family: inherit; }
+.leaflet-control-attribution { display: none; }
+.leaflet-pane { z-index: 0; }
+
+/* Fonts — Instrument Serif (display) + General Sans (body) via Fontshare */
+@import url('https://api.fontshare.com/v2/css?f[]=instrument-serif@400,400i&f[]=general-sans@200,300,400,500,600,700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Fonts */
+    --font-display: 'Instrument Serif', 'Georgia', serif;
+    --font-heading: 'General Sans', system-ui, sans-serif;
+    --font-body: 'General Sans', system-ui, sans-serif;
+
+    /* Aqua Otter brand */
+    --color-cyan: #12BDFB;
+    --color-cyan-bright: #3DCFFF;
+    --color-cyan-deep: #0097C4;
+    --color-gold: #fbbf84;
+    --color-gold-light: #fcd6a8;
+
+    /* Light backgrounds */
+    --color-bg: #FFFFFF;
+    --color-bg-2: #F0F8FF;
+    --color-bg-3: #E8F5FE;
+    --color-bg-card: #FFFFFF;
+    --color-bg-dark: #0C1F2E;
+    --color-bg-dark-2: #1a3448;
+
+    /* Text */
+    --color-text: #0C1F2E;
+    --color-text-muted: rgba(12,31,46,0.55);
+    --color-text-dim: rgba(12,31,46,0.35);
+    --color-text-on-dark: #FFFFFF;
+
+    /* Borders */
+    --color-border: rgba(18,189,251,0.12);
+    --color-border-strong: rgba(18,189,251,0.25);
+    --color-border-subtle: rgba(12,31,46,0.08);
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--color-text);
+  }
+
+  ::selection {
+    background: rgba(18,189,251,0.18);
+    color: #0C1F2E;
+  }
+
+  ::-webkit-scrollbar { width: 5px; }
+  ::-webkit-scrollbar-track { background: #f0f8ff; }
+  ::-webkit-scrollbar-thumb { background: rgba(18,189,251,0.3); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: rgba(18,189,251,0.55); }
+}
+
+/* ── Water animations ──────────────────────────────────────── */
+
+/* Droplet float upward */
+@keyframes float-up {
+  0%   { transform: translateY(0) scale(1); opacity: 0.7; }
+  100% { transform: translateY(-80px) scale(0.3); opacity: 0; }
+}
+
+/* Ripple expand */
+@keyframes ripple-out {
+  0%   { transform: scale(0.5); opacity: 0.8; }
+  100% { transform: scale(3); opacity: 0; }
+}
+
+/* Water wave wobble */
+@keyframes water-wobble {
+  0%, 100% { d: path("M0,6 Q25,0 50,6 Q75,12 100,6"); }
+  50%       { d: path("M0,6 Q25,12 50,6 Q75,0 100,6"); }
+}
+
+/* Marquee */
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.marquee-track { animation: marquee-scroll 32s linear infinite; }
+.marquee-track:hover { animation-play-state: paused; }
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'ClashDisplay-Variable', system-ui, sans-serif;
+  }
+
+  .container-site {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: clamp(1rem, 4vw, 2.5rem);
+    padding-right: clamp(1rem, 4vw, 2.5rem);
+  }
+
+
+  .tabular-nums { font-variant-numeric: tabular-nums; }
+  .text-balance { text-wrap: balance; }
+
+  /* Section variants */
+  .section-light {
+    background-color: var(--color-bg);
+  }
+  .section-tinted {
+    background-color: var(--color-bg-2);
+  }
+  .section-dark {
+    background-color: var(--color-bg-dark);
+  }
+}
