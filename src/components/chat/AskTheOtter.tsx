@@ -41,9 +41,17 @@ export default function AskTheOtter() {
   const [streaming, setStreaming] = useState(false);
   const [showNudge, setShowNudge] = useState(false);
   const [unread, setUnread] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
   const bottomRef = useRef<HTMLDivElement>(null);
   const abortRef = useRef<AbortController | null>(null);
   const reduce = useReducedMotion();
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    check();
+    window.addEventListener("resize", check, { passive: true });
+    return () => window.removeEventListener("resize", check);
+  }, []);
 
   // Restore from localStorage
   useEffect(() => {
@@ -204,8 +212,8 @@ export default function AskTheOtter() {
             onClick={openChat}
             className="fixed z-[90] rounded-full group"
             style={{
-              bottom: "max(24px, env(safe-area-inset-bottom))",
-              right: 24,
+              bottom: isMobile ? "max(84px, calc(env(safe-area-inset-bottom) + 84px))" : "max(24px, env(safe-area-inset-bottom))",
+              right: isMobile ? 16 : 24,
               width: 64,
               height: 64,
               backgroundColor: "#12BDFB",
@@ -247,8 +255,8 @@ export default function AskTheOtter() {
             transition={{ type: "spring", stiffness: 280, damping: 22 }}
             className="fixed z-[89] rounded-2xl px-4 py-3 max-w-[260px] flex items-start gap-2"
             style={{
-              bottom: "calc(max(24px, env(safe-area-inset-bottom)) + 80px)",
-              right: 24,
+              bottom: isMobile ? "calc(max(84px, calc(env(safe-area-inset-bottom) + 84px)) + 80px)" : "calc(max(24px, env(safe-area-inset-bottom)) + 80px)",
+              right: isMobile ? 16 : 24,
               backgroundColor: "#ffffff",
               boxShadow: "0 12px 40px rgba(12,31,46,0.2)",
               border: "1px solid rgba(18,189,251,0.15)",
@@ -286,8 +294,8 @@ export default function AskTheOtter() {
             transition={{ type: "spring", stiffness: 260, damping: 26 }}
             className="fixed z-[91] flex flex-col rounded-3xl overflow-hidden"
             style={{
-              bottom: "max(24px, env(safe-area-inset-bottom))",
-              right: "max(16px, env(safe-area-inset-right))",
+              bottom: isMobile ? "max(84px, calc(env(safe-area-inset-bottom) + 84px))" : "max(24px, env(safe-area-inset-bottom))",
+              right: isMobile ? 8 : "max(16px, env(safe-area-inset-right))",
               width: "min(420px, calc(100vw - 32px))",
               height: "min(640px, calc(100vh - 48px))",
               backgroundColor: "#07111A",
