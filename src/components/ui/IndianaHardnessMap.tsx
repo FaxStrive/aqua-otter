@@ -47,7 +47,9 @@ function DisableInteractions() {
 export default function IndianaHardnessMap() {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const inView = useInView(wrapperRef, { once: true, margin: "-80px" });
+  const [selected, setSelected] = useState<City | null>(null);
   const [hovered, setHovered] = useState<City | null>(null);
+  const active = selected || hovered;
 
   return (
     <div ref={wrapperRef} className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-10 lg:gap-16 items-start">
@@ -79,22 +81,22 @@ export default function IndianaHardnessMap() {
 
             {cities.map((city) => {
               const c = getColor(city.gpg);
-              const isActive = hovered?.name === city.name;
+              const isActive = active?.name === city.name;
               return (
                 <CircleMarker
                   key={city.name}
                   center={[city.lat, city.lng]}
-                  radius={isActive ? 11 : 7}
+                  radius={isActive ? 12 : 8}
                   pathOptions={{
-                    fillColor: c.fill,
+                    fillColor: isActive ? "#12BDFB" : c.fill,
                     fillOpacity: 1,
-                    color: c.stroke,
-                    weight: isActive ? 2.5 : 1.5,
+                    color: isActive ? "#ffffff" : c.stroke,
+                    weight: isActive ? 3 : 1.5,
                   }}
                   eventHandlers={{
                     mouseover: () => setHovered(city),
                     mouseout: () => setHovered(null),
-                    click: () => setHovered(prev => prev?.name === city.name ? null : city),
+                    click: () => setSelected(prev => prev?.name === city.name ? null : city),
                   }}
                 />
               );
@@ -147,9 +149,9 @@ export default function IndianaHardnessMap() {
 
         {/* City card */}
         <AnimatePresence mode="wait">
-          {hovered ? (
+          {active ? (
             <motion.div
-              key={hovered.name}
+              key={active.name}
               initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -8 }}
@@ -159,17 +161,33 @@ export default function IndianaHardnessMap() {
             >
               <div className="flex items-start justify-between gap-4 mb-3">
                 <div>
-                  <p className="font-display font-bold text-white" style={{ fontSize: "1.2rem" }}>{hovered.name}</p>
-                  <p className="text-xs mt-0.5" style={{ color: "rgba(255,255,255,0.38)" }}>{getLabel(hovered.gpg).level}</p>
+                  <div className="flex items-center gap-2 mb-0.5">
+                    <p className="font-display font-bold text-white" style={{ fontSize: "1.2rem" }}>{active.name}</p>
+                    {selected?.name === active.name && (
+                      <span className="text-[9px] font-bold uppercase tracking-widest px-1.5 py-0.5 rounded-full" style={{ backgroundColor: "rgba(18,189,251,0.15)", color: "#12BDFB" }}>selected</span>
+                    )}
+                  </div>
+                  <p className="text-xs" style={{ color: "rgba(255,255,255,0.38)" }}>{getLabel(active.gpg).level}</p>
                 </div>
                 <div className="text-right flex-shrink-0">
-                  <p className="font-display font-bold" style={{ fontSize: "1.8rem", color: "#12BDFB", lineHeight: 1 }}>{hovered.gpg}</p>
+                  <p className="font-display font-bold" style={{ fontSize: "1.8rem", color: "#12BDFB", lineHeight: 1 }}>{active.gpg}</p>
                   <p className="text-xs" style={{ color: "rgba(255,255,255,0.3)" }}>GPG</p>
                 </div>
               </div>
               <p className="text-xs leading-relaxed" style={{ color: "rgba(255,255,255,0.48)" }}>
-                {getLabel(hovered.gpg).desc}
+                {getLabel(active.gpg).desc}
               </p>
+              {selected && (
+                <button
+                  onClick={() => setSelected(null)}
+                  className="mt-3 text-[11px] font-medium transition-colors"
+                  style={{ color: "rgba(255,255,255,0.3)" }}
+                  onMouseEnter={e => (e.currentTarget.style.color = "rgba(255,255,255,0.6)")}
+                  onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,0.3)")}
+                >
+                  Clear selection
+                </button>
+              )}
             </motion.div>
           ) : (
             <motion.p
@@ -180,7 +198,7 @@ export default function IndianaHardnessMap() {
               className="text-sm"
               style={{ color: "rgba(12,31,46,0.3)" }}
             >
-              Click a city dot on the map to see its measured hardness level
+              Hover or click a city dot to see its measured hardness level
             </motion.p>
           )}
         </AnimatePresence>
