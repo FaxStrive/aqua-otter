@@ -131,18 +131,11 @@ export default function WaterSoftenerPage() {
           marginBottom: -50,
         }}
       >
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{ background: "radial-gradient(ellipse 70% 80% at 65% 50%, rgba(18,189,251,0.07) 0%, transparent 65%)" }}
-        />
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            opacity: 0.018,
-            backgroundImage: `linear-gradient(rgba(18,189,251,1) 1px, transparent 1px), linear-gradient(90deg, rgba(18,189,251,1) 1px, transparent 1px)`,
-            backgroundSize: "64px 64px",
-          }}
-        />
+        <video autoPlay loop muted playsInline poster="/videos/system-softener-poster.jpg" className="absolute inset-0 w-full h-full object-cover pointer-events-none" style={{ opacity: 0.28 }}>
+          <source src="/videos/system-softener.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse 70% 80% at 65% 50%, rgba(18,189,251,0.07) 0%, transparent 65%)" }} />
+        <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(to right, rgba(7,17,26,0.85) 0%, rgba(7,17,26,0.4) 55%, rgba(7,17,26,0.1) 100%)" }} />
 
         <div className="container-site relative z-10 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">

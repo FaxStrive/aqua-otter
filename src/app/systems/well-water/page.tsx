@@ -114,6 +114,9 @@ export default function WellWaterPage() {
           marginBottom: -60,
         }}
       >
+        <video autoPlay loop muted playsInline poster="/videos/system-well-poster.jpg" className="absolute inset-0 w-full h-full object-cover pointer-events-none" style={{ opacity: 0.28 }}>
+          <source src="/videos/system-well.mp4" type="video/mp4" />
+        </video>
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
@@ -121,6 +124,7 @@ export default function WellWaterPage() {
               "radial-gradient(ellipse 70% 80% at 65% 50%, rgba(18,189,251,0.07) 0%, transparent 65%)",
           }}
         />
+        <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(to right, rgba(7,17,26,0.85) 0%, rgba(7,17,26,0.4) 55%, rgba(7,17,26,0.1) 100%)" }} />
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
