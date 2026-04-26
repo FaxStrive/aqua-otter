@@ -229,23 +229,26 @@ export default function WaterSoftenerPage() {
         </div>
       </section>
 
-      {/* PROBLEM PHOTO */}
-      <section className="relative overflow-hidden" style={{ height: "55vh", minHeight: 380 }}>
-        <Image src="/client/hero-water-problems.jpg" alt="Rusty discolored water from a tap — hard water iron staining" fill className="object-cover object-center" />
+      {/* PROBLEM STATEMENT */}
+      <section
+        className="relative overflow-hidden py-20 md:py-28"
+        style={{ backgroundColor: "#05080A" }}
+      >
         <div
-          className="absolute inset-0"
-          style={{ background: "linear-gradient(90deg, rgba(7,17,26,0.88) 0%, rgba(7,17,26,0.6) 45%, rgba(7,17,26,0.2) 100%)" }}
+          className="pointer-events-none absolute inset-0"
+          style={{ background: "radial-gradient(ellipse 60% 100% at 80% 50%, rgba(249,115,22,0.05) 0%, transparent 65%)" }}
         />
-        <div className="absolute inset-0 flex items-center">
-          <div className="container-site">
-            <p className="text-xs font-bold uppercase tracking-[0.2em] mb-3" style={{ color: "#f97316" }}>
+        <div className="container-site relative z-10">
+          <div className="max-w-3xl">
+            <p className="text-xs font-bold uppercase tracking-[0.2em] mb-5" style={{ color: "#f97316" }}>
               This is what hard water does
             </p>
             <p
-              className="font-display font-bold leading-tight"
-              style={{ fontSize: "clamp(2rem, 5vw, 4rem)", color: "#ffffff", maxWidth: "16ch" }}
+              className="font-display font-bold leading-[1.05]"
+              style={{ fontSize: "clamp(2.4rem, 6vw, 5rem)", color: "#ffffff", letterSpacing: "-0.03em" }}
             >
-              Scale. Stains. Damage. Every single day.
+              Scale. Stains. Damage.{" "}
+              <span style={{ color: "rgba(255,255,255,0.3)" }}>Every single day.</span>
             </p>
           </div>
         </div>
