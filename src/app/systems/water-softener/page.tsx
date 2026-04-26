@@ -230,11 +230,11 @@ export default function WaterSoftenerPage() {
       </section>
 
       {/* PROBLEM PHOTO */}
-      <section className="relative overflow-hidden" style={{ height: "50vh", minHeight: 340 }}>
-        <Image src="/client/hero-hard-water.png" alt="Hard water scale damage" fill className="object-cover" />
+      <section className="relative overflow-hidden" style={{ height: "55vh", minHeight: 380 }}>
+        <Image src="/client/hero-water-problems.jpg" alt="Rusty discolored water from a tap — hard water iron staining" fill className="object-cover object-center" />
         <div
           className="absolute inset-0"
-          style={{ background: "linear-gradient(90deg, rgba(7,17,26,0.82) 0%, rgba(7,17,26,0.4) 50%, transparent 100%)" }}
+          style={{ background: "linear-gradient(90deg, rgba(7,17,26,0.88) 0%, rgba(7,17,26,0.6) 45%, rgba(7,17,26,0.2) 100%)" }}
         />
         <div className="absolute inset-0 flex items-center">
           <div className="container-site">
