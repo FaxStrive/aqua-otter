@@ -10,7 +10,7 @@ import Wave from "@/components/ui/Wave";
 
 const IndianaHardnessMap = dynamic(() => import("@/components/ui/IndianaHardnessMap"), {
   ssr: false,
-  loading: () => <div style={{ height: 480, borderRadius: 24, backgroundColor: "#EEF5FF" }} />,
+  loading: () => <div style={{ height: 520, borderRadius: 24, backgroundColor: "#EEF5FF" }} />,
 });
 
 const findings = [
@@ -232,12 +232,8 @@ export default function WaterSoftenerPage() {
       {/* PROBLEM STATEMENT */}
       <section
         className="relative overflow-hidden py-20 md:py-28"
-        style={{ backgroundColor: "#05080A" }}
+        style={{ backgroundColor: "#ffffff" }}
       >
-        <div
-          className="pointer-events-none absolute inset-0"
-          style={{ background: "radial-gradient(ellipse 60% 100% at 80% 50%, rgba(249,115,22,0.05) 0%, transparent 65%)" }}
-        />
         <div className="container-site relative z-10">
           <div className="max-w-3xl">
             <p className="text-xs font-bold uppercase tracking-[0.2em] mb-5" style={{ color: "#f97316" }}>
@@ -245,16 +241,14 @@ export default function WaterSoftenerPage() {
             </p>
             <p
               className="font-display font-bold leading-[1.05]"
-              style={{ fontSize: "clamp(2.4rem, 6vw, 5rem)", color: "#ffffff", letterSpacing: "-0.03em" }}
+              style={{ fontSize: "clamp(2.4rem, 6vw, 5rem)", color: "#0C1F2E", letterSpacing: "-0.03em" }}
             >
               Scale. Stains. Damage.{" "}
-              <span style={{ color: "rgba(255,255,255,0.3)" }}>Every single day.</span>
+              <span style={{ color: "rgba(12,31,46,0.25)" }}>Every single day.</span>
             </p>
           </div>
         </div>
       </section>
-
-      <Wave from="#07111A" to="#ffffff" variant="splash" height={80} />
 
       {/* FIELD REPORT — STATS */}
       <section ref={findingsRef} className="py-28 md:py-36" style={{ backgroundColor: "#ffffff" }}>

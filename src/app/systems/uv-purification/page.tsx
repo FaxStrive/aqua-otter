@@ -214,34 +214,38 @@ export default function UVPurificationPage() {
                 style={{ borderBottom: "1px solid rgba(255,255,255,0.06)" }}
               >
                 {/* Pathogen name with animated strikethrough */}
-                <div className="relative flex-1 mr-6 md:mr-12">
-                  <span
-                    className="font-display font-bold block"
-                    style={{
-                      fontSize: "clamp(1.5rem, 3vw, 2.6rem)",
-                      color: "rgba(255,255,255,0.8)",
-                      letterSpacing: "-0.02em",
-                      lineHeight: 1.1,
-                    }}
-                  >
-                    {p.name}
-                  </span>
-                  {/* Strike-through line */}
-                  <motion.div
-                    style={{
-                      position: "absolute",
-                      left: 0,
-                      top: "50%",
-                      marginTop: -1,
-                      height: 2,
-                      backgroundColor: "#12BDFB",
-                      width: "100%",
-                      transformOrigin: "left center",
-                    }}
-                    initial={{ scaleX: 0 }}
-                    animate={pathogenInView ? { scaleX: 1 } : { scaleX: 0 }}
-                    transition={{ delay: i * 0.09 + 0.3, duration: 0.45, ease: "easeOut" }}
-                  />
+                <div className="flex items-center flex-1 mr-6 md:mr-12 gap-4 min-w-0">
+                  <div className="relative flex-shrink-0">
+                    <span
+                      className="font-display font-bold block"
+                      style={{
+                        fontSize: "clamp(1.5rem, 3vw, 2.6rem)",
+                        color: "rgba(255,255,255,0.8)",
+                        letterSpacing: "-0.02em",
+                        lineHeight: 1.1,
+                      }}
+                    >
+                      {p.name}
+                    </span>
+                    {/* Strike-through — width constrained to text only */}
+                    <motion.div
+                      style={{
+                        position: "absolute",
+                        left: 0,
+                        top: "50%",
+                        marginTop: -1,
+                        height: 2,
+                        backgroundColor: "#12BDFB",
+                        width: "100%",
+                        transformOrigin: "left center",
+                      }}
+                      initial={{ scaleX: 0 }}
+                      animate={pathogenInView ? { scaleX: 1 } : { scaleX: 0 }}
+                      transition={{ delay: i * 0.09 + 0.3, duration: 0.45, ease: "easeOut" }}
+                    />
+                  </div>
+                  {/* Thin separator filling remaining space */}
+                  <div className="flex-1 h-px" style={{ backgroundColor: "rgba(255,255,255,0.06)" }} />
                 </div>
 
                 {/* Right: type + badge */}

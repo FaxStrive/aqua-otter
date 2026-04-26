@@ -17,6 +17,7 @@ const systemLinks = [
 
 const navLinks = [
   { label: "How It Works", href: "/how-it-works" },
+  { label: "Gallery", href: "/gallery" },
   { label: "Financing", href: "/financing" },
   { label: "Reviews", href: "/reviews" },
   { label: "About", href: "/about" },

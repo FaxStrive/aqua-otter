@@ -1,9 +1,9 @@
 "use client";
 
-import { useState, useRef } from "react";
-import { MapContainer, TileLayer, CircleMarker, useMap } from "react-leaflet";
+import { useState, useRef, useCallback } from "react";
+import Map, { Marker } from "react-map-gl/maplibre";
 import { motion, useInView, AnimatePresence } from "framer-motion";
-import "leaflet/dist/leaflet.css";
+import "maplibre-gl/dist/maplibre-gl.css";
 
 type City = { name: string; lat: number; lng: number; gpg: number };
 
@@ -24,37 +24,49 @@ const cities: City[] = [
   { name: "New Albany",   lat: 38.286, lng: -85.824, gpg: 14 },
 ];
 
+// CartoDB Positron style — clean minimal tiles, no API key needed
+const MAP_STYLE = {
+  version: 8 as const,
+  sources: {
+    carto: {
+      type: "raster" as const,
+      tiles: ["https://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}@2x.png"],
+      tileSize: 256,
+      attribution: "© CartoDB",
+    },
+  },
+  layers: [{ id: "carto-tiles", type: "raster" as const, source: "carto" }],
+};
+
 function getColor(gpg: number) {
-  if (gpg >= 20) return { fill: "#ffffff", stroke: "rgba(18,189,251,0.8)" };
-  if (gpg >= 16) return { fill: "#12BDFB", stroke: "#0a9ed9" };
-  if (gpg >= 12) return { fill: "rgba(18,189,251,0.75)", stroke: "rgba(18,189,251,0.9)" };
-  return { fill: "rgba(18,189,251,0.45)", stroke: "rgba(18,189,251,0.7)" };
+  if (gpg >= 20) return { fill: "#ffffff", stroke: "rgba(18,189,251,0.9)", size: 14 };
+  if (gpg >= 16) return { fill: "#12BDFB", stroke: "#0a9ed9",              size: 12 };
+  if (gpg >= 12) return { fill: "rgba(18,189,251,0.75)", stroke: "rgba(18,189,251,0.9)", size: 10 };
+  return          { fill: "rgba(18,189,251,0.45)", stroke: "rgba(18,189,251,0.7)",        size: 9 };
 }
 
 function getLabel(gpg: number) {
   if (gpg >= 20) return { level: "Extremely hard", desc: "Severe scale, appliance damage — immediate treatment advised" };
-  if (gpg >= 16) return { level: "Very hard", desc: "Noticeable scale, skin irritation, high soap consumption" };
-  if (gpg >= 12) return { level: "Hard", desc: "Scale buildup begins, water heater efficiency drops measurably" };
-  return { level: "Moderately hard", desc: "Minor deposits forming, treatment recommended" };
-}
-
-function DisableInteractions() {
-  const map = useMap();
-  map.scrollWheelZoom.disable();
-  return null;
+  if (gpg >= 16) return { level: "Very hard",      desc: "Noticeable scale, skin irritation, high soap consumption" };
+  if (gpg >= 12) return { level: "Hard",           desc: "Scale buildup begins, water heater efficiency drops measurably" };
+  return                 { level: "Moderately hard", desc: "Minor deposits forming, treatment recommended" };
 }
 
 export default function IndianaHardnessMap() {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const inView = useInView(wrapperRef, { once: true, margin: "-80px" });
   const [selected, setSelected] = useState<City | null>(null);
-  const [hovered, setHovered] = useState<City | null>(null);
+  const [hovered, setHovered]   = useState<City | null>(null);
   const active = selected || hovered;
+
+  const handleMarkerClick = useCallback((city: City) => {
+    setSelected(prev => prev?.name === city.name ? null : city);
+  }, []);
 
   return (
     <div ref={wrapperRef} className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-10 lg:gap-16 items-start">
 
-      {/* LEFT: Leaflet map */}
+      {/* LEFT: map */}
       <motion.div
         initial={{ opacity: 0, x: -24 }}
         animate={inView ? { opacity: 1, x: 0 } : {}}
@@ -62,46 +74,66 @@ export default function IndianaHardnessMap() {
       >
         <div
           className="rounded-3xl overflow-hidden"
-          style={{ height: 520, border: "1px solid rgba(18,189,251,0.18)", boxShadow: "0 12px 48px rgba(12,31,46,0.1)" }}
+          style={{
+            height: 520,
+            border: "1px solid rgba(18,189,251,0.18)",
+            boxShadow: "0 12px 48px rgba(12,31,46,0.1)",
+          }}
         >
-          <MapContainer
-            center={[39.85, -86.35]}
-            zoom={7}
+          <Map
+            initialViewState={{ longitude: -86.35, latitude: 39.85, zoom: 6.4 }}
             style={{ width: "100%", height: "100%" }}
-            zoomControl={false}
+            mapStyle={MAP_STYLE}
+            scrollZoom={false}
             attributionControl={false}
           >
-            <DisableInteractions />
-
-            {/* CartoDB Positron — clean light tiles, no API key */}
-            <TileLayer
-              url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
-              subdomains="abcd"
-            />
-
             {cities.map((city) => {
               const c = getColor(city.gpg);
               const isActive = active?.name === city.name;
+              const size = isActive ? c.size + 4 : c.size;
               return (
-                <CircleMarker
+                <Marker
                   key={city.name}
-                  center={[city.lat, city.lng]}
-                  radius={isActive ? 12 : 8}
-                  pathOptions={{
-                    fillColor: isActive ? "#12BDFB" : c.fill,
-                    fillOpacity: 1,
-                    color: isActive ? "#ffffff" : c.stroke,
-                    weight: isActive ? 3 : 1.5,
-                  }}
-                  eventHandlers={{
-                    mouseover: () => setHovered(city),
-                    mouseout: () => setHovered(null),
-                    click: () => setSelected(prev => prev?.name === city.name ? null : city),
-                  }}
-                />
+                  longitude={city.lng}
+                  latitude={city.lat}
+                  anchor="center"
+                >
+                  <div
+                    style={{ position: "relative", width: size + 8, height: size + 8, display: "flex", alignItems: "center", justifyContent: "center" }}
+                    onMouseEnter={() => setHovered(city)}
+                    onMouseLeave={() => setHovered(null)}
+                    onClick={() => handleMarkerClick(city)}
+                  >
+                    {isActive && (
+                      <div
+                        style={{
+                          position: "absolute",
+                          inset: 0,
+                          borderRadius: "50%",
+                          backgroundColor: "rgba(18,189,251,0.18)",
+                          transform: "scale(1.5)",
+                        }}
+                      />
+                    )}
+                    <div
+                      style={{
+                        width: size,
+                        height: size,
+                        borderRadius: "50%",
+                        backgroundColor: isActive ? "#12BDFB" : c.fill,
+                        border: `${isActive ? 2.5 : 1.5}px solid ${isActive ? "#0C1F2E" : c.stroke}`,
+                        cursor: "pointer",
+                        transition: "all 0.15s ease",
+                        boxShadow: isActive ? "0 2px 12px rgba(18,189,251,0.5)" : "0 1px 4px rgba(0,0,0,0.15)",
+                        position: "relative",
+                        zIndex: isActive ? 10 : 1,
+                      }}
+                    />
+                  </div>
+                </Marker>
               );
             })}
-          </MapContainer>
+          </Map>
         </div>
         <p className="text-center text-xs mt-3" style={{ color: "rgba(12,31,46,0.28)" }}>
           Municipal water reports and field testing. Click a city dot.
@@ -132,8 +164,8 @@ export default function IndianaHardnessMap() {
           </p>
           <div className="space-y-2.5">
             {[
-              { label: "Extremely hard", range: "20+ GPG",     fill: "#ffffff",              ring: "rgba(18,189,251,0.6)",  note: "Fort Wayne, Gary" },
-              { label: "Very hard",      range: "16 – 19 GPG", fill: "#12BDFB",              ring: "#0a9ed9",               note: "Most of central IN" },
+              { label: "Extremely hard", range: "20+ GPG",     fill: "#ffffff",               ring: "rgba(18,189,251,0.6)",  note: "Fort Wayne, Gary" },
+              { label: "Very hard",      range: "16 – 19 GPG", fill: "#12BDFB",               ring: "#0a9ed9",               note: "Most of central IN" },
               { label: "Hard",           range: "12 – 15 GPG", fill: "rgba(18,189,251,0.75)", ring: "rgba(18,189,251,0.9)", note: "SW Indiana" },
               { label: "Moderate",       range: "7 – 11 GPG",  fill: "rgba(18,189,251,0.45)", ring: "rgba(18,189,251,0.7)", note: "Evansville area" },
             ].map((s) => (

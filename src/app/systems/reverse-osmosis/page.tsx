@@ -175,20 +175,27 @@ export default function ReverseOsmosisPage() {
               </div>
             </motion.div>
 
-            <motion.div initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.9, delay: 0.1 }} className="hidden lg:flex items-center justify-center" style={{ y: imgY }}>
-              <div className="relative" style={{ width: 420, height: 480 }}>
-                <div className="absolute inset-0 rounded-full" style={{ background: "radial-gradient(circle, rgba(18,189,251,0.12) 0%, transparent 70%)" }} />
-                <div className="absolute inset-[-30px] rounded-full animate-pulse" style={{ background: "radial-gradient(circle, rgba(18,189,251,0.04) 0%, transparent 60%)" }} />
-                <Image src="/client/5_Stage_Reverse_Osmosis_RB.png" alt="5-Stage Reverse Osmosis System" width={400} height={460} className="object-contain w-full h-full relative z-10" style={{ filter: "drop-shadow(0 16px 48px rgba(18,189,251,0.25))" }} />
-                <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.8 }} className="absolute -bottom-4 -left-8 rounded-2xl border px-5 py-3.5" style={{ backgroundColor: "rgba(10,24,37,0.9)", backdropFilter: "blur(16px)", borderColor: "rgba(18,189,251,0.2)", boxShadow: "0 8px 32px rgba(0,0,0,0.4)" }}>
-                  <p className="font-display font-bold" style={{ fontSize: "1.8rem", color: "#12BDFB", lineHeight: 1 }}>99%</p>
-                  <p className="text-xs mt-1" style={{ color: "rgba(255,255,255,0.4)" }}>TDS removal</p>
+            <motion.div initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.9, delay: 0.2 }} className="hidden lg:grid grid-cols-2 gap-3">
+              {[
+                { stat: "99%",   label: "Lead removed",        delay: 0.3 },
+                { stat: "99%",   label: "Arsenic eliminated",  delay: 0.4 },
+                { stat: "97%",   label: "Nitrates removed",    delay: 0.5 },
+                { stat: "95%+",  label: "PFAS blocked",        delay: 0.6 },
+                { stat: "$600+", label: "Saved vs. bottled water per year", delay: 0.7 },
+                { stat: "5",     label: "Filtration stages",   delay: 0.8 },
+              ].map((item) => (
+                <motion.div
+                  key={item.label}
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: item.delay }}
+                  className="rounded-2xl border p-5"
+                  style={{ backgroundColor: "rgba(10,24,37,0.7)", backdropFilter: "blur(12px)", borderColor: "rgba(18,189,251,0.12)" }}
+                >
+                  <p className="font-display font-bold leading-none mb-1.5" style={{ fontSize: "2rem", color: "#12BDFB" }}>{item.stat}</p>
+                  <p className="text-xs leading-snug" style={{ color: "rgba(255,255,255,0.38)" }}>{item.label}</p>
                 </motion.div>
-                <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.95 }} className="absolute -top-2 -right-6 rounded-2xl border px-5 py-3.5 text-center" style={{ backgroundColor: "rgba(10,24,37,0.9)", backdropFilter: "blur(16px)", borderColor: "rgba(18,189,251,0.2)", boxShadow: "0 8px 32px rgba(0,0,0,0.4)" }}>
-                  <p className="font-display font-bold" style={{ fontSize: "1.1rem", color: "#12BDFB", lineHeight: 1.2 }}>Stop buying</p>
-                  <p className="text-xs mt-1" style={{ color: "rgba(255,255,255,0.4)" }}>bottled water</p>
-                </motion.div>
-              </div>
+              ))}
             </motion.div>
           </div>
         </div>
@@ -667,15 +674,20 @@ export default function ReverseOsmosisPage() {
             <div style={{ backgroundColor: "#ffffff", padding: "2.5rem 3rem" }}>
               <AnimatePresence mode="wait">
                 <motion.div key={products[activeProduct].name} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.22 }}>
-                  <div className="flex items-start justify-between mb-6 gap-4">
-                    <div>
-                      <div className="inline-flex px-3 py-1 rounded-full text-xs font-bold mb-3" style={{ backgroundColor: "#12BDFB", color: "#07111A" }}>{products[activeProduct].badge}</div>
-                      <h3 className="font-display font-bold" style={{ fontSize: "1.65rem", color: "#0C1F2E", lineHeight: 1.1 }}>{products[activeProduct].name}</h3>
-                    </div>
-                    <div className="flex items-center justify-center rounded-2xl flex-shrink-0" style={{ backgroundColor: "#EAF6FE", width: 120, height: 120 }}>
-                      <Image src={products[activeProduct].img} alt={products[activeProduct].name} width={100} height={100} className="object-contain" style={{ maxHeight: 96, filter: "drop-shadow(0 4px 12px rgba(18,189,251,0.25))" }} />
-                    </div>
+                  {/* Product image showcase */}
+                  <div className="flex items-center justify-center rounded-2xl mb-6" style={{ backgroundColor: "#EAF6FE", height: 220, position: "relative" }}>
+                    <div className="absolute inset-0 rounded-2xl" style={{ background: "radial-gradient(circle at 60% 50%, rgba(18,189,251,0.12) 0%, transparent 70%)" }} />
+                    <Image
+                      src={products[activeProduct].img}
+                      alt={products[activeProduct].name}
+                      width={280}
+                      height={200}
+                      className="object-contain relative z-10"
+                      style={{ maxHeight: 196, filter: "drop-shadow(0 8px 24px rgba(18,189,251,0.3))" }}
+                    />
                   </div>
+                  <div className="inline-flex px-3 py-1 rounded-full text-xs font-bold mb-3" style={{ backgroundColor: "#12BDFB", color: "#07111A" }}>{products[activeProduct].badge}</div>
+                  <h3 className="font-display font-bold mb-4" style={{ fontSize: "1.65rem", color: "#0C1F2E", lineHeight: 1.1 }}>{products[activeProduct].name}</h3>
                   <p className="text-sm leading-relaxed mb-6" style={{ color: "rgba(12,31,46,0.55)", maxWidth: "44ch" }}>{products[activeProduct].desc}</p>
                   <div style={{ borderTop: "1px solid rgba(12,31,46,0.07)" }}>
                     {products[activeProduct].specs.map(s => (
@@ -694,12 +706,19 @@ export default function ReverseOsmosisPage() {
             <div className="flex flex-col gap-1.5" style={{ backgroundColor: "#EAF6FE", padding: "1rem" }}>
               {products.map((p, i) => (
                 <button key={p.name} onClick={() => setActiveProduct(i)} className="text-left w-full rounded-2xl transition-all duration-200"
-                  style={{ padding: "1.25rem 1.5rem", backgroundColor: i === activeProduct ? "#ffffff" : "transparent", border: "none", cursor: "pointer", boxShadow: i === activeProduct ? "0 2px 12px rgba(12,31,46,0.06)" : "none" }}>
-                  <div className="flex items-center justify-between mb-1.5">
-                    <span className="text-sm font-semibold" style={{ color: "#0C1F2E" }}>{p.name}</span>
-                    <span className="text-xs font-bold rounded-full px-2.5 py-1" style={{ color: "#12BDFB", backgroundColor: "rgba(18,189,251,0.12)" }}>{p.badge}</span>
+                  style={{ padding: "1rem 1.25rem", backgroundColor: i === activeProduct ? "#ffffff" : "transparent", border: "none", cursor: "pointer", boxShadow: i === activeProduct ? "0 2px 12px rgba(12,31,46,0.06)" : "none" }}>
+                  <div className="flex items-center gap-3">
+                    <div className="flex-shrink-0 rounded-xl flex items-center justify-center" style={{ width: 64, height: 64, backgroundColor: i === activeProduct ? "#EAF6FE" : "rgba(18,189,251,0.06)" }}>
+                      <Image src={p.img} alt={p.name} width={56} height={56} className="object-contain" style={{ maxHeight: 52, filter: "drop-shadow(0 2px 6px rgba(18,189,251,0.2))" }} />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center justify-between gap-2 mb-1">
+                        <span className="text-sm font-semibold truncate" style={{ color: "#0C1F2E" }}>{p.name}</span>
+                        <span className="text-xs font-bold rounded-full px-2.5 py-1 flex-shrink-0" style={{ color: "#12BDFB", backgroundColor: "rgba(18,189,251,0.12)" }}>{p.badge}</span>
+                      </div>
+                      <p className="text-xs leading-relaxed" style={{ color: "rgba(12,31,46,0.42)" }}>{p.desc.split(".")[0]}.</p>
+                    </div>
                   </div>
-                  <p className="text-xs leading-relaxed" style={{ color: "rgba(12,31,46,0.42)" }}>{p.desc.split(".")[0]}.</p>
                 </button>
               ))}
               <div className="rounded-2xl p-5 mt-auto" style={{ backgroundColor: "#0C1F2E" }}>

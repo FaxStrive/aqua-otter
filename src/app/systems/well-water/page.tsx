@@ -274,29 +274,26 @@ export default function WellWaterPage() {
         </div>
       </section>
 
-      {/* PROBLEM PHOTO */}
-      <section className="relative overflow-hidden" style={{ height: "50vh", minHeight: 340 }}>
-        <Image src="/client/hero-iron-problems.png" alt="Iron stains from well water" fill className="object-cover" />
-        <div
-          className="absolute inset-0"
-          style={{ background: "linear-gradient(90deg, rgba(7,17,26,0.88) 0%, rgba(7,17,26,0.45) 55%, transparent 100%)" }}
-        />
-        <div className="absolute inset-0 flex items-center">
-          <div className="container-site">
-            <p className="text-xs font-bold uppercase tracking-[0.2em] mb-3" style={{ color: "#ef4444" }}>
+      {/* PROBLEM STATEMENT */}
+      <section
+        className="relative overflow-hidden py-20 md:py-28"
+        style={{ backgroundColor: "#ffffff" }}
+      >
+        <div className="container-site relative z-10">
+          <div className="max-w-3xl">
+            <p className="text-xs font-bold uppercase tracking-[0.2em] mb-5" style={{ color: "#ef4444" }}>
               This is what iron does to your home
             </p>
             <p
-              className="font-display font-bold leading-tight"
-              style={{ fontSize: "clamp(2rem, 5vw, 4rem)", color: "#ffffff", maxWidth: "18ch" }}
+              className="font-display font-bold leading-[1.05]"
+              style={{ fontSize: "clamp(2.4rem, 6vw, 5rem)", color: "#0C1F2E", letterSpacing: "-0.03em" }}
             >
-              Orange stains. Rotten egg smell. Bacteria risk.
+              Orange stains. Rotten egg smell.{" "}
+              <span style={{ color: "rgba(12,31,46,0.25)" }}>Bacteria risk.</span>
             </p>
           </div>
         </div>
       </section>
-
-      <Wave from="#07111A" to="#ffffff" variant="splash" height={80} />
 
       {/* FIELD REPORT — STATS */}
       <section ref={findingsRef} className="py-28 md:py-36" style={{ backgroundColor: "#ffffff" }}>
