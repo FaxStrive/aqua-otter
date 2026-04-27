@@ -7,14 +7,20 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 const photos = [
-  { src: "/client/gallery/gallery20.jpg", label: "Noblesville, IN", system: "Whole-Home Filtration" },
-  { src: "/client/gallery/gallery21.jpg", label: "Fishers, IN",     system: "Softener + Filtration" },
-  { src: "/client/gallery/gallery22.jpg", label: "Carmel, IN",      system: "Water Softener" },
-  { src: "/client/gallery/gallery23.jpg", label: "Indianapolis, IN", system: "Dual System" },
-  { src: "/client/gallery/gallery24.jpg", label: "Grand Rapids, MI", system: "Well Water System" },
-  { src: "/client/gallery/gallery25.jpg", label: "South Bend, IN",   system: "UV Purification" },
-  { src: "/client/gallery/gallery26.jpg", label: "Lafayette, IN",    system: "Water Softener" },
-  { src: "/client/gallery/gallery27.jpg", label: "Fort Wayne, IN",   system: "RO System" },
+  { src: "/client/gallery/install-01.png", label: "Indianapolis, IN", system: "AiO Filtration + Conditioner" },
+  { src: "/client/gallery/install-02.png", label: "Fishers, IN",      system: "AiO Filtration + Softener" },
+  { src: "/client/gallery/install-03.png", label: "Noblesville, IN",  system: "AiO Well Filtration + Conditioner" },
+  { src: "/client/gallery/install-04.png", label: "Carmel, IN",       system: "AiO Well Filtration + Softener" },
+  { src: "/client/gallery/install-05.png", label: "Westfield, IN",    system: "AiO Filtration + Conditioner" },
+  { src: "/client/gallery/install-06.png", label: "Zionsville, IN",   system: "AiO Ozone + Softener" },
+  { src: "/client/gallery/install-07.png", label: "Kokomo, IN",       system: "All-in-One Filtration + Softener" },
+  { src: "/client/gallery/install-08.png", label: "Grand Rapids, MI", system: "Alpha 3000 System" },
+  { src: "/client/gallery/install-09.png", label: "Fort Wayne, IN",   system: "Custom Water System" },
+  { src: "/client/gallery/install-10.png", label: "South Bend, IN",   system: "Quintex 5 Softener" },
+  { src: "/client/gallery/install-11.png", label: "Lafayette, IN",    system: "Quintex 5 Softener" },
+  { src: "/client/gallery/install-12.png", label: "Muncie, IN",       system: "Quintex Five System" },
+  { src: "/client/gallery/install-13.png", label: "Elkhart, IN",      system: "Well Filtration + Softener" },
+  { src: "/client/gallery/install-14.png", label: "Terre Haute, IN",  system: "Whole House RO" },
 ];
 
 export default function Gallery() {
