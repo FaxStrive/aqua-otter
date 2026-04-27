@@ -28,14 +28,14 @@ const WATER_SOURCES = [
 ];
 
 const CONCERNS = [
-  { id: "hardness",     label: "Hard water / Scale",   sub: "White buildup on fixtures and appliances"  },
-  { id: "iron_stains",  label: "Iron / rust stains",   sub: "Orange or brown discoloration in sinks"    },
-  { id: "bad_taste",    label: "Bad taste or odor",    sub: "Chlorine smell or flat, off flavor"        },
-  { id: "sulfur_smell", label: "Sulfur smell",         sub: "Rotten egg odor from the tap"              },
-  { id: "dry_skin",     label: "Dry skin or hair",     sub: "After showering or bathing"                },
-  { id: "bottled_water",label: "Buying bottled water", sub: "Don't trust drinking straight from the tap"},
-  { id: "bacteria",     label: "Bacteria / Safety",    sub: "Especially common on well water"           },
-  { id: "not_sure",     label: "Not sure — just test", sub: "Let the water results guide the solution"  },
+  { id: "hardness",     label: "Hard water",       sub: "Scale & mineral buildup",      bg: "linear-gradient(135deg, #0d1f3c 0%, #1a3a5c 100%)",  accent: "#4db8ff" },
+  { id: "iron_stains",  label: "Iron stains",      sub: "Orange / rust discoloration",  bg: "linear-gradient(135deg, #2d1200 0%, #5c2800 100%)",  accent: "#ff8c42" },
+  { id: "bad_taste",    label: "Bad taste",        sub: "Chlorine or flat flavor",      bg: "linear-gradient(135deg, #001a1a 0%, #003333 100%)",  accent: "#00e5cc" },
+  { id: "sulfur_smell", label: "Sulfur smell",     sub: "Rotten egg odor",              bg: "linear-gradient(135deg, #1a1a00 0%, #333300 100%)",  accent: "#d4e600" },
+  { id: "dry_skin",     label: "Dry skin",         sub: "After showering or bathing",   bg: "linear-gradient(135deg, #1a001a 0%, #360036 100%)",  accent: "#e066ff" },
+  { id: "bottled_water",label: "Bottled water",    sub: "Don't trust the tap",          bg: "linear-gradient(135deg, #001a0d 0%, #003320 100%)",  accent: "#00e676" },
+  { id: "bacteria",     label: "Bacteria risk",    sub: "Especially on well water",     bg: "linear-gradient(135deg, #1a0000 0%, #3d0000 100%)",  accent: "#ff4444" },
+  { id: "not_sure",     label: "Not sure",         sub: "Let results guide us",         bg: "linear-gradient(135deg, #0d0d1a 0%, #1a1a33 100%)",  accent: "#a0a0ff" },
 ];
 
 const HOUSEHOLD_SIZES = [
@@ -140,6 +140,58 @@ function TextCard({
           }}
         >
           {selected && <Check className="w-3.5 h-3.5 text-white" />}
+        </div>
+      </div>
+    </button>
+  );
+}
+
+function ConcernCard({
+  label, sub, bg, accent, selected, onClick,
+}: {
+  label: string; sub: string; bg: string; accent: string; selected: boolean; onClick: () => void;
+}) {
+  return (
+    <button
+      onClick={onClick}
+      className="relative overflow-hidden rounded-2xl text-left transition-all duration-200 w-full"
+      style={{
+        background: bg,
+        border: selected ? `2px solid ${accent}` : "2px solid transparent",
+        boxShadow: selected ? `0 0 0 3px ${accent}22, 0 8px 24px rgba(0,0,0,0.3)` : "0 4px 16px rgba(0,0,0,0.2)",
+        aspectRatio: "1 / 1",
+      }}
+    >
+      {/* Accent glow blob */}
+      <div
+        className="absolute pointer-events-none"
+        style={{
+          width: "80%", height: "80%",
+          top: "-20%", right: "-20%",
+          borderRadius: "50%",
+          background: `radial-gradient(circle, ${accent}18 0%, transparent 70%)`,
+          transition: "opacity 0.2s",
+          opacity: selected ? 1 : 0.5,
+        }}
+      />
+
+      {/* Content */}
+      <div className="absolute inset-0 flex flex-col justify-between p-4">
+        <div
+          className="w-2 h-2 rounded-full self-end"
+          style={{ backgroundColor: selected ? accent : "rgba(255,255,255,0.15)", transition: "background-color 0.2s" }}
+        />
+        <div>
+          {selected && (
+            <div className="mb-2 inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold"
+              style={{ backgroundColor: `${accent}22`, color: accent }}>
+              <Check className="w-2.5 h-2.5" /> Selected
+            </div>
+          )}
+          <p className="font-display font-bold leading-tight text-white" style={{ fontSize: "clamp(1rem, 3.5vw, 1.15rem)" }}>
+            {label}
+          </p>
+          <p className="text-xs mt-1 leading-snug" style={{ color: "rgba(255,255,255,0.45)" }}>{sub}</p>
         </div>
       </div>
     </button>
@@ -343,12 +395,14 @@ export default function GetStartedPage() {
               <p className="text-sm mb-6" style={{ color: "rgba(12,31,46,0.45)" }}>
                 Pick everything that applies. Multiple is fine.
               </p>
-              <div className="flex flex-col gap-2">
+              <div className="grid grid-cols-2 gap-3">
                 {CONCERNS.map(c => (
-                  <TextCard
+                  <ConcernCard
                     key={c.id}
                     label={c.label}
                     sub={c.sub}
+                    bg={c.bg}
+                    accent={c.accent}
                     selected={answers.concerns.includes(c.id)}
                     onClick={() => toggle("concerns", c.id)}
                   />
