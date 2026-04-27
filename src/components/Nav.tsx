@@ -160,7 +160,7 @@ export default function Nav() {
               <Phone className="w-3.5 h-3.5" style={{ color: "#12BDFB" }} />
               (317) 983-5919
             </a>
-            <Link href="/contact"
+            <Link href="/get-started"
               className="px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-200"
               style={{ backgroundColor: "#12BDFB", color: "#0C1F2E", boxShadow: "0 2px 12px rgba(18,189,251,0.25)" }}
               onMouseEnter={e => { e.currentTarget.style.backgroundColor = "#3DCFFF"; }}
@@ -205,7 +205,7 @@ export default function Nav() {
                   <Phone className="w-4 h-4" style={{ color: "#12BDFB" }} />
                   (317) 983-5919
                 </a>
-                <Link href="/contact" onClick={() => setOpen(false)} className="block w-full text-center py-3.5 rounded-full text-sm font-semibold" style={{ backgroundColor: "#12BDFB", color: "#0C1F2E" }}>
+                <Link href="/get-started" onClick={() => setOpen(false)} className="block w-full text-center py-3.5 rounded-full text-sm font-semibold" style={{ backgroundColor: "#12BDFB", color: "#0C1F2E" }}>
                   Free Water Test
                 </Link>
               </div>

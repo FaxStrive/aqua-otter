@@ -87,7 +87,7 @@ export default function CTA() {
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-3">
               <Link
-                href="/contact"
+                href="/get-started"
                 className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full text-sm font-semibold transition-all duration-200"
                 style={{
                   backgroundColor: "#12BDFB",

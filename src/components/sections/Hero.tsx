@@ -117,7 +117,7 @@ export default function Hero() {
               className="flex flex-col sm:flex-row gap-3 mb-8"
             >
               <Link
-                href="/contact"
+                href="/get-started"
                 className="group inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full text-sm font-semibold transition-all duration-200"
                 style={{ backgroundColor: "#12BDFB", color: "#07111A", letterSpacing: "0.01em" }}
                 onMouseEnter={e => { e.currentTarget.style.backgroundColor = "#3DCFFF"; }}
