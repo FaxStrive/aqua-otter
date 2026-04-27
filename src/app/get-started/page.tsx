@@ -28,14 +28,14 @@ const WATER_SOURCES = [
 ];
 
 const CONCERNS = [
-  { id: "hardness",     label: "Hard water / Scale",    sub: "White buildup on fixtures",   img: "/client/hero-hard-water.png"       },
-  { id: "iron_stains",  label: "Iron stains",           sub: "Orange / rust discoloration",  img: "/client/hero-iron-problems.png"    },
-  { id: "bad_taste",    label: "Bad taste or odor",     sub: "Chlorine or flat flavor",      img: "/client/service-woman-drinking.jpg" },
-  { id: "sulfur_smell", label: "Sulfur smell",          sub: "\"Rotten egg\" odor",          img: "/client/hero-smelly-water.png"     },
-  { id: "dry_skin",     label: "Dry skin or hair",      sub: "After showering or bathing",   img: "/client/service-shower.jpg"        },
-  { id: "bottled_water",label: "Buying bottled water",  sub: "Don't trust the tap",          img: "/client/service-kid-drinking.jpg"  },
-  { id: "bacteria",     label: "Bacteria / Safety",     sub: "Especially on well water",     img: "/client/service-tech-consult.jpg"  },
-  { id: "not_sure",     label: "Not sure — just test",  sub: "Let the results guide us",     img: "/client/Testing_Otter-removebg-preview.png" },
+  { id: "hardness",     label: "Hard water / Scale",   sub: "White buildup on fixtures",   icon: "🪨" },
+  { id: "iron_stains",  label: "Iron / rust stains",   sub: "Orange discoloration",        icon: "🟠" },
+  { id: "bad_taste",    label: "Bad taste or odor",    sub: "Chlorine or flat flavor",     icon: "💧" },
+  { id: "sulfur_smell", label: "Sulfur smell",         sub: "Rotten egg odor",             icon: "💨" },
+  { id: "dry_skin",     label: "Dry skin or hair",     sub: "After showering or bathing",  icon: "🚿" },
+  { id: "bottled_water",label: "Buying bottled water", sub: "Don't trust the tap",         icon: "🍶" },
+  { id: "bacteria",     label: "Bacteria / Safety",    sub: "Especially on well water",    icon: "🦠" },
+  { id: "not_sure",     label: "Not sure — just test", sub: "Let the results guide us",    icon: "🔬" },
 ];
 
 const HOUSEHOLD_SIZES = [
@@ -71,9 +71,9 @@ function ProgressBar({ step, total }: { step: number; total: number }) {
 }
 
 function ImageCard({
-  img, label, sub, selected, onClick, multi,
+  img, label, sub, selected, onClick,
 }: {
-  img: string; label: string; sub: string; selected: boolean; onClick: () => void; multi?: boolean;
+  img: string; label: string; sub: string; selected: boolean; onClick: () => void;
 }) {
   return (
     <button
@@ -106,6 +106,41 @@ function ImageCard({
       <div className="absolute bottom-0 left-0 right-0 p-3">
         <p className="font-semibold text-white text-sm leading-tight">{label}</p>
         <p className="text-[11px] mt-0.5" style={{ color: "rgba(255,255,255,0.55)" }}>{sub}</p>
+      </div>
+    </button>
+  );
+}
+
+function IconCard({
+  icon, label, sub, selected, onClick,
+}: {
+  icon: string; label: string; sub: string; selected: boolean; onClick: () => void;
+}) {
+  return (
+    <button
+      onClick={onClick}
+      className="rounded-2xl p-4 text-left transition-all duration-200 w-full flex flex-col gap-2"
+      style={{
+        border: selected ? "2px solid #12BDFB" : "2px solid rgba(12,31,46,0.08)",
+        backgroundColor: selected ? "rgba(18,189,251,0.06)" : "#ffffff",
+        boxShadow: selected ? "0 0 0 4px rgba(18,189,251,0.1)" : "none",
+      }}
+    >
+      <div className="flex items-start justify-between">
+        <span className="text-2xl leading-none">{icon}</span>
+        <div
+          className="w-5 h-5 rounded-full border-2 flex items-center justify-center flex-shrink-0"
+          style={{
+            borderColor: selected ? "#12BDFB" : "rgba(12,31,46,0.15)",
+            backgroundColor: selected ? "#12BDFB" : "transparent",
+          }}
+        >
+          {selected && <Check className="w-3 h-3 text-white" />}
+        </div>
+      </div>
+      <div>
+        <p className="font-semibold text-sm leading-tight" style={{ color: "#0C1F2E" }}>{label}</p>
+        <p className="text-xs mt-0.5" style={{ color: "rgba(12,31,46,0.4)" }}>{sub}</p>
       </div>
     </button>
   );
@@ -167,7 +202,7 @@ function Slide({ children, dir, stepKey }: { children: React.ReactNode; dir: num
 
 // ─── Main page ────────────────────────────────────────────────────────────────
 
-const TOTAL_STEPS = 8;
+const TOTAL_STEPS = 7;
 
 export default function GetStartedPage() {
   const [step, setStep] = useState(0);
@@ -344,14 +379,13 @@ export default function GetStartedPage() {
               </p>
               <div className="grid grid-cols-2 gap-3">
                 {CONCERNS.map(c => (
-                  <ImageCard
+                  <IconCard
                     key={c.id}
-                    img={c.img}
+                    icon={c.icon}
                     label={c.label}
                     sub={c.sub}
                     selected={answers.concerns.includes(c.id)}
                     onClick={() => toggle("concerns", c.id)}
-                    multi
                   />
                 ))}
               </div>
@@ -461,10 +495,10 @@ export default function GetStartedPage() {
           {step === 6 && (
             <div>
               <h2 className="font-display font-bold mb-1" style={{ fontSize: "clamp(1.6rem, 5vw, 2.2rem)", color: "#0C1F2E" }}>
-                Where should we send your results?
+                Last step — how do we reach you?
               </h2>
               <p className="text-sm mb-6" style={{ color: "rgba(12,31,46,0.45)" }}>
-                We&apos;ll call to schedule your free water test. No spam, ever.
+                We&apos;ll call to schedule. No spam, ever.
               </p>
               <div className="flex flex-col gap-3">
                 <div>
@@ -513,60 +547,10 @@ export default function GetStartedPage() {
                   />
                 </div>
               </div>
-            </div>
-          )}
-
-          {/* STEP 7 — Review summary */}
-          {step === 7 && (
-            <div>
-              <h2 className="font-display font-bold mb-1" style={{ fontSize: "clamp(1.6rem, 5vw, 2.2rem)", color: "#0C1F2E" }}>
-                Here&apos;s what we know.
-              </h2>
-              <p className="text-sm mb-6" style={{ color: "rgba(12,31,46,0.45)" }}>
-                Review your answers, then we&apos;ll reach out to schedule.
-              </p>
-
-              <div className="rounded-2xl overflow-hidden mb-5" style={{ border: "1px solid rgba(12,31,46,0.08)" }}>
-                {[
-                  { label: "Water source",    val: answers.waterSource === "city" ? "City / Municipal" : "Well water" },
-                  { label: "Concerns",        val: answers.concerns.length > 0 ? answers.concerns.map(c => CONCERNS.find(x => x.id === c)?.label ?? c).join(", ") : "—" },
-                  { label: "Household",       val: `${answers.household} people` },
-                  { label: "Ownership",       val: answers.ownership === "own" ? "Homeowner" : "Renting" },
-                  { label: "Timeline",        val: TIMELINES.find(t => t.id === answers.timeline)?.label ?? answers.timeline },
-                  { label: "ZIP code",        val: answers.zip },
-                  { label: "Name",            val: answers.name },
-                  { label: "Phone",           val: answers.phone },
-                  ...(answers.email ? [{ label: "Email", val: answers.email }] : []),
-                ].map((row, i) => (
-                  <div
-                    key={row.label}
-                    className="flex items-start gap-4 px-4 py-3"
-                    style={{ borderTop: i > 0 ? "1px solid rgba(12,31,46,0.06)" : "none", backgroundColor: i % 2 === 0 ? "#fafafa" : "#ffffff" }}
-                  >
-                    <span className="text-xs font-semibold uppercase tracking-wide w-24 flex-shrink-0 pt-0.5" style={{ color: "rgba(12,31,46,0.35)" }}>{row.label}</span>
-                    <span className="text-sm font-medium" style={{ color: "#0C1F2E" }}>{row.val}</span>
-                  </div>
-                ))}
-              </div>
 
               {error && (
-                <p className="text-sm text-red-500 mb-4">{error}</p>
+                <p className="text-sm text-red-500 mt-4">{error}</p>
               )}
-
-              <button
-                onClick={submit}
-                disabled={submitting}
-                className="w-full rounded-full py-4 font-semibold text-base transition-all duration-200 flex items-center justify-center gap-2"
-                style={{ backgroundColor: submitting ? "rgba(18,189,251,0.5)" : "#12BDFB", color: "#07111A" }}
-              >
-                {submitting ? "Submitting..." : (
-                  <>Book My Free Water Test <ArrowRight className="w-4 h-4" /></>
-                )}
-              </button>
-
-              <p className="text-xs text-center mt-3" style={{ color: "rgba(12,31,46,0.3)" }}>
-                No spam. No high-pressure sales. Just a technician and a test kit.
-              </p>
             </div>
           )}
         </Slide>
@@ -578,7 +562,7 @@ export default function GetStartedPage() {
         style={{ backgroundColor: "#ffffff", borderTop: "1px solid rgba(12,31,46,0.06)" }}
       >
         <div className="max-w-lg mx-auto flex items-center gap-3">
-          {step > 0 && step < 7 && (
+          {step > 0 && (
             <button
               onClick={() => go(step - 1)}
               className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0 transition-colors"
@@ -587,22 +571,10 @@ export default function GetStartedPage() {
               <ArrowLeft className="w-5 h-5" />
             </button>
           )}
-          {step === 7 && (
-            <button
-              onClick={() => go(6)}
-              className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0 transition-colors"
-              style={{ border: "2px solid rgba(12,31,46,0.1)", color: "rgba(12,31,46,0.5)" }}
-            >
-              <ArrowLeft className="w-5 h-5" />
-            </button>
-          )}
 
-          {/* Multi-select steps need explicit Next */}
-          {(step === 1 || step === 5 || step === 6) && (
+          {(step === 1 || step === 5) && (
             <button
-              onClick={() => {
-                if (step === 6) { go(7); } else { go(step + 1); }
-              }}
+              onClick={() => go(step + 1)}
               disabled={!canAdvance()}
               className="flex-1 h-12 rounded-full font-semibold text-sm flex items-center justify-center gap-2 transition-all duration-200"
               style={{
@@ -610,11 +582,29 @@ export default function GetStartedPage() {
                 color: canAdvance() ? "#07111A" : "rgba(12,31,46,0.3)",
               }}
             >
-              {step === 6 ? "Review my answers" : "Next"}
-              <ArrowRight className="w-4 h-4" />
+              Next <ArrowRight className="w-4 h-4" />
+            </button>
+          )}
+
+          {step === 6 && (
+            <button
+              onClick={submit}
+              disabled={submitting || !canAdvance()}
+              className="flex-1 h-12 rounded-full font-semibold text-sm flex items-center justify-center gap-2 transition-all duration-200"
+              style={{
+                backgroundColor: canAdvance() && !submitting ? "#12BDFB" : "rgba(12,31,46,0.06)",
+                color: canAdvance() && !submitting ? "#07111A" : "rgba(12,31,46,0.3)",
+              }}
+            >
+              {submitting ? "Booking..." : <><span>Book My Free Water Test</span> <ArrowRight className="w-4 h-4" /></>}
             </button>
           )}
         </div>
+        {step === 6 && (
+          <p className="text-xs text-center mt-2 max-w-lg mx-auto" style={{ color: "rgba(12,31,46,0.3)" }}>
+            No spam. No high-pressure sales. Just a technician and a test kit.
+          </p>
+        )}
       </div>
     </div>
   );
