@@ -12,7 +12,7 @@ export default function Hero() {
     <section
       className="relative overflow-hidden"
       style={{
-        backgroundColor: "#07111A",
+        backgroundColor: "#ffffff",
         minHeight: "100svh",
         display: "flex",
         flexDirection: "column",
@@ -21,6 +21,9 @@ export default function Hero() {
         paddingBottom: "clamp(40px, 6vh, 80px)",
       }}
     >
+      {/* Mobile: dark background so text reads on video */}
+      <div className="absolute inset-0 lg:hidden" style={{ backgroundColor: "#07111A", zIndex: 0 }} />
+
       {/* ── Full-bleed cinematic video — mobile: full BG, desktop: right half ── */}
       <motion.div
         initial={{ opacity: 0 }}
@@ -78,8 +81,12 @@ export default function Hero() {
           <span className="text-[11px] font-semibold tracking-[0.14em] uppercase" style={{ color: "#12BDFB" }}>
             Manufacturer Direct
           </span>
-          <div className="h-px flex-1" style={{ backgroundColor: "rgba(255,255,255,0.1)" }} />
-          <span className="text-[11px] font-medium tracking-[0.08em] uppercase" style={{ color: "rgba(255,255,255,0.3)" }}>
+          <div className="h-px flex-1 lg:hidden" style={{ backgroundColor: "rgba(255,255,255,0.1)" }} />
+          <div className="h-px flex-1 hidden lg:block" style={{ backgroundColor: "rgba(12,31,46,0.08)" }} />
+          <span className="text-[11px] font-medium tracking-[0.08em] uppercase lg:hidden" style={{ color: "rgba(255,255,255,0.3)" }}>
+            Indiana &amp; Michigan
+          </span>
+          <span className="text-[11px] font-medium tracking-[0.08em] uppercase hidden lg:inline" style={{ color: "rgba(12,31,46,0.3)" }}>
             Indiana &amp; Michigan
           </span>
         </motion.div>
@@ -93,7 +100,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 36 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.75, delay: 0.08, ease: [0.21, 0.47, 0.32, 0.98] }}
-              className="font-display mb-6"
+              className="font-display mb-6 lg:[color:#0C1F2E]"
               style={{ fontSize: "clamp(2.8rem, 11vw, 6.5rem)", lineHeight: 0.95, color: "#ffffff", letterSpacing: "-0.02em", fontWeight: 400 }}
             >
               The water system<br />
@@ -105,7 +112,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="leading-[1.7] mb-8"
+              className="leading-[1.7] mb-8 lg:[color:rgba(12,31,46,0.5)]"
               style={{ fontSize: "clamp(0.95rem, 3vw, 1.06rem)", color: "rgba(255,255,255,0.55)", maxWidth: "40ch", fontWeight: 400 }}
             >
               We design, build, and install every system in-house. No middlemen. No compromises. Custom-engineered for your home&apos;s water chemistry and warranted for life.
@@ -121,9 +128,9 @@ export default function Hero() {
               <Link
                 href="/contact"
                 className="group inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full text-sm font-semibold transition-all duration-200"
-                style={{ backgroundColor: "#12BDFB", color: "#07111A", letterSpacing: "0.01em" }}
-                onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = "#3DCFFF"; }}
-                onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "#12BDFB"; }}
+                style={{ backgroundColor: "#0C1F2E", color: "#ffffff", letterSpacing: "0.01em" }}
+                onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = "#12BDFB"; e.currentTarget.style.color = "#0C1F2E"; }}
+                onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "#0C1F2E"; e.currentTarget.style.color = "#ffffff"; }}
               >
                 Schedule Free Water Test
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
@@ -131,10 +138,10 @@ export default function Hero() {
 
               <a
                 href="tel:+13179835919"
-                className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full border text-sm font-medium transition-all duration-200"
-                style={{ color: "rgba(255,255,255,0.6)", borderColor: "rgba(255,255,255,0.15)" }}
-                onMouseEnter={(e) => { e.currentTarget.style.color = "#12BDFB"; e.currentTarget.style.borderColor = "#12BDFB"; }}
-                onMouseLeave={(e) => { e.currentTarget.style.color = "rgba(255,255,255,0.6)"; e.currentTarget.style.borderColor = "rgba(255,255,255,0.15)"; }}
+                className="inline-flex items-center justify-center gap-2 px-7 py-4 text-sm font-medium transition-all duration-200"
+                style={{ color: "rgba(12,31,46,0.45)" }}
+                onMouseEnter={(e) => { e.currentTarget.style.color = "#12BDFB"; }}
+                onMouseLeave={(e) => { e.currentTarget.style.color = "rgba(12,31,46,0.45)"; }}
               >
                 <Phone className="w-3.5 h-3.5" />
                 (317) 983-5919
@@ -156,12 +163,12 @@ export default function Hero() {
                     </svg>
                   ))}
                 </div>
-                <span className="text-xs font-semibold" style={{ color: "rgba(255,255,255,0.8)" }}>500+ reviews</span>
+                <span className="text-xs font-semibold lg:[color:#0C1F2E]" style={{ color: "rgba(255,255,255,0.8)" }}>500+ reviews</span>
               </div>
-              <div className="w-px h-3" style={{ backgroundColor: "rgba(255,255,255,0.15)" }} />
-              <span className="text-xs" style={{ color: "rgba(255,255,255,0.4)" }}>Lifetime warranty</span>
-              <div className="w-px h-3" style={{ backgroundColor: "rgba(255,255,255,0.15)" }} />
-              <span className="text-xs" style={{ color: "rgba(255,255,255,0.4)" }}>Same-week installation</span>
+              <div className="w-px h-3 lg:[background-color:rgba(12,31,46,0.12)]" style={{ backgroundColor: "rgba(255,255,255,0.15)" }} />
+              <span className="text-xs lg:[color:rgba(12,31,46,0.35)]" style={{ color: "rgba(255,255,255,0.4)" }}>Lifetime warranty</span>
+              <div className="w-px h-3 lg:[background-color:rgba(12,31,46,0.12)]" style={{ backgroundColor: "rgba(255,255,255,0.15)" }} />
+              <span className="text-xs lg:[color:rgba(12,31,46,0.35)]" style={{ color: "rgba(255,255,255,0.4)" }}>Same-week installation</span>
             </motion.div>
 
             {/* Mobile stats strip */}
