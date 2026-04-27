@@ -4,7 +4,7 @@ import { useState, useRef } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, Check, Phone, Layers, Droplets, FlaskConical, Wind, Sparkles, ShoppingCart, ShieldAlert, HelpCircle, type LucideIcon } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, Phone } from "lucide-react";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -27,15 +27,15 @@ const WATER_SOURCES = [
   { id: "well",  label: "Well Water",         sub: "Private well on the property", img: "/client/service-well-water.jpg"  },
 ];
 
-const CONCERNS: { id: string; label: string; sub: string; icon: LucideIcon }[] = [
-  { id: "hardness",     label: "Hard water / Scale",   sub: "White buildup on fixtures",   icon: Layers       },
-  { id: "iron_stains",  label: "Iron / rust stains",   sub: "Orange discoloration",        icon: Droplets     },
-  { id: "bad_taste",    label: "Bad taste or odor",    sub: "Chlorine or flat flavor",     icon: FlaskConical },
-  { id: "sulfur_smell", label: "Sulfur smell",         sub: "Rotten egg odor",             icon: Wind         },
-  { id: "dry_skin",     label: "Dry skin or hair",     sub: "After showering or bathing",  icon: Sparkles     },
-  { id: "bottled_water",label: "Buying bottled water", sub: "Don't trust the tap",         icon: ShoppingCart },
-  { id: "bacteria",     label: "Bacteria / Safety",    sub: "Especially on well water",    icon: ShieldAlert  },
-  { id: "not_sure",     label: "Not sure — just test", sub: "Let the results guide us",    icon: HelpCircle   },
+const CONCERNS = [
+  { id: "hardness",     label: "Hard water / Scale",   sub: "White buildup on fixtures and appliances"  },
+  { id: "iron_stains",  label: "Iron / rust stains",   sub: "Orange or brown discoloration in sinks"    },
+  { id: "bad_taste",    label: "Bad taste or odor",    sub: "Chlorine smell or flat, off flavor"        },
+  { id: "sulfur_smell", label: "Sulfur smell",         sub: "Rotten egg odor from the tap"              },
+  { id: "dry_skin",     label: "Dry skin or hair",     sub: "After showering or bathing"                },
+  { id: "bottled_water",label: "Buying bottled water", sub: "Don't trust drinking straight from the tap"},
+  { id: "bacteria",     label: "Bacteria / Safety",    sub: "Especially common on well water"           },
+  { id: "not_sure",     label: "Not sure — just test", sub: "Let the water results guide the solution"  },
 ];
 
 const HOUSEHOLD_SIZES = [
@@ -111,45 +111,6 @@ function ImageCard({
   );
 }
 
-function IconCard({
-  icon: Icon, label, sub, selected, onClick,
-}: {
-  icon: LucideIcon; label: string; sub: string; selected: boolean; onClick: () => void;
-}) {
-  return (
-    <button
-      onClick={onClick}
-      className="rounded-2xl p-4 text-left transition-all duration-200 w-full flex flex-col gap-3"
-      style={{
-        border: selected ? "2px solid #12BDFB" : "2px solid rgba(12,31,46,0.08)",
-        backgroundColor: selected ? "rgba(18,189,251,0.06)" : "#ffffff",
-        boxShadow: selected ? "0 0 0 4px rgba(18,189,251,0.1)" : "none",
-      }}
-    >
-      <div className="flex items-start justify-between">
-        <div
-          className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0"
-          style={{ backgroundColor: selected ? "rgba(18,189,251,0.15)" : "rgba(12,31,46,0.05)" }}
-        >
-          <Icon className="w-4.5 h-4.5" style={{ color: selected ? "#12BDFB" : "rgba(12,31,46,0.45)" }} strokeWidth={1.75} />
-        </div>
-        <div
-          className="w-5 h-5 rounded-full border-2 flex items-center justify-center flex-shrink-0"
-          style={{
-            borderColor: selected ? "#12BDFB" : "rgba(12,31,46,0.15)",
-            backgroundColor: selected ? "#12BDFB" : "transparent",
-          }}
-        >
-          {selected && <Check className="w-3 h-3 text-white" />}
-        </div>
-      </div>
-      <div>
-        <p className="font-semibold text-sm leading-tight" style={{ color: "#0C1F2E" }}>{label}</p>
-        <p className="text-xs mt-0.5" style={{ color: "rgba(12,31,46,0.4)" }}>{sub}</p>
-      </div>
-    </button>
-  );
-}
 
 function TextCard({
   label, sub, selected, onClick,
@@ -382,11 +343,10 @@ export default function GetStartedPage() {
               <p className="text-sm mb-6" style={{ color: "rgba(12,31,46,0.45)" }}>
                 Pick everything that applies. Multiple is fine.
               </p>
-              <div className="grid grid-cols-2 gap-3">
+              <div className="flex flex-col gap-2">
                 {CONCERNS.map(c => (
-                  <IconCard
+                  <TextCard
                     key={c.id}
-                    icon={c.icon}
                     label={c.label}
                     sub={c.sub}
                     selected={answers.concerns.includes(c.id)}
