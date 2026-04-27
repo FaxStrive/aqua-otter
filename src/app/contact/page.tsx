@@ -100,44 +100,79 @@ export default function ContactPage() {
 
         {/* LEFT: Otter + context */}
         <div
-          className="md:w-2/5 flex-shrink-0 relative hidden md:flex flex-col justify-end overflow-hidden"
+          className="md:w-2/5 flex-shrink-0 relative hidden md:flex flex-col justify-between overflow-hidden"
           style={{ backgroundColor: "#07111A", minHeight: "100vh" }}
         >
-          <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse 80% 60% at 30% 60%, rgba(18,189,251,0.07) 0%, transparent 65%)" }} />
+          {/* Background layers */}
+          <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse 90% 70% at 50% 55%, rgba(18,189,251,0.11) 0%, transparent 65%)" }} />
+          <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse 60% 40% at 80% 20%, rgba(18,189,251,0.06) 0%, transparent 60%)" }} />
+          {/* Subtle dot grid */}
+          <div className="absolute inset-0 pointer-events-none" style={{ opacity: 0.04, backgroundImage: "radial-gradient(rgba(18,189,251,1) 1px, transparent 1px)", backgroundSize: "28px 28px" }} />
 
-          {/* Otter mascot — changes per step */}
+          {/* TOP: Logo + headline */}
+          <div className="relative z-10 p-10 pb-0">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-8" style={{ backgroundColor: "rgba(18,189,251,0.1)", border: "1px solid rgba(18,189,251,0.2)" }}>
+              <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: "#12BDFB" }} />
+              <span className="text-xs font-semibold tracking-widest uppercase" style={{ color: "#12BDFB" }}>Free water test</span>
+            </div>
+            <h2 className="font-display font-bold leading-[0.9] mb-6" style={{ fontSize: "clamp(2rem, 3.5vw, 2.8rem)", color: "#ffffff" }}>
+              Know what&apos;s<br />in your water.<br />
+              <span style={{ color: "#12BDFB" }}>In 24 hours.</span>
+            </h2>
+
+            {/* Trust pills */}
+            <div className="flex flex-col gap-2.5">
+              {[
+                { icon: "✓", text: "No cost, ever" },
+                { icon: "✓", text: "Licensed technician at your door" },
+                { icon: "✓", text: "Results explained on-site" },
+                { icon: "✓", text: "No pressure to buy anything" },
+              ].map(item => (
+                <div key={item.text} className="flex items-center gap-2.5">
+                  <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold" style={{ backgroundColor: "rgba(18,189,251,0.15)", color: "#12BDFB" }}>
+                    {item.icon}
+                  </div>
+                  <span className="text-sm" style={{ color: "rgba(255,255,255,0.65)" }}>{item.text}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* MIDDLE: Otter mascot */}
           <AnimatePresence mode="wait">
             <motion.div
               key={step}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.4 }}
-              className="relative z-10 px-10 pb-0 flex justify-center"
+              exit={{ opacity: 0, y: -16 }}
+              transition={{ duration: 0.35 }}
+              className="relative z-10 flex justify-center items-end"
+              style={{ flex: "1 1 auto" }}
             >
               <Image
                 src={OTTERS[Math.min(step, OTTERS.length - 1)]}
                 alt=""
-                width={280}
-                height={320}
-                className="object-contain"
-                style={{ maxHeight: 360 }}
+                width={260}
+                height={300}
+                className="object-contain drop-shadow-2xl"
+                style={{ maxHeight: 300 }}
               />
             </motion.div>
           </AnimatePresence>
 
-          {/* Brand copy bottom */}
-          <div className="relative z-10 p-10 pt-6">
-            <p className="font-display font-bold mb-2" style={{ fontSize: "1.6rem", color: "#ffffff", lineHeight: 1.1 }}>
-              Free. In your home.<br />No obligation.
-            </p>
-            <p className="text-sm" style={{ color: "rgba(255,255,255,0.38)" }}>
-              5,000+ families tested across 6 states.
-            </p>
-            <div className="flex items-center gap-2 mt-4">
+          {/* BOTTOM: Social proof */}
+          <div className="relative z-10 p-10 pt-6" style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+            <div className="flex items-center gap-3 mb-3">
               <div className="flex">{[...Array(5)].map((_, i) => <svg key={i} className="w-3.5 h-3.5" viewBox="0 0 20 20" fill="#fbbf24"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>)}</div>
-              <span className="text-xs" style={{ color: "rgba(255,255,255,0.45)" }}>5.0 Google · BBB A+</span>
+              <span className="text-sm font-semibold text-white">5.0</span>
+              <span className="text-xs" style={{ color: "rgba(255,255,255,0.35)" }}>· BBB A+ · 5,000+ families</span>
             </div>
+            <p className="text-xs italic" style={{ color: "rgba(255,255,255,0.35)", lineHeight: 1.6 }}>
+              &ldquo;Came out the next day, tested everything, explained it all. Zero pressure. Best home service experience I&apos;ve had.&rdquo;
+            </p>
+            <p className="text-xs mt-1.5 font-medium" style={{ color: "rgba(255,255,255,0.25)" }}>
+              — Sarah M., Fishers IN
+            </p>
           </div>
         </div>
 
