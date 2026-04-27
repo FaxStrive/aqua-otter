@@ -610,49 +610,21 @@ export default function WaterSoftenerPage() {
           </div>
 
           {/* Mobile stacked cards */}
-          <div className="flex flex-col gap-5 lg:hidden">
-            {products.map((p) => (
-              <div
-                key={p.name}
-                className="bg-white rounded-3xl overflow-hidden border"
-                style={{ borderColor: "rgba(18,189,251,0.12)", boxShadow: "0 4px 24px rgba(12,31,46,0.07)" }}
-              >
-                <div className="relative flex items-center justify-center" style={{ backgroundColor: "#EAF6FE", height: 200 }}>
-                  <div className="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold" style={{ backgroundColor: "#12BDFB", color: "#07111A" }}>
-                    {p.badge}
+          <div className="lg:hidden overflow-x-auto -mx-4 px-4 pb-4">
+            <div className="flex gap-4" style={{ width: "max-content" }}>
+              {products.map((p) => (
+                <div key={p.name} className="flex-shrink-0 bg-white rounded-3xl overflow-hidden border" style={{ width: "82vw", borderColor: "rgba(18,189,251,0.12)", boxShadow: "0 4px 24px rgba(12,31,46,0.07)" }}>
+                  <div className="relative flex items-center justify-center" style={{ backgroundColor: "#EAF6FE", height: 180 }}>
+                    <div className="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold" style={{ backgroundColor: "#12BDFB", color: "#07111A" }}>{p.badge}</div>
+                    <Image src={p.img} alt={p.name} width={140} height={140} className="object-contain" style={{ maxHeight: 140, filter: "drop-shadow(0 8px 20px rgba(18,189,251,0.2))" }} />
                   </div>
-                  <Image
-                    src={p.img}
-                    alt={p.name}
-                    width={160}
-                    height={160}
-                    className="object-contain"
-                    style={{ maxHeight: 160, filter: "drop-shadow(0 8px 20px rgba(18,189,251,0.2))" }}
-                  />
-                </div>
-                <div className="p-7">
-                  <h3 className="font-display font-bold mb-2" style={{ fontSize: "1.2rem", color: "#0C1F2E", letterSpacing: "-0.02em" }}>
-                    {p.name}
-                  </h3>
-                  <p className="text-sm leading-relaxed mb-5" style={{ color: "rgba(12,31,46,0.55)" }}>{p.desc}</p>
-                  <div className="rounded-xl overflow-hidden" style={{ border: "1px solid rgba(12,31,46,0.08)" }}>
-                    {p.specs.map(([label, value], i) => (
-                      <div
-                        key={label}
-                        className="flex items-center justify-between px-4 py-2.5"
-                        style={{
-                          backgroundColor: i % 2 === 0 ? "#F8FBFF" : "#ffffff",
-                          borderBottom: i < p.specs.length - 1 ? "1px solid rgba(12,31,46,0.06)" : "none",
-                        }}
-                      >
-                        <span className="text-xs font-semibold uppercase tracking-wide" style={{ color: "rgba(12,31,46,0.38)" }}>{label}</span>
-                        <span className="text-xs font-semibold" style={{ color: "#0C1F2E" }}>{value}</span>
-                      </div>
-                    ))}
+                  <div className="p-5">
+                    <h3 className="font-display font-bold mb-1.5" style={{ fontSize: "1.1rem", color: "#0C1F2E" }}>{p.name}</h3>
+                    <p className="text-sm leading-relaxed" style={{ color: "rgba(12,31,46,0.55)" }}>{p.desc.split(".")[0]}.</p>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>

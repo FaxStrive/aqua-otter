@@ -49,10 +49,30 @@ export default function Gallery() {
         </motion.div>
       </div>
 
-      {/* COLLAGE: Edge-to-edge, broken grid */}
+      {/* Mobile: 2×2 simple grid */}
+      <div className="md:hidden grid grid-cols-2 gap-1.5 mt-8 px-4">
+        {photos.slice(0, 4).map((p, i) => (
+          <motion.div
+            key={p.src}
+            initial={{ opacity: 0, scale: 0.96 }}
+            animate={inView ? { opacity: 1, scale: 1 } : {}}
+            transition={{ duration: 0.5, delay: i * 0.08 }}
+            className="relative overflow-hidden rounded-2xl"
+            style={{ height: 160 }}
+          >
+            <Image src={p.src} alt={p.system} fill className="object-cover" sizes="50vw" />
+            <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(7,17,26,0.65) 0%, transparent 55%)" }} />
+            <div className="absolute bottom-3 left-3">
+              <p className="text-[10px] text-white font-semibold">{p.system}</p>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+
+      {/* Desktop: COLLAGE: Edge-to-edge, broken grid */}
       <div
+        className="hidden md:grid"
         style={{
-          display: "grid",
           gridTemplateColumns: "38% 22% 1fr 1fr",
           gridTemplateRows: "300px 240px",
           gap: 6,
@@ -122,7 +142,7 @@ export default function Gallery() {
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ background: "rgba(7,17,26,0.3)" }} />
           </motion.div>
         ))}
-      </div>
+      </div> {/* end desktop collage */}
 
       {/* Stat strip below collage */}
       <motion.div

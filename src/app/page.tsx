@@ -19,7 +19,9 @@ export default function Home() {
       <Marquee />
       <ZipLookup />
       <CityVsWellFunnel />
-      <HouseDiagram />
+      <div className="hidden lg:block">
+        <HouseDiagram />
+      </div>
       <ConversionBridge />
       <PhotoStrip />
       <Stats />
