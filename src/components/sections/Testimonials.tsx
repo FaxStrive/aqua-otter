@@ -259,7 +259,7 @@ export default function Testimonials() {
               </svg>
             </div>
             <div className="flex items-center gap-4 text-xs" style={{ color: "rgba(12,31,46,0.5)" }}>
-              <span><b style={{ color: "#0C1F2E" }}>2,500+</b> families served</span>
+              <span><b style={{ color: "#0C1F2E" }}>5,000+</b> families served</span>
               <span className="w-px h-3" style={{ backgroundColor: "rgba(12,31,46,0.15)" }} />
               <span><b style={{ color: "#0C1F2E" }}>100%</b> satisfaction</span>
               <span className="w-px h-3" style={{ backgroundColor: "rgba(12,31,46,0.15)" }} />
@@ -300,7 +300,7 @@ export default function Testimonials() {
         >
           <div>
             <p className="font-display font-bold text-white" style={{ fontSize: "clamp(1.2rem, 2vw, 1.6rem)" }}>
-              Join 2,500+ Indiana families with cleaner water.
+              Join 5,000+ Indiana families with cleaner water.
             </p>
             <p className="text-sm mt-1" style={{ color: "rgba(255,255,255,0.5)" }}>
               Free water test. Same-week install. No pressure.

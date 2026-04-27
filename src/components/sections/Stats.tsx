@@ -6,7 +6,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 const stats = [
-  { value: 2500, suffix: "+", label: "Families Served",    sub: "Across 6 states",                size: "15vw", col: "1 / 8",  row: "1 / 2", align: "left"  },
+  { value: 5000, suffix: "+", label: "Families Served",    sub: "Across 6 states",                size: "15vw", col: "1 / 8",  row: "1 / 2", align: "left"  },
   { value: 100,  suffix: "%", label: "Satisfaction Rate",  sub: "Verified by every customer",     size: "11vw", col: "6 / 13", row: "2 / 3", align: "right" },
   { value: 25,   suffix: "+", label: "Years in Business",  sub: "Water treatment specialists",    size: "13vw", col: "1 / 7",  row: "3 / 4", align: "left"  },
   { value: 7,    suffix: "d", label: "Average Install",    sub: "From water test to clean water", size: "10vw", col: "7 / 13", row: "4 / 5", align: "right" },

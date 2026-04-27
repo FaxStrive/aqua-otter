@@ -104,7 +104,7 @@ export default function ReviewsPage() {
               <span className="text-xs font-medium tracking-[0.1em] uppercase" style={{ color: "#12BDFB" }}>5-Star Google Rating</span>
             </div>
             <h1 className="font-display font-bold leading-[0.9] tracking-tight mb-5" style={{ fontSize: "clamp(3rem, 6vw, 5rem)", color: "#0C1F2E" }}>
-              500+ families.<br />
+              5,000+ families.<br />
               <span style={{ color: "#12BDFB" }}>All 5 stars.</span>
             </h1>
             <div className="flex items-center justify-center gap-3 mb-4">
@@ -189,7 +189,7 @@ export default function ReviewsPage() {
       <section className="py-20" style={{ backgroundColor: "#0C1F2E" }}>
         <div className="container-site text-center">
           <h2 className="font-display font-bold mb-4" style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)", color: "#ffffff" }}>
-            Join 2,500+ satisfied families.
+            Join 5,000+ satisfied families.
           </h2>
           <p className="mb-8" style={{ color: "rgba(255,255,255,0.5)", maxWidth: "36ch", margin: "0 auto 2rem" }}>
             Start with a free in-home water test. No cost, no obligation.

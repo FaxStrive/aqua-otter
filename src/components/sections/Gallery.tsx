@@ -49,7 +49,7 @@ export default function Gallery() {
               Every job starts with a test. Every system is designed for that home.
             </p>
             <Link href="/gallery" className="inline-flex items-center gap-2 text-sm font-semibold transition-colors" style={{ color: "#12BDFB" }} onMouseEnter={e => (e.currentTarget.style.opacity = "0.7")} onMouseLeave={e => (e.currentTarget.style.opacity = "1")}>
-              View all 30+ installations <ArrowRight className="w-4 h-4" />
+              View all installations <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </motion.div>
@@ -158,7 +158,7 @@ export default function Gallery() {
         className="container-site flex flex-wrap items-center gap-8"
         style={{ paddingTop: 40, paddingBottom: "clamp(64px, 8vw, 100px)" }}
       >
-        {[["30+", "Installs photographed"], ["6", "States we serve"], ["1,000+", "Total systems installed"]].map(([val, label]) => (
+        {[["5,000+", "Families served"], ["6", "States we serve"], ["5,000+", "Total systems installed"]].map(([val, label]) => (
           <div key={label} className="flex items-center gap-3">
             <span className="font-display font-bold" style={{ fontSize: "clamp(1.8rem, 3vw, 2.4rem)", color: "#0C1F2E", letterSpacing: "-0.03em" }}>{val}</span>
             <span className="text-sm" style={{ color: "rgba(12,31,46,0.4)" }}>{label}</span>

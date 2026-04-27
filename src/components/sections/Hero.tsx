@@ -172,7 +172,7 @@ export default function Hero() {
             >
               {[
                 { val: "99.9%", lab: "Contaminant removal" },
-                { val: "500+",  lab: "Homes served" },
+                { val: "5,000+", lab: "Homes served" },
                 { val: "7 days", lab: "Avg install" },
               ].map((s, i) => (
                 <div key={s.lab} className="flex items-center gap-6">
@@ -197,7 +197,7 @@ export default function Hero() {
         >
           {[
             { val: "99.9%", lab: "Contaminant removal" },
-            { val: "500+",  lab: "Homes served" },
+            { val: "5,000+", lab: "Homes served" },
             { val: "7 days", lab: "Average install" },
           ].map((s, i) => (
             <div key={s.lab} className="flex items-center gap-6">

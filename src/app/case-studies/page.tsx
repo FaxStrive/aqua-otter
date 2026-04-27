@@ -59,7 +59,7 @@ export default function CaseStudiesPage() {
             className="flex flex-wrap items-center gap-8 mt-12"
           >
             {[
-              { val: "500+", lab: "Homes treated" },
+              { val: "5,000+", lab: "Homes treated" },
               { val: "6", lab: "States served" },
               { val: "25+", lab: "Years of experience" },
               { val: "0 GPG", lab: "Target hardness" },

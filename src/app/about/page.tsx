@@ -16,7 +16,7 @@ const values = [
 
 const stats = [
   { value: "1999", label: "Founded", sub: "Indiana" },
-  { value: "2,500+", label: "Families served", sub: "6 states" },
+  { value: "5,000+", label: "Families served", sub: "6 states" },
   { value: "25+", label: "Years of expertise", sub: "Water treatment" },
   { value: "5.0★", label: "Google rating", sub: "BBB A+" },
 ];
@@ -27,7 +27,7 @@ const timeline = [
   { year: "2012", event: "Crossed 500 families served. Added reverse osmosis and no-salt systems." },
   { year: "2018", event: "Expanded to Ohio, Kentucky, and Tennessee. Over 1,000 families treated." },
   { year: "2022", event: "Added North Carolina. 2,000+ families. Regional expansion with the same test-first playbook." },
-  { year: "2024", event: "2,500+ families served. Lifetime warranty extended to all systems." },
+  { year: "2024", event: "5,000+ families served. Lifetime warranty extended to all systems." },
 ];
 
 export default function AboutPage() {
@@ -76,7 +76,7 @@ export default function AboutPage() {
               Your water.<br /><span style={{ color: "#12BDFB" }}>Our obsession.</span>
             </h1>
             <p style={{ color: "rgba(255,255,255,0.48)", maxWidth: "46ch", lineHeight: 1.7, fontSize: "1.05rem" }}>
-              Two and a half decades. 2,500 homes. Six states. The only people in the region who test your water first and design your system second.
+              Two and a half decades. 5,000 homes. Six states. The only people in the region who test your water first and design your system second.
             </p>
           </motion.div>
         </motion.div>

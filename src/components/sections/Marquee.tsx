@@ -2,7 +2,7 @@ export default function Marquee() {
   const items = [
     "Lifetime Warranty Available",
     "Free In-Home Water Test",
-    "500+ Families Served",
+    "5,000+ Families Served",
     "Licensed & Insured",
     "Same-Week Installation",
     "Indiana & Michigan",
