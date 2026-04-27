@@ -28,14 +28,14 @@ const WATER_SOURCES = [
 ];
 
 const CONCERNS = [
-  { id: "hardness",     label: "Hard water / Scale",   sub: "White buildup on fixtures and appliances"   },
-  { id: "iron_stains",  label: "Iron / rust stains",   sub: "Orange or brown discoloration in your sinks" },
-  { id: "bad_taste",    label: "Bad taste or odor",    sub: "Chlorine smell or flat, off-putting flavor"  },
-  { id: "sulfur_smell", label: "Sulfur smell",         sub: "Rotten egg odor from the tap"               },
-  { id: "dry_skin",     label: "Dry skin or hair",     sub: "After showering or washing"                 },
-  { id: "bottled_water",label: "Buying bottled water", sub: "You don't trust drinking from the tap"      },
-  { id: "bacteria",     label: "Bacteria / Safety",    sub: "Especially common on private well water"    },
-  { id: "not_sure",     label: "Not sure — just test", sub: "Let the water test results guide us"        },
+  { id: "hardness",     label: "Hard water",     sub: "Scale & mineral buildup",         word: "SCALE"    },
+  { id: "iron_stains",  label: "Iron stains",    sub: "Orange rust discoloration",       word: "RUST"     },
+  { id: "bad_taste",    label: "Bad taste",      sub: "Chlorine or flat flavor",         word: "TASTE"    },
+  { id: "sulfur_smell", label: "Sulfur smell",   sub: "Rotten egg odor",                 word: "SMELL"    },
+  { id: "dry_skin",     label: "Dry skin",       sub: "After showering or bathing",      word: "SKIN"     },
+  { id: "bottled_water",label: "Bottled water",  sub: "Don't trust the tap",             word: "BOTTLES"  },
+  { id: "bacteria",     label: "Bacteria",       sub: "Especially on well water",        word: "BACTERIA" },
+  { id: "not_sure",     label: "Not sure",       sub: "Let the test results guide us",   word: "TEST"     },
 ];
 
 const HOUSEHOLD_SIZES = [
@@ -147,49 +147,67 @@ function TextCard({
 }
 
 function ConcernCard({
-  label, sub, selected, onClick,
+  label, sub, word, selected, onClick,
 }: {
-  label: string; sub: string; selected: boolean; onClick: () => void;
+  label: string; sub: string; word: string; selected: boolean; onClick: () => void;
 }) {
   return (
     <button
       onClick={onClick}
-      className="w-full text-left transition-all duration-150 flex items-center gap-4 px-4 py-3.5"
+      className="relative overflow-hidden rounded-2xl text-left transition-all duration-200 w-full"
       style={{
-        backgroundColor: selected ? "rgba(18,189,251,0.05)" : "#ffffff",
-        borderRadius: 16,
-        border: "1.5px solid",
-        borderColor: selected ? "#12BDFB" : "rgba(12,31,46,0.09)",
-        boxShadow: selected ? "0 0 0 3px rgba(18,189,251,0.1)" : "none",
+        backgroundColor: selected ? "#07111A" : "#f4f6f8",
+        border: "2px solid",
+        borderColor: selected ? "#12BDFB" : "transparent",
+        boxShadow: selected ? "0 0 0 3px rgba(18,189,251,0.15)" : "none",
+        height: 130,
       }}
     >
-      {/* Left accent bar */}
+      {/* Giant watermark word */}
       <div
-        className="flex-shrink-0 rounded-full"
-        style={{
-          width: 3,
-          height: 36,
-          backgroundColor: selected ? "#12BDFB" : "rgba(12,31,46,0.08)",
-          transition: "background-color 0.15s",
-        }}
-      />
-
-      {/* Text */}
-      <div className="flex-1 min-w-0">
-        <p className="font-semibold text-sm" style={{ color: "#0C1F2E" }}>{label}</p>
-        <p className="text-xs mt-0.5 truncate" style={{ color: "rgba(12,31,46,0.4)" }}>{sub}</p>
+        className="absolute inset-0 flex items-center justify-end pr-3 pointer-events-none select-none overflow-hidden"
+        aria-hidden
+      >
+        <span
+          className="font-display font-bold leading-none"
+          style={{
+            fontSize: "clamp(2.8rem, 12vw, 4.5rem)",
+            color: selected ? "rgba(18,189,251,0.18)" : "rgba(12,31,46,0.07)",
+            letterSpacing: "-0.04em",
+            whiteSpace: "nowrap",
+            transition: "color 0.2s",
+          }}
+        >
+          {word}
+        </span>
       </div>
 
-      {/* Check */}
-      <div
-        className="flex-shrink-0 w-5 h-5 rounded-full border-2 flex items-center justify-center"
-        style={{
-          borderColor: selected ? "#12BDFB" : "rgba(12,31,46,0.18)",
-          backgroundColor: selected ? "#12BDFB" : "transparent",
-          transition: "all 0.15s",
-        }}
-      >
-        {selected && <Check className="w-3 h-3 text-white" strokeWidth={3} />}
+      {/* Foreground content */}
+      <div className="absolute inset-0 flex flex-col justify-between p-4">
+        <div
+          className="w-5 h-5 rounded-full border-2 flex items-center justify-center self-end"
+          style={{
+            borderColor: selected ? "#12BDFB" : "rgba(12,31,46,0.2)",
+            backgroundColor: selected ? "#12BDFB" : "transparent",
+            transition: "all 0.2s",
+          }}
+        >
+          {selected && <Check className="w-3 h-3 text-white" strokeWidth={3} />}
+        </div>
+        <div>
+          <p
+            className="font-display font-bold leading-tight"
+            style={{ fontSize: "1.05rem", color: selected ? "#ffffff" : "#0C1F2E", transition: "color 0.2s" }}
+          >
+            {label}
+          </p>
+          <p
+            className="text-xs mt-0.5"
+            style={{ color: selected ? "rgba(255,255,255,0.5)" : "rgba(12,31,46,0.4)", transition: "color 0.2s" }}
+          >
+            {sub}
+          </p>
+        </div>
       </div>
     </button>
   );
@@ -392,12 +410,13 @@ export default function GetStartedPage() {
               <p className="text-sm mb-6" style={{ color: "rgba(12,31,46,0.45)" }}>
                 Pick everything that applies. Multiple is fine.
               </p>
-              <div className="flex flex-col gap-2">
+              <div className="grid grid-cols-2 gap-3">
                 {CONCERNS.map(c => (
                   <ConcernCard
                     key={c.id}
                     label={c.label}
                     sub={c.sub}
+                    word={c.word}
                     selected={answers.concerns.includes(c.id)}
                     onClick={() => toggle("concerns", c.id)}
                   />
