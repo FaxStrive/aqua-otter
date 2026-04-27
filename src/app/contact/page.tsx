@@ -13,12 +13,12 @@ const SOURCES = [
 ];
 
 const CONCERNS = [
-  { id: "scale", label: "Scale & hard water", icon: "⬜" },
-  { id: "iron",  label: "Iron / rust stains", icon: "🟠" },
-  { id: "taste", label: "Taste or smell",     icon: "💧" },
-  { id: "bacteria", label: "Bacteria / safety", icon: "🦠" },
-  { id: "drinking", label: "Drinking water quality", icon: "🍶" },
-  { id: "unsure", label: "Not sure — just test it", icon: "🔬" },
+  { id: "scale",    label: "Scale & hard water" },
+  { id: "iron",     label: "Iron / rust stains" },
+  { id: "taste",    label: "Taste or smell" },
+  { id: "bacteria", label: "Bacteria / safety" },
+  { id: "drinking", label: "Drinking water quality" },
+  { id: "unsure",   label: "Not sure — just test it" },
 ];
 
 // Otter per step
@@ -45,6 +45,7 @@ export default function ContactPage() {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [done, setDone] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
 
   function next(n: number = 1) {
     setDir(1);
@@ -54,9 +55,29 @@ export default function ContactPage() {
     setDir(-1);
     setStep(s => s - 1);
   }
-  function submit() {
-    setDone(true);
-    setStep(4);
+  async function submit() {
+    if (submitting) return;
+    setSubmitting(true);
+    try {
+      await fetch("/api/lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name,
+          phone,
+          city,
+          source: "contact-form",
+          waterSource: source,
+          concern,
+        }),
+      });
+    } catch {
+      // fail open — user still sees confirmation
+    } finally {
+      setSubmitting(false);
+      setDone(true);
+      setStep(4);
+    }
   }
 
   const totalSteps = 4;
@@ -191,7 +212,6 @@ export default function ContactPage() {
                         onMouseEnter={e => { e.currentTarget.style.borderColor = "#12BDFB"; e.currentTarget.style.backgroundColor = "rgba(18,189,251,0.04)"; }}
                         onMouseLeave={e => { e.currentTarget.style.borderColor = "rgba(18,189,251,0.18)"; e.currentTarget.style.backgroundColor = "#FAFCFF"; }}
                       >
-                        <span className="text-2xl block mb-2">{c.icon}</span>
                         <p className="text-sm font-medium" style={{ color: "#0C1F2E" }}>{c.label}</p>
                       </button>
                     ))}
@@ -265,10 +285,11 @@ export default function ContactPage() {
                   <div className="flex items-center gap-4">
                     <button
                       onClick={() => name.trim() && phone.trim() && submit()}
+                      disabled={submitting}
                       className="flex items-center gap-2 px-8 py-4 rounded-full text-sm font-semibold transition-all duration-200"
-                      style={{ backgroundColor: name.trim() && phone.trim() ? "#12BDFB" : "rgba(18,189,251,0.2)", color: name.trim() && phone.trim() ? "#0C1F2E" : "rgba(18,189,251,0.5)", cursor: name.trim() && phone.trim() ? "pointer" : "default", boxShadow: name.trim() && phone.trim() ? "0 4px 20px rgba(18,189,251,0.3)" : "none" }}
+                      style={{ backgroundColor: name.trim() && phone.trim() ? "#12BDFB" : "rgba(18,189,251,0.2)", color: name.trim() && phone.trim() ? "#0C1F2E" : "rgba(18,189,251,0.5)", cursor: name.trim() && phone.trim() ? "pointer" : "default", boxShadow: name.trim() && phone.trim() ? "0 4px 20px rgba(18,189,251,0.3)" : "none", opacity: submitting ? 0.7 : 1 }}
                     >
-                      Schedule My Free Test <ArrowRight className="w-4 h-4" />
+                      {submitting ? "Sending..." : "Schedule My Free Test"} {!submitting && <ArrowRight className="w-4 h-4" />}
                     </button>
                     <button onClick={back} className="flex items-center gap-1.5 text-sm" style={{ color: "rgba(12,31,46,0.38)" }}>
                       <ArrowLeft className="w-3.5 h-3.5" /> Back

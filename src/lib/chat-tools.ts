@@ -1,5 +1,6 @@
 import type { Tool, ToolUseBlock } from "@anthropic-ai/sdk/resources/messages";
 import { lookupWaterByZip, hardnessLevel } from "./water-data";
+import { createGHLContact } from "./ghl";
 
 export const CHAT_TOOLS: Tool[] = [
   {
@@ -201,8 +202,19 @@ export async function executeTool(toolName: string, input: Record<string, unknow
       if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
         return { kind: "booking", ok: false, name, email, zip, error: "That email looks off — want to try again?" };
       }
-      // MVP: log server-side. Production: POST to CRM.
-      console.log("[chat-booking]", { at: new Date().toISOString(), name, email, zip, phone: input.phone, time_window: input.time_window, notes: input.notes });
+      const ghl = await createGHLContact({
+        name,
+        email,
+        zip,
+        phone: input.phone ? String(input.phone) : undefined,
+        timeWindow: input.time_window ? String(input.time_window) : undefined,
+        notes: input.notes ? String(input.notes) : undefined,
+        source: "chat-booking",
+        tags: ["chat-lead"],
+      });
+      if (!ghl.ok) {
+        console.error("[chat-booking] GHL error", ghl.error);
+      }
       return { kind: "booking", ok: true, name, email, zip };
     }
 
