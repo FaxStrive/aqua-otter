@@ -28,14 +28,14 @@ const WATER_SOURCES = [
 ];
 
 const CONCERNS = [
-  { id: "hardness",     label: "Hard water",     sub: "Scale & mineral buildup",         word: "SCALE"    },
-  { id: "iron_stains",  label: "Iron stains",    sub: "Orange rust discoloration",       word: "RUST"     },
-  { id: "bad_taste",    label: "Bad taste",      sub: "Chlorine or flat flavor",         word: "TASTE"    },
-  { id: "sulfur_smell", label: "Sulfur smell",   sub: "Rotten egg odor",                 word: "SMELL"    },
-  { id: "dry_skin",     label: "Dry skin",       sub: "After showering or bathing",      word: "SKIN"     },
-  { id: "bottled_water",label: "Bottled water",  sub: "Don't trust the tap",             word: "BOTTLES"  },
-  { id: "bacteria",     label: "Bacteria",       sub: "Especially on well water",        word: "BACTERIA" },
-  { id: "not_sure",     label: "Not sure",       sub: "Let the test results guide us",   word: "TEST"     },
+  { id: "hardness",     label: "Hard water",    sub: "Scale & mineral buildup"      },
+  { id: "iron_stains",  label: "Iron stains",   sub: "Orange rust discoloration"    },
+  { id: "bad_taste",    label: "Bad taste",     sub: "Chlorine or flat flavor"      },
+  { id: "sulfur_smell", label: "Sulfur smell",  sub: "Rotten egg odor"              },
+  { id: "dry_skin",     label: "Dry skin",      sub: "After showering or bathing"   },
+  { id: "bottled_water",label: "Bottled water", sub: "Don't trust the tap"          },
+  { id: "bacteria",     label: "Bacteria",      sub: "Especially on well water"     },
+  { id: "not_sure",     label: "Not sure",      sub: "Let the test results guide us"},
 ];
 
 const HOUSEHOLD_SIZES = [
@@ -146,68 +146,185 @@ function TextCard({
   );
 }
 
+// ─── Per-concern animated SVG illustrations ───────────────────────────────────
+
+function IllustrationHardWater({ c }: { c: string }) {
+  return (
+    <svg viewBox="0 0 64 64" width="56" height="56" fill="none">
+      {[20, 30, 40].map((r, i) => (
+        <motion.circle key={r} cx="32" cy="32" r={r} stroke={c} strokeWidth="1.2" opacity={0.9 - i * 0.28}
+          animate={{ scale: [1, 1.06, 1], opacity: [0.9 - i * 0.28, 1 - i * 0.2, 0.9 - i * 0.28] }}
+          transition={{ duration: 2.4, repeat: Infinity, delay: i * 0.4, ease: "easeInOut" }} />
+      ))}
+      <motion.circle cx="32" cy="32" r="6" fill={c}
+        animate={{ scale: [1, 1.15, 1] }} transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }} />
+    </svg>
+  );
+}
+
+function IllustrationIronStains({ c }: { c: string }) {
+  return (
+    <svg viewBox="0 0 64 64" width="56" height="56" fill="none">
+      {[{cx:20,delay:0},{cx:32,delay:0.5},{cx:44,delay:1}].map(({cx,delay})=>(
+        <g key={cx}>
+          <motion.ellipse cx={cx} cy="16" rx="4" ry="5" fill={c} opacity="0.85"
+            animate={{ cy: [16, 48, 16], opacity: [0.85, 0, 0.85] }}
+            transition={{ duration: 2, repeat: Infinity, delay, ease: "easeIn" }} />
+        </g>
+      ))}
+      <rect x="8" y="52" width="48" height="4" rx="2" fill={c} opacity="0.25" />
+    </svg>
+  );
+}
+
+function IllustrationBadTaste({ c }: { c: string }) {
+  return (
+    <svg viewBox="0 0 64 64" width="56" height="56" fill="none">
+      <motion.path d="M8 32 Q16 24 24 32 Q32 40 40 32 Q48 24 56 32" stroke={c} strokeWidth="2.5" strokeLinecap="round"
+        animate={{ d: ["M8 32 Q16 24 24 32 Q32 40 40 32 Q48 24 56 32","M8 32 Q16 40 24 32 Q32 24 40 32 Q48 40 56 32","M8 32 Q16 24 24 32 Q32 40 40 32 Q48 24 56 32"] }}
+        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }} />
+      <motion.path d="M8 44 Q16 36 24 44 Q32 52 40 44 Q48 36 56 44" stroke={c} strokeWidth="1.5" strokeLinecap="round" opacity="0.4"
+        animate={{ d: ["M8 44 Q16 36 24 44 Q32 52 40 44 Q48 36 56 44","M8 44 Q16 52 24 44 Q32 36 40 44 Q48 52 56 44","M8 44 Q16 36 24 44 Q32 52 40 44 Q48 36 56 44"] }}
+        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 0.2 }} />
+      <motion.path d="M8 20 Q16 12 24 20 Q32 28 40 20 Q48 12 56 20" stroke={c} strokeWidth="1" strokeLinecap="round" opacity="0.2"
+        animate={{ d: ["M8 20 Q16 12 24 20 Q32 28 40 20 Q48 12 56 20","M8 20 Q16 28 24 20 Q32 12 40 20 Q48 28 56 20","M8 20 Q16 12 24 20 Q32 28 40 20 Q48 12 56 20"] }}
+        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 0.4 }} />
+    </svg>
+  );
+}
+
+function IllustrationSulfurSmell({ c }: { c: string }) {
+  return (
+    <svg viewBox="0 0 64 64" width="56" height="56" fill="none">
+      {[{x:20,delay:0},{x:32,delay:0.6},{x:44,delay:1.2}].map(({x,delay})=>(
+        <motion.circle key={x} cx={x} cy="48" r="5" fill={c} opacity="0"
+          animate={{ cy: [48, 16], opacity: [0.7, 0], r: [5, 8] }}
+          transition={{ duration: 2, repeat: Infinity, delay, ease: "easeOut" }} />
+      ))}
+      <ellipse cx="32" cy="52" rx="20" ry="5" fill={c} opacity="0.2" />
+    </svg>
+  );
+}
+
+function IllustrationDrySkin({ c }: { c: string }) {
+  return (
+    <svg viewBox="0 0 64 64" width="56" height="56" fill="none">
+      <ellipse cx="32" cy="36" rx="18" ry="22" stroke={c} strokeWidth="1.5" opacity="0.3" />
+      {["M32 14 L28 22","M32 14 L36 22","M28 22 L24 32","M36 22 L40 32","M24 32 L22 44","M40 32 L42 44"].map((d,i)=>(
+        <motion.path key={i} d={d} stroke={c} strokeWidth="1.8" strokeLinecap="round"
+          initial={{ pathLength: 0 }} animate={{ pathLength: [0, 1, 1, 0] }}
+          transition={{ duration: 3, repeat: Infinity, delay: i * 0.18, ease: "easeInOut" }} />
+      ))}
+    </svg>
+  );
+}
+
+function IllustrationBottledWater({ c }: { c: string }) {
+  return (
+    <svg viewBox="0 0 64 64" width="56" height="56" fill="none">
+      {[{x:18,delay:0},{x:32,delay:0.3},{x:46,delay:0.6}].map(({x,delay})=>(
+        <motion.g key={x} animate={{ y: [0, -4, 0] }} transition={{ duration: 2.5, repeat: Infinity, delay, ease: "easeInOut" }}>
+          <rect x={x-6} y="18" width="12" height="34" rx="4" stroke={c} strokeWidth="1.5" opacity="0.85" />
+          <rect x={x-3} y="12" width="6" height="8" rx="2" stroke={c} strokeWidth="1.2" opacity="0.6" />
+          <motion.rect x={x-5} y="26" width="10" height="0" rx="2" fill={c} opacity="0.35"
+            animate={{ height: [0, 18, 0], y: [26, 26, 44] }}
+            transition={{ duration: 2.5, repeat: Infinity, delay: delay + 0.3, ease: "easeInOut" }} />
+        </motion.g>
+      ))}
+    </svg>
+  );
+}
+
+function IllustrationBacteria({ c }: { c: string }) {
+  return (
+    <svg viewBox="0 0 64 64" width="56" height="56" fill="none">
+      {[
+        {cx:32,cy:32,r:10,delay:0},
+        {cx:16,cy:24,r:6,delay:0.4},
+        {cx:48,cy:24,r:7,delay:0.8},
+        {cx:20,cy:46,r:5,delay:0.2},
+        {cx:44,cy:46,r:6,delay:0.6},
+      ].map(({cx,cy,r,delay},i)=>(
+        <motion.circle key={i} cx={cx} cy={cy} r={r} stroke={c} strokeWidth="1.5" fill={c} fillOpacity="0.15"
+          animate={{ scale: [1, 1.2, 1], opacity: [0.8, 1, 0.8] }}
+          transition={{ duration: 1.8, repeat: Infinity, delay, ease: "easeInOut" }} />
+      ))}
+    </svg>
+  );
+}
+
+function IllustrationNotSure({ c }: { c: string }) {
+  return (
+    <svg viewBox="0 0 64 64" width="56" height="56" fill="none">
+      <motion.g animate={{ y: [0, -5, 0] }} transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}>
+        <path d="M32 8 C20 8 14 16 14 24 C14 30 18 35 24 38 L24 44 L40 44 L40 38 C46 35 50 30 50 24 C50 16 44 8 32 8Z" stroke={c} strokeWidth="1.8" fill={c} fillOpacity="0.1" />
+        <text x="32" y="34" textAnchor="middle" fontSize="18" fontWeight="700" fill={c} fontFamily="sans-serif">?</text>
+        <motion.ellipse cx="32" cy="50" rx="6" ry="6" fill={c}
+          animate={{ scaleX: [1, 1.4, 1], scaleY: [1, 0.6, 1] }}
+          transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }} />
+      </motion.g>
+    </svg>
+  );
+}
+
+const CONCERN_ILLUSTRATIONS: Record<string, React.FC<{ c: string }>> = {
+  hardness:     IllustrationHardWater,
+  iron_stains:  IllustrationIronStains,
+  bad_taste:    IllustrationBadTaste,
+  sulfur_smell: IllustrationSulfurSmell,
+  dry_skin:     IllustrationDrySkin,
+  bottled_water:IllustrationBottledWater,
+  bacteria:     IllustrationBacteria,
+  not_sure:     IllustrationNotSure,
+};
+
 function ConcernCard({
-  label, sub, word, selected, onClick,
+  id, label, sub, selected, onClick,
 }: {
-  label: string; sub: string; word: string; selected: boolean; onClick: () => void;
+  id: string; label: string; sub: string; selected: boolean; onClick: () => void;
 }) {
+  const Illustration = CONCERN_ILLUSTRATIONS[id];
+  const color = selected ? "#12BDFB" : "rgba(255,255,255,0.5)";
+
   return (
     <button
       onClick={onClick}
-      className="relative overflow-hidden rounded-2xl text-left transition-all duration-200 w-full"
+      className="relative overflow-hidden rounded-2xl text-left transition-all duration-200 w-full flex flex-col"
       style={{
-        backgroundColor: selected ? "#07111A" : "#f4f6f8",
+        backgroundColor: selected ? "#07111A" : "#111C26",
         border: "2px solid",
-        borderColor: selected ? "#12BDFB" : "transparent",
-        boxShadow: selected ? "0 0 0 3px rgba(18,189,251,0.15)" : "none",
-        height: 130,
+        borderColor: selected ? "#12BDFB" : "rgba(255,255,255,0.06)",
+        boxShadow: selected ? "0 0 24px rgba(18,189,251,0.2)" : "none",
+        height: 164,
       }}
     >
-      {/* Giant watermark word */}
-      <div
-        className="absolute inset-0 flex items-center justify-end pr-3 pointer-events-none select-none overflow-hidden"
-        aria-hidden
-      >
-        <span
-          className="font-display font-bold leading-none"
-          style={{
-            fontSize: "clamp(2.8rem, 12vw, 4.5rem)",
-            color: selected ? "rgba(18,189,251,0.18)" : "rgba(12,31,46,0.07)",
-            letterSpacing: "-0.04em",
-            whiteSpace: "nowrap",
-            transition: "color 0.2s",
-          }}
-        >
-          {word}
-        </span>
-      </div>
-
-      {/* Foreground content */}
-      <div className="absolute inset-0 flex flex-col justify-between p-4">
+      {/* Check */}
+      <div className="absolute top-3 right-3 z-10">
         <div
-          className="w-5 h-5 rounded-full border-2 flex items-center justify-center self-end"
+          className="w-5 h-5 rounded-full border-2 flex items-center justify-center"
           style={{
-            borderColor: selected ? "#12BDFB" : "rgba(12,31,46,0.2)",
+            borderColor: selected ? "#12BDFB" : "rgba(255,255,255,0.2)",
             backgroundColor: selected ? "#12BDFB" : "transparent",
             transition: "all 0.2s",
           }}
         >
           {selected && <Check className="w-3 h-3 text-white" strokeWidth={3} />}
         </div>
-        <div>
-          <p
-            className="font-display font-bold leading-tight"
-            style={{ fontSize: "1.05rem", color: selected ? "#ffffff" : "#0C1F2E", transition: "color 0.2s" }}
-          >
-            {label}
-          </p>
-          <p
-            className="text-xs mt-0.5"
-            style={{ color: selected ? "rgba(255,255,255,0.5)" : "rgba(12,31,46,0.4)", transition: "color 0.2s" }}
-          >
-            {sub}
-          </p>
-        </div>
+      </div>
+
+      {/* Illustration */}
+      <div className="flex-1 flex items-center justify-center pt-2">
+        {Illustration && <Illustration c={color} />}
+      </div>
+
+      {/* Text */}
+      <div className="px-4 pb-4">
+        <p className="font-semibold text-sm leading-tight" style={{ color: selected ? "#ffffff" : "rgba(255,255,255,0.85)" }}>
+          {label}
+        </p>
+        <p className="text-[11px] mt-0.5" style={{ color: selected ? "rgba(18,189,251,0.7)" : "rgba(255,255,255,0.3)" }}>
+          {sub}
+        </p>
       </div>
     </button>
   );
@@ -414,9 +531,9 @@ export default function GetStartedPage() {
                 {CONCERNS.map(c => (
                   <ConcernCard
                     key={c.id}
+                    id={c.id}
                     label={c.label}
                     sub={c.sub}
-                    word={c.word}
                     selected={answers.concerns.includes(c.id)}
                     onClick={() => toggle("concerns", c.id)}
                   />
