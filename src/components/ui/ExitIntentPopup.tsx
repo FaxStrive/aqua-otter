@@ -10,7 +10,9 @@ const GUIDE_URL = "/downloads/10-signs-your-water-is-damaging-your-home.pdf";
 
 export default function ExitIntentPopup() {
   const [open, setOpen] = useState(false);
+  const [name, setName]   = useState("");
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -52,8 +54,17 @@ export default function ExitIntentPopup() {
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
+    if (!name.trim() || name.trim().length < 2) {
+      setError("Please enter your first name.");
+      return;
+    }
     if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
       setError("That email doesn't look quite right.");
+      return;
+    }
+    const phoneDigits = phone.replace(/\D/g, "");
+    if (phoneDigits.length < 10) {
+      setError("Please enter a valid phone number.");
       return;
     }
     setSubmitting(true);
@@ -61,7 +72,7 @@ export default function ExitIntentPopup() {
       await fetch("/api/lead", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, source: "exit-intent-guide" }),
+        body: JSON.stringify({ name: name.trim(), email, phone: phoneDigits, source: "exit-intent-guide" }),
       }).catch(() => {}); // fail-open for MVP
       setSubmitted(true);
     } finally {
@@ -130,16 +141,45 @@ export default function ExitIntentPopup() {
                     <p className="text-sm leading-relaxed mb-5" style={{ color: "rgba(12,31,46,0.55)" }}>
                       A free PDF guide. What to look for, what it costs you every month, and when to do something about it.
                     </p>
-                    <form onSubmit={onSubmit} className="space-y-3">
+                    <form onSubmit={onSubmit} className="space-y-2.5">
+                      <input
+                        type="text"
+                        required
+                        value={name}
+                        onChange={e => setName(e.target.value)}
+                        placeholder="First name"
+                        autoComplete="given-name"
+                        className="w-full px-4 py-3 rounded-xl text-sm outline-none transition-colors"
+                        style={{
+                          border: `1.5px solid ${error && !name.trim() ? "#ef4444" : "rgba(12,31,46,0.12)"}`,
+                          backgroundColor: "#fafbfc",
+                          color: "#0C1F2E",
+                        }}
+                      />
                       <input
                         type="email"
                         required
                         value={email}
                         onChange={e => setEmail(e.target.value)}
-                        placeholder="you@homeowner.com"
+                        placeholder="Email address"
+                        autoComplete="email"
                         className="w-full px-4 py-3 rounded-xl text-sm outline-none transition-colors"
                         style={{
-                          border: `1.5px solid ${error ? "#ef4444" : "rgba(12,31,46,0.12)"}`,
+                          border: `1.5px solid ${error && error.toLowerCase().includes("email") ? "#ef4444" : "rgba(12,31,46,0.12)"}`,
+                          backgroundColor: "#fafbfc",
+                          color: "#0C1F2E",
+                        }}
+                      />
+                      <input
+                        type="tel"
+                        required
+                        value={phone}
+                        onChange={e => setPhone(e.target.value)}
+                        placeholder="Phone number"
+                        autoComplete="tel"
+                        className="w-full px-4 py-3 rounded-xl text-sm outline-none transition-colors"
+                        style={{
+                          border: `1.5px solid ${error && error.toLowerCase().includes("phone") ? "#ef4444" : "rgba(12,31,46,0.12)"}`,
                           backgroundColor: "#fafbfc",
                           color: "#0C1F2E",
                         }}
@@ -148,7 +188,7 @@ export default function ExitIntentPopup() {
                       <button
                         type="submit"
                         disabled={submitting}
-                        className="w-full py-3.5 rounded-xl text-sm font-bold transition-all"
+                        className="w-full py-3.5 rounded-xl text-sm font-bold transition-all mt-1"
                         style={{
                           backgroundColor: submitting ? "#7ed7ff" : "#12BDFB",
                           color: "#0C1F2E",
@@ -159,7 +199,7 @@ export default function ExitIntentPopup() {
                       </button>
                     </form>
                     <p className="text-[11px] mt-3" style={{ color: "rgba(12,31,46,0.38)" }}>
-                      No spam. Unsubscribe any time. We hate spam too.
+                      No spam. We&apos;ll never share your info. Unsubscribe any time.
                     </p>
                   </>
                 ) : (
