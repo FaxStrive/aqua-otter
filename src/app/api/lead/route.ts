@@ -14,7 +14,19 @@ export async function POST(req: Request) {
       return NextResponse.json({ ok: false, error: "invalid_email" }, { status: 400 });
     }
 
-    const result = await createGHLContact({ name, email, phone, city, zip, source, concern, waterSource, timeWindow, notes });
+    // Source → workflow trigger tag map. Each tag fires a specific GHL workflow
+    // (e.g. `guide-10-signs` → workflow that emails the PDF guide).
+    const sourceTagMap: Record<string, string[]> = {
+      "exit-intent-guide":   ["guide-10-signs", "lead-magnet", "needs-nurture"],
+      "homepage-form":       ["website-form", "needs-followup"],
+      "service-page":        ["service-inquiry", "needs-followup"],
+      "free-water-test":     ["free-water-test-request", "hot-lead"],
+      "quiz-funnel":         ["quiz-completed", "hot-lead"],
+      "city-page":           ["local-inquiry", "needs-followup"],
+    };
+    const extraTags = source && sourceTagMap[source] ? sourceTagMap[source] : [];
+
+    const result = await createGHLContact({ name, email, phone, city, zip, source, concern, waterSource, timeWindow, notes, tags: extraTags });
 
     if (!result.ok) {
       console.error("[lead] GHL error", result.error);

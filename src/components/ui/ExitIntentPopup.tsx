@@ -168,17 +168,19 @@ export default function ExitIntentPopup() {
                       <CheckCircle2 className="w-7 h-7" style={{ color: "#22c55e" }} />
                     </div>
                     <h2 className="font-display font-bold leading-tight mb-2" style={{ fontSize: "1.6rem", color: "#0C1F2E" }}>
-                      Check your inbox.
+                      On its way to your inbox.
                     </h2>
                     <p className="text-sm leading-relaxed mb-5" style={{ color: "rgba(12,31,46,0.6)" }}>
-                      We sent the guide to <b>{email}</b>. Takes 2 minutes to read. Might save you thousands.
+                      We&apos;re sending the guide to <b>{email}</b> right now. Check your inbox in the next minute or two — and your spam folder, just in case.
                     </p>
                     <a
                       href={GUIDE_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 text-sm font-semibold"
                       style={{ color: "#12BDFB" }}
                     >
-                      Download now →
+                      Or download it now →
                     </a>
                   </div>
                 )}
