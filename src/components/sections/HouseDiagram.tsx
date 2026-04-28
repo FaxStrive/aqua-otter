@@ -327,7 +327,7 @@ export default function HouseDiagram() {
   };
 
   return (
-    <section ref={ref} className="relative overflow-hidden py-24 md:py-36" style={{ backgroundColor: "#050b13" }}>
+    <section ref={ref} className="relative overflow-hidden py-24 md:py-36" style={{ backgroundColor: "#07111A" }}>
       {/* Layered background — gridlines + radial glows */}
       <div
         aria-hidden
