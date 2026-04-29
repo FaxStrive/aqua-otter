@@ -18,7 +18,10 @@ const TARGET_STATES_DEFAULT = ["IN", "MI", "OH", "KY", "TN", "NC"];
 const targetStates = (process.argv.slice(2).length ? process.argv.slice(2) : TARGET_STATES_DEFAULT)
   .map(s => s.toUpperCase());
 
-const ZIP_CSV_URL    = "https://raw.githubusercontent.com/scpike/us-state-county-zip/master/geo-data.csv";
+// GeoNames is the canonical free + CC BY USPS-derived ZIP database.
+// Covers ~41,000 US ZIPs including PO-Box-only and newly-issued ZIPs.
+const GEONAMES_URL   = "https://download.geonames.org/export/zip/US.zip";
+const GEONAMES_TXT   = "US.txt";
 const EWG_BASE       = "https://www.ewg.org/tapwater";
 const USER_AGENT     = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15";
 
@@ -26,7 +29,8 @@ const ROOT = process.cwd();
 const CACHE_DIR     = path.join(ROOT, ".cache", "ewg");
 const ZIP_CACHE     = path.join(CACHE_DIR, "zip-index.json");
 const UTIL_CACHE    = path.join(CACHE_DIR, "utility-cache.json");
-const ZIP_DB_FILE   = path.join(CACHE_DIR, "zip-db.csv");
+const ZIP_DB_FILE   = path.join(CACHE_DIR, "geonames-US.txt");
+const ZIP_DB_ZIP    = path.join(CACHE_DIR, "geonames-US.zip");
 const OUTPUT_FILE   = path.join(ROOT, "src", "lib", "water-profiles.json");
 
 if (!fs.existsSync(CACHE_DIR)) fs.mkdirSync(CACHE_DIR, { recursive: true });
@@ -116,24 +120,27 @@ function fetchHtml(url: string, attempt = 0): Promise<string> {
   });
 }
 
-// ─── ZIP DB: download once, then parse ───────────────────────────
+// ─── ZIP DB: download GeoNames once, then parse ──────────────────
 async function loadZipDb(): Promise<{ state: string; zip: string; county: string; city: string }[]> {
   if (!fs.existsSync(ZIP_DB_FILE)) {
-    process.stdout.write(`Downloading ZIP database from GitHub…\n`);
-    const text = await fetchHtml(ZIP_CSV_URL);
-    fs.writeFileSync(ZIP_DB_FILE, text);
+    process.stdout.write(`Downloading GeoNames US ZIP database…\n`);
+    // GeoNames is a binary zip file; download with curl and unzip via shell.
+    const { execSync } = await import("node:child_process");
+    execSync(`curl -sL "${GEONAMES_URL}" -o "${ZIP_DB_ZIP}"`);
+    execSync(`cd "${CACHE_DIR}" && unzip -o "${ZIP_DB_ZIP}" > /dev/null && mv "${GEONAMES_TXT}" "${path.basename(ZIP_DB_FILE)}"`);
   }
   const text = fs.readFileSync(ZIP_DB_FILE, "utf8");
-  const lines = text.split("\n").slice(1).filter(Boolean);
+  const lines = text.split("\n").filter(Boolean);
   const out: { state: string; zip: string; county: string; city: string }[] = [];
+  // GeoNames format (tab-delimited):
+  // country  postal_code  place_name  admin_name1  admin_code1  admin_name2  admin_code2  ...
   for (const line of lines) {
-    // Some city names contain commas; CSV from this source has 6 unquoted fields and a few quoted exceptions.
-    const cols = line.split(",");
-    if (cols.length < 6) continue;
-    const state_abbr = cols[2];
-    const zipcode    = cols[3];
-    const county     = cols[4];
-    const city       = cols.slice(5).join(",");
+    const c = line.split("\t");
+    if (c.length < 6) continue;
+    const state_abbr = c[4];
+    const zipcode    = c[1];
+    const city       = c[2];
+    const county     = c[5] || "";
     if (!targetStates.includes(state_abbr)) continue;
     if (!/^\d{5}$/.test(zipcode)) continue;
     out.push({ state: state_abbr, zip: zipcode, county, city });
