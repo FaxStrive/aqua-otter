@@ -44,7 +44,7 @@ const STAGES: Stage[] = [
     label: "Sediment Pre-Filter",
     subtitle: "Stage 01 · Mechanical Capture",
     color: "#f59e0b",
-    glowColor: "rgba(245,158,11,0.55)",
+    glowColor: "rgba(245,158,11,0.45)",
     xCenter: TANK_X.sediment,
     micron: "5 μm pleated media",
     flow: "12 GPM",
@@ -61,8 +61,8 @@ const STAGES: Stage[] = [
     id: "carbon",
     label: "Catalytic Carbon",
     subtitle: "Stage 02 · Chemical Adsorption",
-    color: "#a855f7",
-    glowColor: "rgba(168,85,247,0.55)",
+    color: "#0097C4",
+    glowColor: "rgba(0,151,196,0.55)",
     xCenter: TANK_X.carbon,
     micron: "0.5 μm carbon block",
     flow: "10 GPM",
@@ -111,12 +111,12 @@ type Particle = {
 };
 
 const TYPE_DEFS: { type: ParticleType; stage: StageId | null; size: number; shape: Particle["shape"]; color: string }[] = [
-  { type: "rust",      stage: "sediment", size: 8,   shape: "spike",   color: "#dc2626" },
-  { type: "silt",      stage: "sediment", size: 5.5, shape: "circle",  color: "#92400e" },
-  { type: "chlorine",  stage: "carbon",   size: 7,   shape: "hex",     color: "#facc15" },
-  { type: "pfas",      stage: "carbon",   size: 7.5, shape: "star",    color: "#a855f7" },
-  { type: "calcium",   stage: "softener", size: 6.5, shape: "diamond", color: "#60a5fa" },
-  { type: "magnesium", stage: "softener", size: 6,   shape: "diamond", color: "#fb923c" },
+  { type: "rust",      stage: "sediment", size: 8,   shape: "spike",   color: "#f59e0b" },
+  { type: "silt",      stage: "sediment", size: 5.5, shape: "circle",  color: "#b4641a" },
+  { type: "chlorine",  stage: "carbon",   size: 7,   shape: "hex",     color: "#0097C4" },
+  { type: "pfas",      stage: "carbon",   size: 7.5, shape: "star",    color: "#0e7490" },
+  { type: "calcium",   stage: "softener", size: 6.5, shape: "diamond", color: "#12BDFB" },
+  { type: "magnesium", stage: "softener", size: 6,   shape: "diamond", color: "#7dd3fc" },
 ];
 
 function buildParticles(count: number): Particle[] {
@@ -334,7 +334,7 @@ export default function HouseDiagram() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 80% 60% at 20% 50%, rgba(245,158,11,0.08) 0%, transparent 50%), radial-gradient(ellipse 70% 50% at 50% 50%, rgba(168,85,247,0.08) 0%, transparent 50%), radial-gradient(ellipse 80% 60% at 85% 50%, rgba(18,189,251,0.12) 0%, transparent 55%)",
+            "radial-gradient(ellipse 80% 60% at 18% 50%, rgba(245,158,11,0.06) 0%, transparent 55%), radial-gradient(ellipse 80% 60% at 85% 50%, rgba(18,189,251,0.14) 0%, transparent 55%)",
         }}
       />
       <div
@@ -374,7 +374,7 @@ export default function HouseDiagram() {
           >
             Dirty water in.<br />
             <span style={{
-              background: "linear-gradient(90deg, #f59e0b 0%, #a855f7 50%, #12BDFB 100%)",
+              background: "linear-gradient(90deg, #f59e0b 0%, #0097C4 50%, #12BDFB 100%)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",
@@ -396,8 +396,8 @@ export default function HouseDiagram() {
           style={{ maxWidth: "880px", backgroundColor: "rgba(255,255,255,0.025)", border: "1px solid rgba(255,255,255,0.06)", backdropFilter: "blur(20px)" }}
         >
           <div className="flex items-center gap-2.5">
-            <Activity className="w-4 h-4" style={{ color: "#22c55e" }} />
-            <StatCounter value={99} suffix=".9%" label="Removal Rate" color="#22c55e" />
+            <Activity className="w-4 h-4" style={{ color: "#12BDFB" }} />
+            <StatCounter value={99} suffix=".9%" label="Removal Rate" color="#12BDFB" />
           </div>
           <div className="w-px h-10 hidden md:block" style={{ backgroundColor: "rgba(255,255,255,0.08)" }} />
           <div className="flex items-center gap-2.5">
@@ -406,8 +406,8 @@ export default function HouseDiagram() {
           </div>
           <div className="w-px h-10 hidden md:block" style={{ backgroundColor: "rgba(255,255,255,0.08)" }} />
           <div className="flex items-center gap-2.5">
-            <Waves className="w-4 h-4" style={{ color: "#a855f7" }} />
-            <StatCounter value={3} label="Stages" color="#a855f7" delay={400} />
+            <Waves className="w-4 h-4" style={{ color: "#12BDFB" }} />
+            <StatCounter value={3} label="Stages" color="#12BDFB" delay={400} />
           </div>
           <div className="w-px h-10 hidden md:block" style={{ backgroundColor: "rgba(255,255,255,0.08)" }} />
           <div className="flex items-center gap-2.5">
@@ -443,11 +443,11 @@ export default function HouseDiagram() {
             <div className="flex items-center gap-3">
               <motion.span
                 className="block w-1.5 h-1.5 rounded-full"
-                style={{ backgroundColor: "#22c55e" }}
+                style={{ backgroundColor: "#12BDFB" }}
                 animate={{ opacity: [0.4, 1, 0.4] }}
                 transition={{ duration: 1.4, repeat: Infinity }}
               />
-              <span className="text-[10px] font-mono uppercase tracking-[0.15em]" style={{ color: "rgba(34,197,94,0.8)" }}>
+              <span className="text-[10px] font-mono uppercase tracking-[0.15em]" style={{ color: "rgba(18,189,251,0.8)" }}>
                 System online · streaming
               </span>
             </div>
@@ -472,11 +472,11 @@ export default function HouseDiagram() {
                 </linearGradient>
                 <linearGradient id="midPipe1" x1="0" y1="0" x2="1" y2="0">
                   <stop offset="0%" stopColor="#92400e" />
-                  <stop offset="100%" stopColor="#7c3aed" />
+                  <stop offset="100%" stopColor="#0e7490" />
                 </linearGradient>
                 <linearGradient id="midPipe2" x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0%" stopColor="#7c3aed" />
-                  <stop offset="100%" stopColor="#0e7490" />
+                  <stop offset="0%" stopColor="#0e7490" />
+                  <stop offset="100%" stopColor="#12BDFB" />
                 </linearGradient>
 
                 {STAGES.map(s => (
@@ -922,7 +922,7 @@ export default function HouseDiagram() {
               className="rounded-2xl p-5"
               style={{ backgroundColor: "rgba(255,255,255,0.025)", border: "1px solid rgba(255,255,255,0.06)" }}
             >
-              <c.icon className="w-5 h-5 mb-3" style={{ color: i === 0 ? "#f59e0b" : i === 1 ? "#a855f7" : i === 2 ? "#22c55e" : "#12BDFB" }} />
+              <c.icon className="w-5 h-5 mb-3" style={{ color: i === 0 ? "#f59e0b" : "#12BDFB" }} />
               <p className="text-sm font-bold text-white">{c.label}</p>
               <p className="text-xs mt-1" style={{ color: "rgba(255,255,255,0.45)" }}>{c.sub}</p>
             </div>

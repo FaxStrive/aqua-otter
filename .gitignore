@@ -24,3 +24,7 @@ yarn-error.log*
 
 # Vercel
 .vercel
+
+# Scraper cache (kept locally for resume, not committed)
+.cache/
+

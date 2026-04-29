@@ -4,7 +4,7 @@ import { useRef, useState } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, Search, AlertTriangle, Beaker, Droplets } from "lucide-react";
-import { lookupWaterByZip, hardnessLevel, type WaterProfile } from "@/lib/water-data";
+import { hardnessLevel, type WaterProfile } from "@/lib/water-types";
 
 type ResultState =
   | { kind: "idle" }
@@ -43,10 +43,19 @@ export default function ZipLookup() {
     const clean = zip.replace(/\D/g, "").slice(0, 5);
     if (clean.length !== 5) return;
     setLoading(true);
-    await new Promise(r => setTimeout(r, 450)); // tiny delay feels more trustworthy
-    const profile = lookupWaterByZip(clean);
-    setResult(profile ? { kind: "found", profile } : { kind: "not-found", zip: clean });
-    setLoading(false);
+    try {
+      const res = await fetch(`/api/water-lookup?zip=${clean}`);
+      if (res.ok) {
+        const data = await res.json();
+        setResult({ kind: "found", profile: data.profile as WaterProfile });
+      } else {
+        setResult({ kind: "not-found", zip: clean });
+      }
+    } catch {
+      setResult({ kind: "not-found", zip: clean });
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
