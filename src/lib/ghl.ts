@@ -8,6 +8,14 @@
 
 const GHL_BASE = "https://services.leadconnectorhq.com";
 
+// Sierra's workflow webhook in the AquaOtter sub-account where she runs
+// automations (separate location from the one tied to GHL_API_KEY). We
+// fire-and-forget a POST to this in parallel with the Contacts API call
+// so both pipelines stay in sync. Override via GHL_WEBHOOK_URL env if
+// pointing at a staging workflow.
+const DEFAULT_WEBHOOK_URL =
+  "https://services.leadconnectorhq.com/hooks/lGY1i8kHWLp0Tmsp1HJ5/webhook-trigger/1c79ad02-9e0c-40d4-9a4d-510a90590a9f";
+
 function getEnv() {
   const apiKey = process.env.GHL_API_KEY;
   const locationId = process.env.GHL_LOCATION_ID;
@@ -78,9 +86,57 @@ function authHeaders(apiKey: string) {
  * Create a contact in GHL — or, if one already exists with the same
  * email/phone, update it instead so tags + custom fields get refreshed.
  */
+/**
+ * Fire-and-forget POST to Sierra's workflow webhook (separate GHL sub-account).
+ * Runs in parallel with the Contacts API call so both pipelines see the lead.
+ */
+function fireWorkflowWebhook(input: GHLContactInput): void {
+  const url = process.env.GHL_WEBHOOK_URL || DEFAULT_WEBHOOK_URL;
+  if (!url) return;
+
+  const { firstName, lastName } = input.name
+    ? splitName(input.name)
+    : { firstName: undefined, lastName: undefined };
+
+  const payload: Record<string, unknown> = {
+    name: input.name,
+    firstName,
+    lastName,
+    email: input.email,
+    phone: input.phone,
+    city: input.city,
+    zip: input.zip,
+    source: input.source ?? "website",
+    tags: ["aqua-otter-website", ...(input.tags ?? []), ...(input.source ? [input.source] : [])],
+    water_concern: input.concern,
+    water_source: input.waterSource,
+    preferred_time: input.timeWindow,
+    notes: input.notes,
+    submitted_at: new Date().toISOString(),
+    site: "myaquaotter.com",
+  };
+
+  fetch(url, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+    signal: AbortSignal.timeout(10_000),
+  })
+    .then((r) => {
+      if (!r.ok) console.error("[ghl-webhook] non-2xx", r.status);
+    })
+    .catch((e) => {
+      console.error("[ghl-webhook] post failed", e instanceof Error ? e.message : String(e));
+    });
+}
+
 export async function createGHLContact(
   input: GHLContactInput,
 ): Promise<{ ok: boolean; contactId?: string; error?: string }> {
+  // Fire Sierra's workflow webhook in parallel — don't await, don't block
+  // the API path if the webhook is slow/broken.
+  fireWorkflowWebhook(input);
+
   const { apiKey, locationId } = getEnv();
   const body = buildBody(input, locationId);
 
