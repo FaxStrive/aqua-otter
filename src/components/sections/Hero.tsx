@@ -3,9 +3,32 @@
 import { motion, useReducedMotion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, Phone } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+
+// Clean brand-color backdrop shown until the hero video has buffered enough
+// to play smoothly. Avoids flashing the raw poster frame (which looked like a
+// random marbled image) before the mp4 takes over.
+const VIDEO_BACKDROP =
+  "radial-gradient(ellipse 90% 70% at 50% 40%, rgba(18,189,251,0.45) 0%, rgba(18,189,251,0.18) 40%, rgba(7,17,26,0.95) 100%)";
 
 export default function Hero() {
   const shouldReduce = useReducedMotion();
+  const mobileVideoRef = useRef<HTMLVideoElement>(null);
+  const desktopVideoRef = useRef<HTMLVideoElement>(null);
+  const [mobileReady, setMobileReady] = useState(false);
+  const [desktopReady, setDesktopReady] = useState(false);
+
+  useEffect(() => {
+    const tryPlay = (v: HTMLVideoElement | null) => {
+      if (!v) return;
+      v.muted = true;
+      v.playsInline = true;
+      const p = v.play();
+      if (p && typeof p.catch === "function") p.catch(() => {});
+    };
+    tryPlay(mobileVideoRef.current);
+    tryPlay(desktopVideoRef.current);
+  }, []);
 
   return (
     <>
@@ -47,15 +70,20 @@ export default function Hero() {
             height: "clamp(280px, 42vh, 420px)",
             border: "1px solid rgba(18,189,251,0.18)",
             boxShadow: "0 20px 60px rgba(0,0,0,0.4), 0 0 80px rgba(18,189,251,0.08)",
+            background: VIDEO_BACKDROP,
           }}
         >
           <video
+            ref={mobileVideoRef}
             autoPlay loop muted playsInline
-            poster="/videos/hero-water-poster.jpg"
-            className="absolute inset-0 w-full h-full object-cover"
-          >
-            <source src="/videos/hero-water.mp4" type="video/mp4" />
-          </video>
+            preload="auto"
+            src="/videos/hero-water-mobile.mp4"
+            onCanPlayThrough={() => setMobileReady(true)}
+            onPlaying={() => setMobileReady(true)}
+            className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700"
+            style={{ opacity: mobileReady ? 1 : 0 }}
+          />
+
 
           {/* Subtle inner vignette so card edges feel premium without darkening the video */}
           <div
@@ -217,15 +245,18 @@ export default function Hero() {
           animate={{ opacity: 1 }}
           transition={{ duration: 1.4, delay: 0.2 }}
           className="absolute top-0 bottom-0 right-0 pointer-events-none overflow-hidden w-[48%]"
-          style={{ zIndex: 1 }}
+          style={{ zIndex: 1, background: VIDEO_BACKDROP }}
         >
           <video
+            ref={desktopVideoRef}
             autoPlay loop muted playsInline
-            poster="/videos/hero-water-poster.jpg"
-            className="w-full h-full object-cover"
-          >
-            <source src="/videos/hero-water.mp4" type="video/mp4" />
-          </video>
+            preload="auto"
+            src="/videos/hero-water.mp4"
+            onCanPlayThrough={() => setDesktopReady(true)}
+            onPlaying={() => setDesktopReady(true)}
+            className="w-full h-full object-cover transition-opacity duration-700"
+            style={{ opacity: desktopReady ? 1 : 0 }}
+          />
 
           <div className="absolute inset-0" style={{ background: "linear-gradient(to right, #ffffff 0%, rgba(255,255,255,0.6) 8%, rgba(255,255,255,0) 22%)" }} />
           <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(255,255,255,0.5) 0%, transparent 8%, transparent 92%, rgba(255,255,255,0.7) 100%)" }} />
