@@ -7,7 +7,9 @@ import SiteOrb from "@/components/SiteOrb";
 import ScrollProgress from "@/components/ui/ScrollProgress";
 import StickyMobileCTA from "@/components/ui/StickyMobileCTA";
 import ExitIntentPopup from "@/components/ui/ExitIntentPopup";
-import AskTheOtter from "@/components/chat/AskTheOtter";
+// AskTheOtter (custom Anthropic chat) was removed in favor of AquaOtter's
+// GHL-hosted AI chat widget, loaded near the bottom of <body>. Keeping both
+// would put two chat bubbles on the page.
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.myaquaotter.com"),
@@ -51,7 +53,15 @@ export default function RootLayout({
         <Footer />
         <StickyMobileCTA />
         <ExitIntentPopup />
-        <AskTheOtter />
+        {/* GHL-hosted AI chat widget — handles lead conversations and
+            routes qualified leads back into AquaOtter's CRM workflows. */}
+        <Script
+          id="ghl-chat-widget"
+          src="https://widgets.leadconnectorhq.com/loader.js"
+          data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
+          data-widget-id="69e278dc06d5d58f3d95c662"
+          strategy="afterInteractive"
+        />
         <Script id="ms-clarity" strategy="afterInteractive">
           {`(function(c,l,a,r,i,t,y){
             c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
