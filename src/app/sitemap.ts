@@ -33,6 +33,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/systems/well-water",
     "/systems/uv-purification",
     "/systems/no-salt",
+    "/indiana",
+    "/michigan",
+    "/ohio",
+    "/kentucky",
+    "/tennessee",
+    "/north-carolina",
   ].map(p => ({
     url: `${BASE}${p}`,
     lastModified: now,
