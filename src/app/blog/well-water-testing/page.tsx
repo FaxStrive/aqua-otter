@@ -4,7 +4,6 @@ import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
 
-// TODO: confirm Larry's last name and update author.name accordingly.
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
@@ -13,7 +12,7 @@ const articleSchema = {
   author: {
     "@type": "Person",
     "@id": "https://www.myaquaotter.com/#larry",
-    name: "Larry",
+    name: "Larry Foster",
     jobTitle: "Founder",
     worksFor: { "@id": "https://www.myaquaotter.com/#organization" },
   },
@@ -36,7 +35,7 @@ export default function WellWaterTestingPost() {
           Well Water Testing: Why You Should Test Every Year
         </h1>
 
-        <p className="text-sm mb-10" style={{ color: "rgba(12,31,46,0.4)" }}>March 28, 2026 &nbsp;·&nbsp; 5 min read &nbsp;·&nbsp; By Larry</p>
+        <p className="text-sm mb-10" style={{ color: "rgba(12,31,46,0.4)" }}>March 28, 2026 &nbsp;·&nbsp; 5 min read &nbsp;·&nbsp; By Larry Foster</p>
 
         <div className="space-y-6 text-base leading-relaxed" style={{ color: "rgba(12,31,46,0.65)" }}>
           <p>

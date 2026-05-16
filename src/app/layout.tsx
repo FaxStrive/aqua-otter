@@ -112,8 +112,7 @@ export const metadata: Metadata = {
   },
 };
 
-// Site-wide Organization + Person (founder Larry) JSON-LD.
-// TODO: confirm Larry's last name and update larryPerson.name accordingly.
+// Site-wide Organization + Person (founder Larry Foster) JSON-LD.
 const organizationSchema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -140,7 +139,7 @@ const organizationSchema = {
     {
       "@type": "Person",
       "@id": "https://www.myaquaotter.com/#larry",
-      name: "Larry",
+      name: "Larry Foster",
       jobTitle: "Founder",
       worksFor: { "@id": "https://www.myaquaotter.com/#organization" },
     },

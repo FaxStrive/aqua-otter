@@ -20,8 +20,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
   const cs = getCaseStudy(params.slug);
   if (!cs) notFound();
 
-  // Article + Person JSON-LD. Larry is the founding author.
-  // TODO: confirm Larry's last name and update author.name accordingly.
+  // Article + Person JSON-LD. Larry Foster is the founding author.
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -30,7 +29,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
     author: {
       "@type": "Person",
       "@id": "https://www.myaquaotter.com/#larry",
-      name: "Larry",
+      name: "Larry Foster",
       jobTitle: "Founder",
       worksFor: { "@id": "https://www.myaquaotter.com/#organization" },
     },
