@@ -61,7 +61,7 @@ function StatBlock({ s, index }: { s: typeof stats[number]; index: number }) {
         <Counter to={s.value} suffix={s.suffix} run={inView} />
       </div>
 
-      {/* Real number — clipped reveal from below */}
+      {/* Real number, clipped reveal from below */}
       <div
         className="relative"
         style={{
@@ -116,7 +116,7 @@ function StatBlock({ s, index }: { s: typeof stats[number]; index: number }) {
         {s.sub}
       </motion.p>
 
-      {/* Hidden — keeps index in closure signature */}
+      {/* Hidden, keeps index in closure signature */}
       <span hidden aria-hidden>{index}</span>
     </motion.div>
   );
@@ -188,7 +188,7 @@ export default function Stats() {
         }}
       />
 
-      {/* Caustic shimmer overlay — that dappled light-through-water look */}
+      {/* Caustic shimmer overlay, that dappled light-through-water look */}
       <div
         aria-hidden
         className="absolute inset-0 pointer-events-none mix-blend-screen"
@@ -217,7 +217,7 @@ export default function Stats() {
         }}
       />
 
-      {/* FLOWING WAVE BAND #1 — top third, drifts left continuously, scroll-shifts */}
+      {/* FLOWING WAVE BAND #1, top third, drifts left continuously, scroll-shifts */}
       <motion.div
         aria-hidden
         className="absolute left-0 pointer-events-none"
@@ -236,7 +236,7 @@ export default function Stats() {
         />
       </motion.div>
 
-      {/* FLOWING WAVE BAND #2 — middle, drifts right, scroll-shifts opposite */}
+      {/* FLOWING WAVE BAND #2, middle, drifts right, scroll-shifts opposite */}
       <motion.div
         aria-hidden
         className="absolute left-0 pointer-events-none"
@@ -255,7 +255,7 @@ export default function Stats() {
         />
       </motion.div>
 
-      {/* FLOWING WAVE BAND #3 — bottom, slowest */}
+      {/* FLOWING WAVE BAND #3, bottom, slowest */}
       <motion.div
         aria-hidden
         className="absolute left-0 right-0 bottom-0 pointer-events-none"
@@ -347,7 +347,7 @@ export default function Stats() {
         }}
       />
 
-      {/* Scroll-drawn water spine connecting stats — only desktop */}
+      {/* Scroll-drawn water spine connecting stats, only desktop */}
       <motion.svg
         aria-hidden
         className="hidden md:block absolute inset-0 w-full h-full pointer-events-none"
@@ -413,7 +413,7 @@ export default function Stats() {
           <StatBlock key={s.label} s={s} index={i} />
         ))}
 
-        {/* CTA — bottom right */}
+        {/* CTA, bottom right */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={sectionInView ? { opacity: 1, y: 0 } : {}}

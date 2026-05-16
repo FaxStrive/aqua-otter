@@ -18,7 +18,7 @@ const CONCERNS = [
   { id: "taste",    label: "Taste or smell" },
   { id: "bacteria", label: "Bacteria / safety" },
   { id: "drinking", label: "Drinking water quality" },
-  { id: "unsure",   label: "Not sure — just test it" },
+  { id: "unsure",   label: "Not sure, just test it" },
 ];
 
 // Otter per step
@@ -72,7 +72,7 @@ export default function ContactPage() {
         }),
       });
     } catch {
-      // fail open — user still sees confirmation
+      // fail open, user still sees confirmation
     } finally {
       setSubmitting(false);
       setDone(true);
@@ -171,7 +171,7 @@ export default function ContactPage() {
               &ldquo;Came out the next day, tested everything, explained it all. Zero pressure. Best home service experience I&apos;ve had.&rdquo;
             </p>
             <p className="text-xs mt-1.5 font-medium" style={{ color: "rgba(255,255,255,0.25)" }}>
-              — Sarah M., Fishers IN
+Sarah M., Fishers IN
             </p>
           </div>
         </div>
@@ -294,7 +294,7 @@ export default function ContactPage() {
               {/* STEP 3: Contact info */}
               {step === 3 && (
                 <motion.div key="step3" custom={dir} variants={slide} initial="initial" animate="animate" exit="exit" transition={{ duration: 0.35 }}>
-                  <p className="text-xs font-bold uppercase tracking-[0.2em] mb-4" style={{ color: "#12BDFB" }}>Step 4 of 4 — Last one</p>
+                  <p className="text-xs font-bold uppercase tracking-[0.2em] mb-4" style={{ color: "#12BDFB" }}>Step 4 of 4, Last one</p>
                   <h2 className="font-display font-bold leading-[0.9] mb-3" style={{ fontSize: "clamp(2.2rem, 5vw, 3.5rem)", color: "#0C1F2E" }}>
                     How do we<br />reach you?
                   </h2>
@@ -355,7 +355,7 @@ export default function ContactPage() {
 
             </AnimatePresence>
 
-            {/* Direct contact strip — always visible */}
+            {/* Direct contact strip, always visible */}
             {!done && (
               <div className="mt-16 pt-8 border-t" style={{ borderColor: "rgba(18,189,251,0.08)" }}>
                 <p className="text-xs mb-3" style={{ color: "rgba(12,31,46,0.32)" }}>Prefer to call directly?</p>

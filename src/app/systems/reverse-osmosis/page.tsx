@@ -13,14 +13,14 @@ const findings = [
   { n: "03", label: "of nitrates and nitrites removed", stat: "97%" },
   { n: "04", label: "of PFAS per-and polyfluoroalkyl substances removed", stat: "95%+" },
   { n: "05", label: "saved per year compared to buying bottled water", stat: "$600+" },
-  { n: "06", label: "TDS reduction — dissolved solids effectively gone", stat: "99%" },
+  { n: "06", label: "TDS reduction, dissolved solids effectively gone", stat: "99%" },
 ];
 
 const scienceSteps = [
   {
     n: "01",
     title: "Pre-filtration removes sediment and chlorine",
-    desc: "Water first passes through a sediment filter and two carbon stages that remove particles, chlorine, and chloramines — protecting the delicate RO membrane from damage.",
+    desc: "Water first passes through a sediment filter and two carbon stages that remove particles, chlorine, and chloramines, protecting the delicate RO membrane from damage.",
   },
   {
     n: "02",
@@ -30,7 +30,7 @@ const scienceSteps = [
   {
     n: "03",
     title: "Post-carbon polishing delivers perfect taste",
-    desc: "A final carbon stage removes any remaining trace tastes or odors before water flows to your dedicated drinking faucet — cleaner than most bottled water brands.",
+    desc: "A final carbon stage removes any remaining trace tastes or odors before water flows to your dedicated drinking faucet, cleaner than most bottled water brands.",
   },
 ];
 
@@ -94,7 +94,7 @@ const roStages = [
   {
     n: 2, name: "Carbon Block", short: "Pre-filter stage 1", color: "#94a3b8",
     removes: ["Chlorine", "Chloramines", "VOCs", "Chemical tastes"],
-    desc: "Activated carbon removes chlorine and chloramines — oxidants that degrade the RO membrane on contact. This stage is what makes the membrane's multi-year lifespan achievable.",
+    desc: "Activated carbon removes chlorine and chloramines, oxidants that degrade the RO membrane on contact. This stage is what makes the membrane's multi-year lifespan achievable.",
   },
   {
     n: 3, name: "Carbon Block", short: "Pre-filter stage 2", color: "#94a3b8",
@@ -104,7 +104,7 @@ const roStages = [
   {
     n: 4, name: "RO Membrane", short: "0.0001 micron pore", color: "#12BDFB",
     removes: ["Lead (99%)", "Arsenic (99%)", "Nitrates (97%)", "PFAS (95%+)", "Heavy metals", "Pharmaceuticals"],
-    desc: "The core of the system. Water is forced through a semi-permeable membrane with pores measured in nanometers. 99% of dissolved contaminants — lead, arsenic, PFAS, nitrates — cannot pass through.",
+    desc: "The core of the system. Water is forced through a semi-permeable membrane with pores measured in nanometers. 99% of dissolved contaminants, lead, arsenic, PFAS, nitrates, cannot pass through.",
     isPrimary: true,
   },
   {
@@ -244,7 +244,7 @@ export default function ReverseOsmosisPage() {
 
       <Wave from="#ffffff" to="#07111A" variant="gentle" height={70} />
 
-      {/* 5-STAGE MEMBRANE DIAGRAM — redesigned */}
+      {/* 5-STAGE MEMBRANE DIAGRAM, redesigned */}
       <section ref={diagramRef} className="py-24 md:py-32 overflow-hidden" style={{ backgroundColor: "#07111A" }}>
         <style>{`
           @keyframes water-drip {
@@ -472,7 +472,7 @@ export default function ReverseOsmosisPage() {
                               />
                             )}
 
-                            {/* RO membrane — special spiral indicator */}
+                            {/* RO membrane, special spiral indicator */}
                             {isPrimary && (
                               <div style={{
                                 position: "absolute",
@@ -564,7 +564,7 @@ export default function ReverseOsmosisPage() {
                     </div>
                     <div>
                       <p className="text-[10px] font-bold uppercase tracking-[0.15em]" style={{ color: roStages[activeStage].color }}>
-                        Stage {roStages[activeStage].n} — {roStages[activeStage].short}
+                        Stage {roStages[activeStage].n}, {roStages[activeStage].short}
                       </p>
                       <h3 className="font-display font-bold text-white" style={{ fontSize: "1.25rem", lineHeight: 1.1 }}>
                         {roStages[activeStage].name}
@@ -625,7 +625,7 @@ export default function ReverseOsmosisPage() {
 
       <Wave from="#07111A" to="#0C1F2E" variant="gentle" height={50} />
 
-      {/* HOW IT WORKS — typographic steps */}
+      {/* HOW IT WORKS, typographic steps */}
       <section ref={stepsRef} className="py-28 md:py-40" style={{ backgroundColor: "#0C1F2E" }}>
         <div className="container-site">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={stepsInView ? { opacity: 1, y: 0 } : {}} className="mb-20">
@@ -731,7 +731,7 @@ export default function ReverseOsmosisPage() {
             </div>
           </div>
 
-          {/* Mobile — horizontal scroll carousel */}
+          {/* Mobile, horizontal scroll carousel */}
           <div className="lg:hidden overflow-x-auto -mx-4 px-4 pb-4">
             <div className="flex gap-4" style={{ width: "max-content" }}>
               {products.map(p => (
@@ -760,11 +760,11 @@ export default function ReverseOsmosisPage() {
               {[...Array(5)].map((_, i) => (<svg key={i} className="w-5 h-5" viewBox="0 0 20 20" fill="#fbbf24"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>))}
             </div>
             <blockquote className="font-display font-light italic leading-[1.6] mb-10" style={{ fontSize: "clamp(1.4rem, 3vw, 2rem)", color: "rgba(255,255,255,0.75)" }}>
-              &ldquo;Our water tastes incredible now — better than bottled. We stopped buying cases of water the week it was installed. The quality is unbelievable for what comes right out of our tap.&rdquo;
+              &ldquo;Our water tastes incredible now, better than bottled. We stopped buying cases of water the week it was installed. The quality is unbelievable for what comes right out of our tap.&rdquo;
             </blockquote>
             <div>
               <p className="font-semibold text-white">Val Fowler</p>
-              <p className="text-sm mt-1" style={{ color: "rgba(255,255,255,0.38)" }}>Google Review — 5-Stage Reverse Osmosis</p>
+              <p className="text-sm mt-1" style={{ color: "rgba(255,255,255,0.38)" }}>Google Review, 5-Stage Reverse Osmosis</p>
             </div>
           </motion.div>
         </div>

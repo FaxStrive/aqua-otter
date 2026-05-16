@@ -16,7 +16,7 @@ export default function TermsPage() {
             },
             {
               title: "Installation",
-              body: "Installation is free on all systems we sell. Installation is performed by licensed and insured Aqua Otter technicians — not subcontractors. Customer must be present during installation. Customer is responsible for ensuring reasonable access to the installation location.",
+              body: "Installation is free on all systems we sell. Installation is performed by licensed and insured Aqua Otter technicians, not subcontractors. Customer must be present during installation. Customer is responsible for ensuring reasonable access to the installation location.",
             },
             {
               title: "Warranty",

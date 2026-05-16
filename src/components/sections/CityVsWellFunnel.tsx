@@ -136,7 +136,7 @@ export default function CityVsWellFunnel() {
         </motion.div>
 
         <AnimatePresence mode="wait">
-          {/* ─── STEP 1 — CITY vs WELL ─────────────────────────────── */}
+          {/* ─── STEP 1, CITY vs WELL ─────────────────────────────── */}
           {!source && (
             <motion.div
               key="step1"
@@ -165,7 +165,7 @@ export default function CityVsWellFunnel() {
             </motion.div>
           )}
 
-          {/* ─── STEP 2 — CONCERNS ─────────────────────────────────── */}
+          {/* ─── STEP 2, CONCERNS ─────────────────────────────────── */}
           {source && !showResult && (
             <motion.div
               key="step2"
@@ -230,7 +230,7 @@ export default function CityVsWellFunnel() {
             </motion.div>
           )}
 
-          {/* ─── STEP 3 — RESULT ───────────────────────────────────── */}
+          {/* ─── STEP 3, RESULT ───────────────────────────────────── */}
           {showResult && source && (
             <motion.div
               key="step3"

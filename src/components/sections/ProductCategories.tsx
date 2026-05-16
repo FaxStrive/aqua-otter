@@ -10,7 +10,7 @@ const categories = [
   {
     name: "Water Softeners",
     tagline: "Eliminate hard water. Protect everything you own.",
-    desc: "Ion-exchange removes calcium and magnesium at the source — protecting your pipes, appliances, skin, and hair from hard water damage.",
+    desc: "Ion-exchange removes calcium and magnesium at the source, protecting your pipes, appliances, skin, and hair from hard water damage.",
     img: "/client/Softener_RB.png",
     href: "/systems/water-softener",
     badge: "Most Popular",
@@ -19,7 +19,7 @@ const categories = [
   {
     name: "Whole-Home Filtration",
     tagline: "Clean, great-tasting water from every single tap.",
-    desc: "Multi-stage carbon filtration removes chlorine, chloramines, sediment, and odor throughout your entire home — not just the kitchen.",
+    desc: "Multi-stage carbon filtration removes chlorine, chloramines, sediment, and odor throughout your entire home, not just the kitchen.",
     img: "/client/Alpha_3000_RB-removebg-preview.png",
     href: "/systems/filtration",
     badge: null,

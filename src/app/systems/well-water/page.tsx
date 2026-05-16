@@ -10,7 +10,7 @@ import Wave from "@/components/ui/Wave";
 const findings = [
   { n: "01", label: "mg/L of iron removed from well water without chemicals", stat: "10+" },
   { n: "02", label: "of rotten egg hydrogen sulfide odor eliminated on contact", stat: "100%" },
-  { n: "03", label: "mg/L — EPA manganese limit our systems consistently hit", stat: "0.05" },
+  { n: "03", label: "mg/L, EPA manganese limit our systems consistently hit", stat: "0.05" },
   { n: "04", label: "less water wasted vs traditional chemical-feed systems", stat: "50%" },
   { n: "05", label: "saved annually on cleaning products, fixtures, and appliance repairs", stat: "$400+" },
 ];
@@ -20,13 +20,13 @@ const scienceSteps = [
     n: "01",
     badge: "Step 1",
     title: "Air creates an oxidation pocket",
-    desc: "As well water enters the tank, a trapped air pocket at the top oxidizes dissolved iron, manganese, and hydrogen sulfide on contact — converting invisible dissolved metals into solid particles the media can capture.",
+    desc: "As well water enters the tank, a trapped air pocket at the top oxidizes dissolved iron, manganese, and hydrogen sulfide on contact, converting invisible dissolved metals into solid particles the media can capture.",
   },
   {
     n: "02",
     badge: "Step 2",
     title: "Filtration media traps the solids",
-    desc: "Oxidized particles are too large to pass through the media bed. They collect inside the tank while filtered water continues through to every tap in your home — clear, odor-free, and metal-free.",
+    desc: "Oxidized particles are too large to pass through the media bed. They collect inside the tank while filtered water continues through to every tap in your home, clear, odor-free, and metal-free.",
   },
   {
     n: "03",
@@ -53,7 +53,7 @@ const products = [
     name: "AiO Ozone",
     badge: "Premium Oxidation",
     img: "/client/AiO_Ozone-removebg-preview.png",
-    desc: "Ozone-enhanced air injection for the most challenging well water. Ozone is 50× more powerful than chlorine as an oxidizer — it destroys iron, manganese, sulfur, and bacteria simultaneously with zero chemical byproducts.",
+    desc: "Ozone-enhanced air injection for the most challenging well water. Ozone is 50× more powerful than chlorine as an oxidizer, it destroys iron, manganese, sulfur, and bacteria simultaneously with zero chemical byproducts.",
     specs: [
       ["Oxidation Power", "50× stronger than chlorine"],
       ["Bacteria", "Destroyed on contact"],
@@ -65,7 +65,7 @@ const products = [
     name: "AiO + Softener",
     badge: "Complete Well Solution",
     img: "/client/AiO_well_filtration_and_Softener.jpg",
-    desc: "AiO filtration paired with a water softener for well water that has both iron and hardness. Iron removal happens first — protecting the softener resin from fouling and extending its service life by years.",
+    desc: "AiO filtration paired with a water softener for well water that has both iron and hardness. Iron removal happens first, protecting the softener resin from fouling and extending its service life by years.",
     specs: [
       ["Iron + Hardness", "Both eliminated"],
       ["Resin Protection", "Iron removed upstream"],
@@ -295,7 +295,7 @@ export default function WellWaterPage() {
         </div>
       </section>
 
-      {/* FIELD REPORT — STATS */}
+      {/* FIELD REPORT, STATS */}
       <section ref={findingsRef} className="py-28 md:py-36" style={{ backgroundColor: "#ffffff" }}>
         <div className="container-site">
           <div
@@ -311,7 +311,7 @@ export default function WellWaterPage() {
                 className="text-xs font-bold uppercase tracking-[0.2em] mb-2"
                 style={{ color: "rgba(12,31,46,0.35)" }}
               >
-                Lab Report — AiO Systems
+                Lab Report, AiO Systems
               </p>
               <h2
                 className="font-display font-bold leading-[0.9]"
@@ -399,7 +399,7 @@ export default function WellWaterPage() {
 
       <Wave from="#ffffff" to="#07111A" variant="gentle" height={70} />
 
-      {/* IRON GLASS — BEFORE & AFTER */}
+      {/* IRON GLASS, BEFORE & AFTER */}
       <section ref={glassRef} className="py-24 md:py-32" style={{ backgroundColor: "#07111A" }}>
         <div className="container-site">
           <motion.div
@@ -409,7 +409,7 @@ export default function WellWaterPage() {
             className="text-center mb-16"
           >
             <p className="text-xs font-bold uppercase tracking-[0.2em] mb-3" style={{ color: "rgba(18,189,251,0.5)" }}>
-              AiO Iron Removal — Visual Proof
+              AiO Iron Removal, Visual Proof
             </p>
             <h2
               className="font-display font-bold leading-[0.9]"
@@ -705,7 +705,7 @@ export default function WellWaterPage() {
 
       <Wave from="#07111A" to="#0C1F2E" variant="gentle" height={50} />
 
-      {/* TYPOGRAPHIC STEPS — HOW IT WORKS */}
+      {/* TYPOGRAPHIC STEPS, HOW IT WORKS */}
       <section ref={stepsRef} className="py-24 md:py-32" style={{ backgroundColor: "#0C1F2E" }}>
         <div className="container-site">
           <motion.div
@@ -817,7 +817,7 @@ export default function WellWaterPage() {
 
       <Wave from="#0C1F2E" to="#F0F8FF" variant="double" height={70} />
 
-      {/* SHOWROOM FLOOR — PRODUCTS */}
+      {/* SHOWROOM FLOOR, PRODUCTS */}
       <section className="py-28 md:py-36" style={{ backgroundColor: "#F0F8FF" }}>
         <div className="container-site">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
@@ -1021,7 +1021,7 @@ export default function WellWaterPage() {
             </div>
           </div>
 
-          {/* Mobile — horizontal scroll carousel */}
+          {/* Mobile, horizontal scroll carousel */}
           <div className="lg:hidden overflow-x-auto -mx-4 px-4 pb-4">
             <div className="flex gap-4" style={{ width: "max-content" }}>
               {products.map((p) => (
@@ -1062,14 +1062,14 @@ export default function WellWaterPage() {
               className="font-display font-light italic leading-[1.6] mb-10"
               style={{ fontSize: "clamp(1.4rem, 3vw, 2rem)", color: "rgba(255,255,255,0.75)" }}
             >
-              &ldquo;We had iron stains on everything — sinks, toilets, the shower. The system fixed
+              &ldquo;We had iron stains on everything, sinks, toilets, the shower. The system fixed
               it completely. Not a single stain since installation. I wish we had done this
               years ago.&rdquo;
             </blockquote>
             <div>
               <p className="font-semibold text-white">Gerald Mitchell</p>
               <p className="text-sm mt-1" style={{ color: "rgba(255,255,255,0.38)" }}>
-                Google Review — AiO Well Water Filtration
+                Google Review, AiO Well Water Filtration
               </p>
             </div>
           </motion.div>

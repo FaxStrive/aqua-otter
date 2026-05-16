@@ -268,7 +268,7 @@ export default function Testimonials() {
           </div>
         </motion.div>
 
-        {/* Masonry layout — featured spans 2 cols on desktop */}
+        {/* Masonry layout, featured spans 2 cols on desktop */}
         <div
           className="gap-5"
           style={{

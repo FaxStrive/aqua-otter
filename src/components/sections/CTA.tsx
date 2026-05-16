@@ -35,7 +35,7 @@ export default function CTA() {
       <div className="container-site">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
 
-          {/* Left — copy */}
+          {/* Left, copy */}
           <motion.div
             initial={{ opacity: 0, y: 28 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -135,7 +135,7 @@ export default function CTA() {
             </p>
           </motion.div>
 
-          {/* Right — photo */}
+          {/* Right, photo */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}

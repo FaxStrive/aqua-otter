@@ -240,7 +240,7 @@ function drawFrame(
     });
   });
 
-  /* ── 3. Fill tip — where water currently reaches ─────────── */
+  /* ── 3. Fill tip, where water currently reaches ─────────── */
   if (scrollP > 0.01) {
     const [tr, tg, tb] = waterColorAt(scrollP);
 
@@ -395,7 +395,7 @@ export default function WaterStream() {
       style={{ width: 72 }}
       aria-hidden
     >
-      {/* Top cap — open end where raw water enters */}
+      {/* Top cap, open end where raw water enters */}
       <div
         className="mx-auto flex-shrink-0"
         style={{
@@ -440,7 +440,7 @@ export default function WaterStream() {
         />
       </div>
 
-      {/* Bottom cap — pure water exits */}
+      {/* Bottom cap, pure water exits */}
       <div
         className="mx-auto flex-shrink-0"
         style={{

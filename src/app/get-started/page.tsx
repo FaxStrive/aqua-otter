@@ -494,7 +494,7 @@ export default function GetStartedPage() {
       {/* Content */}
       <div className="flex-1 px-5 pt-8 pb-8 max-w-lg mx-auto w-full">
         <Slide dir={dir} stepKey={String(step)}>
-          {/* STEP 0 — Water source */}
+          {/* STEP 0, Water source */}
           {step === 0 && (
             <div>
               <h2 className="font-display font-bold mb-1" style={{ fontSize: "clamp(1.6rem, 5vw, 2.2rem)", color: "#0C1F2E" }}>
@@ -518,7 +518,7 @@ export default function GetStartedPage() {
             </div>
           )}
 
-          {/* STEP 1 — Concerns */}
+          {/* STEP 1, Concerns */}
           {step === 1 && (
             <div>
               <h2 className="font-display font-bold mb-1" style={{ fontSize: "clamp(1.6rem, 5vw, 2.2rem)", color: "#0C1F2E" }}>
@@ -542,7 +542,7 @@ export default function GetStartedPage() {
             </div>
           )}
 
-          {/* STEP 2 — Household size */}
+          {/* STEP 2, Household size */}
           {step === 2 && (
             <div>
               <h2 className="font-display font-bold mb-1" style={{ fontSize: "clamp(1.6rem, 5vw, 2.2rem)", color: "#0C1F2E" }}>
@@ -565,7 +565,7 @@ export default function GetStartedPage() {
             </div>
           )}
 
-          {/* STEP 3 — Ownership */}
+          {/* STEP 3, Ownership */}
           {step === 3 && (
             <div>
               <h2 className="font-display font-bold mb-1" style={{ fontSize: "clamp(1.6rem, 5vw, 2.2rem)", color: "#0C1F2E" }}>
@@ -588,7 +588,7 @@ export default function GetStartedPage() {
             </div>
           )}
 
-          {/* STEP 4 — Timeline */}
+          {/* STEP 4, Timeline */}
           {step === 4 && (
             <div>
               <h2 className="font-display font-bold mb-1" style={{ fontSize: "clamp(1.6rem, 5vw, 2.2rem)", color: "#0C1F2E" }}>
@@ -611,7 +611,7 @@ export default function GetStartedPage() {
             </div>
           )}
 
-          {/* STEP 5 — ZIP */}
+          {/* STEP 5, ZIP */}
           {step === 5 && (
             <div>
               <h2 className="font-display font-bold mb-1" style={{ fontSize: "clamp(1.6rem, 5vw, 2.2rem)", color: "#0C1F2E" }}>
@@ -641,11 +641,11 @@ export default function GetStartedPage() {
             </div>
           )}
 
-          {/* STEP 6 — Contact info */}
+          {/* STEP 6, Contact info */}
           {step === 6 && (
             <div>
               <h2 className="font-display font-bold mb-1" style={{ fontSize: "clamp(1.6rem, 5vw, 2.2rem)", color: "#0C1F2E" }}>
-                Last step — how do we reach you?
+                Last step, how do we reach you?
               </h2>
               <p className="text-sm mb-6" style={{ color: "rgba(12,31,46,0.45)" }}>
                 We&apos;ll call to schedule. No spam, ever.

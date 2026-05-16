@@ -26,7 +26,7 @@ export function generateMetadata({ params }: Props): Metadata {
     description: `${service.name} in ${area.city}, ${area.state}. ${service.tagline} Free in-home water test. Lifetime warranty. Serving ${area.county} County homeowners.`,
     alternates: { canonical: `/service-areas/${area.slug}/${service.slug}` },
     openGraph: {
-      title: `${service.name} in ${area.city} — Aqua Otter`,
+      title: `${service.name} in ${area.city}, Aqua Otter`,
       description: service.tagline,
       type: "website",
     },

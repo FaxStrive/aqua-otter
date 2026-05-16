@@ -3,22 +3,22 @@
 import { useEffect, useState } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 
-/* Positions as viewport fractions — orb drifts through these as you scroll */
+/* Positions as viewport fractions, orb drifts through these as you scroll */
 const WAYPOINTS = [
-  { x: 0.78, y: 0.22 }, // hero — top right
-  { x: 0.15, y: 0.55 }, // marquee — left mid
-  { x: 0.72, y: 0.65 }, // step 01 — bottom right
-  { x: 0.18, y: 0.30 }, // step 02 — top left
-  { x: 0.75, y: 0.40 }, // step 03 — mid right
-  { x: 0.20, y: 0.68 }, // step 04 — bottom left
-  { x: 0.65, y: 0.25 }, // step 05 — top right
+  { x: 0.78, y: 0.22 }, // hero, top right
+  { x: 0.15, y: 0.55 }, // marquee, left mid
+  { x: 0.72, y: 0.65 }, // step 01, bottom right
+  { x: 0.18, y: 0.30 }, // step 02, top left
+  { x: 0.75, y: 0.40 }, // step 03, mid right
+  { x: 0.20, y: 0.68 }, // step 04, bottom left
+  { x: 0.65, y: 0.25 }, // step 05, top right
   { x: 0.30, y: 0.50 }, // stats
   { x: 0.70, y: 0.70 }, // gallery
   { x: 0.25, y: 0.35 }, // testimonials
   { x: 0.60, y: 0.50 }, // cta
 ];
 
-/* Color per scroll progress — interpolated smoothly */
+/* Color per scroll progress, interpolated smoothly */
 const COLOR_STOPS: [number, [number, number, number]][] = [
   [0.00, [18,  189, 251]], // cyan (hero)
   [0.18, [112, 58,  10 ]], // brown (contamination)

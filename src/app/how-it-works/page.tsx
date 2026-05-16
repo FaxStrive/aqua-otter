@@ -12,29 +12,29 @@ const steps = [
   {
     n: "01", title: "Free In-Home Water Test", headline: "We test first.\nAlways.",
     sub: "30 minutes. Your home. Zero cost.",
-    desc: "A certified specialist comes to you and runs a comprehensive 12-point panel — hardness, iron, pH, chlorine, TDS, sulfur, manganese, and bacterial indicators. You watch it happen and see every result before we leave.",
-    bullets: ["Tests 12+ water quality parameters","No cost, no obligation, no pressure","Results explained clearly in plain language","You see the data — you own it"],
+    desc: "A certified specialist comes to you and runs a comprehensive 12-point panel, hardness, iron, pH, chlorine, TDS, sulfur, manganese, and bacterial indicators. You watch it happen and see every result before we leave.",
+    bullets: ["Tests 12+ water quality parameters","No cost, no obligation, no pressure","Results explained clearly in plain language","You see the data, you own it"],
     img: "/client/service-tech-consult.jpg", dark: true,
   },
   {
     n: "02", title: "Custom System Design", headline: "Engineered\nfor your water.",
     sub: "Not a catalog pick.",
-    desc: "Your test results drive every single decision. We specify the exact equipment your water chemistry requires — the right tank size, the right media, the right configuration. Written quote. No hidden fees.",
-    bullets: ["Sized to your household water usage","Equipment selected from your test data","Combination systems when needed","No upselling — only what your water needs"],
+    desc: "Your test results drive every single decision. We specify the exact equipment your water chemistry requires, the right tank size, the right media, the right configuration. Written quote. No hidden fees.",
+    bullets: ["Sized to your household water usage","Equipment selected from your test data","Combination systems when needed","No upselling, only what your water needs"],
     img: "/client/service-consult.jpg", dark: false,
   },
   {
     n: "03", title: "Expert Installation", headline: "Clean water\nthe same day.",
     sub: "One visit. 2 to 4 hours.",
-    desc: "A licensed, insured technician handles everything — plumbing connections, programming, bypass valves, and cleanup. Before we leave, we walk you through exactly how your system works.",
-    bullets: ["Free installation on every system","Licensed and insured — no subcontractors","2 to 4 hours from start to finish","Full system walkthrough before we leave"],
+    desc: "A licensed, insured technician handles everything, plumbing connections, programming, bypass valves, and cleanup. Before we leave, we walk you through exactly how your system works.",
+    bullets: ["Free installation on every system","Licensed and insured, no subcontractors","2 to 4 hours from start to finish","Full system walkthrough before we leave"],
     img: "/client/service-plumber.jpg", dark: true,
   },
   {
     n: "04", title: "Backed for Life", headline: "The last system\nyou'll ever need.",
     sub: "Lifetime warranty. Guaranteed.",
-    desc: "Your system is covered — parts, valves, electronics, and labor on warranty repairs — for the life of the system. If your water quality is not right after installation, we come back and fix it.",
-    bullets: ["Lifetime warranty on all systems","Annual maintenance programs available","Local team — reachable by call or text","Satisfaction guarantee, always"],
+    desc: "Your system is covered, parts, valves, electronics, and labor on warranty repairs, for the life of the system. If your water quality is not right after installation, we come back and fix it.",
+    bullets: ["Lifetime warranty on all systems","Annual maintenance programs available","Local team, reachable by call or text","Satisfaction guarantee, always"],
     img: "/client/service-tech-handshake.jpg", dark: false,
   },
 ];
@@ -130,7 +130,7 @@ export default function HowItWorksPage() {
                 Ready to start<br /><span style={{ color: "#12BDFB" }}>step one?</span>
               </h2>
               <p className="mb-10 text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.45)", maxWidth: "38ch" }}>
-                The free water test is the only step that costs you nothing — and it is the one that changes everything.
+                The free water test is the only step that costs you nothing, and it is the one that changes everything.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-sm font-semibold transition-all duration-200"

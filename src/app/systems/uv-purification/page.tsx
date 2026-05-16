@@ -18,11 +18,11 @@ const pathogens = [
 ];
 
 const findings = [
-  { n: "01", label: "of bacteria and viruses eliminated — NSF/ANSI 55 certified", stat: "99.99%" },
-  { n: "02", label: "chemical-free — zero additives to your water at any point", stat: "100%" },
+  { n: "01", label: "of bacteria and viruses eliminated, NSF/ANSI 55 certified", stat: "99.99%" },
+  { n: "02", label: "chemical-free, zero additives to your water at any point", stat: "100%" },
   { n: "03", label: "coliform, and fecal bacteria are permanently destroyed", stat: "E. coli" },
-  { n: "04", label: "and cryptosporidium cysts deactivated — no chlorine needed", stat: "Giardia" },
-  { n: "05", label: "disinfection byproducts created — no chemical reactions", stat: "0 DBPs" },
+  { n: "04", label: "and cryptosporidium cysts deactivated, no chlorine needed", stat: "Giardia" },
+  { n: "05", label: "disinfection byproducts created, no chemical reactions", stat: "0 DBPs" },
   { n: "06", label: "pathogen elimination per NSF/ANSI Class A certification", stat: "99.99%" },
 ];
 
@@ -35,12 +35,12 @@ const scienceSteps = [
   {
     n: "02",
     title: "UV light at 254nm disrupts DNA",
-    desc: "The lamp emits ultraviolet light at 254 nanometers — the precise wavelength that penetrates the cell walls of bacteria, viruses, and protozoan cysts and permanently destroys their DNA.",
+    desc: "The lamp emits ultraviolet light at 254 nanometers, the precise wavelength that penetrates the cell walls of bacteria, viruses, and protozoan cysts and permanently destroys their DNA.",
   },
   {
     n: "03",
     title: "Pathogens cannot replicate or infect",
-    desc: "Organisms with disrupted DNA cannot reproduce or cause infection. They remain as inert particles — completely harmless. No chemicals are added at any point in the process.",
+    desc: "Organisms with disrupted DNA cannot reproduce or cause infection. They remain as inert particles, completely harmless. No chemicals are added at any point in the process.",
   },
 ];
 
@@ -48,7 +48,7 @@ const products = [
   {
     name: "11 GPM UV Purification System",
     badge: "Residential Standard",
-    desc: "High-output UV system rated at 11 gallons per minute — sufficient for most homes up to 4 bedrooms. NSF/ANSI 55 Class A certified for eliminating bacteria, viruses, and cysts.",
+    desc: "High-output UV system rated at 11 gallons per minute, sufficient for most homes up to 4 bedrooms. NSF/ANSI 55 Class A certified for eliminating bacteria, viruses, and cysts.",
     img: "/client/11_GPG_UV_Light.png",
     specs: ["11 GPM flow rate", "NSF/ANSI 55 Class A certified", "Eliminates bacteria, viruses, cysts", "Annual lamp replacement only"],
   },
@@ -106,7 +106,7 @@ export default function UVPurificationPage() {
                 99.99% of<br />bacteria.<br />Destroyed.
               </h1>
               <p className="text-base leading-relaxed mb-10" style={{ color: "rgba(255,255,255,0.48)", maxWidth: "42ch" }}>
-                UV light at 254nm disrupts the DNA of bacteria, viruses, and cysts — permanently deactivating them before they reach any tap. No chemicals. No taste. No byproducts.
+                UV light at 254nm disrupts the DNA of bacteria, viruses, and cysts, permanently deactivating them before they reach any tap. No chemicals. No taste. No byproducts.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/contact" className="inline-flex items-center gap-2 px-7 py-4 rounded-full text-sm font-semibold transition-all duration-200"
@@ -227,7 +227,7 @@ export default function UVPurificationPage() {
                     >
                       {p.name}
                     </span>
-                    {/* Strike-through — width constrained to text only */}
+                    {/* Strike-through, width constrained to text only */}
                     <motion.div
                       style={{
                         position: "absolute",
@@ -290,7 +290,7 @@ export default function UVPurificationPage() {
 
       <Wave from="#07111A" to="#0C1F2E" variant="sharp" height={60} />
 
-      {/* HOW IT WORKS — typographic steps */}
+      {/* HOW IT WORKS, typographic steps */}
       <section ref={stepsRef} className="py-28 md:py-40" style={{ backgroundColor: "#0C1F2E" }}>
         <div className="container-site">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={stepsInView ? { opacity: 1, y: 0 } : {}} className="mb-20">
@@ -379,7 +379,7 @@ export default function UVPurificationPage() {
             </div>
           </div>
 
-          {/* Mobile — horizontal scroll carousel */}
+          {/* Mobile, horizontal scroll carousel */}
           <div className="lg:hidden overflow-x-auto -mx-4 px-4 pb-4">
             <div className="flex gap-4" style={{ width: "max-content" }}>
               {products.map(p => (
@@ -410,7 +410,7 @@ export default function UVPurificationPage() {
             </blockquote>
             <div>
               <p className="font-semibold text-white">Michelle Rhodes</p>
-              <p className="text-sm mt-1" style={{ color: "rgba(255,255,255,0.38)" }}>Google Review — UV Purification System</p>
+              <p className="text-sm mt-1" style={{ color: "rgba(255,255,255,0.38)" }}>Google Review, UV Purification System</p>
             </div>
           </motion.div>
         </div>
