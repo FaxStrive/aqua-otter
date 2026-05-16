@@ -16,7 +16,7 @@ export default function PrivacyPage() {
             },
             {
               title: "Communications",
-              body: "By submitting your phone number, you agree that Aqua Otter Water Systems may contact you by phone or text message regarding your water test request. You may opt out of communications at any time by replying STOP to any text message or by calling (317) 983-5919.",
+              body: "By submitting your phone number, you agree that Aqua Otter Water Systems may contact you by phone or text message regarding your water test request. You may opt out of communications at any time by replying STOP to any text message or by calling (317) 961-6925.",
             },
             {
               title: "Cookies and Analytics",
@@ -28,11 +28,11 @@ export default function PrivacyPage() {
             },
             {
               title: "Your Rights",
-              body: "You may request to access, correct, or delete your personal information at any time by contacting us at info@myaquaotter.com or (317) 983-5919.",
+              body: "You may request to access, correct, or delete your personal information at any time by contacting us at info@myaquaotter.com or (317) 961-6925.",
             },
             {
               title: "Contact Us",
-              body: "If you have questions about this Privacy Policy, contact us at info@myaquaotter.com or call (317) 983-5919.",
+              body: "If you have questions about this Privacy Policy, contact us at info@myaquaotter.com or call (317) 961-6925.",
             },
           ].map((section) => (
             <div key={section.title}>

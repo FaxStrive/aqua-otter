@@ -151,14 +151,14 @@ export default function Nav() {
           </nav>
 
           <div className="hidden lg:flex items-center gap-3">
-            <a href="tel:+13179835919"
+            <a href="tel:+13179616925"
               className="flex items-center gap-2 px-4 py-2 rounded-full border text-sm transition-all duration-200"
               style={{ borderColor: "rgba(18,189,251,0.22)", color: "rgba(12,31,46,0.55)", backgroundColor: "rgba(18,189,251,0.04)" }}
               onMouseEnter={e => { e.currentTarget.style.borderColor = "#12BDFB"; e.currentTarget.style.color = "#12BDFB"; }}
               onMouseLeave={e => { e.currentTarget.style.borderColor = "rgba(18,189,251,0.22)"; e.currentTarget.style.color = "rgba(12,31,46,0.55)"; }}
             >
               <Phone className="w-3.5 h-3.5" style={{ color: "#12BDFB" }} />
-              (317) 983-5919
+              (317) 961-6925
             </a>
             <Link href="/get-started"
               className="px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-200"
@@ -201,9 +201,9 @@ export default function Nav() {
                 ))}
               </div>
               <div className="space-y-3 mt-8">
-                <a href="tel:+13179835919" className="flex items-center gap-2 text-sm" style={{ color: "rgba(12,31,46,0.6)" }}>
+                <a href="tel:+13179616925" className="flex items-center gap-2 text-sm" style={{ color: "rgba(12,31,46,0.6)" }}>
                   <Phone className="w-4 h-4" style={{ color: "#12BDFB" }} />
-                  (317) 983-5919
+                  (317) 961-6925
                 </a>
                 <Link href="/get-started" onClick={() => setOpen(false)} className="block w-full text-center py-3.5 rounded-full text-sm font-semibold" style={{ backgroundColor: "#12BDFB", color: "#0C1F2E" }}>
                   Free Water Test

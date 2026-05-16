@@ -118,9 +118,9 @@ export default function ServiceAreasPage() {
                 <Link href="/contact" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-sm font-semibold transition-all duration-200" style={{ backgroundColor: "#12BDFB", color: "#0C1F2E", boxShadow: "0 4px 20px rgba(18,189,251,0.28)" }} onMouseEnter={e => (e.currentTarget.style.backgroundColor = "#3DCFFF")} onMouseLeave={e => (e.currentTarget.style.backgroundColor = "#12BDFB")}>
                   Get Free Water Test <ArrowRight className="w-4 h-4" />
                 </Link>
-                <a href="tel:+13179835919" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border text-sm font-medium transition-all duration-200" style={{ borderColor: "rgba(12,31,46,0.15)", color: "rgba(12,31,46,0.55)" }} onMouseEnter={e => { e.currentTarget.style.borderColor = "rgba(18,189,251,0.4)"; e.currentTarget.style.color = "#12BDFB"; }} onMouseLeave={e => { e.currentTarget.style.borderColor = "rgba(12,31,46,0.15)"; e.currentTarget.style.color = "rgba(12,31,46,0.55)"; }}>
+                <a href="tel:+13179616925" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border text-sm font-medium transition-all duration-200" style={{ borderColor: "rgba(12,31,46,0.15)", color: "rgba(12,31,46,0.55)" }} onMouseEnter={e => { e.currentTarget.style.borderColor = "rgba(18,189,251,0.4)"; e.currentTarget.style.color = "#12BDFB"; }} onMouseLeave={e => { e.currentTarget.style.borderColor = "rgba(12,31,46,0.15)"; e.currentTarget.style.color = "rgba(12,31,46,0.55)"; }}>
                   <Phone className="w-3.5 h-3.5" style={{ color: "#12BDFB" }} />
-                  (317) 983-5919
+                  (317) 961-6925
                 </a>
               </div>
             </motion.div>
@@ -146,7 +146,7 @@ export default function ServiceAreasPage() {
         <div className="container-site">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={statesInView ? { opacity: 1, y: 0 } : {}} className="mb-16">
             <h2 className="font-display font-bold mb-4" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", color: "#0C1F2E" }}>Coverage by state</h2>
-            <p style={{ color: "rgba(12,31,46,0.5)", maxWidth: "44ch" }}>Not sure if we cover your city? Call or text us at (317) 983-5919, we&apos;ll tell you within 30 seconds.</p>
+            <p style={{ color: "rgba(12,31,46,0.5)", maxWidth: "44ch" }}>Not sure if we cover your city? Call or text us at (317) 961-6925, we&apos;ll tell you within 30 seconds.</p>
           </motion.div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {states.map((state, i) => (
@@ -187,9 +187,9 @@ export default function ServiceAreasPage() {
             <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-sm font-semibold transition-all duration-200" style={{ backgroundColor: "#12BDFB", color: "#0C1F2E", boxShadow: "0 4px 20px rgba(18,189,251,0.3)" }} onMouseEnter={e => (e.currentTarget.style.backgroundColor = "#3DCFFF")} onMouseLeave={e => (e.currentTarget.style.backgroundColor = "#12BDFB")}>
               Request Free Water Test <ArrowRight className="w-4 h-4" />
             </Link>
-            <a href="tel:+13179835919" className="inline-flex items-center gap-2 px-8 py-4 rounded-full border text-sm font-medium" style={{ borderColor: "rgba(255,255,255,0.15)", color: "rgba(255,255,255,0.65)" }}>
+            <a href="tel:+13179616925" className="inline-flex items-center gap-2 px-8 py-4 rounded-full border text-sm font-medium" style={{ borderColor: "rgba(255,255,255,0.15)", color: "rgba(255,255,255,0.65)" }}>
               <Phone className="w-4 h-4" style={{ color: "#12BDFB" }} />
-              (317) 983-5919
+              (317) 961-6925
             </a>
           </div>
         </div>

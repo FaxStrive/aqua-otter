@@ -32,7 +32,7 @@ export default function StickyMobileCTA() {
         >
           <div className="grid grid-cols-2 gap-1.5 p-1.5">
             <a
-              href="tel:+13179835919"
+              href="tel:+13179616925"
               className="flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-semibold transition-colors"
               style={{ backgroundColor: "rgba(18,189,251,0.08)", color: "#12BDFB", border: "1px solid rgba(18,189,251,0.25)" }}
             >

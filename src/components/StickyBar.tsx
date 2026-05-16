@@ -51,7 +51,7 @@ export default function StickyBar() {
               {/* Right: CTAs */}
               <div className="flex items-center gap-3 ml-auto">
                 <a
-                  href="tel:+13179835919"
+                  href="tel:+13179616925"
                   className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-full border text-xs font-medium transition-all duration-200"
                   style={{
                     borderColor: "rgba(255,255,255,0.12)",
@@ -67,7 +67,7 @@ export default function StickyBar() {
                   }}
                 >
                   <Phone className="w-3 h-3" style={{ color: "#12BDFB" }} />
-                  (317) 983-5919
+                  (317) 961-6925
                 </a>
                 <Link
                   href="/contact"

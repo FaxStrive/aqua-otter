@@ -121,7 +121,7 @@ export default function Footer() {
             </p>
             <div className="space-y-2.5">
               {[
-                { icon: Phone, text: "(317) 983-5919", href: "tel:+13179835919" },
+                { icon: Phone, text: "(317) 961-6925", href: "tel:+13179616925" },
                 { icon: Mail, text: "info@myaquaotter.com", href: "mailto:info@myaquaotter.com" },
               ].map(({ icon: Icon, text, href }) => (
                 <a

@@ -426,12 +426,12 @@ export default function Stats() {
           </p>
           <div className="flex items-center gap-3">
             <Link
-              href="tel:3179835919"
+              href="tel:3179616925"
               className="inline-flex items-center gap-2 px-5 py-3 rounded-full border text-sm font-semibold transition-colors"
               style={{ borderColor: "rgba(18,189,251,0.3)", color: "#12BDFB" }}
             >
               <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: "#12BDFB" }} />
-              (317) 983-5919
+              (317) 961-6925
             </Link>
             <Link
               href="/contact"

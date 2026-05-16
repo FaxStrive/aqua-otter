@@ -185,7 +185,7 @@ doc.fillColor("#7d96aa").font("Helvetica").fontSize(9).text("5,000+ installs acr
 
 // Cover footer rule
 doc.save().moveTo(56, doc.page.height - 50).lineTo(556, doc.page.height - 50).strokeColor("#1a3a55").lineWidth(0.5).stroke().restore();
-doc.fillColor("#7d96aa").font("Helvetica").fontSize(8).text("myaquaotter.com  ·  (317) 983-5919", 56, doc.page.height - 40, { characterSpacing: 0.5 });
+doc.fillColor("#7d96aa").font("Helvetica").fontSize(8).text("myaquaotter.com  ·  (317) 961-6925", 56, doc.page.height - 40, { characterSpacing: 0.5 });
 doc.fillColor("#7d96aa").text("Free water test included with every consultation", 56, doc.page.height - 40, { width: 500, align: "right" });
 
 // ─── INTRO PAGE ───────────────────────────────────────────────────
@@ -210,7 +210,7 @@ doc.font("Helvetica").fontSize(11).fillColor(NAVY).text(
   "We'll come out, run a free 12-point water test on your tap, and tell you exactly what's in your water and what it would take to fix.",
   72, calloutY + 32, { width: 470, lineGap: 3 }
 );
-doc.font("Helvetica-Bold").fontSize(10).fillColor(CYAN).text("Schedule yours: myaquaotter.com/get-started  ·  (317) 983-5919", 72, calloutY + 70);
+doc.font("Helvetica-Bold").fontSize(10).fillColor(CYAN).text("Schedule yours: myaquaotter.com/get-started  ·  (317) 961-6925", 72, calloutY + 70);
 
 doc.moveDown(2);
 
@@ -267,7 +267,7 @@ SIGNS.forEach((s, idx) => {
   doc.restore();
 
   doc.fillColor(MUTED).font("Helvetica").fontSize(8).text(`${idx + 1} of 10`, 56, progressY + 12);
-  doc.fillColor(MUTED).text("myaquaotter.com  ·  (317) 983-5919", 56, progressY + 12, { width: 500, align: "right" });
+  doc.fillColor(MUTED).text("myaquaotter.com  ·  (317) 961-6925", 56, progressY + 12, { width: 500, align: "right" });
 });
 
 // ─── WHAT NOW PAGE ────────────────────────────────────────────────
@@ -312,7 +312,7 @@ doc.fillColor(CYAN).font("Helvetica-Bold").fontSize(9).text("READY WHEN YOU ARE"
 doc.fillColor("#ffffff").font("Helvetica-Bold").fontSize(22).text("Schedule your free water test.", 72, ctaY + 40);
 doc.fillColor("#a8b9c8").font("Helvetica").fontSize(11).text("No commitment. No high-pressure pitch. We test, we tell you what's in there, and we leave you the report.", 72, ctaY + 70, { width: 460, lineGap: 3 });
 
-doc.fillColor(CYAN).font("Helvetica-Bold").fontSize(11).text("myaquaotter.com/get-started  ·  (317) 983-5919", 72, ctaY + 105);
+doc.fillColor(CYAN).font("Helvetica-Bold").fontSize(11).text("myaquaotter.com/get-started  ·  (317) 961-6925", 72, ctaY + 105);
 
 // ─── BACK PAGE / FOOTER ───────────────────────────────────────────
 doc.addPage();
@@ -351,7 +351,7 @@ const cY = doc.page.height - 130;
 doc.save().moveTo(56, cY).lineTo(556, cY).strokeColor("#1a3a55").lineWidth(0.5).stroke().restore();
 
 doc.fillColor("#7d96aa").font("Helvetica-Bold").fontSize(8).text("PHONE", 56, cY + 16, { characterSpacing: 2 });
-doc.fillColor("#ffffff").font("Helvetica-Bold").fontSize(13).text("(317) 983-5919", 56, cY + 30);
+doc.fillColor("#ffffff").font("Helvetica-Bold").fontSize(13).text("(317) 961-6925", 56, cY + 30);
 
 doc.fillColor("#7d96aa").font("Helvetica-Bold").fontSize(8).text("WEB", 226, cY + 16, { characterSpacing: 2 });
 doc.fillColor("#ffffff").font("Helvetica-Bold").fontSize(13).text("myaquaotter.com", 226, cY + 30);

@@ -107,7 +107,7 @@ export default function CTA() {
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
               </Link>
               <a
-                href="tel:+13179835919"
+                href="tel:+13179616925"
                 className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full border text-sm font-medium transition-all duration-200"
                 style={{
                   borderColor: "rgba(255,255,255,0.1)",
@@ -123,7 +123,7 @@ export default function CTA() {
                 }}
               >
                 <Phone className="w-3.5 h-3.5" style={{ color: "#12BDFB" }} />
-                (317) 983-5919
+                (317) 961-6925
               </a>
             </div>
 

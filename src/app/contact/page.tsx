@@ -348,7 +348,7 @@ Sarah M., Fishers IN
                     {source === "well" ? "Well water test" : "City water test"} scheduled for {city}.
                   </p>
                   <p className="text-sm" style={{ color: "rgba(12,31,46,0.45)" }}>
-                    Need to talk now? Call <a href="tel:+13179835919" className="font-semibold" style={{ color: "#12BDFB" }}>(317) 983-5919</a>
+                    Need to talk now? Call <a href="tel:+13179616925" className="font-semibold" style={{ color: "#12BDFB" }}>(317) 961-6925</a>
                   </p>
                 </motion.div>
               )}
@@ -359,7 +359,7 @@ Sarah M., Fishers IN
             {!done && (
               <div className="mt-16 pt-8 border-t" style={{ borderColor: "rgba(18,189,251,0.08)" }}>
                 <p className="text-xs mb-3" style={{ color: "rgba(12,31,46,0.32)" }}>Prefer to call directly?</p>
-                <a href="tel:+13179835919" className="text-sm font-semibold" style={{ color: "#12BDFB" }}>(317) 983-5919</a>
+                <a href="tel:+13179616925" className="text-sm font-semibold" style={{ color: "#12BDFB" }}>(317) 961-6925</a>
                 <span className="text-xs mx-2" style={{ color: "rgba(12,31,46,0.25)" }}>·</span>
                 <a href="mailto:info@myaquaotter.com" className="text-sm" style={{ color: "rgba(12,31,46,0.4)" }}>info@myaquaotter.com</a>
               </div>

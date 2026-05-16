@@ -112,6 +112,41 @@ export const metadata: Metadata = {
   },
 };
 
+// Site-wide Organization + Person (founder Larry) JSON-LD.
+// TODO: confirm Larry's last name and update larryPerson.name accordingly.
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.myaquaotter.com/#organization",
+      name: "Aqua Otter Water Systems",
+      url: "https://www.myaquaotter.com",
+      logo: "https://www.myaquaotter.com/client/Black_Logo.png",
+      telephone: "+1-317-961-6925",
+      sameAs: [
+        "https://www.facebook.com/MyAquaOtter/",
+        "https://www.instagram.com/therealaquaotter/",
+        "https://www.youtube.com/@AquaOtterWaterSystems",
+      ],
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: "4.8",
+        reviewCount: "55",
+      },
+      areaServed: ["Indiana", "Michigan", "Ohio", "Kentucky", "Tennessee", "North Carolina"],
+      founder: { "@id": "https://www.myaquaotter.com/#larry" },
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.myaquaotter.com/#larry",
+      name: "Larry",
+      jobTitle: "Founder",
+      worksFor: { "@id": "https://www.myaquaotter.com/#organization" },
+    },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -131,6 +166,10 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
         <ScrollProgress />
         <SiteOrb />
         <Nav />

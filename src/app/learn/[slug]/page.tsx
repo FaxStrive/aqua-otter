@@ -19,5 +19,34 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 export default function LibraryArticlePage({ params }: { params: { slug: string } }) {
   const article = getLibraryArticle(params.slug);
   if (!article) notFound();
-  return <LibraryArticleClient article={article} />;
+
+  // Article + Person JSON-LD. Larry is the founding author.
+  // TODO: confirm Larry's last name and update author.name accordingly.
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: article.title,
+    description: article.description,
+    datePublished: article.date,
+    dateModified: article.date,
+    author: {
+      "@type": "Person",
+      "@id": "https://www.myaquaotter.com/#larry",
+      name: "Larry",
+      jobTitle: "Founder",
+      worksFor: { "@id": "https://www.myaquaotter.com/#organization" },
+    },
+    publisher: { "@id": "https://www.myaquaotter.com/#organization" },
+    mainEntityOfPage: `https://www.myaquaotter.com/learn/${article.slug}`,
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <LibraryArticleClient article={article} />
+    </>
+  );
 }
