@@ -67,7 +67,7 @@ const STAGES: Stage[] = [
     micron: "0.5 μm carbon block",
     flow: "10 GPM",
     removes: [
-      { name: "Chlorine",        size: "Ionic",     detail: "What your city adds. We take it back out — fully." },
+      { name: "Chlorine",        size: "Ionic",     detail: "What your city adds. We take it back out, fully." },
       { name: "Chloramine",      size: "Ionic",     detail: "Harder to remove than chlorine. Catalytic carbon handles it." },
       { name: "PFAS",            size: "Molecular", detail: "Forever chemicals. Adsorbed at the molecular surface." },
       { name: "VOCs & herbicides",size: "Molecular", detail: "Volatile organic compounds, pesticides, solvents" },
@@ -86,7 +86,7 @@ const STAGES: Stage[] = [
     flow: "10 GPM",
     removes: [
       { name: "Calcium",         size: "Ca²⁺",      detail: "The mineral that builds scale on every fixture" },
-      { name: "Magnesium",       size: "Mg²⁺",      detail: "Co-conspirator in hardness — ruins soap lather" },
+      { name: "Magnesium",       size: "Mg²⁺",      detail: "Co-conspirator in hardness, ruins soap lather" },
       { name: "Iron (≤3 ppm)",   size: "Fe²⁺",      detail: "Dissolved iron that stains laundry and porcelain" },
       { name: "Manganese",       size: "Mn²⁺",      detail: "Black staining and metallic taste at trace levels" },
     ],
@@ -307,7 +307,7 @@ export default function HouseDiagram() {
 
   const particles = useMemo(() => buildParticles(54), []);
 
-  // Cycle through stages automatically when not interacted with — feels alive
+  // Cycle through stages automatically when not interacted with, feels alive
   const [hasInteracted, setHasInteracted] = useState(false);
   useEffect(() => {
     if (hasInteracted) return;
@@ -328,7 +328,7 @@ export default function HouseDiagram() {
 
   return (
     <section ref={ref} className="relative overflow-hidden py-24 md:py-36" style={{ backgroundColor: "#07111A" }}>
-      {/* Layered background — gridlines + radial glows */}
+      {/* Layered background, gridlines + radial glows */}
       <div
         aria-hidden
         className="absolute inset-0 pointer-events-none"
@@ -416,7 +416,7 @@ export default function HouseDiagram() {
           </div>
         </motion.div>
 
-        {/* THE PIECE — full width filter laboratory */}
+        {/* THE PIECE, full width filter laboratory */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -783,7 +783,7 @@ export default function HouseDiagram() {
               />
             </svg>
 
-            {/* Active stage detail panel — overlaid on bottom of canvas */}
+            {/* Active stage detail panel, overlaid on bottom of canvas */}
             <div
               className="absolute bottom-6 left-6 right-6 rounded-2xl overflow-hidden"
               style={{
@@ -803,7 +803,7 @@ export default function HouseDiagram() {
                   className="grid grid-cols-1 md:grid-cols-[280px_1fr_280px] divide-y md:divide-y-0 md:divide-x"
                   style={{ borderColor: "rgba(255,255,255,0.06)" }}
                 >
-                  {/* Left — title + why */}
+                  {/* Left, title + why */}
                   <div className="p-5 flex flex-col gap-3">
                     <span className="text-[10px] font-bold uppercase tracking-[0.18em]" style={{ color: current.color }}>
                       {current.subtitle}
@@ -816,7 +816,7 @@ export default function HouseDiagram() {
                     </p>
                   </div>
 
-                  {/* Middle — what gets removed */}
+                  {/* Middle, what gets removed */}
                   <div className="p-5">
                     <p className="text-[10px] font-bold uppercase tracking-[0.18em] mb-3" style={{ color: "rgba(255,255,255,0.4)" }}>
                       What gets removed at this stage
@@ -850,7 +850,7 @@ export default function HouseDiagram() {
                     </div>
                   </div>
 
-                  {/* Right — why & CTA */}
+                  {/* Right, why & CTA */}
                   <div className="p-5 flex flex-col justify-between gap-3" style={{ background: `linear-gradient(135deg, ${current.color}15 0%, transparent 100%)` }}>
                     <div>
                       <p className="text-[10px] font-bold uppercase tracking-[0.18em] mb-2" style={{ color: current.color }}>
@@ -874,7 +874,7 @@ export default function HouseDiagram() {
             </div>
           </div>
 
-          {/* Bottom bezel — stage selector */}
+          {/* Bottom bezel, stage selector */}
           <div className="px-6 py-4 flex flex-wrap items-center justify-center gap-3 border-t" style={{ borderColor: "rgba(255,255,255,0.05)", backgroundColor: "rgba(0,0,0,0.25)" }}>
             <span className="text-[10px] font-mono uppercase tracking-[0.2em]" style={{ color: "rgba(255,255,255,0.35)" }}>
               Inspect stage:
@@ -904,7 +904,7 @@ export default function HouseDiagram() {
           </div>
         </motion.div>
 
-        {/* Below the rig — proof row */}
+        {/* Below the rig, proof row */}
         <motion.div
           initial={{ opacity: 0, y: 14 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}

@@ -16,7 +16,7 @@ export type ServiceArea = {
   nearby: string[];
 };
 
-// Local office phone map — pick the closest regional office for each metro.
+// Local office phone map, pick the closest regional office for each metro.
 const PHONE_HQ         = "(317) 983-5919"; // Indianapolis HQ
 const PHONE_FT_WAYNE   = "(260) 235-4204";
 const PHONE_GRAND_RAP  = "(616) 612-1660";

@@ -24,14 +24,14 @@ const PROBLEMS = [
   { id: "lead",       Icon: ShieldAlert,  label: "Lead or arsenic",      system: "reverse-osmosis", color: "#059669" },
   { id: "bacteria",   Icon: Microscope,   label: "Bacteria concern",     system: "uv-purification", color: "#d97706" },
   { id: "eco",        Icon: Leaf,         label: "Salt-free option",     system: "no-salt",         color: "#16a34a" },
-  { id: "unsure",     Icon: Microscope,   label: "Not sure — test me",   system: "contact",         color: "#12BDFB" },
+  { id: "unsure",     Icon: Microscope,   label: "Not sure, test me",   system: "contact",         color: "#12BDFB" },
 ];
 
 const SYSTEMS = [
   {
     id: "water-softener", name: "Water Softeners", accent: "#0891b2",
     headline: "Hard water ends here.",
-    desc: "Ion-exchange physically removes calcium and magnesium — the minerals behind scale, dry skin, and shortened appliance lifespans. You'll notice the difference in week one.",
+    desc: "Ion-exchange physically removes calcium and magnesium, the minerals behind scale, dry skin, and shortened appliance lifespans. You'll notice the difference in week one.",
     img: "/client/Softener_RB.png", otter: "/client/otter-arms-crossed.png",
     href: "/systems/water-softener", badge: "Most Popular",
     solves: ["Scale buildup gone from every fixture", "Softer skin and hair", "Appliances last years longer", "Soap lathers the way it's supposed to"],
@@ -40,7 +40,7 @@ const SYSTEMS = [
   {
     id: "well-water", name: "Well Water Solutions", accent: "#dc2626",
     headline: "Whatever your well throws at you.",
-    desc: "Iron, sulfur, manganese, bacteria — removed without chemicals or salt using air injection oxidation. Built specifically for the problems city water systems never see.",
+    desc: "Iron, sulfur, manganese, bacteria, removed without chemicals or salt using air injection oxidation. Built specifically for the problems city water systems never see.",
     img: "/client/AiO_Well_Filtration_RB.png", otter: "/client/otter-wrench.png",
     href: "/systems/well-water", badge: "Well Water Specialist",
     solves: ["Iron stains eliminated completely", "Rotten egg smell gone", "Manganese removed", "Bacteria treated without chemicals"],
@@ -49,7 +49,7 @@ const SYSTEMS = [
   {
     id: "filtration", name: "Whole-Home Filtration", accent: "#7c3aed",
     headline: "Every tap. Zero chlorine.",
-    desc: "Multi-stage catalytic carbon removes chlorine, chloramines, VOCs, and odors from every faucet, shower, and appliance — not just the kitchen sink.",
+    desc: "Multi-stage catalytic carbon removes chlorine, chloramines, VOCs, and odors from every faucet, shower, and appliance, not just the kitchen sink.",
     img: "/client/Alpha_3000_RB-removebg-preview.png", otter: "/client/otter-thumbsup.png",
     href: "/systems/filtration", badge: null,
     solves: ["Chlorine taste and smell gone", "Chemical byproducts removed", "Sediment and rust filtered", "Full flow, no pressure drop"],
@@ -140,7 +140,7 @@ export default function SystemsPage() {
 
         <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse 50% 70% at 60% 40%, rgba(18,189,251,0.06) 0%, transparent 65%)" }} />
 
-        {/* Otter pointing — bottom right */}
+        {/* Otter pointing, bottom right */}
         <div className="absolute bottom-0 right-0 hidden lg:block z-10" style={{ width: 260 }}>
           <Image src="/client/otter-pointing.png" alt="" width={260} height={300} className="object-contain w-full" style={{ transform: "scaleX(-1)" }} />
         </div>
@@ -363,7 +363,7 @@ export default function SystemsPage() {
                         style={{ maxHeight: 280, filter: `drop-shadow(0 12px 36px ${sys.accent}35)` }}
                       />
 
-                      {/* Otter character — floating corner */}
+                      {/* Otter character, floating corner */}
                       <div className="absolute bottom-0 right-0 z-20" style={{ width: 110 }}>
                         <Image src={sys.otter} alt="" width={110} height={130} className="object-contain w-full" />
                       </div>
@@ -557,7 +557,7 @@ export default function SystemsPage() {
                 Still not sure<br /><span style={{ color: "#12BDFB" }}>what you need?</span>
               </h2>
               <p style={{ color: "rgba(255,255,255,0.45)", maxWidth: "38ch", lineHeight: 1.7 }}>
-                We test your water first. Free, in your home, 30 minutes. Then we tell you exactly which system — and why.
+                We test your water first. Free, in your home, 30 minutes. Then we tell you exactly which system, and why.
               </p>
             </div>
             <div className="flex flex-col gap-4 flex-shrink-0">

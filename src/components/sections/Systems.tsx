@@ -14,7 +14,7 @@ const systems = [
     badge: "Most Popular",
     name: "Water Softener",
     tagline: "Eliminate hard water. Protect everything.",
-    desc: "Ion-exchange technology removes calcium and magnesium at the source. Every pipe, appliance, and fixture — protected.",
+    desc: "Ion-exchange technology removes calcium and magnesium at the source. Every pipe, appliance, and fixture, protected.",
     specs: ["Whole-home coverage", "Smart regeneration", "Salt-efficient design", "Lifetime warranty available"],
     img: `${CDN}Softener+RB-1920w.png`,
     href: "/systems/water-softener",

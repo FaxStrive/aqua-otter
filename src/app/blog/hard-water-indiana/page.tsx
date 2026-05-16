@@ -22,10 +22,10 @@ export default function HardWaterIndianaPost() {
 
         <div className="space-y-6 text-base leading-relaxed" style={{ color: "rgba(12,31,46,0.65)" }}>
           <p>
-            If you live in Indiana, there is a very good chance your water is hard. In fact, according to USGS data, approximately 85% of Indiana homes receive water with hardness levels above 7 grains per gallon (GPG) — the threshold at which most water treatment professionals consider water definitively hard.
+            If you live in Indiana, there is a very good chance your water is hard. In fact, according to USGS data, approximately 85% of Indiana homes receive water with hardness levels above 7 grains per gallon (GPG), the threshold at which most water treatment professionals consider water definitively hard.
           </p>
           <p>
-            The average Indiana home sits around 12 to 18 GPG. Some well water in central and northern Indiana tests above 25 GPG. That is genuinely extreme, and it causes real problems — slowly, silently, and expensively.
+            The average Indiana home sits around 12 to 18 GPG. Some well water in central and northern Indiana tests above 25 GPG. That is genuinely extreme, and it causes real problems, slowly, silently, and expensively.
           </p>
 
           <h2 className="font-display font-bold pt-4" style={{ fontSize: "1.5rem", color: "#0C1F2E" }}>What exactly is hard water?</h2>
@@ -37,10 +37,10 @@ export default function HardWaterIndianaPost() {
           </p>
 
           <h2 className="font-display font-bold pt-4" style={{ fontSize: "1.5rem", color: "#0C1F2E" }}>What hard water does to your home</h2>
-          <p><strong style={{ color: "#0C1F2E" }}>Your pipes:</strong> Calcium and magnesium deposit on the interior walls of pipes over time, narrowing the diameter and restricting flow. Water heaters are especially vulnerable — a water heater operating on hard water can lose 30% of its efficiency within 5 years. That is money you are spending every month on your energy bill without realizing why.</p>
-          <p><strong style={{ color: "#0C1F2E" }}>Your appliances:</strong> Dishwashers, washing machines, ice makers, and coffee makers all see shortened lifespans with hard water. The heating elements scale over, the spray arms clog, and the internal valves seize. Most manufacturers void warranties when they find evidence of scale buildup — because hard water damage is preventable.</p>
+          <p><strong style={{ color: "#0C1F2E" }}>Your pipes:</strong> Calcium and magnesium deposit on the interior walls of pipes over time, narrowing the diameter and restricting flow. Water heaters are especially vulnerable, a water heater operating on hard water can lose 30% of its efficiency within 5 years. That is money you are spending every month on your energy bill without realizing why.</p>
+          <p><strong style={{ color: "#0C1F2E" }}>Your appliances:</strong> Dishwashers, washing machines, ice makers, and coffee makers all see shortened lifespans with hard water. The heating elements scale over, the spray arms clog, and the internal valves seize. Most manufacturers void warranties when they find evidence of scale buildup, because hard water damage is preventable.</p>
           <p><strong style={{ color: "#0C1F2E" }}>Your fixtures:</strong> That white crust around your faucet? The soap scum that won't come off your shower door? Calcium deposits. They are cosmetically annoying and can permanently etch glass and chrome over time.</p>
-          <p><strong style={{ color: "#0C1F2E" }}>Your skin and hair:</strong> Hard water reacts with soap to form calcium soap scum — the same stuff on your shower door ends up on your skin. It strips moisture, clogs pores, and leaves hair dull and difficult to manage. Many people with persistent dry skin or scalp issues see dramatic improvement after softening their water.</p>
+          <p><strong style={{ color: "#0C1F2E" }}>Your skin and hair:</strong> Hard water reacts with soap to form calcium soap scum, the same stuff on your shower door ends up on your skin. It strips moisture, clogs pores, and leaves hair dull and difficult to manage. Many people with persistent dry skin or scalp issues see dramatic improvement after softening their water.</p>
           <p><strong style={{ color: "#0C1F2E" }}>Your laundry:</strong> Clothes washed in hard water feel stiff, look dingy, and wear out faster. The minerals bond with fabric fibers and with detergent residue that fails to fully rinse out.</p>
 
           <h2 className="font-display font-bold pt-4" style={{ fontSize: "1.5rem", color: "#0C1F2E" }}>How to know if you have hard water</h2>
@@ -61,7 +61,7 @@ export default function HardWaterIndianaPost() {
           <p>Which is right for your home depends on your specific water hardness, household size, and preferences. That is exactly what a free water test is designed to figure out.</p>
 
           <div className="rounded-3xl p-8 border mt-8" style={{ backgroundColor: "#F0F8FF", borderColor: "rgba(18,189,251,0.18)" }}>
-            <h3 className="font-display font-bold mb-3" style={{ fontSize: "1.2rem", color: "#0C1F2E" }}>Get your water tested — free, in your home</h3>
+            <h3 className="font-display font-bold mb-3" style={{ fontSize: "1.2rem", color: "#0C1F2E" }}>Get your water tested, free, in your home</h3>
             <p className="text-sm mb-5" style={{ color: "rgba(12,31,46,0.6)" }}>We test hardness, iron, pH, chlorine, TDS, and more. Takes 30 minutes. No cost, no obligation.</p>
             <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold transition-all duration-200" style={{ backgroundColor: "#12BDFB", color: "#0C1F2E" }} onMouseOver={e => (e.currentTarget.style.backgroundColor = "#3DCFFF")} onMouseOut={e => (e.currentTarget.style.backgroundColor = "#12BDFB")}>
               Schedule Free Water Test <ArrowRight className="w-4 h-4" />

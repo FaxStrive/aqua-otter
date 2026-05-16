@@ -17,14 +17,14 @@ const steps = [
     n: "02",
     title: "Custom System Design",
     detail: "Engineered for your water.",
-    desc: "Your test data drives every decision. We specify the exact equipment your water chemistry requires — the right tank size, media, configuration. Written quote, no hidden fees.",
+    desc: "Your test data drives every decision. We specify the exact equipment your water chemistry requires, the right tank size, media, configuration. Written quote, no hidden fees.",
     bullets: ["Sized to your household usage", "Combination systems when needed", "No upselling, ever"],
   },
   {
     n: "03",
     title: "Expert Installation",
     detail: "Same-day clean water.",
-    desc: "A licensed, insured technician installs your system in a single visit — plumbing, programming, bypass valves, cleanup, and full walkthrough before we leave.",
+    desc: "A licensed, insured technician installs your system in a single visit, plumbing, programming, bypass valves, cleanup, and full walkthrough before we leave.",
     bullets: ["Free installation on every system", "2 to 4 hours, start to finish", "Lifetime warranty activated at install"],
   },
 ];

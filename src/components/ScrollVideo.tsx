@@ -9,7 +9,7 @@ interface ScrollVideoProps {
 }
 
 /**
- * ScrollVideo — plays when scrolled into view, pauses when out.
+ * ScrollVideo, plays when scrolled into view, pauses when out.
  */
 export default function ScrollVideo({ src, className = "", threshold = 0.3 }: ScrollVideoProps) {
   const ref = useRef<HTMLVideoElement>(null);

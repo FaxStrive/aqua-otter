@@ -22,7 +22,7 @@ const STAGES = [
     n: "01",
     name: "Coconut Shell Carbon",
     tag: "Better skin. Better hair. Better taste.",
-    desc: "The chlorine in your water strips your hair and dries out your skin every single shower. Remove it and you feel the difference within days — softer skin, healthier hair, water that actually tastes like water.",
+    desc: "The chlorine in your water strips your hair and dries out your skin every single shower. Remove it and you feel the difference within days, softer skin, healthier hair, water that actually tastes like water.",
     removes: ["Softer skin", "Healthier hair", "Better taste", "No chlorine smell"],
     accent: "#64748b",
   },
@@ -30,7 +30,7 @@ const STAGES = [
     n: "02",
     name: "Catalytic Carbon",
     tag: "The chemicals you never knew were there.",
-    desc: "Forever chemicals, pharmaceuticals, and industrial byproducts that pass right through standard municipal treatment. This stage removes what your city water plant doesn't — protecting your family from what you can't see or taste.",
+    desc: "Forever chemicals, pharmaceuticals, and industrial byproducts that pass right through standard municipal treatment. This stage removes what your city water plant doesn't, protecting your family from what you can't see or taste.",
     removes: ["Forever chemicals", "Pharmaceuticals", "Safer for your family", "Cleaner water"],
     accent: "#475569",
   },
@@ -46,7 +46,7 @@ const STAGES = [
     n: "04",
     name: "Food-Grade Phosphate",
     tag: "Your home. Protected for life.",
-    desc: "Hard water silently destroys water heaters, dishwashers, and pipes — costing thousands in repairs. This salt-free stage conditions minerals so they stop sticking. Everything runs better. Everything lasts longer.",
+    desc: "Hard water silently destroys water heaters, dishwashers, and pipes, costing thousands in repairs. This salt-free stage conditions minerals so they stop sticking. Everything runs better. Everything lasts longer.",
     removes: ["Appliances last longer", "No scale buildup", "Fixtures stay clean", "Zero salt needed"],
     accent: "#12BDFB",
   },
@@ -54,20 +54,20 @@ const STAGES = [
 
 // ── Stream colours ────────────────────────────────────────────────────────────
 
-// Water appearance at each stage — changes when filter band passes through
+// Water appearance at each stage, changes when filter band passes through
 // Index 0 = raw city water, index 1-4 = after each filter stage clears
 const STAGE_WATER = [
-  { r: 192, g: 190, b: 155, a: 0.90 }, // 0: raw chlorinated city water — yellow-gray
-  { r: 148, g: 170, b: 182, a: 0.78 }, // 1: post coconut carbon — gray-blue
-  { r: 105, g: 160, b: 185, a: 0.65 }, // 2: post catalytic carbon — clear blue-gray
-  { r:  50, g: 172, b: 215, a: 0.55 }, // 3: post KDF-55 — pale cyan
-  { r:  18, g: 189, b: 251, a: 0.72 }, // 4: post phosphate — pure vivid cyan
+  { r: 192, g: 190, b: 155, a: 0.90 }, // 0: raw chlorinated city water, yellow-gray
+  { r: 148, g: 170, b: 182, a: 0.78 }, // 1: post coconut carbon, gray-blue
+  { r: 105, g: 160, b: 185, a: 0.65 }, // 2: post catalytic carbon, clear blue-gray
+  { r:  50, g: 172, b: 215, a: 0.55 }, // 3: post KDF-55, pale cyan
+  { r:  18, g: 189, b: 251, a: 0.72 }, // 4: post phosphate, pure vivid cyan
 ];
 
 // ── Filter texture drawers ────────────────────────────────────────────────────
 
 const BAND_H = 140;
-const SW     = 90; // stream width — cinematic size
+const SW     = 90; // stream width, cinematic size
 
 function bandRange(prog: number, s0: number, mid: number, s1: number, H: number) {
   if (prog <= s0) return H * 1.15;
@@ -80,14 +80,14 @@ function bandRange(prog: number, s0: number, mid: number, s1: number, H: number)
   return -H * 1.15 * t2;
 }
 
-// Sediment — white fibrous filter paper
+// Sediment, white fibrous filter paper
 function drawSediment(ctx: CanvasRenderingContext2D, cy: number, W: number) {
   ctx.save();
   ctx.beginPath();
   ctx.rect(0, cy - BAND_H / 2, W, BAND_H);
   ctx.clip();
 
-  // Base — off-white slightly warm
+  // Base, off-white slightly warm
   ctx.fillStyle = "rgba(242, 238, 233, 0.96)";
   ctx.fillRect(0, cy - BAND_H / 2, W, BAND_H);
 
@@ -123,12 +123,12 @@ function drawSediment(ctx: CanvasRenderingContext2D, cy: number, W: number) {
   ctx.restore();
 }
 
-// Coconut Shell Carbon — deep black granules, slightly larger
+// Coconut Shell Carbon, deep black granules, slightly larger
 function drawCoconutCarbon(ctx: CanvasRenderingContext2D, cy: number, W: number) {
   drawCarbonBase(ctx, cy, W, 4.8, "#424242", "#232323", "#0d0d0d", 16);
 }
 
-// Catalytic Carbon — finer black granules, slightly lighter shade
+// Catalytic Carbon, finer black granules, slightly lighter shade
 function drawCatalyticCarbon(ctx: CanvasRenderingContext2D, cy: number, W: number) {
   drawCarbonBase(ctx, cy, W, 3.5, "#3a3a3a", "#1c1c1c", "#090909", 21);
 }
@@ -177,7 +177,7 @@ function drawCarbonBase(
   ctx.restore();
 }
 
-// KDF-55 — golden/brass granules (matches spec sheet photo)
+// KDF-55, golden/brass granules (matches spec sheet photo)
 function drawKDF55(ctx: CanvasRenderingContext2D, cy: number, W: number) {
   ctx.save();
   ctx.beginPath();
@@ -226,7 +226,7 @@ function drawKDF55(ctx: CanvasRenderingContext2D, cy: number, W: number) {
   ctx.restore();
 }
 
-// Food-Grade Phosphate — white/cream crystalline beads (matches spec sheet photo)
+// Food-Grade Phosphate, white/cream crystalline beads (matches spec sheet photo)
 function drawPhosphate(ctx: CanvasRenderingContext2D, cy: number, W: number) {
   ctx.save();
   ctx.beginPath();
@@ -305,7 +305,7 @@ type Particle = {
   extractTrail: number; // trail opacity
 };
 
-// Extraction burst particles — short-lived sparks that fly out when filter captures contaminant
+// Extraction burst particles, short-lived sparks that fly out when filter captures contaminant
 type Spark = {
   x: number; y: number; vx: number; vy: number;
   life: number; maxLife: number;
@@ -317,7 +317,7 @@ function mkParticles(H: number): Particle[] {
   const ps: Particle[] = [];
   const rng = () => Math.random();
 
-  // Chlorine/chemical particles — yellow-gray, larger, more visible
+  // Chlorine/chemical particles, yellow-gray, larger, more visible
   for (let i = 0; i < 18; i++) {
     const br = 155 + rng()*40;
     ps.push({ type:"flake", x:rng()*SW*0.8-SW*0.4, y:rng()*H,
@@ -329,7 +329,7 @@ function mkParticles(H: number): Particle[] {
       extracting:false, extractVx:0, extractVy:0, extractScale:1, extractTrail:0 });
   }
 
-  // Fine chemical specks — more of them, varied sizes
+  // Fine chemical specks, more of them, varied sizes
   for (let i = 0; i < 55; i++) {
     const v = 145+rng()*50;
     ps.push({ type:"speck", x:rng()*SW*0.88-SW*0.44, y:rng()*H,
@@ -341,7 +341,7 @@ function mkParticles(H: number): Particle[] {
       extracting:false, extractVx:0, extractVy:0, extractScale:1, extractTrail:0 });
   }
 
-  // Bubbles — rise up through stream
+  // Bubbles, rise up through stream
   for (let i = 0; i < 14; i++) {
     ps.push({ type:"bubble", x:rng()*SW*0.76-SW*0.38, y:rng()*H,
       vy:-(0.35+rng()*0.5), vx:rng()*0.08-0.04, vr:0, rot:0, w:0, h:0,
@@ -355,7 +355,7 @@ function mkParticles(H: number): Particle[] {
   return ps;
 }
 
-// ── Splash/Burst system — particles that spray when filter meets stream ─────
+// ── Splash/Burst system, particles that spray when filter meets stream ─────
 
 type SplashParticle = {
   x: number; y: number; vx: number; vy: number;
@@ -363,7 +363,7 @@ type SplashParticle = {
   r: number; g: number; b: number;
 };
 
-// ── Glow flash system — radial pulse when stage clears ──────────────────────
+// ── Glow flash system, radial pulse when stage clears ──────────────────────
 type GlowFlash = {
   x: number; y: number; life: number; maxLife: number;
   r: number; g: number; b: number; maxRadius: number;
@@ -382,15 +382,15 @@ function noise(x: number, y: number, t: number) {
 // land between two filters. Each filter sweeps as a complete action.
 //
 // Timeline (within 650vh section):
-// 0.00–0.12  Intro hold — snap point
+// 0.00–0.12  Intro hold, snap point
 // 0.12–0.20  Band 1 sweeps through
-// 0.20–0.35  Stage 1 hold — snap point
+// 0.20–0.35  Stage 1 hold, snap point
 // 0.35–0.43  Band 2 sweeps through
-// 0.43–0.58  Stage 2 hold — snap point
+// 0.43–0.58  Stage 2 hold, snap point
 // 0.58–0.66  Band 3 sweeps through
-// 0.66–0.81  Stage 3 hold — snap point
+// 0.66–0.81  Stage 3 hold, snap point
 // 0.81–0.89  Band 4 sweeps through
-// 0.89–1.00  Completion hold — snap point
+// 0.89–1.00  Completion hold, snap point
 const BAND_RANGES = [
   [0.12, 0.16, 0.20],
   [0.35, 0.39, 0.43],
@@ -409,7 +409,7 @@ export default function WaterJourney() {
   const scrollProg   = useRef(0);
   const rafRef       = useRef<number>();
   const timeRef      = useRef(0);
-  // Smoothly animated water colour — lerps toward target when stage changes
+  // Smoothly animated water colour, lerps toward target when stage changes
   const waterCol     = useRef({ ...STAGE_WATER[0] });
   // Smoothly animated cleanliness 0→1
   const cleanAnim    = useRef(0);
@@ -425,7 +425,7 @@ export default function WaterJourney() {
     pRef.current = mkParticles(window.innerHeight);
   }, []);
 
-  // ── JS scroll snap — locks scroll to hold zones between filters ──────
+  // ── JS scroll snap, locks scroll to hold zones between filters ──────
   useEffect(() => {
     const section = containerRef.current;
     if (!section) return;
@@ -451,7 +451,7 @@ export default function WaterJourney() {
 
         const currentProg = (window.scrollY - sectionTop) / sectionH;
 
-        // Don't snap if we're in a filter sweep zone — let it play through
+        // Don't snap if we're in a filter sweep zone, let it play through
         const inSweep = BAND_RANGES.some(([s0, , s1]) =>
           currentProg >= s0 - 0.02 && currentProg <= s1 + 0.02
         );
@@ -513,10 +513,10 @@ export default function WaterJourney() {
       if (prog > 0.62) stageCleared = 2;
       if (prog > 0.85) stageCleared = 3;
 
-      // Target water colour based on which stage has cleared — NOT scroll progress
+      // Target water colour based on which stage has cleared, NOT scroll progress
       const targetCol   = STAGE_WATER[stageCleared + 1];
       const targetClean = (stageCleared + 1) / 4;
-      const speed       = 0.035; // lerp speed — how fast water changes after filter
+      const speed       = 0.035; // lerp speed, how fast water changes after filter
 
       const wc = waterCol.current;
       wc.r += (targetCol.r - wc.r) * speed;
@@ -530,7 +530,7 @@ export default function WaterJourney() {
 
       ctx.clearRect(0, 0, W, H);
 
-      // ── 0. ATMOSPHERIC BACKGROUND — shifts from murky haze to crystal ────
+      // ── 0. ATMOSPHERIC BACKGROUND, shifts from murky haze to crystal ────
       // Full-screen atmosphere that responds to cleanliness
       const hazeA = Math.max(0, (1 - clean) * 0.06);
       if (hazeA > 0.002) {
@@ -542,7 +542,7 @@ export default function WaterJourney() {
         ctx.fillRect(0, 0, W, H);
       }
 
-      // Ambient floating motes — dust/atmosphere particles
+      // Ambient floating motes, dust/atmosphere particles
       const moteRng = mulberry32(999);
       for (let m = 0; m < 35; m++) {
         const mx = moteRng() * W;
@@ -558,7 +558,7 @@ export default function WaterJourney() {
         }
       }
 
-      // GOD RAYS — emerge as water gets cleaner (light beams from above)
+      // GOD RAYS, emerge as water gets cleaner (light beams from above)
       const rayStrength = Math.max(0, (clean - 0.3) * 1.5);
       if (rayStrength > 0.01) {
         for (let ray = 0; ray < 5; ray++) {
@@ -643,7 +643,7 @@ export default function WaterJourney() {
         ctx.closePath();
       };
 
-      // ── 2. Stream ambient glow — wide atmospheric wash around stream ─────
+      // ── 2. Stream ambient glow, wide atmospheric wash around stream ─────
       ctx.save();
       ctx.shadowBlur  = 55;
       ctx.shadowColor = `rgba(${col.r},${col.g},${col.b},${0.15 + clean * 0.2})`;
@@ -652,7 +652,7 @@ export default function WaterJourney() {
       ctx.fill();
       ctx.restore();
 
-      // ── 3. Stream body — multi-layer cinematic rendering ─────────────────
+      // ── 3. Stream body, multi-layer cinematic rendering ─────────────────
 
       // Layer 1: outer soft glow
       ctx.save();
@@ -677,7 +677,7 @@ export default function WaterJourney() {
       ctx.fillStyle = `rgba(${col.r},${col.g},${col.b},${col.a * 0.92})`;
       ctx.fill();
 
-      // Layer 4: depth — 3D cylinder shadow
+      // Layer 4: depth, 3D cylinder shadow
       streamPath(0);
       const depthG = ctx.createLinearGradient(cx - SW, 0, cx + SW, 0);
       depthG.addColorStop(0,    "rgba(0,0,0,0)");
@@ -736,7 +736,7 @@ export default function WaterJourney() {
       ctx.fillStyle = `rgba(255,255,255,${0.06 + clean * 0.15})`;
       ctx.fill();
 
-      // Layer 8: flowing shimmer bands — light catching the surface
+      // Layer 8: flowing shimmer bands, light catching the surface
       for (let i = 0; i < 8; i++) {
         const phase = ((t * 0.45 + i * 0.125) % 1);
         const shimY  = phase * H;
@@ -749,7 +749,7 @@ export default function WaterJourney() {
         ctx.fill();
       }
 
-      // Layer 9: velocity lines — sense of downward flow motion
+      // Layer 9: velocity lines, sense of downward flow motion
       for (let vl = 0; vl < 12; vl++) {
         const vlRng = mulberry32(vl + 500);
         const vlX = (vlRng()-0.5) * SW * 0.7;
@@ -767,7 +767,7 @@ export default function WaterJourney() {
         }
       }
 
-      // Layer 10: murk swirls — dirty water turbulence (fades as water cleans)
+      // Layer 10: murk swirls, dirty water turbulence (fades as water cleans)
       const mS = Math.max(0, 1 - clean * 1.6);
       if (mS > 0.01) {
         for (let y = 0; y < H; y += 7) {
@@ -783,7 +783,7 @@ export default function WaterJourney() {
         }
       }
 
-      // Layer 11: caustic diamond pattern — clean water only
+      // Layer 11: caustic diamond pattern, clean water only
       const cS = Math.max(0, (clean - 0.35) * 2.5);
       if (cS > 0.01) {
         for (let dir = -1; dir <= 1; dir += 2) {
@@ -813,7 +813,7 @@ export default function WaterJourney() {
         ctx.stroke();
       }
 
-      // ── 4. Filter band impact effects — dramatic spray + shockwave ───────
+      // ── 4. Filter band impact effects, dramatic spray + shockwave ───────
       BAND_RANGES.forEach(([s0, mid, s1], i) => {
         let offsetY: number;
         if (prog <= s0)        offsetY = H * 1.15;
@@ -827,7 +827,7 @@ export default function WaterJourney() {
         const proximity = Math.max(0, 1 - Math.abs(bandCY - H/2) / (H * 0.35));
 
         if (proximity > 0.03) {
-          // HEAVY spray — water exploding off both sides of the filter
+          // HEAVY spray, water exploding off both sides of the filter
           const sprayN = Math.floor(proximity * 14);
           for (let s = 0; s < sprayN; s++) {
             const side = s % 2 === 0 ? -1 : 1;
@@ -846,7 +846,7 @@ export default function WaterJourney() {
             ctx.restore();
           }
 
-          // Shockwave rings — cinematic pressure waves
+          // Shockwave rings, cinematic pressure waves
           for (let ring = 0; ring < 5; ring++) {
             const rPhase = (t * 2.5 + ring * 0.5 + i * 1.5) % 3;
             const rR = SW * 0.6 + rPhase * 50;
@@ -860,7 +860,7 @@ export default function WaterJourney() {
             }
           }
 
-          // Captured contaminants stuck to filter — accumulate
+          // Captured contaminants stuck to filter, accumulate
           const captI = proximity * (prog > mid ? 0.4 : 0.9);
           if (captI > 0.1 && i <= stageCleared) {
             const captRng = mulberry32(i * 100 + 7);
@@ -881,7 +881,7 @@ export default function WaterJourney() {
             }
           }
 
-          // Impact glow at intersection — warm light at collision point
+          // Impact glow at intersection, warm light at collision point
           const impGrad = ctx.createRadialGradient(cx, bandCY, 0, cx, bandCY, SW * 1.2);
           impGrad.addColorStop(0, `rgba(255,255,255,${proximity * 0.08})`);
           impGrad.addColorStop(0.3, `rgba(${col.r},${col.g},${col.b},${proximity * 0.06})`);
@@ -891,7 +891,7 @@ export default function WaterJourney() {
         }
       });
 
-      // ── 5. Stage change — CINEMATIC shockwave + burst ──────────────────
+      // ── 5. Stage change, CINEMATIC shockwave + burst ──────────────────
       if (stageCleared !== prevStageRef.current && stageCleared > prevStageRef.current) {
         const accentR = stageCleared === 3 ? 18 : stageCleared === 2 ? 212 : 100;
         const accentG = stageCleared === 3 ? 189 : stageCleared === 2 ? 160 : 116;
@@ -903,7 +903,7 @@ export default function WaterJourney() {
           r: accentR, g: accentG, b: accentB, maxRadius: W * 0.7,
         });
 
-        // Massive splash burst — 48 particles
+        // Massive splash burst, 48 particles
         for (let s = 0; s < 48; s++) {
           const angle = (s / 48) * Math.PI * 2 + Math.random() * 0.5;
           const speed = 4 + Math.random() * 10;
@@ -924,7 +924,7 @@ export default function WaterJourney() {
         prevStageRef.current = stageCleared;
       }
 
-      // ── 6. Particles — LIVE extraction as filter band sweeps past ────────
+      // ── 6. Particles, LIVE extraction as filter band sweeps past ────────
       pRef.current.forEach(p => {
         const cleared = stageCleared >= p.removedAtStage;
 
@@ -943,11 +943,11 @@ export default function WaterJourney() {
         const inCaptureZone = distToBand < BAND_H * 1.2 && prog >= bs0 && prog <= bs1 && !p.extracting;
 
         if (inCaptureZone && p.opacity > 0.05) {
-          // Attract toward band — stronger the closer it is
+          // Attract toward band, stronger the closer it is
           const attraction = Math.max(0, 1 - distToBand / (BAND_H * 1.2));
 
           if (attraction > 0.3) {
-            // Start full extraction — particle gets captured
+            // Start full extraction, particle gets captured
             p.extracting = true;
             // Pull TOWARD band vertically AND outward horizontally
             const side = p.x >= 0 ? 1 : -1;
@@ -967,7 +967,7 @@ export default function WaterJourney() {
               });
             }
           } else if (attraction > 0.1) {
-            // Wobble/tremble — particle knows the filter is coming
+            // Wobble/tremble, particle knows the filter is coming
             p.vx += (Math.random()-0.5) * 0.4 * attraction;
             p.vy += (bandCY > p.y ? 0.15 : -0.15) * attraction;
           }
@@ -993,7 +993,7 @@ export default function WaterJourney() {
         }
 
         if (p.extracting) {
-          // Fly toward band then outward — two-phase extraction
+          // Fly toward band then outward, two-phase extraction
           p.x += p.extractVx;
           p.y += p.extractVy;
           p.extractVx *= 1.06; // accelerate outward
@@ -1105,7 +1105,7 @@ export default function WaterJourney() {
         ctx.restore();
       });
 
-      // ── 7. Sparks — tiny extraction burst particles ──────────────────────
+      // ── 7. Sparks, tiny extraction burst particles ──────────────────────
       sparksRef.current = sparksRef.current.filter(s => {
         s.life -= 0.035;
         if (s.life <= 0) return false;
@@ -1121,7 +1121,7 @@ export default function WaterJourney() {
         return true;
       });
 
-      // ── 8. Splash burst particles — outward spray on stage clear ─────────
+      // ── 8. Splash burst particles, outward spray on stage clear ─────────
       splashRef.current = splashRef.current.filter(s => {
         s.life -= 0.025;
         if (s.life <= 0) return false;
@@ -1143,7 +1143,7 @@ export default function WaterJourney() {
         return true;
       });
 
-      // ── 9. Glow flashes — radial pulse on stage clear ────────────────────
+      // ── 9. Glow flashes, radial pulse on stage clear ────────────────────
       glowRef.current = glowRef.current.filter(g => {
         g.life -= 0.02;
         if (g.life <= 0) return false;
@@ -1159,7 +1159,7 @@ export default function WaterJourney() {
         return true;
       });
 
-      // ── 10. Pour-in at top — dramatic funnel entry ───────────────────────
+      // ── 10. Pour-in at top, dramatic funnel entry ───────────────────────
       const pourW = SW * 0.5;
       const pourGrad = ctx.createLinearGradient(cx, 0, cx, 70);
       pourGrad.addColorStop(0, `rgba(${col.r},${col.g},${col.b},0)`);
@@ -1192,7 +1192,7 @@ export default function WaterJourney() {
         }
       }
 
-      // ── 11. Collection pool at bottom — cinematic spreading pool ─────────
+      // ── 11. Collection pool at bottom, cinematic spreading pool ─────────
       const poolY = H - 20;
       const poolW = SW * (1.5 + clean * 1.2);
       // Multi-layer pool
@@ -1242,7 +1242,7 @@ export default function WaterJourney() {
 
   useMotionValueEvent(scrollYProgress, "change", (v) => {
     scrollProg.current = v;
-    // Stage activates once its band reaches center — holds through the rest zone
+    // Stage activates once its band reaches center, holds through the rest zone
     if      (v < 0.16) setActiveStage(-1);
     else if (v < 0.39) setActiveStage(0);
     else if (v < 0.62) setActiveStage(1);
@@ -1271,7 +1271,7 @@ export default function WaterJourney() {
       style={{ height: "650vh", position: "relative" }}
     >
 
-      {/* Hidden SVG — water displacement filter */}
+      {/* Hidden SVG, water displacement filter */}
       <svg
         className="absolute w-0 h-0 overflow-hidden"
         aria-hidden="true"
@@ -1311,14 +1311,14 @@ export default function WaterJourney() {
           display: "flex", flexDirection: "column",
         }}
       >
-        {/* Canvas — stream + textures + particles, with SVG water distortion */}
+        {/* Canvas, stream + textures + particles, with SVG water distortion */}
         <canvas
           ref={canvasRef}
           className="absolute inset-0 pointer-events-none"
           style={{ zIndex: 1 }}
         />
 
-        {/* ── Filter band label overlays — big bold text ── */}
+        {/* ── Filter band label overlays, big bold text ── */}
         {STAGES.map((stage, i) => (
           <motion.div
             key={stage.n}
@@ -1340,7 +1340,7 @@ export default function WaterJourney() {
                 className="text-[9px] font-black tracking-[0.32em] uppercase"
                 style={{ color: stage.accent, opacity: 0.6 }}
               >
-                Stage {stage.n} — 04
+                Stage {stage.n}, 04
               </span>
               <span
                 className="font-display font-bold leading-[0.88]"
@@ -1448,7 +1448,7 @@ export default function WaterJourney() {
                       className="text-base leading-relaxed"
                       style={{ color: "rgba(12,31,46,0.42)", maxWidth: "28ch" }}
                     >
-                      Scroll down to see exactly what we remove — and what changes in your home when we do.
+                      Scroll down to see exactly what we remove, and what changes in your home when we do.
                     </p>
                   </motion.div>
                 ) : (
@@ -1464,7 +1464,7 @@ export default function WaterJourney() {
                       className="text-[10px] font-black tracking-[0.3em] uppercase mb-4"
                       style={{ color: STAGES[activeStage].accent, opacity: 0.7 }}
                     >
-                      Stage {STAGES[activeStage].n} — 04
+                      Stage {STAGES[activeStage].n}, 04
                     </p>
 
                     {/* BIG headline */}
@@ -1590,7 +1590,7 @@ export default function WaterJourney() {
                 </div>
               </div>
 
-              {/* Stage cards — stacked, light up as cleared */}
+              {/* Stage cards, stacked, light up as cleared */}
               <div className="space-y-2">
                 {STAGES.map((stage, i) => {
                   const isActive = activeStage === i;
@@ -1674,7 +1674,7 @@ export default function WaterJourney() {
                           </AnimatePresence>
                         </div>
 
-                        {/* Benefit pills — only show for active stage */}
+                        {/* Benefit pills, only show for active stage */}
                         <AnimatePresence>
                           {isActive && (
                             <motion.div
@@ -1720,7 +1720,7 @@ export default function WaterJourney() {
                 })}
               </div>
 
-              {/* Completion state — HIGH INTENT CTA */}
+              {/* Completion state, HIGH INTENT CTA */}
               <AnimatePresence>
                 {isComplete && (
                   <motion.div
@@ -1820,7 +1820,7 @@ export default function WaterJourney() {
                     className="text-[10px] font-black tracking-[0.28em] uppercase mb-2"
                     style={{ color: STAGES[activeStage].accent }}
                   >
-                    Stage {STAGES[activeStage].n} — 04
+                    Stage {STAGES[activeStage].n}, 04
                   </p>
                   <h2
                     className="font-display font-bold leading-[0.86] mb-3"

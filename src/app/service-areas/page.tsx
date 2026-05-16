@@ -80,7 +80,7 @@ const states = [
 ];
 
 const reasons = [
-  "We come to you — in-home water testing at no charge",
+  "We come to you, in-home water testing at no charge",
   "Same-week installation available in all service areas",
   "Local technicians, not subcontractors",
   "Emergency service for existing customers",
@@ -146,7 +146,7 @@ export default function ServiceAreasPage() {
         <div className="container-site">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={statesInView ? { opacity: 1, y: 0 } : {}} className="mb-16">
             <h2 className="font-display font-bold mb-4" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", color: "#0C1F2E" }}>Coverage by state</h2>
-            <p style={{ color: "rgba(12,31,46,0.5)", maxWidth: "44ch" }}>Not sure if we cover your city? Call or text us at (317) 983-5919 — we&apos;ll tell you within 30 seconds.</p>
+            <p style={{ color: "rgba(12,31,46,0.5)", maxWidth: "44ch" }}>Not sure if we cover your city? Call or text us at (317) 983-5919, we&apos;ll tell you within 30 seconds.</p>
           </motion.div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {states.map((state, i) => (

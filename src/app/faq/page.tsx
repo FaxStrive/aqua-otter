@@ -17,7 +17,7 @@ const categories = [
       },
       {
         q: "How long does the water test take?",
-        a: "About 30 to 45 minutes from start to finish. We test right there in your home, explain the results clearly, and answer every question you have before we leave — with no pressure to do anything afterward.",
+        a: "About 30 to 45 minutes from start to finish. We test right there in your home, explain the results clearly, and answer every question you have before we leave, with no pressure to do anything afterward.",
       },
       {
         q: "Is the water test really free? No hidden costs?",
@@ -38,7 +38,7 @@ const categories = [
     faqs: [
       {
         q: "What is no-salt water treatment?",
-        a: "No-salt systems use template-assisted crystallization (TAC) to convert dissolved calcium and magnesium into harmless crystals that cannot stick to surfaces. Unlike traditional softeners, they do not remove minerals from the water — they just change the form so scale cannot form. No salt bags, no brine discharge, virtually no maintenance.",
+        a: "No-salt systems use template-assisted crystallization (TAC) to convert dissolved calcium and magnesium into harmless crystals that cannot stick to surfaces. Unlike traditional softeners, they do not remove minerals from the water, they just change the form so scale cannot form. No salt bags, no brine discharge, virtually no maintenance.",
       },
       {
         q: "What is the difference between well water and city water treatment?",
@@ -54,7 +54,7 @@ const categories = [
       },
       {
         q: "Is installation really free?",
-        a: "Yes — free installation on every system we sell. The system price is the full price. No separate labor fee, no trip charge.",
+        a: "Yes, free installation on every system we sell. The system price is the full price. No separate labor fee, no trip charge.",
       },
       {
         q: "What maintenance do the systems require?",
@@ -62,7 +62,7 @@ const categories = [
       },
       {
         q: "What warranty do your systems come with?",
-        a: "We offer a lifetime warranty on our systems. If anything fails due to manufacturing defect, we repair or replace it at no charge. We also offer a satisfaction guarantee — if your water quality is not right after installation, we make it right.",
+        a: "We offer a lifetime warranty on our systems. If anything fails due to manufacturing defect, we repair or replace it at no charge. We also offer a satisfaction guarantee, if your water quality is not right after installation, we make it right.",
       },
     ],
   },
@@ -88,11 +88,11 @@ const categories = [
     faqs: [
       {
         q: "How much do water treatment systems cost?",
-        a: "System pricing varies based on your water chemistry and the treatment required. Entry-level filtration systems start around $1,200. Full softening and filtration combinations run $2,500 to $4,500. Whole-home reverse osmosis systems are priced separately. We provide a written quote after your free water test — no guessing, no surprises.",
+        a: "System pricing varies based on your water chemistry and the treatment required. Entry-level filtration systems start around $1,200. Full softening and filtration combinations run $2,500 to $4,500. Whole-home reverse osmosis systems are priced separately. We provide a written quote after your free water test, no guessing, no surprises.",
       },
       {
         q: "What payment options do you accept?",
-        a: "We accept cash, check, and all major credit cards. Financing options are also available for qualified customers — ask your specialist during your water test appointment.",
+        a: "We accept cash, check, and all major credit cards. Financing options are also available for qualified customers, ask your specialist during your water test appointment.",
       },
     ],
   },
@@ -182,7 +182,7 @@ export default function FAQPage() {
               Everything you<br />
               <span style={{ color: "#12BDFB" }}>want to know.</span>
             </h1>
-            <p style={{ color: "rgba(12,31,46,0.48)" }}>Can&apos;t find your answer? Call us at <a href="tel:+13179835919" className="font-medium" style={{ color: "#12BDFB" }}>(317) 983-5919</a> — we pick up.</p>
+            <p style={{ color: "rgba(12,31,46,0.48)" }}>Can&apos;t find your answer? Call us at <a href="tel:+13179835919" className="font-medium" style={{ color: "#12BDFB" }}>(317) 983-5919</a>, we pick up.</p>
           </motion.div>
           <motion.div initial={{ opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7, delay: 0.15 }} className="hidden lg:flex justify-end items-end">
             <Image src="/client/otter-thinking.png" alt="" width={220} height={260} className="object-contain" />

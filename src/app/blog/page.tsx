@@ -10,7 +10,7 @@ const posts = [
   {
     slug: "hard-water-indiana",
     title: "Hard Water in Indiana: What Every Homeowner Needs to Know",
-    excerpt: "85% of Indiana homes have hard water above 7 GPG. Here's what that means for your pipes, appliances, skin, and water bill — and what you can actually do about it.",
+    excerpt: "85% of Indiana homes have hard water above 7 GPG. Here's what that means for your pipes, appliances, skin, and water bill, and what you can actually do about it.",
     category: "Education",
     readTime: "6 min read",
     date: "April 12, 2026",
@@ -30,7 +30,7 @@ const posts = [
   {
     slug: "softener-vs-no-salt",
     title: "Water Softener vs. No-Salt System: Which One Is Right for You?",
-    excerpt: "Traditional salt-based softeners and no-salt conditioners both treat hard water — but they work differently and the right choice depends on your specific situation.",
+    excerpt: "Traditional salt-based softeners and no-salt conditioners both treat hard water, but they work differently and the right choice depends on your specific situation.",
     category: "Systems",
     readTime: "7 min read",
     date: "March 10, 2026",
@@ -148,7 +148,7 @@ export default function BlogPage() {
       <section className="py-20" style={{ backgroundColor: "#ffffff" }}>
         <div className="container-site text-center">
           <h2 className="font-display font-bold mb-4" style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)", color: "#0C1F2E" }}>Ready to test your water?</h2>
-          <p className="mb-8" style={{ color: "rgba(12,31,46,0.5)", maxWidth: "36ch", margin: "0 auto 2rem" }}>Knowledge is step one. Step two is finding out exactly what&apos;s in your water — free, in your home.</p>
+          <p className="mb-8" style={{ color: "rgba(12,31,46,0.5)", maxWidth: "36ch", margin: "0 auto 2rem" }}>Knowledge is step one. Step two is finding out exactly what&apos;s in your water, free, in your home.</p>
           <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-sm font-semibold transition-all duration-200" style={{ backgroundColor: "#12BDFB", color: "#0C1F2E", boxShadow: "0 4px 20px rgba(18,189,251,0.28)" }} onMouseEnter={e => (e.currentTarget.style.backgroundColor = "#3DCFFF")} onMouseLeave={e => (e.currentTarget.style.backgroundColor = "#12BDFB")}>
             Get Your Free Water Test <ArrowRight className="w-4 h-4" />
           </Link>

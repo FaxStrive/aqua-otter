@@ -85,7 +85,7 @@ export default function Gallery() {
           marginTop: 32,
         }}
       >
-        {/* BIG hero image — spans full height, left edge bleeding */}
+        {/* BIG hero image, spans full height, left edge bleeding */}
         <motion.div
           initial={{ opacity: 0, scale: 0.97 }}
           animate={inView ? { opacity: 1, scale: 1 } : {}}
@@ -101,7 +101,7 @@ export default function Gallery() {
           </div>
         </motion.div>
 
-        {/* Tall narrow — col 2 */}
+        {/* Tall narrow, col 2 */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}

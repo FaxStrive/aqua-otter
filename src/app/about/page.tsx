@@ -127,7 +127,7 @@ export default function AboutPage() {
 
       <Wave from="#ffffff" to="#F0F8FF" variant="gentle" height={60} />
 
-      {/* VALUES — Typographic treatment */}
+      {/* VALUES, Typographic treatment */}
       <section ref={valuesRef} className="py-20 md:py-32" style={{ backgroundColor: "#F0F8FF" }}>
         <div className="container-site">
           <motion.p initial={{ opacity: 0, y: 16 }} animate={valuesInView ? { opacity: 1, y: 0 } : {}} className="text-xs font-semibold uppercase tracking-[0.2em] mb-12" style={{ color: "#12BDFB" }}>How we operate</motion.p>
@@ -144,7 +144,7 @@ export default function AboutPage() {
 
       <Wave from="#F0F8FF" to="#0C1F2E" variant="double" height={70} />
 
-      {/* TIMELINE — interactive chapter navigator */}
+      {/* TIMELINE, interactive chapter navigator */}
       <section ref={timelineRef} className="py-28 md:py-40" style={{ backgroundColor: "#0C1F2E" }}>
         <div className="container-site">
           <motion.h2 initial={{ opacity: 0, y: 20 }} animate={timelineInView ? { opacity: 1, y: 0 } : {}} className="font-display font-bold mb-16" style={{ fontSize: "clamp(2.5rem, 6vw, 5rem)", color: "#ffffff", lineHeight: 0.9 }}>
