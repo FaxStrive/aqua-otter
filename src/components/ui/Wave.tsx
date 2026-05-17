@@ -1,4 +1,4 @@
-// Reusable SVG wave divider — place between sections to replace boring horizontal cuts
+// Reusable SVG wave divider, place between sections to replace boring horizontal cuts
 
 type WaveVariant = "gentle" | "sharp" | "double" | "splash";
 

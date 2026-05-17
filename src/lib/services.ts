@@ -38,10 +38,10 @@ export const SERVICES: Record<ServiceSlug, ServiceMeta> = {
     productMentions: ["Water Softener (single-tank)", "Twin Softener", "Dual City Softener", "Tannin Softener (well water)"],
     relevanceFor: (a) => (a.hardness_gpg >= 16 ? "primary" : a.hardness_gpg >= 11 ? "primary" : a.hardness_gpg >= 7 ? "secondary" : "niche"),
     localCopy: (a) => {
-      if (a.hardness_gpg >= 20) return `${a.city} water tests at ${a.hardness_gpg} GPG. That's officially "extremely hard" — you'll see scale on every glass, spot on every dish, and noticeable scale buildup on your fixtures within weeks. A softener isn't optional here. It's the single biggest upgrade to your home water.`;
+      if (a.hardness_gpg >= 20) return `${a.city} water tests at ${a.hardness_gpg} GPG. That's officially "extremely hard", you'll see scale on every glass, spot on every dish, and noticeable scale buildup on your fixtures within weeks. A softener isn't optional here. It's the single biggest upgrade to your home water.`;
       if (a.hardness_gpg >= 16) return `Water in ${a.city} averages ${a.hardness_gpg} GPG. "Very hard" territory. Every appliance in your home takes damage over time. A softener in ${a.county} County is one of the highest-ROI plumbing upgrades you can make.`;
-      if (a.hardness_gpg >= 11) return `${a.city} water tests around ${a.hardness_gpg} GPG — hard enough to scale your water heater and spot your dishes. A properly sized softener cuts your detergent usage by 35% and extends every appliance's life.`;
-      if (a.hardness_gpg >= 7) return `${a.city} runs moderately hard at about ${a.hardness_gpg} GPG. Softening here is a quality-of-life move rather than an emergency — spot-free glassware, better soap lather, softer laundry. A compact single-tank unit handles it.`;
+      if (a.hardness_gpg >= 11) return `${a.city} water tests around ${a.hardness_gpg} GPG, hard enough to scale your water heater and spot your dishes. A properly sized softener cuts your detergent usage by 35% and extends every appliance's life.`;
+      if (a.hardness_gpg >= 7) return `${a.city} runs moderately hard at about ${a.hardness_gpg} GPG. Softening here is a quality-of-life move rather than an emergency, spot-free glassware, better soap lather, softer laundry. A compact single-tank unit handles it.`;
       return `${a.city} water is relatively soft at ${a.hardness_gpg} GPG. You probably don't need a traditional softener. A no-salt conditioner like the Quintex 5 handles any residual scale and keeps appliances pristine.`;
     },
   },

@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const a = getServiceArea(params.slug);
   if (!a) return {};
   return {
-    title: `Water Treatment in ${a.city}, ${a.state} — Free Water Test | Aqua Otter`,
+    title: `Water Treatment in ${a.city}, ${a.state}, Free Water Test | Aqua Otter`,
     description: `Custom water softener, filtration, reverse osmosis, and well water treatment in ${a.city}, ${a.state}. Free in-home water test. Lifetime warranty. Serving ${a.county} County.`,
     alternates: { canonical: `/service-areas/${a.slug}` },
   };
@@ -35,7 +35,7 @@ export default function ServiceAreaPage({ params }: Props) {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    name: `Aqua Otter Water Systems — ${area.city}`,
+    name: `Aqua Otter Water Systems, ${area.city}`,
     image: "https://www.myaquaotter.com/client/service-tech-consult.jpg",
     "@id": `https://www.myaquaotter.com/service-areas/${area.slug}`,
     url: `https://www.myaquaotter.com/service-areas/${area.slug}`,

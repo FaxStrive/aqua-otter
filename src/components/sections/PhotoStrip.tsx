@@ -101,7 +101,7 @@ export default function PhotoStrip() {
         </h2>
       </div>
 
-      {/* Dual rows — 1 on mobile, 2 on desktop */}
+      {/* Dual rows, 1 on mobile, 2 on desktop */}
       <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
         <Strip items={ROW_A} direction="left" />
         <div className="hidden md:block">

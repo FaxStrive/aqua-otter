@@ -8,11 +8,11 @@ import { ArrowRight, CheckCircle, Shield, Wrench, Phone, Star } from "lucide-rea
 
 const covered = [
   { label: "All system components", detail: "Tanks, media, valves, controllers, and all internal parts are covered under the lifetime warranty." },
-  { label: "Control valve and electronics", detail: "The brain of your system — every electronic component and the control head — is covered for life." },
+  { label: "Control valve and electronics", detail: "The brain of your system, every electronic component and the control head, is covered for life." },
   { label: "Manufacturing defects", detail: "If it fails due to how it was made, we fix or replace it. Period. No questions asked." },
   { label: "Media and filtration material", detail: "Core media is covered for its rated lifespan. We guarantee it performs as specified." },
   { label: "Labor for warranty repairs", detail: "When a covered repair is needed, we send a technician. You don't pay for labor on warranty work." },
-  { label: "System performance guarantee", detail: "If your water quality is not what it should be after installation, we make it right — guaranteed." },
+  { label: "System performance guarantee", detail: "If your water quality is not what it should be after installation, we make it right, guaranteed." },
 ];
 
 const notCovered = [
@@ -24,7 +24,7 @@ const notCovered = [
 
 const steps = [
   { icon: Phone, n: "01", title: "Call or text us", desc: "Contact us at (317) 983-5919 and describe what you&apos;re experiencing with your system." },
-  { icon: Wrench, n: "02", title: "We diagnose remotely", desc: "We troubleshoot over the phone — many issues are resolved with a 5-minute call." },
+  { icon: Wrench, n: "02", title: "We diagnose remotely", desc: "We troubleshoot over the phone, many issues are resolved with a 5-minute call." },
   { icon: Star, n: "03", title: "We schedule a visit", desc: "If a technician visit is needed, we schedule within days at no charge for covered repairs." },
   { icon: Shield, n: "04", title: "Repaired or replaced", desc: "We fix the issue completely and confirm your system is performing as designed before we leave." },
 ];
@@ -53,7 +53,7 @@ export default function WarrantyPage() {
                 <span style={{ color: "#12BDFB" }}>you&apos;ll ever need.</span>
               </h1>
               <p className="leading-relaxed mb-8" style={{ fontSize: "clamp(0.9rem, 1.3vw, 1.05rem)", color: "rgba(12,31,46,0.5)", maxWidth: "42ch" }}>
-                Every system we install is backed by a lifetime warranty. Not 5 years. Not 10. For life. If it fails due to a manufacturing defect, we fix it or replace it — at no charge to you.
+                Every system we install is backed by a lifetime warranty. Not 5 years. Not 10. For life. If it fails due to a manufacturing defect, we fix it or replace it, at no charge to you.
               </p>
               <Link href="/contact" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-sm font-semibold transition-all duration-200" style={{ backgroundColor: "#12BDFB", color: "#0C1F2E", boxShadow: "0 4px 20px rgba(18,189,251,0.28)" }} onMouseEnter={e => (e.currentTarget.style.backgroundColor = "#3DCFFF")} onMouseLeave={e => (e.currentTarget.style.backgroundColor = "#12BDFB")}>
                 Get Your System <ArrowRight className="w-4 h-4" />
@@ -65,7 +65,7 @@ export default function WarrantyPage() {
                 <p className="font-display font-bold mb-1" style={{ fontSize: "clamp(2.5rem, 4vw, 3.5rem)", color: "#12BDFB", lineHeight: 1 }}>Lifetime</p>
                 <p className="text-lg font-semibold mb-3" style={{ color: "#ffffff" }}>Warranty Coverage</p>
                 <p className="text-sm" style={{ color: "rgba(255,255,255,0.42)", maxWidth: "28ch", margin: "0 auto" }}>
-                  Parts, valves, electronics, and labor — covered for the life of every system we install.
+                  Parts, valves, electronics, and labor, covered for the life of every system we install.
                 </p>
               </div>
             </motion.div>
@@ -109,7 +109,7 @@ export default function WarrantyPage() {
                   </ul>
                   <div className="mt-6 pt-6 border-t" style={{ borderColor: "rgba(12,31,46,0.08)" }}>
                     <p className="text-sm" style={{ color: "rgba(12,31,46,0.5)" }}>
-                      The things not covered are consumables you replace yourself, or damage from external causes outside our control. If you&apos;re unsure whether something is covered, call us — we&apos;ll tell you honestly.
+                      The things not covered are consumables you replace yourself, or damage from external causes outside our control. If you&apos;re unsure whether something is covered, call us, we&apos;ll tell you honestly.
                     </p>
                   </div>
                 </div>

@@ -239,7 +239,7 @@ export default function SavingsCalculator() {
                   <p className="text-sm" style={{ color: "#ffffff" }}>
                     A typical whole-home system pays for itself in{" "}
                     <b style={{ color: "#22c55e" }}>
-                      {breakdown.annual > 0 ? (systemCost / breakdown.annual).toFixed(1) : "—"} years
+                      {breakdown.annual > 0 ? (systemCost / breakdown.annual).toFixed(1) : ", "} years
                     </b>
                     {" "}at your household&apos;s water costs.
                   </p>

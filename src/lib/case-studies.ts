@@ -71,7 +71,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     },
     solution: {
       headline: "Softener for the hardness. RO for what the softener doesn't touch.",
-      body: "We ran an in-home water test confirming 21 GPG — among the highest we see in the state. The softener handles all the calcium and magnesium, eliminating scale throughout the home. The 5-stage RO under the kitchen sink removes Chromium-6, chlorine byproducts, and anything else that gets through the municipal treatment process. Two systems. One complete answer.",
+      body: "We ran an in-home water test confirming 21 GPG, among the highest we see in the state. The softener handles all the calcium and magnesium, eliminating scale throughout the home. The 5-stage RO under the kitchen sink removes Chromium-6, chlorine byproducts, and anything else that gets through the municipal treatment process. Two systems. One complete answer.",
       systems: [
         { name: "Aqua Otter Pro 64 Softener", why: "Sized for a 4-person household at 21 GPG. Efficient salt use with demand-initiated regeneration." },
         { name: "5-Stage Reverse Osmosis", why: "Removes Chromium-6, lead, nitrate, chlorine byproducts, and TDS to near-zero at the kitchen tap." },
@@ -108,11 +108,11 @@ export const CASE_STUDIES: CaseStudy[] = [
     customerFirstName: "Marcus",
     quote: "My wife is a physician and she brought home the Ann Arbor water report one night and that was it. We had the Aqua Otter team out within the week. The whole-home carbon plus the RO under the kitchen was exactly what the situation called for.",
     problem: {
-      headline: "PFAS in the Huron River — and what the city report confirms",
+      headline: "PFAS in the Huron River, and what the city report confirms",
       body: "Ann Arbor's water supply comes from the Huron River. State testing has documented PFAS compounds in the source water above EPA health advisory levels. The city treatment plant reduces them but does not eliminate them. For a family with young children, this was unacceptable. Marcus wanted whole-home coverage, not just a point-of-use filter.",
       symptoms: [
         "PFAS detected in municipal water report above EPA advisory levels",
-        "Two young children in the home — proactive health decision",
+        "Two young children in the home, proactive health decision",
         "Concern about bioaccumulation over years of exposure",
         "Wanting whole-home protection, not just kitchen sink",
       ],
@@ -161,8 +161,8 @@ export const CASE_STUDIES: CaseStudy[] = [
     customerFirstName: "David",
     quote: "I was skeptical because we're on city water, not a well. But our test showed 1.8 ppm iron right at the tap. Six weeks after the AiO went in, the orange ring in the toilet bowl was gone. The white bathtub is actually white again.",
     problem: {
-      headline: "Iron staining on city water — not as rare as you'd think",
-      body: "David had orange rings in every toilet bowl, rust-colored staining in his white bathtub, and discoloration on the grout in his shower. He assumed it was a well water problem. In fact, Fort Wayne's distribution system runs through aging cast iron infrastructure, and iron can leach into the water between the treatment plant and your tap. His in-home test confirmed 1.8 ppm ferrous iron — well above the 0.3 ppm EPA secondary standard.",
+      headline: "Iron staining on city water, not as rare as you'd think",
+      body: "David had orange rings in every toilet bowl, rust-colored staining in his white bathtub, and discoloration on the grout in his shower. He assumed it was a well water problem. In fact, Fort Wayne's distribution system runs through aging cast iron infrastructure, and iron can leach into the water between the treatment plant and your tap. His in-home test confirmed 1.8 ppm ferrous iron, well above the 0.3 ppm EPA secondary standard.",
       symptoms: [
         "Orange/rust rings in toilet bowls",
         "Iron staining on white bathtub and shower tile",
@@ -180,7 +180,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     },
     solution: {
       headline: "An AiO oxidizes and filters iron in one vessel. No chemicals required.",
-      body: "The Aqua Otter AiO uses an air pocket in the top of the vessel to oxidize dissolved ferrous iron into solid ferric iron particles, then filters them out through the media bed. The system backwashes automatically to purge the captured iron. At 1.8 ppm, the AiO is sized appropriately — no additional chemical injection needed. The system also addresses Fort Wayne's high hardness, though David chose to pair it with a separate softener for the calcium and magnesium.",
+      body: "The Aqua Otter AiO uses an air pocket in the top of the vessel to oxidize dissolved ferrous iron into solid ferric iron particles, then filters them out through the media bed. The system backwashes automatically to purge the captured iron. At 1.8 ppm, the AiO is sized appropriately, no additional chemical injection needed. The system also addresses Fort Wayne's high hardness, though David chose to pair it with a separate softener for the calcium and magnesium.",
       systems: [
         { name: "Aqua Otter AiO All-In-One", why: "Air-charged oxidation tank removes iron, manganese, and hydrogen sulfide without chemicals. Automatic backwash." },
         { name: "Aqua Otter Pro 64 Softener", why: "Added to address the 22 GPG hardness that the AiO doesn't touch." },
@@ -217,7 +217,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     quote: "I'm in a condo so a salt softener was never on the table. The Quintex 5 fits in my utility closet, there's no drain line, no salt to buy, no maintenance. And the water just tastes better. I stopped buying bottled water.",
     problem: {
       headline: "Soft Nashville water with a persistent chlorine taste",
-      body: "Nashville's Cumberland River supply is naturally soft at 5 GPG — one of the lowest in Aqua Otter's service area. But city treatment with chlorine and chloramines leaves a distinct chemical taste that bothered Priya every time she drank from the tap or made coffee. As a condo owner, she couldn't install anything requiring a floor drain, and her HOA restricted salt-discharge systems.",
+      body: "Nashville's Cumberland River supply is naturally soft at 5 GPG, one of the lowest in Aqua Otter's service area. But city treatment with chlorine and chloramines leaves a distinct chemical taste that bothered Priya every time she drank from the tap or made coffee. As a condo owner, she couldn't install anything requiring a floor drain, and her HOA restricted salt-discharge systems.",
       symptoms: [
         "Strong chlorine and chemical taste from the tap",
         "Reluctance to drink tap water; buying bottled",
@@ -269,7 +269,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     quote: "We bought the house knowing it was old. When I started reading about lead solder and what it means for homes built before 1986, I stopped drinking the tap water entirely. The RO gave us safe drinking water and I verified it with my own TDS meter. Zero lead at our kitchen tap.",
     problem: {
       headline: "Pre-1986 construction means lead solder at every joint.",
-      body: "Carol's 1962 Livonia home passed inspection with no issues. But homes built before 1986 used lead-tin solder at every pipe joint, and as pipes age, that solder can leach into the water. GLWA (Detroit's water authority) treats water to reduce lead leaching, but the risk lives inside the home's plumbing — not the main. The only way to protect a household in this situation is a point-of-use system at the kitchen tap.",
+      body: "Carol's 1962 Livonia home passed inspection with no issues. But homes built before 1986 used lead-tin solder at every pipe joint, and as pipes age, that solder can leach into the water. GLWA (Detroit's water authority) treats water to reduce lead leaching, but the risk lives inside the home's plumbing, not the main. The only way to protect a household in this situation is a point-of-use system at the kitchen tap.",
       symptoms: [
         "Home built in 1962 with original copper plumbing",
         "Lead solder used at all pipe joints (standard pre-1986)",
@@ -285,7 +285,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       source: "Municipal (GLWA via City of Livonia)",
     },
     solution: {
-      headline: "A 5-stage RO removes lead to below 1 ppb — well under the EPA action level.",
+      headline: "A 5-stage RO removes lead to below 1 ppb, well under the EPA action level.",
       body: "Reverse osmosis membranes reject lead ions at 98-99% efficiency. The 5-stage system under Carol's kitchen sink feeds the tap she uses for drinking, cooking, and filling glasses. GLWA water at 7 GPG doesn't require pre-softening, so the RO membrane lasts 2-3 years before replacement. We also added a dedicated faucet in polished nickel to match her kitchen hardware.",
       systems: [
         { name: "5-Stage Reverse Osmosis", why: "RO membrane rejects lead, copper, chromium, PFAS, nitrate, and TTHMs. 5-gallon storage tank under sink." },

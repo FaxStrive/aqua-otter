@@ -8,10 +8,10 @@ import { ArrowRight, CheckCircle, DollarSign, Clock, Shield, Zap } from "lucide-
 
 const options = [
   {
-    name: "0% Interest — 12 Months",
+    name: "0% Interest, 12 Months",
     tag: "Most Popular",
     tagColor: "#12BDFB",
-    desc: "No interest, no fees — pay off your system over 12 months with equal monthly payments. Same-as-cash financing for qualified applicants.",
+    desc: "No interest, no fees, pay off your system over 12 months with equal monthly payments. Same-as-cash financing for qualified applicants.",
     details: [
       "0% APR for 12 months",
       "No prepayment penalty",
@@ -34,7 +34,7 @@ const options = [
     example: "A $3,600 system = as low as $65/mo for 60 months (example rate).",
   },
   {
-    name: "Deferred Payment — 90 Days",
+    name: "Deferred Payment, 90 Days",
     tag: "No Payments Now",
     tagColor: "#f59e0b",
     desc: "Get your system installed today and make no payments for 90 days. Pay in full within 90 days and pay zero interest.",
@@ -49,9 +49,9 @@ const options = [
 ];
 
 const steps = [
-  { n: "01", title: "Get your free water test", desc: "We test and design your custom system first — no cost." },
+  { n: "01", title: "Get your free water test", desc: "We test and design your custom system first, no cost." },
   { n: "02", title: "Choose your system", desc: "We give you a written quote with the full system price." },
-  { n: "03", title: "Apply for financing", desc: "Fill out a simple online application — takes 3 to 5 minutes." },
+  { n: "03", title: "Apply for financing", desc: "Fill out a simple online application, takes 3 to 5 minutes." },
   { n: "04", title: "Get approved + installed", desc: "Same-day approval in most cases. Installation scheduled immediately." },
 ];
 
@@ -66,7 +66,7 @@ const faqs = [
   },
   {
     q: "Can I pay off early?",
-    a: "Yes — all financing options carry no prepayment penalty. Pay it off any time and you will owe nothing additional.",
+    a: "Yes, all financing options carry no prepayment penalty. Pay it off any time and you will owe nothing additional.",
   },
   {
     q: "Does financing cover the full system including installation?",
@@ -219,7 +219,7 @@ export default function FinancingPage() {
             Start with the free water test.
           </h2>
           <p className="mb-8" style={{ color: "rgba(255,255,255,0.45)", maxWidth: "40ch", margin: "0 auto 2rem" }}>
-            We test your water, design your system, give you a written quote, and then discuss financing options — in that order. No pressure, ever.
+            We test your water, design your system, give you a written quote, and then discuss financing options, in that order. No pressure, ever.
           </p>
           <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-sm font-semibold transition-all duration-200" style={{ backgroundColor: "#12BDFB", color: "#0C1F2E", boxShadow: "0 4px 20px rgba(18,189,251,0.3)" }} onMouseEnter={e => (e.currentTarget.style.backgroundColor = "#3DCFFF")} onMouseLeave={e => (e.currentTarget.style.backgroundColor = "#12BDFB")}>
             Get Your Free Water Test <ArrowRight className="w-4 h-4" />

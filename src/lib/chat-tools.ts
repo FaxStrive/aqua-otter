@@ -83,7 +83,7 @@ export const CHAT_TOOLS: Tool[] = [
 ];
 
 // ────────────────────────────────────────────────────────────────
-// Tool executors — pure functions that return JSON-serializable data.
+// Tool executors, pure functions that return JSON-serializable data.
 // Data shape matches the `<ToolResultCard>` renderers on the client.
 // ────────────────────────────────────────────────────────────────
 
@@ -117,7 +117,7 @@ export async function executeTool(toolName: string, input: Record<string, unknow
         systems.push({
           id: "aio",
           name: "AiO Ozone Well Filtration",
-          why: "You're on a well. AiO handles iron, sulfur, manganese, and bacteria in one tank using ozone injection — the foundation of any well water setup.",
+          why: "You're on a well. AiO handles iron, sulfur, manganese, and bacteria in one tank using ozone injection, the foundation of any well water setup.",
           priority: 1,
         });
         if (concerns.includes("bacteria")) {
@@ -200,7 +200,7 @@ export async function executeTool(toolName: string, input: Record<string, unknow
         return { kind: "booking", ok: false, name, email, zip, error: "Need name, email, and ZIP to book." };
       }
       if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
-        return { kind: "booking", ok: false, name, email, zip, error: "That email looks off — want to try again?" };
+        return { kind: "booking", ok: false, name, email, zip, error: "That email looks off, want to try again?" };
       }
       const ghl = await createGHLContact({
         name,
@@ -227,7 +227,7 @@ export async function executeTool(toolName: string, input: Record<string, unknow
   }
 }
 
-// Narrow helper — convert tool_use block into tool_result string for follow-up turn
+// Narrow helper, convert tool_use block into tool_result string for follow-up turn
 export function stringifyToolResult(payload: ToolResultPayload): string {
   return JSON.stringify(payload);
 }

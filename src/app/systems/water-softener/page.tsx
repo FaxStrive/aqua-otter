@@ -18,7 +18,7 @@ const findings = [
   { n: "02", label: "shorter appliance lifespan caused by scale buildup inside pipes and water heaters", stat: "30%" },
   { n: "03", label: "drop in water heater efficiency for every 1/4 inch of scale on heating elements", stat: "29%" },
   { n: "04", label: "more soap, shampoo, and detergent needed because hard water won't lather", stat: "2×" },
-  { n: "05", label: "of Indiana homes have hard water above 7 grains per gallon — most above 15", stat: "85%" },
+  { n: "05", label: "of Indiana homes have hard water above 7 grains per gallon, most above 15", stat: "85%" },
 ];
 
 const scienceSteps = [
@@ -32,7 +32,7 @@ const scienceSteps = [
     n: "02",
     badge: "Step 2",
     title: "Ion exchange captures the minerals",
-    desc: "Calcium and magnesium ions bind to the resin beads. Sodium ions are released into the water in their place. The hard minerals are physically captured inside the tank — not filtered around, but removed.",
+    desc: "Calcium and magnesium ions bind to the resin beads. Sodium ions are released into the water in their place. The hard minerals are physically captured inside the tank, not filtered around, but removed.",
   },
   {
     n: "03",
@@ -47,7 +47,7 @@ const products = [
     name: "Water Softener",
     badge: "Most Popular",
     img: "/client/Softener_RB.png",
-    desc: "Single-tank ion exchange softener for 1 to 4 person households. High-efficiency demand-initiated regeneration uses salt only when needed — not on a fixed schedule — minimizing operating cost.",
+    desc: "Single-tank ion exchange softener for 1 to 4 person households. High-efficiency demand-initiated regeneration uses salt only when needed, not on a fixed schedule, minimizing operating cost.",
     specs: [
       ["Capacity", "48,000 grain"],
       ["Regeneration", "Demand-initiated"],
@@ -59,7 +59,7 @@ const products = [
     name: "Twin Softener",
     badge: "Best for Large Homes",
     img: "/client/Twin_Softener_RB.png",
-    desc: "Dual alternating tanks deliver continuous soft water 24 hours a day, 7 days a week — even during regeneration. One tank regenerates while the other stays online. Ideal for larger families with high demand.",
+    desc: "Dual alternating tanks deliver continuous soft water 24 hours a day, 7 days a week, even during regeneration. One tank regenerates while the other stays online. Ideal for larger families with high demand.",
     specs: [
       ["Capacity", "96,000 grain"],
       ["Tanks", "Dual alternating"],
@@ -250,7 +250,7 @@ export default function WaterSoftenerPage() {
         </div>
       </section>
 
-      {/* FIELD REPORT — STATS */}
+      {/* FIELD REPORT, STATS */}
       <section ref={findingsRef} className="py-28 md:py-36" style={{ backgroundColor: "#ffffff" }}>
         <div className="container-site">
           <div
@@ -263,7 +263,7 @@ export default function WaterSoftenerPage() {
               transition={{ duration: 0.5 }}
             >
               <p className="text-xs font-bold uppercase tracking-[0.2em] mb-2" style={{ color: "rgba(12,31,46,0.35)" }}>
-                The Real Cost — Hard Water Data
+                The Real Cost, Hard Water Data
               </p>
               <h2
                 className="font-display font-bold leading-[0.9]"
@@ -358,7 +358,7 @@ export default function WaterSoftenerPage() {
 
       <Wave from="#F0F8FF" to="#0C1F2E" variant="gentle" height={70} />
 
-      {/* TYPOGRAPHIC STEPS — HOW IT WORKS */}
+      {/* TYPOGRAPHIC STEPS, HOW IT WORKS */}
       <section ref={stepsRef} className="py-24 md:py-32" style={{ backgroundColor: "#0C1F2E" }}>
         <div className="container-site">
           <motion.div
@@ -456,7 +456,7 @@ export default function WaterSoftenerPage() {
 
       <Wave from="#0C1F2E" to="#F0F8FF" variant="double" height={70} />
 
-      {/* SHOWROOM FLOOR — PRODUCTS */}
+      {/* SHOWROOM FLOOR, PRODUCTS */}
       <section className="py-28 md:py-36" style={{ backgroundColor: "#F0F8FF" }}>
         <div className="container-site">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
@@ -651,7 +651,7 @@ export default function WaterSoftenerPage() {
             <div>
               <p className="font-semibold text-white">Mike &amp; Sarah T.</p>
               <p className="text-sm mt-1" style={{ color: "rgba(255,255,255,0.38)" }}>
-                Noblesville, IN — Water Softener + Well Filtration
+                Noblesville, IN, Water Softener + Well Filtration
               </p>
             </div>
           </motion.div>

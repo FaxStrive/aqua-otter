@@ -6,7 +6,7 @@ export default function Marquee() {
     "Licensed & Insured",
     "Same-Week Installation",
     "Indiana & Michigan",
-    "No Guesswork — Just Science",
+    "No Guesswork, Just Science",
     "City & Well Water Specialists",
   ];
 

@@ -211,7 +211,7 @@ export default function ExitIntentPopup() {
                       On its way to your inbox.
                     </h2>
                     <p className="text-sm leading-relaxed mb-5" style={{ color: "rgba(12,31,46,0.6)" }}>
-                      We&apos;re sending the guide to <b>{email}</b> right now. Check your inbox in the next minute or two — and your spam folder, just in case.
+                      We&apos;re sending the guide to <b>{email}</b> right now. Check your inbox in the next minute or two, and your spam folder, just in case.
                     </p>
                     <a
                       href={GUIDE_URL}

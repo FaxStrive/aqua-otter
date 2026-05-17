@@ -24,7 +24,7 @@ const cities: City[] = [
   { name: "New Albany",   lat: 38.286, lng: -85.824, gpg: 14 },
 ];
 
-// CartoDB Positron style — clean minimal tiles, no API key needed
+// CartoDB Positron style, clean minimal tiles, no API key needed
 const MAP_STYLE = {
   version: 8 as const,
   sources: {
@@ -46,7 +46,7 @@ function getColor(gpg: number) {
 }
 
 function getLabel(gpg: number) {
-  if (gpg >= 20) return { level: "Extremely hard", desc: "Severe scale, appliance damage — immediate treatment advised" };
+  if (gpg >= 20) return { level: "Extremely hard", desc: "Severe scale, appliance damage, immediate treatment advised" };
   if (gpg >= 16) return { level: "Very hard",      desc: "Noticeable scale, skin irritation, high soap consumption" };
   if (gpg >= 12) return { level: "Hard",           desc: "Scale buildup begins, water heater efficiency drops measurably" };
   return                 { level: "Moderately hard", desc: "Minor deposits forming, treatment recommended" };

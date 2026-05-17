@@ -21,7 +21,7 @@ const waterReport = [
 const impacts = [
   { n: "$800+", label: "avg. bottled water spend per year"   },
   { n: "30%",   label: "appliance lifespan lost to scale"    },
-  { n: "2×",    label: "more soap used — washed right out"   },
+  { n: "2×",    label: "more soap used, washed right out"   },
   { n: "Years", label: "of pipe damage before you notice it" },
 ];
 
@@ -60,12 +60,12 @@ export function StageContamination() {
         >
           <div className="w-8 h-[2px] rounded" style={{ backgroundColor: "#12BDFB" }} />
           <span className="text-xs font-heading font-semibold tracking-[0.22em] uppercase" style={{ color: "#12BDFB" }}>
-            Stage 01 — Contamination
+            Stage 01, Contamination
           </span>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-          {/* Left — big stat + impact grid */}
+          {/* Left, big stat + impact grid */}
           <div>
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -86,7 +86,7 @@ export function StageContamination() {
                 <span className="italic" style={{ color: "rgba(12,31,46,0.4)" }}>hard water.</span>
               </p>
               <p className="text-base leading-relaxed max-w-sm mb-10" style={{ color: "rgba(12,31,46,0.5)" }}>
-                Most families don&apos;t know — until the appliances break early, the stains won&apos;t wash out, or the water just doesn&apos;t taste right.
+                Most families don&apos;t know, until the appliances break early, the stains won&apos;t wash out, or the water just doesn&apos;t taste right.
               </p>
 
               {/* Impact stats 2×2 */}
@@ -108,7 +108,7 @@ export function StageContamination() {
             </motion.div>
           </div>
 
-          {/* Right — animated water quality report card */}
+          {/* Right, animated water quality report card */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
@@ -178,7 +178,7 @@ export function StageContamination() {
                 style={{ borderColor: "rgba(18,189,251,0.1)", backgroundColor: "rgba(18,189,251,0.02)" }}
               >
                 <p className="text-xs" style={{ color: "rgba(12,31,46,0.38)" }}>
-                  Your results may vary — we test on-site, free.
+                  Your results may vary, we test on-site, free.
                 </p>
                 <Link
                   href="/contact"
@@ -199,7 +199,7 @@ export function StageContamination() {
 }
 
 /* ─── STAGE 2: THE FILTER ───────────────────────────────────── */
-// Water purity color per step — visually shows the water clearing
+// Water purity color per step, visually shows the water clearing
 const filterStages = [
   {
     n: "01",
@@ -210,7 +210,7 @@ const filterStages = [
   {
     n: "02",
     label: "Softening",
-    desc: "Ion exchange removes calcium and magnesium — hardness eliminated.",
+    desc: "Ion exchange removes calcium and magnesium, hardness eliminated.",
     waterColor: "#6b8c80",
   },
   {
@@ -222,7 +222,7 @@ const filterStages = [
   {
     n: "04",
     label: "Final Polish",
-    desc: "A clean, pure result exits — ready for every tap in your home.",
+    desc: "A clean, pure result exits, ready for every tap in your home.",
     waterColor: "#12BDFB",
   },
 ];
@@ -252,12 +252,12 @@ export function StageFilter() {
         >
           <div className="w-8 h-[2px] rounded" style={{ backgroundColor: "#12BDFB" }} />
           <span className="text-xs font-heading font-semibold tracking-[0.22em] uppercase" style={{ color: "#12BDFB" }}>
-            Stage 02 — Filtration
+            Stage 02, Filtration
           </span>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-          {/* Left — scroll video */}
+          {/* Left, scroll video */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={inView ? { opacity: 1, scale: 1 } : {}}
@@ -295,7 +295,7 @@ export function StageFilter() {
             </div>
           </motion.div>
 
-          {/* Right — filter stages with water color dots */}
+          {/* Right, filter stages with water color dots */}
           <div>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -402,7 +402,7 @@ const systems = [
   {
     name: "Twin Softener",
     tag: "Hard Water Solution",
-    desc: "Dual-tank continuous soft water 24/7. One regenerates while the other runs — zero service interruptions.",
+    desc: "Dual-tank continuous soft water 24/7. One regenerates while the other runs, zero service interruptions.",
     specs: ["Continuous soft water", "24/7 operation", "Zero interruptions", "Made in USA"],
     img: `${CDN}Twin+Softener+RB-1920w.png`,
     href: "/services/water-softening",
@@ -467,7 +467,7 @@ export function StageSystems() {
           className="text-base max-w-xl leading-relaxed mb-14"
           style={{ color: "rgba(12,31,46,0.5)" }}
         >
-          No two homes have the same water. We design every system from your actual test results — not a one-size-fits-all shelf unit.
+          No two homes have the same water. We design every system from your actual test results, not a one-size-fits-all shelf unit.
         </motion.p>
 
         {/* 2×2 grid of tilt cards */}
@@ -543,7 +543,7 @@ export function StageSystems() {
 /* ─── STAGE 4: THE RESULT ───────────────────────────────────── */
 const transformations = [
   { before: "Scale destroys appliances early",     after: "Pipes & systems protected for decades"    },
-  { before: "Orange stains on every fixture",       after: "Spotless surfaces — every single time"    },
+  { before: "Orange stains on every fixture",       after: "Spotless surfaces, every single time"    },
   { before: "Dry, itchy skin after every shower",   after: "Noticeably softer skin within 2 weeks"    },
   { before: "$80+/month on bottled water",          after: "Pure from every tap, completely free"      },
   { before: "Laundry fades faster, feels rough",    after: "Colors last 33% more washes"              },
@@ -572,12 +572,12 @@ export function StageResult() {
         >
           <div className="w-8 h-[2px] rounded" style={{ backgroundColor: "#12BDFB" }} />
           <span className="text-xs font-heading font-semibold tracking-[0.22em] uppercase" style={{ color: "#12BDFB" }}>
-            Stage 04 — The Result
+            Stage 04, The Result
           </span>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Left — before / after comparison */}
+          {/* Left, before / after comparison */}
           <div>
             <motion.h2
               initial={{ opacity: 0, y: 24 }}
@@ -661,7 +661,7 @@ export function StageResult() {
             </motion.div>
           </div>
 
-          {/* Right — parallax video */}
+          {/* Right, parallax video */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={inView ? { opacity: 1, scale: 1 } : {}}

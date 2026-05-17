@@ -9,7 +9,7 @@ import Wave from "@/components/ui/Wave";
 import PhosphateDiagram from "@/components/sections/PhosphateDiagram";
 
 const findings = [
-  { n: "01", label: "brine discharge — zero environmental impact", stat: "Zero" },
+  { n: "01", label: "brine discharge, zero environmental impact", stat: "Zero" },
   { n: "02", label: "pounds of salt purchased or hauled per year", stat: "0 lbs" },
   { n: "03", label: "scale prevention on pipes and appliances", stat: "99%" },
   { n: "04", label: "of healthy minerals retained in your water", stat: "100%" },
@@ -21,12 +21,12 @@ const scienceSteps = [
   {
     n: "01",
     title: "Hard water flows through TAC media",
-    desc: "Water containing dissolved calcium and magnesium passes through a tank of template-assisted crystallization nucleation sites — tiny polymer beads with a specific surface structure.",
+    desc: "Water containing dissolved calcium and magnesium passes through a tank of template-assisted crystallization nucleation sites, tiny polymer beads with a specific surface structure.",
   },
   {
     n: "02",
     title: "Minerals crystallize into micro-particles",
-    desc: "The TAC sites cause dissolved hard minerals to form stable, microscopic crystals. These crystals remain in the water but can no longer attach to surfaces — scale formation stops completely.",
+    desc: "The TAC sites cause dissolved hard minerals to form stable, microscopic crystals. These crystals remain in the water but can no longer attach to surfaces, scale formation stops completely.",
   },
   {
     n: "03",
@@ -205,7 +205,7 @@ export default function NoSaltPage() {
 
       <Wave from="#ffffff" to="#0C1F2E" variant="gentle" height={70} />
 
-      {/* HOW IT WORKS — typographic steps */}
+      {/* HOW IT WORKS, typographic steps */}
       <section ref={stepsRef} className="py-28 md:py-40" style={{ backgroundColor: "#0C1F2E" }}>
         <div className="container-site">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={stepsInView ? { opacity: 1, y: 0 } : {}} className="mb-20">
@@ -448,7 +448,7 @@ export default function NoSaltPage() {
             </div>
           </div>
 
-          {/* Mobile — horizontal scroll carousel */}
+          {/* Mobile, horizontal scroll carousel */}
           <div className="lg:hidden overflow-x-auto -mx-4 px-4 pb-4">
             <div className="flex gap-4" style={{ width: "max-content" }}>
               {products.map(p => (
@@ -479,7 +479,7 @@ export default function NoSaltPage() {
             </blockquote>
             <div>
               <p className="font-semibold text-white">Shelly Ganger</p>
-              <p className="text-sm mt-1" style={{ color: "rgba(255,255,255,0.38)" }}>Google Review — No-Salt Hard Water System</p>
+              <p className="text-sm mt-1" style={{ color: "rgba(255,255,255,0.38)" }}>Google Review, No-Salt Hard Water System</p>
             </div>
           </motion.div>
         </div>

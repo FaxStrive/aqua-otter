@@ -38,8 +38,7 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "No messages provided." }, { status: 400 });
   }
 
-  // Convert to Anthropic message format. Only the final user turn is handled via streaming —
-  // prior turns go in as plain text history.
+  // Convert to Anthropic message format. Only the final user turn is handled via streaming, // prior turns go in as plain text history.
   const history: Anthropic.Messages.MessageParam[] = incoming.map(m => ({
     role: m.role,
     content: m.content,

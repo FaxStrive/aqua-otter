@@ -8,17 +8,17 @@ const issues = [
   {
     icon: Zap,
     title: "Scale Destroys Appliances",
-    desc: "Hard minerals coat your pipes, water heater, and dishwasher — cutting efficiency and shaving years off their lifespan.",
+    desc: "Hard minerals coat your pipes, water heater, and dishwasher, cutting efficiency and shaving years off their lifespan.",
   },
   {
     icon: Droplets,
     title: "Dry Skin & Brittle Hair",
-    desc: "Hard water strips natural oils from your skin and hair every single shower. It's not your shampoo — it's your water.",
+    desc: "Hard water strips natural oils from your skin and hair every single shower. It's not your shampoo, it's your water.",
   },
   {
     icon: AlertTriangle,
     title: "Taste, Odor & Contaminants",
-    desc: "Iron, sulfur, chlorine, and sediment make tap water taste and smell wrong — and in some cases, it's more than just a nuisance.",
+    desc: "Iron, sulfur, chlorine, and sediment make tap water taste and smell wrong, and in some cases, it's more than just a nuisance.",
   },
 ];
 
@@ -80,7 +80,7 @@ export default function Problem() {
             <p className="text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.38)" }}>
               Most families don&apos;t know. Hard water silently wears down your
               appliances, irritates skin, and costs thousands in premature
-              replacements — while you keep paying for bottled water you
+              replacements, while you keep paying for bottled water you
               shouldn&apos;t need. We fix it permanently, engineered from your
               actual water test results.
             </p>

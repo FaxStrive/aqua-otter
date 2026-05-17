@@ -131,7 +131,7 @@ export default function WhyItMatters() {
             </motion.div>
           </div>
 
-          {/* Right — water quality report card */}
+          {/* Right, water quality report card */}
           <motion.div
             initial={{ opacity: 0, x: 28 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
@@ -231,7 +231,7 @@ export default function WhyItMatters() {
               }}
             >
               <p className="text-xs" style={{ color: "rgba(12,31,46,0.38)" }}>
-                Your results may vary — we test on-site, free.
+                Your results may vary, we test on-site, free.
               </p>
               <Link
                 href="/contact"

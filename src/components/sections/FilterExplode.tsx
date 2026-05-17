@@ -49,7 +49,7 @@ const STATIONS: {
   {
     frame: 70,
     headline: "Goodbye Scale. Hello Minerals.",
-    sub: "No salt. No brine. Minerals stay — scale does not.",
+    sub: "No salt. No brine. Minerals stay, scale does not.",
     accent: "#06B6D4",
     annotations: [
       { tx: 53, ty: 32, lx: 74, ly: 22, title: "Ion-Exchange Resin",       desc: "Amber beads swap Ca\u00b2\u207a and Mg\u00b2\u207a ions for soft water.", side: "right" },
@@ -100,7 +100,7 @@ export default function FilterExplode() {
     setShowAnnotations(false); // hide annotations during transition
     const start    = currentFrameRef.current;
     const t0       = performance.now();
-    const duration = 600; // fixed 600ms regardless of frame distance — always snappy
+    const duration = 600; // fixed 600ms regardless of frame distance, always snappy
     const step = (now: number) => {
       const t = Math.min(1, (now - t0) / duration);
       const f = Math.round(start + (target - start) * t);
@@ -203,7 +203,7 @@ export default function FilterExplode() {
           }}
         />
 
-        {/* Annotation overlay — hidden on mobile, only shown after animation lands */}
+        {/* Annotation overlay, hidden on mobile, only shown after animation lands */}
         <AnimatePresence mode="wait">
           {showAnnotations && <motion.div
             key={stationIdx}
@@ -283,7 +283,7 @@ export default function FilterExplode() {
           </motion.div>}
         </AnimatePresence>
 
-        {/* Bottom headline — minimal, left-aligned */}
+        {/* Bottom headline, minimal, left-aligned */}
         <div style={{ position: "absolute", left: 0, right: 0, bottom: 0, padding: "0 5vw clamp(24px, 5vh, 48px)", pointerEvents: "none" }}>
           <AnimatePresence mode="wait">
             <motion.div
@@ -294,7 +294,7 @@ export default function FilterExplode() {
               transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
             >
               <p style={{ fontSize: 10, fontWeight: 700, letterSpacing: "0.28em", textTransform: "uppercase", color: station.accent, marginBottom: 6, fontFamily: "var(--font-heading, sans-serif)" }}>
-                {`0${stationIdx + 1}  —  Inside the Quintex 5`}
+                {`0${stationIdx + 1}, Inside the Quintex 5`}
               </p>
               <h2 style={{ fontSize: "clamp(1.5rem, 2.8vw, 2.6rem)", fontWeight: 800, lineHeight: 1.08, color: "#0C1F2E", marginBottom: 0, fontFamily: "var(--font-display, sans-serif)" }}>
                 {station.headline}

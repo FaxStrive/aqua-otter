@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * SiteOrb — one persistent water orb across the whole site.
+ * SiteOrb, one persistent water orb across the whole site.
  *
  * Outside the journey section: drifts smoothly with page scroll.
  * Inside the journey section:
@@ -17,11 +17,11 @@ import { Check } from "lucide-react";
 
 /* ─── Journey waypoints: viewport % coords + orb colour ─────── */
 const STAGE_WP = [
-  { x: 62, y: 14, r: 112, g: 55,  b: 8   }, // 0 — intro       brown
-  { x: 78, y: 30, r: 90,  g: 70,  b: 20  }, // 1 — pre-filter  olive
-  { x: 22, y: 52, r: 28,  g: 130, b: 178 }, // 2 — softening   blue
-  { x: 76, y: 70, r: 18,  g: 185, b: 248 }, // 3 — carbon      cyan
-  { x: 50, y: 86, r: 18,  g: 225, b: 255 }, // 4 — pure        bright cyan
+  { x: 62, y: 14, r: 112, g: 55,  b: 8   }, // 0, intro       brown
+  { x: 78, y: 30, r: 90,  g: 70,  b: 20  }, // 1, pre-filter  olive
+  { x: 22, y: 52, r: 28,  g: 130, b: 178 }, // 2, softening   blue
+  { x: 76, y: 70, r: 18,  g: 185, b: 248 }, // 3, carbon      cyan
+  { x: 50, y: 86, r: 18,  g: 225, b: 255 }, // 4, pure        bright cyan
 ];
 
 /* ─── Free path outside the journey (scroll% → position) ───── */
@@ -41,23 +41,23 @@ const CARDS = [
   {
     side: "left" as const, top: "18%", accent: "#f97316",
     n: "01", name: "Pre-Filtration",
-    headline: "Sediment & particles — first out.",
-    body: "A multi-stage pre-filter captures sand, rust, and debris before they reach any core component — protecting everything downstream.",
+    headline: "Sediment & particles, first out.",
+    body: "A multi-stage pre-filter captures sand, rust, and debris before they reach any core component, protecting everything downstream.",
     removes: ["Sediment & sand", "Rust particles", "Dirt & debris", "Visible particulates"],
     stat: "5μm", statLabel: "filtration accuracy",
   },
   {
     side: "right" as const, top: "42%", accent: "#12BDFB",
     n: "02", name: "Water Softening",
-    headline: "Hard minerals — completely gone.",
-    body: "Ion-exchange resin swaps calcium and magnesium for softening ions. Scale, spotted dishes, dry skin — permanently eliminated.",
+    headline: "Hard minerals, completely gone.",
+    body: "Ion-exchange resin swaps calcium and magnesium for softening ions. Scale, spotted dishes, dry skin, permanently eliminated.",
     removes: ["Calcium (hardness)", "Magnesium", "Scale buildup", "Limescale"],
     stat: "30%", statLabel: "longer appliance lifespan",
   },
   {
     side: "left" as const, top: "60%", accent: "#12BDFB",
     n: "03", name: "Carbon Filtration",
-    headline: "Chemicals & taste — absorbed.",
+    headline: "Chemicals & taste, absorbed.",
     body: "A 5-media carbon block captures chlorine, chloramines, and chemical compounds at the molecular level.",
     removes: ["Chlorine & chloramines", "Chemical compounds", "Bad taste & odor", "VOCs"],
     stat: "100K", statLabel: "gallon filter lifespan",
@@ -134,7 +134,7 @@ function StageCard({ card }: { card: typeof CARDS[0] }) {
         <div className="px-5 py-4 border-b" style={{ borderColor: "rgba(255,255,255,0.06)" }}>
           <div className="flex items-center justify-between mb-2">
             <span className="text-[10px] font-heading font-bold tracking-[0.2em] uppercase" style={{ color: card.accent }}>
-              Stage {card.n} — {card.name}
+              Stage {card.n}, {card.name}
             </span>
             <div className="text-right">
               <p className="text-lg font-heading font-bold leading-none" style={{ color: card.accent }}>{card.stat}</p>
@@ -340,7 +340,7 @@ export default function SiteOrb() {
         <OrbVisual r={r} g={g} b={b} />
       </motion.div>
 
-      {/* Filter stage cards — appear when orb dwells near a waypoint */}
+      {/* Filter stage cards, appear when orb dwells near a waypoint */}
       <AnimatePresence mode="wait">
         {activeCard >= 0 && (
           <StageCard key={activeCard} card={CARDS[activeCard]} />

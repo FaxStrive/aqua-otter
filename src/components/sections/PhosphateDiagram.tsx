@@ -34,7 +34,7 @@ export default function PhosphateDiagram() {
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-10 lg:gap-16 items-center">
-          {/* LEFT — Animated diagram */}
+          {/* LEFT, Animated diagram */}
           <motion.div
             initial={{ opacity: 0, x: -24 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
@@ -106,7 +106,7 @@ export default function PhosphateDiagram() {
               <rect x={400} y={155} width={140} height={14} rx={2} fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.15)" strokeWidth={1} />
               <text x={470} y={145} textAnchor="middle" fontSize="10" fontWeight="bold" letterSpacing="1.5" fill="#12BDFB">CONDITIONED OUT</text>
 
-              {/* Transformed particles on the right side — bound to phosphate, can't scale */}
+              {/* Transformed particles on the right side, bound to phosphate, can't scale */}
               {[408, 432, 456, 480, 504, 528].map((cx, i) => (
                 <g key={i}>
                   <circle cx={cx} cy={162} r={5} fill="none" stroke="#12BDFB" strokeWidth={1.5}>
@@ -147,7 +147,7 @@ export default function PhosphateDiagram() {
             </svg>
           </motion.div>
 
-          {/* RIGHT — Comparison table */}
+          {/* RIGHT, Comparison table */}
           <motion.div
             initial={{ opacity: 0, x: 24 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}

@@ -8,7 +8,7 @@ export default function PrivacyPage() {
           {[
             {
               title: "Information We Collect",
-              body: "When you submit a water test request or contact form, we collect your name, phone number, email address, and city or zip code. If you call or text us, we retain your phone number for the purpose of scheduling and follow-up. We do not collect payment information directly — all financing applications are handled through our lending partners.",
+              body: "When you submit a water test request or contact form, we collect your name, phone number, email address, and city or zip code. If you call or text us, we retain your phone number for the purpose of scheduling and follow-up. We do not collect payment information directly, all financing applications are handled through our lending partners.",
             },
             {
               title: "How We Use Your Information",
@@ -20,7 +20,7 @@ export default function PrivacyPage() {
             },
             {
               title: "Cookies and Analytics",
-              body: "Our website uses standard analytics tools to understand how visitors interact with our site. This data is aggregated and anonymous — we do not track individual users across other websites.",
+              body: "Our website uses standard analytics tools to understand how visitors interact with our site. This data is aggregated and anonymous, we do not track individual users across other websites.",
             },
             {
               title: "Data Security",

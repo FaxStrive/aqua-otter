@@ -1,9 +1,9 @@
 import { NextResponse } from "next/server";
 
-// Google Places API — "Place Details" endpoint.
+// Google Places API, "Place Details" endpoint.
 // Docs: https://developers.google.com/maps/documentation/places/web-service/details
 // Returns the 5 most recent reviews for our business place ID.
-// Cached for 24h — Google only updates review data daily anyway.
+// Cached for 24h, Google only updates review data daily anyway.
 
 export const runtime = "nodejs";
 export const revalidate = 86400; // 24h

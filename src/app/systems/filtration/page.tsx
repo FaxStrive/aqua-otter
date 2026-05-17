@@ -10,10 +10,10 @@ import Wave from "@/components/ui/Wave";
 const findings = [
   { n: "01", label: "of chlorine removed at every tap in your home", stat: "95%" },
   { n: "02", label: "of US tap water contains chlorine disinfection byproducts", stat: "73%" },
-  { n: "03", label: "gallon filter lifespan — no cartridges, no maintenance", stat: "1.5M" },
+  { n: "03", label: "gallon filter lifespan, no cartridges, no maintenance", stat: "1.5M" },
   { n: "04", label: "cartridges replaced per year with the Quintex 5", stat: "0" },
   { n: "05", label: "common contaminants removed including sediment and VOCs", stat: "8+" },
-  { n: "06", label: "of your home protected — not just the kitchen tap", stat: "100%" },
+  { n: "06", label: "of your home protected, not just the kitchen tap", stat: "100%" },
 ];
 
 const scienceSteps = [
@@ -25,7 +25,7 @@ const scienceSteps = [
   {
     n: "02",
     title: "Adsorption removes contaminants",
-    desc: "Chlorine, chloramines, VOCs, and chemical byproducts bond to the carbon surface and are permanently captured — not just displaced into another form.",
+    desc: "Chlorine, chloramines, VOCs, and chemical byproducts bond to the carbon surface and are permanently captured, not just displaced into another form.",
   },
   {
     n: "03",
@@ -119,7 +119,7 @@ export default function FiltrationPage() {
                 Every tap.<br />Pure water.
               </h1>
               <p className="text-base leading-relaxed mb-10" style={{ color: "rgba(255,255,255,0.48)", maxWidth: "42ch" }}>
-                Carbon filtration removes chlorine, chloramines, VOCs, and chemical byproducts at the whole-home level. Every shower, every glass, every appliance — from day one.
+                Carbon filtration removes chlorine, chloramines, VOCs, and chemical byproducts at the whole-home level. Every shower, every glass, every appliance, from day one.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/contact" className="inline-flex items-center gap-2 px-7 py-4 rounded-full text-sm font-semibold transition-all duration-200"
@@ -153,7 +153,7 @@ export default function FiltrationPage() {
         </div>
       </section>
 
-      {/* FIELD REPORT — stat findings */}
+      {/* FIELD REPORT, stat findings */}
       <section ref={findingsRef} className="py-28 md:py-40" style={{ backgroundColor: "#ffffff" }}>
         <div className="container-site">
           {/* Header bar */}
@@ -212,7 +212,7 @@ export default function FiltrationPage() {
 
       <Wave from="#ffffff" to="#0C1F2E" variant="gentle" height={70} />
 
-      {/* HOW IT WORKS — typographic steps */}
+      {/* HOW IT WORKS, typographic steps */}
       <section ref={stepsRef} className="py-28 md:py-40" style={{ backgroundColor: "#0C1F2E" }}>
         <div className="container-site">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={stepsInView ? { opacity: 1, y: 0 } : {}} className="mb-20">
@@ -266,7 +266,7 @@ export default function FiltrationPage() {
 
       <Wave from="#0C1F2E" to="#F0F8FF" variant="double" height={70} />
 
-      {/* SHOWROOM FLOOR — product selector */}
+      {/* SHOWROOM FLOOR, product selector */}
       <section className="py-28 md:py-40" style={{ backgroundColor: "#F0F8FF" }}>
         <div className="container-site">
           <div className="mb-12">
@@ -278,7 +278,7 @@ export default function FiltrationPage() {
             </p>
           </div>
 
-          {/* Desktop showroom — hidden below lg */}
+          {/* Desktop showroom, hidden below lg */}
           <div
             className="hidden lg:grid rounded-3xl overflow-hidden"
             style={{
@@ -287,7 +287,7 @@ export default function FiltrationPage() {
               backgroundColor: "rgba(18,189,251,0.12)",
             }}
           >
-            {/* Left — featured product pane */}
+            {/* Left, featured product pane */}
             <div style={{ backgroundColor: "#ffffff", padding: "2.5rem 3rem" }}>
               <AnimatePresence mode="wait">
                 <motion.div
@@ -339,7 +339,7 @@ export default function FiltrationPage() {
               </AnimatePresence>
             </div>
 
-            {/* Right — selector */}
+            {/* Right, selector */}
             <div className="flex flex-col gap-1.5" style={{ backgroundColor: "#EAF6FE", padding: "1rem" }}>
               {products.map((p, i) => (
                 <button
@@ -375,7 +375,7 @@ export default function FiltrationPage() {
             </div>
           </div>
 
-          {/* Mobile — horizontal scroll carousel */}
+          {/* Mobile, horizontal scroll carousel */}
           <div className="lg:hidden overflow-x-auto -mx-4 px-4 pb-4">
             <div className="flex gap-4" style={{ width: "max-content" }}>
               {products.map((p) => (
@@ -409,11 +409,11 @@ export default function FiltrationPage() {
               ))}
             </div>
             <blockquote className="font-display font-light italic leading-[1.6] mb-10" style={{ fontSize: "clamp(1.4rem, 3vw, 2rem)", color: "rgba(255,255,255,0.75)" }}>
-              &ldquo;The water tastes incredible now — better than bottled. I can actually smell the difference when I shower. Aqua Otter installed it in a couple of hours and we noticed it immediately.&rdquo;
+              &ldquo;The water tastes incredible now, better than bottled. I can actually smell the difference when I shower. Aqua Otter installed it in a couple of hours and we noticed it immediately.&rdquo;
             </blockquote>
             <div>
               <p className="font-semibold text-white">Val Fowler</p>
-              <p className="text-sm mt-1" style={{ color: "rgba(255,255,255,0.38)" }}>Google Review — Whole-Home Filtration</p>
+              <p className="text-sm mt-1" style={{ color: "rgba(255,255,255,0.38)" }}>Google Review, Whole-Home Filtration</p>
             </div>
           </motion.div>
         </div>

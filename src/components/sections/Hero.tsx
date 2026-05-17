@@ -37,7 +37,7 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* Video showcase — top stage */}
+        {/* Video showcase, top stage */}
         <motion.div
           initial={{ opacity: 0, scale: 0.96 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -211,7 +211,7 @@ export default function Hero() {
           paddingBottom: "clamp(40px, 6vh, 80px)",
         }}
       >
-        {/* Video — right 48% */}
+        {/* Video, right 48% */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

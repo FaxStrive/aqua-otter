@@ -11,7 +11,7 @@ interface TiltCardProps {
 }
 
 /**
- * TiltCard — perspective tilt on mouse move, spring-back on leave.
+ * TiltCard, perspective tilt on mouse move, spring-back on leave.
  * Wraps any content in a 3D-tilting container.
  */
 export default function TiltCard({

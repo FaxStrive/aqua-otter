@@ -109,7 +109,7 @@ export default function JourneyNav() {
                 className="relative flex items-center gap-3 py-3.5 group"
                 aria-label={`Go to ${stage.label}`}
               >
-                {/* Stage label — visible when active, hover on others */}
+                {/* Stage label, visible when active, hover on others */}
                 <span
                   className="text-xs font-heading font-semibold tracking-[0.1em] uppercase whitespace-nowrap transition-all duration-300 pr-1"
                   style={{
@@ -119,7 +119,7 @@ export default function JourneyNav() {
                     pointerEvents: "none",
                   }}
                 >
-                  {stage.n} — {stage.label}
+                  {stage.n}, {stage.label}
                 </span>
 
                 {/* Hover label for non-active */}

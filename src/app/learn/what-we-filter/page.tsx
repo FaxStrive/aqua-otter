@@ -5,7 +5,7 @@ import WaterJourney from "@/components/sections/WaterJourney";
 import CTA from "@/components/sections/CTA";
 
 export const metadata: Metadata = {
-  title: "What's in your water — every contaminant we filter",
+  title: "What's in your water, every contaminant we filter",
   description:
     "Step through every contaminant we pull out of your water: chlorine, sediment, iron, PFAS, lead, bacteria, and more. See how each stage of treatment works.",
 };
