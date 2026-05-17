@@ -23,7 +23,7 @@ const notCovered = [
 ];
 
 const steps = [
-  { icon: Phone, n: "01", title: "Call or text us", desc: "Contact us at (317) 983-5919 and describe what you&apos;re experiencing with your system." },
+  { icon: Phone, n: "01", title: "Call or text us", desc: "Contact us at (317) 961-6925 and describe what you&apos;re experiencing with your system." },
   { icon: Wrench, n: "02", title: "We diagnose remotely", desc: "We troubleshoot over the phone, many issues are resolved with a 5-minute call." },
   { icon: Star, n: "03", title: "We schedule a visit", desc: "If a technician visit is needed, we schedule within days at no charge for covered repairs." },
   { icon: Shield, n: "04", title: "Repaired or replaced", desc: "We fix the issue completely and confirm your system is performing as designed before we leave." },
@@ -163,9 +163,9 @@ export default function WarrantyPage() {
             <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-sm font-semibold transition-all duration-200" style={{ backgroundColor: "#12BDFB", color: "#0C1F2E", boxShadow: "0 4px 20px rgba(18,189,251,0.3)" }} onMouseEnter={e => (e.currentTarget.style.backgroundColor = "#3DCFFF")} onMouseLeave={e => (e.currentTarget.style.backgroundColor = "#12BDFB")}>
               Get Free Water Test <ArrowRight className="w-4 h-4" />
             </Link>
-            <a href="tel:+13179835919" className="inline-flex items-center gap-2 px-8 py-4 rounded-full border text-sm font-medium" style={{ borderColor: "rgba(255,255,255,0.15)", color: "rgba(255,255,255,0.65)" }}>
+            <a href="tel:+13179616925" className="inline-flex items-center gap-2 px-8 py-4 rounded-full border text-sm font-medium" style={{ borderColor: "rgba(255,255,255,0.15)", color: "rgba(255,255,255,0.65)" }}>
               <Phone className="w-4 h-4" style={{ color: "#12BDFB" }} />
-              (317) 983-5919
+              (317) 961-6925
             </a>
           </div>
         </div>

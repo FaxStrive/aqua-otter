@@ -4,9 +4,26 @@ import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
 
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "Well Water Testing: Why You Should Test Every Year",
+  datePublished: "2026-03-28",
+  author: {
+    "@type": "Person",
+    "@id": "https://www.myaquaotter.com/#larry",
+    name: "Larry Foster",
+    jobTitle: "Founder",
+    worksFor: { "@id": "https://www.myaquaotter.com/#organization" },
+  },
+  publisher: { "@id": "https://www.myaquaotter.com/#organization" },
+  mainEntityOfPage: "https://www.myaquaotter.com/blog/well-water-testing",
+};
+
 export default function WellWaterTestingPost() {
   return (
     <article className="pt-40 pb-24" style={{ backgroundColor: "#ffffff" }}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <div className="container-site max-w-2xl mx-auto">
         <Link href="/blog" className="inline-flex items-center gap-1.5 text-sm mb-10 transition-colors" style={{ color: "rgba(12,31,46,0.4)" }}>
           <ArrowLeft className="w-3.5 h-3.5" /> Back to Blog
@@ -18,7 +35,7 @@ export default function WellWaterTestingPost() {
           Well Water Testing: Why You Should Test Every Year
         </h1>
 
-        <p className="text-sm mb-10" style={{ color: "rgba(12,31,46,0.4)" }}>March 28, 2026 &nbsp;·&nbsp; 5 min read &nbsp;·&nbsp; By the Aqua Otter Team</p>
+        <p className="text-sm mb-10" style={{ color: "rgba(12,31,46,0.4)" }}>March 28, 2026 &nbsp;·&nbsp; 5 min read &nbsp;·&nbsp; By Larry Foster</p>
 
         <div className="space-y-6 text-base leading-relaxed" style={{ color: "rgba(12,31,46,0.65)" }}>
           <p>

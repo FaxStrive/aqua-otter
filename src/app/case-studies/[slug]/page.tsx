@@ -19,5 +19,31 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 export default function CaseStudyPage({ params }: { params: { slug: string } }) {
   const cs = getCaseStudy(params.slug);
   if (!cs) notFound();
-  return <CaseStudyClient cs={cs} />;
+
+  // Article + Person JSON-LD. Larry Foster is the founding author.
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: cs.title,
+    description: cs.subtitle,
+    author: {
+      "@type": "Person",
+      "@id": "https://www.myaquaotter.com/#larry",
+      name: "Larry Foster",
+      jobTitle: "Founder",
+      worksFor: { "@id": "https://www.myaquaotter.com/#organization" },
+    },
+    publisher: { "@id": "https://www.myaquaotter.com/#organization" },
+    mainEntityOfPage: `https://www.myaquaotter.com/case-studies/${cs.slug}`,
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <CaseStudyClient cs={cs} />
+    </>
+  );
 }

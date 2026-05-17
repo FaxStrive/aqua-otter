@@ -32,7 +32,7 @@ export default function TermsPage() {
             },
             {
               title: "Contact",
-              body: "For questions about these terms, contact us at info@myaquaotter.com or (317) 983-5919.",
+              body: "For questions about these terms, contact us at info@myaquaotter.com or (317) 961-6925.",
             },
           ].map((section) => (
             <div key={section.title}>

@@ -80,11 +80,11 @@ export const FAQ_CATEGORIES: FAQCategory[] = [
       },
       {
         q: "How do I schedule a water test?",
-        a: "Call or text us at (317) 983-5919, email info@myaquaotter.com, or fill out the form on our contact page. We respond within one business day and can often schedule within the same week.",
+        a: "Call or text us at (317) 961-6925, email info@myaquaotter.com, or fill out the form on our contact page. We respond within one business day and can often schedule within the same week.",
       },
       {
         q: "Do you offer emergency service?",
-        a: "Yes. For system issues or urgent water quality concerns, call or text (317) 983-5919. We do our best to respond to existing customers promptly.",
+        a: "Yes. For system issues or urgent water quality concerns, call or text (317) 961-6925. We do our best to respond to existing customers promptly.",
       },
     ],
   },

@@ -188,7 +188,7 @@ export default function AskTheOtter() {
       }
     } catch (err) {
       if ((err as Error).name !== "AbortError") {
-        setMessages(prev => [...prev, { role: "assistant", parts: [{ type: "text", text: "Sorry, I hit a snag. You can reach us at (317) 983-5919 or the contact form." }] }]);
+        setMessages(prev => [...prev, { role: "assistant", parts: [{ type: "text", text: "Sorry, I hit a snag. You can reach us at (317) 961-6925 or the contact form." }] }]);
       }
     } finally {
       setStreaming(false);

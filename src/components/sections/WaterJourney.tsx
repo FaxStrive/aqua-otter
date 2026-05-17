@@ -1767,14 +1767,14 @@ export default function WaterJourney() {
                         <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
                       </Link>
                       <a
-                        href="tel:+13179835919"
+                        href="tel:+13179616925"
                         className="inline-flex items-center justify-center gap-2 text-xs font-medium transition-colors"
                         style={{ color: "rgba(12,31,46,0.35)" }}
                         onMouseEnter={(e) => (e.currentTarget.style.color = "#12BDFB")}
                         onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(12,31,46,0.35)")}
                       >
                         <Phone className="w-3 h-3" />
-                        (317) 983-5919
+                        (317) 961-6925
                       </a>
                     </motion.div>
                   </motion.div>

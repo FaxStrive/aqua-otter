@@ -49,6 +49,17 @@ export default function ServiceAreaPage({ params }: Props) {
     },
     areaServed: area.zips.map(z => ({ "@type": "PostalCodeSpecification", postalCode: z })),
     priceRange: "$$",
+    sameAs: [
+      "https://www.facebook.com/MyAquaOtter/",
+      "https://www.instagram.com/therealaquaotter/",
+      "https://www.youtube.com/@AquaOtterWaterSystems",
+    ],
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.8",
+      reviewCount: "55",
+    },
+    parentOrganization: { "@id": "https://www.myaquaotter.com/#organization" },
   };
 
   return (

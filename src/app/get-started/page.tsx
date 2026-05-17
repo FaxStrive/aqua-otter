@@ -434,7 +434,7 @@ export default function GetStartedPage() {
       if (!data.ok) throw new Error(data.error ?? "unknown");
       setDone(true);
     } catch {
-      setError("Something went wrong. Call us directly at (317) 983-5919.");
+      setError("Something went wrong. Call us directly at (317) 961-6925.");
     } finally {
       setSubmitting(false);
     }
@@ -457,12 +457,12 @@ export default function GetStartedPage() {
             Want to reach us faster?
           </p>
           <a
-            href="tel:+13179835919"
+            href="tel:+13179616925"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-sm"
             style={{ backgroundColor: "#12BDFB", color: "#07111A" }}
           >
             <Phone className="w-4 h-4" />
-            (317) 983-5919
+            (317) 961-6925
           </a>
           <div className="mt-8">
             <Link href="/" className="text-sm" style={{ color: "rgba(255,255,255,0.3)" }}>

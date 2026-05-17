@@ -86,11 +86,11 @@ export default function FAQPage() {
               <p style={{ color: "rgba(12,31,46,0.48)" }}>
                 Can&apos;t find your answer? Call us at{" "}
                 <a
-                  href="tel:+13179835919"
+                  href="tel:+13179616925"
                   className="font-medium"
                   style={{ color: "#12BDFB" }}
                 >
-                  (317) 983-5919
+                  (317) 961-6925
                 </a>
                 , we pick up.
               </p>
@@ -193,11 +193,11 @@ export default function FAQPage() {
           >
             Call or text us at{" "}
             <a
-              href="tel:+13179835919"
+              href="tel:+13179616925"
               className="font-semibold"
               style={{ color: "#12BDFB" }}
             >
-              (317) 983-5919
+              (317) 961-6925
             </a>{" "}
             or schedule a free water test and we will answer everything in
             person.

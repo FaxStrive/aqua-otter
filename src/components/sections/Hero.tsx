@@ -146,12 +146,12 @@ export default function Hero() {
               <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
             </Link>
             <a
-              href="tel:+13179835919"
+              href="tel:+13179616925"
               className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full border text-sm font-medium transition-all duration-200"
               style={{ color: "rgba(12,31,46,0.7)", borderColor: "rgba(12,31,46,0.18)" }}
             >
               <Phone className="w-3.5 h-3.5" />
-              (317) 983-5919
+              (317) 961-6925
             </a>
           </motion.div>
 
@@ -283,14 +283,14 @@ export default function Hero() {
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                 </Link>
                 <a
-                  href="tel:+13179835919"
+                  href="tel:+13179616925"
                   className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full text-sm font-medium transition-all duration-200"
                   style={{ color: "rgba(12,31,46,0.65)" }}
                   onMouseEnter={e => { e.currentTarget.style.color = "#12BDFB"; }}
                   onMouseLeave={e => { e.currentTarget.style.color = "rgba(12,31,46,0.65)"; }}
                 >
                   <Phone className="w-3.5 h-3.5" />
-                  (317) 983-5919
+                  (317) 961-6925
                 </a>
               </motion.div>
 

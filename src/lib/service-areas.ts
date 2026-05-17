@@ -17,7 +17,7 @@ export type ServiceArea = {
 };
 
 // Local office phone map, pick the closest regional office for each metro.
-const PHONE_HQ         = "(317) 983-5919"; // Indianapolis HQ
+const PHONE_HQ         = "(317) 961-6925"; // Main CallRail tracking number (forwards to Indianapolis HQ backend (317) 983-5919)
 const PHONE_FT_WAYNE   = "(260) 235-4204";
 const PHONE_GRAND_RAP  = "(616) 612-1660";
 const PHONE_DETROIT    = "(248) 621-8411";
