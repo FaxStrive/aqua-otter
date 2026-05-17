@@ -5,11 +5,9 @@ import Link from "next/link";
 import { ArrowRight, Phone } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
-// Clean brand-color backdrop shown until the hero video has buffered enough
-// to play smoothly. Avoids flashing the raw poster frame (which looked like a
-// random marbled image) before the mp4 takes over.
+// Otter placeholder shown until the hero video has buffered enough to play.
 const VIDEO_BACKDROP =
-  "radial-gradient(ellipse 90% 70% at 50% 40%, rgba(18,189,251,0.45) 0%, rgba(18,189,251,0.18) 40%, rgba(7,17,26,0.95) 100%)";
+  "linear-gradient(rgba(7,17,26,0.25), rgba(7,17,26,0.55)), url('/client/otter-closeup.png') center/cover no-repeat, #07111A";
 
 export default function Hero() {
   const shouldReduce = useReducedMotion();
