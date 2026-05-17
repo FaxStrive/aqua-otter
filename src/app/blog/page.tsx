@@ -8,14 +8,44 @@ import { ArrowRight, Clock, Calendar } from "lucide-react";
 
 const posts = [
   {
+    slug: "indianapolis-tap-water-quality-2026",
+    title: "Indianapolis Tap Water Quality 2026: TTHM, Lead, Chlorine",
+    excerpt: "What is in Indianapolis tap water in 2026: TTHM, lead, chlorine, and 16 to 19 GPG hardness. What is regulated, what is not, and how to treat it at home.",
+    category: "Water Quality",
+    readTime: "10 min read",
+    date: "May 17, 2026",
+    img: "/images/blog-hero/indianapolis-tap-water-quality-2026.jpg",
+    featured: true,
+  },
+  {
+    slug: "water-softener-cost-indianapolis-indiana-2026",
+    title: "Water Softener Cost Indianapolis Indiana 2026",
+    excerpt: "Real 2026 pricing for a professionally installed water softener in Indianapolis, by household size, plus salt costs and 10-year ownership math.",
+    category: "Cost Guide",
+    readTime: "9 min read",
+    date: "May 17, 2026",
+    img: "/images/blog-hero/water-softener-cost-indianapolis-indiana-2026.jpg",
+    featured: false,
+  },
+  {
+    slug: "white-spots-on-faucets-indianapolis",
+    title: "White Spots on Faucets Indianapolis: Hard Water Diagnostic",
+    excerpt: "White spots on Indianapolis faucets are almost always hard-water scale. Use this diagnostic to confirm and fix it for good.",
+    category: "Diagnostic",
+    readTime: "8 min read",
+    date: "May 17, 2026",
+    img: "/images/blog-hero/white-spots-on-faucets-indianapolis.jpg",
+    featured: false,
+  },
+  {
     slug: "hard-water-indiana",
     title: "Hard Water in Indiana: What Every Homeowner Needs to Know",
-    excerpt: "85% of Indiana homes have hard water above 7 GPG. Here's what that means for your pipes, appliances, skin, and water bill — and what you can actually do about it.",
+    excerpt: "85% of Indiana homes have hard water above 7 GPG. Here is what that means for your pipes, appliances, skin, and water bill, and what you can actually do about it.",
     category: "Education",
     readTime: "6 min read",
     date: "April 12, 2026",
     img: "/client/service-kitchen-tap.jpg",
-    featured: true,
+    featured: false,
   },
   {
     slug: "well-water-testing",
@@ -39,7 +69,7 @@ const posts = [
   },
 ];
 
-const categories = ["All", "Education", "Well Water", "Systems", "Maintenance"];
+const categories = ["All", "Water Quality", "Cost Guide", "Diagnostic", "Education", "Well Water", "Systems", "Maintenance"];
 
 export default function BlogPage() {
   const postsRef = useRef<HTMLDivElement>(null);
