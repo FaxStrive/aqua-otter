@@ -87,6 +87,9 @@ const WEBSITE_JSONLD = {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.myaquaotter.com"),
+  verification: {
+    google: "chQilLwRNQCJcdT5VQWXXjIfEfhsyxlG7luqA_h5vxk",
+  },
   title: {
     default: "Aqua Otter Water Systems | Pure Water, Perfected",
     template: "%s | Aqua Otter Water Systems",
