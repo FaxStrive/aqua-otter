@@ -1,3 +1,5 @@
+import { migrationRedirects } from "./migration-redirects.mjs";
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
@@ -11,6 +13,9 @@ const nextConfig = {
         hostname: "le-cdn.hibuwebsites.com",
       },
     ],
+  },
+  async redirects() {
+    return migrationRedirects;
   },
 };
 
