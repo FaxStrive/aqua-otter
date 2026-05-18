@@ -22,11 +22,11 @@ export function generateMetadata({ params }: Props): Metadata {
   if (!area || !service) return {};
 
   return {
-    title: `${service.seoLabel} in ${area.city}, ${area.state} | Aqua Otter`,
+    title: `${service.seoLabel} in ${area.city}, ${area.state}`,
     description: `Professional ${service.seoLabel.toLowerCase()} in ${area.city}, ${area.state}. ${service.tagline} Free in-home water test, lifetime warranty, serving ${area.county} County homeowners.`,
     alternates: { canonical: `/service-areas/${area.slug}/${service.slug}` },
     openGraph: {
-      title: `${service.seoLabel} in ${area.city}, ${area.state} | Aqua Otter`,
+      title: `${service.seoLabel} in ${area.city}, ${area.state} | Aqua Otter Water Systems`,
       description: `${service.seoLabel} in ${area.city}. ${service.tagline}`,
       type: "website",
     },
