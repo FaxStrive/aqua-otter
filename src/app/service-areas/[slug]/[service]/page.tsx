@@ -22,12 +22,12 @@ export function generateMetadata({ params }: Props): Metadata {
   if (!area || !service) return {};
 
   return {
-    title: `${service.name} in ${area.city}, ${area.state} | Aqua Otter`,
-    description: `${service.name} in ${area.city}, ${area.state}. ${service.tagline} Free in-home water test. Lifetime warranty. Serving ${area.county} County homeowners.`,
+    title: `${service.seoLabel} in ${area.city}, ${area.state} | Aqua Otter`,
+    description: `Professional ${service.seoLabel.toLowerCase()} in ${area.city}, ${area.state}. ${service.tagline} Free in-home water test, lifetime warranty, serving ${area.county} County homeowners.`,
     alternates: { canonical: `/service-areas/${area.slug}/${service.slug}` },
     openGraph: {
-      title: `${service.name} in ${area.city}, Aqua Otter`,
-      description: service.tagline,
+      title: `${service.seoLabel} in ${area.city}, ${area.state} | Aqua Otter`,
+      description: `${service.seoLabel} in ${area.city}. ${service.tagline}`,
       type: "website",
     },
   };
@@ -48,7 +48,8 @@ export default function CityServicePage({ params }: Props) {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Service",
-    serviceType: service.name,
+    name: `${service.seoLabel} in ${area.city}, ${area.state}`,
+    serviceType: service.seoLabel,
     provider: {
       "@type": "LocalBusiness",
       name: "Aqua Otter Water Systems",
@@ -65,7 +66,7 @@ export default function CityServicePage({ params }: Props) {
       name: area.city,
       containedInPlace: { "@type": "State", name: area.state },
     },
-    description: `${service.name} installation and service in ${area.city}, ${area.state}. ${service.tagline}`,
+    description: `${service.seoLabel} in ${area.city}, ${area.state}. ${service.tagline}`,
     offers: { "@type": "Offer", priceSpecification: { "@type": "PriceSpecification", priceCurrency: "USD" } },
   };
 
