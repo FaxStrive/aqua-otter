@@ -18,13 +18,13 @@ const posts = [
     featured: true,
   },
   {
-    slug: "water-softener-cost-indianapolis-indiana-2026",
-    title: "Water Softener Cost Indianapolis Indiana 2026",
-    excerpt: "Real 2026 pricing for a professionally installed water softener in Indianapolis, by household size, plus salt costs and 10-year ownership math.",
-    category: "Cost Guide",
-    readTime: "9 min read",
+    slug: "cloudy-glassware-indianapolis",
+    title: "Cloudy Glassware in Indianapolis: Causes and How to Fix It",
+    excerpt: "Cloudy glasses out of the dishwasher are almost always Indianapolis hard water at 16 to 19 GPG. Here is the diagnostic, the etching test, and the permanent fix.",
+    category: "Diagnostic",
+    readTime: "10 min read",
     date: "May 17, 2026",
-    img: "/images/blog-hero/water-softener-cost-indianapolis-indiana-2026.jpg",
+    img: "/images/blog-hero/cloudy-glassware-indianapolis.jpg",
     featured: false,
   },
   {
@@ -69,7 +69,7 @@ const posts = [
   },
 ];
 
-const categories = ["All", "Water Quality", "Cost Guide", "Diagnostic", "Education", "Well Water", "Systems", "Maintenance"];
+const categories = ["All", "Water Quality", "Diagnostic", "Education", "Well Water", "Systems", "Maintenance"];
 
 export default function BlogPage() {
   const postsRef = useRef<HTMLDivElement>(null);

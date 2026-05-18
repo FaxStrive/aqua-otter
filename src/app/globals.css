@@ -3,7 +3,7 @@
 .leaflet-control-attribution { display: none; }
 .leaflet-pane { z-index: 0; }
 
-/* Fonts — Instrument Serif (display) + General Sans (body) via Fontshare */
+/* Fonts: Instrument Serif (display) + General Sans (body) via Fontshare */
 @import url('https://api.fontshare.com/v2/css?f[]=instrument-serif@400,400i&f[]=general-sans@200,300,400,500,600,700&display=swap');
 
 @tailwind base;
