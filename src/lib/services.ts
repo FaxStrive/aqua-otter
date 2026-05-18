@@ -8,6 +8,11 @@ export type ServiceMeta = {
   slug: ServiceSlug;
   name: string;
   shortName: string;
+  // Commercial-intent label used in <title>, meta description, and one SEO H2.
+  // Match how homeowners actually search, not internal branding (so "Water
+  // Filtration Installation" rather than "Whole-Home Filtration"). The
+  // friendly `name` stays in the visible H1 for brand voice.
+  seoLabel: string;
   tagline: string;
   color: string;
   image: string; // hero product shot
@@ -24,6 +29,7 @@ export const SERVICES: Record<ServiceSlug, ServiceMeta> = {
     slug: "water-softener",
     name: "Water Softener",
     shortName: "Softener",
+    seoLabel: "Water Softener Installation",
     tagline: "Kill the scale. Keep the appliances.",
     color: "#12BDFB",
     image: "/client/AiO_and_Softener.jpeg",
@@ -50,6 +56,7 @@ export const SERVICES: Record<ServiceSlug, ServiceMeta> = {
     slug: "filtration",
     name: "Whole-Home Filtration",
     shortName: "Filtration",
+    seoLabel: "Water Filtration Installation",
     tagline: "Every tap. Every floor. Every day.",
     color: "#12BDFB",
     image: "/client/Quintex_5_RB-removebg-preview__1_.png",
@@ -77,6 +84,7 @@ export const SERVICES: Record<ServiceSlug, ServiceMeta> = {
     slug: "reverse-osmosis",
     name: "Reverse Osmosis",
     shortName: "RO",
+    seoLabel: "Reverse Osmosis Installation",
     tagline: "99% out. Only the water gets through.",
     color: "#22c55e",
     image: "/client/5_Stage_Reverse_Osmosis_RB.png",
@@ -105,6 +113,7 @@ export const SERVICES: Record<ServiceSlug, ServiceMeta> = {
     slug: "well-water",
     name: "Well Water Treatment",
     shortName: "Well Water",
+    seoLabel: "Well Water Filtration & Treatment",
     tagline: "Iron, sulfur, bacteria. Handled.",
     color: "#f59e0b",
     image: "/client/AiO_Well_Filtration_RB.png",
@@ -128,6 +137,7 @@ export const SERVICES: Record<ServiceSlug, ServiceMeta> = {
     slug: "uv-purification",
     name: "UV Purification",
     shortName: "UV",
+    seoLabel: "UV Water Purification System",
     tagline: "Bacteria, viruses, pathogens. Gone.",
     color: "#a78bfa",
     image: "/client/21_GPG_UV_Light.png",
@@ -151,6 +161,7 @@ export const SERVICES: Record<ServiceSlug, ServiceMeta> = {
     slug: "no-salt",
     name: "No-Salt Conditioner",
     shortName: "No-Salt",
+    seoLabel: "Salt-Free Water Conditioner",
     tagline: "Prevent scale. Skip the salt bags.",
     color: "#f59e0b",
     image: "/client/Quintex_5_RB.png",
